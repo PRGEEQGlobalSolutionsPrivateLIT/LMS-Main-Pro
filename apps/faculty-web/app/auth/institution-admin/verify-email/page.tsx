@@ -1,13 +1,13 @@
 "use client";
 
+import { Suspense, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
 import AuthShell from "../../../../components/auth/AuthShell";
 import OtpInput from "../../../../components/auth/OtpInput";
 import NeuButton from "../../../../components/auth/NeuButton";
 import { authApi } from "../../../../lib/api";
 
-export default function VerifyEmailPage() {
+function VerifyEmailContent() {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -96,5 +96,13 @@ export default function VerifyEmailPage() {
         </div>
       </div>
     </AuthShell>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-sm">Loading...</div>}>
+      <VerifyEmailContent />
+    </Suspense>
   );
 }
