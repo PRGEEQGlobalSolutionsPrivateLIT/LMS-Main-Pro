@@ -1,19 +1,18 @@
 "use client";
 
-import { Suspense, useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import AuthShell from "../../../../components/auth/AuthShell";
 import QrPlaceholder from "../../../../components/auth/QrPlaceholder";
 import OtpInput from "../../../../components/auth/OtpInput";
 import NeuButton from "../../../../components/auth/NeuButton";
 import { authApi } from "../../../../lib/api";
-
-function MfaSetupContent() {
+import { ROLES } from "../../../../lib/constants";
+import { validateMfaCode } from "../../../../lib/validators";
+export default function MfaSetupPage() {
   const router = useRouter();
-  const params = useSearchParams();
-  const email = params.get("email") || "";
 
-  const [secret, setSecret] = useState("DEMO-MFA-SECRET");
+  const [secret, setSecret] = useState("MFA-SECRET-PLACEHOLDER");
   const [qrCodeUrl, setQrCodeUrl] = useState("");
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
@@ -22,28 +21,24 @@ function MfaSetupContent() {
   useEffect(() => {
     async function initMfa() {
       try {
-        const response = await authApi.setupMfa({ email });
+        const response = await authApi.setupMfa({
+          role: ROLES.INSTITUTION_ADMIN,
+        });
 
-        if (response && typeof response === "object" && "secret" in response) {
-          setSecret(String(response.secret));
-        }
-
-        if (response && typeof response === "object" && "qrCodeUrl" in response) {
-          setQrCodeUrl(String(response.qrCodeUrl));
-        }
+        setSecret(response.secret || "MFA-SECRET-PLACEHOLDER");
+        setQrCodeUrl(response.qrCodeUrl || "");
       } catch {
-        setSecret("DEMO-MFA-SECRET");
+        setSecret("MFA-SECRET-PLACEHOLDER");
       }
     }
 
-    if (email) {
-      void initMfa();
-    }
-  }, [email]);
+    void initMfa();
+  }, []);
 
   async function handleActivate() {
-    if (!otp || otp.length < 4) {
-      setError("Enter a valid MFA code.");
+    const validationError = validateMfaCode(otp);
+    if (validationError) {
+      setError(validationError);
       return;
     }
 
@@ -51,7 +46,11 @@ function MfaSetupContent() {
       setLoading(true);
       setError("");
 
-      await authApi.verifyMfa({ email, otp });
+      await authApi.verifyMfa({
+        role: ROLES.INSTITUTION_ADMIN,
+        otp,
+        setup: true,
+      });
 
       router.push("/auth/institution-admin/success");
     } catch (err) {
@@ -91,13 +90,5 @@ function MfaSetupContent() {
         </NeuButton>
       </div>
     </AuthShell>
-  );
-}
-
-export default function MfaSetupPage() {
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <MfaSetupContent />
-    </Suspense>
   );
 }
