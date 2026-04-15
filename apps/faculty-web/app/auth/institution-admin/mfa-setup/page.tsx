@@ -1,18 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import AuthShell from "../../../../components/auth/AuthShell";
 import QrPlaceholder from "../../../../components/auth/QrPlaceholder";
 import OtpInput from "../../../../components/auth/OtpInput";
 import NeuButton from "../../../../components/auth/NeuButton";
 import { authApi } from "../../../../lib/api";
-import { ROLES } from "../../../../lib/constants";
-import { validateMfaCode } from "../../../../lib/validators";
-export default function MfaSetupPage() {
-  const router = useRouter();
 
-  const [secret, setSecret] = useState("MFA-SECRET-PLACEHOLDER");
+function MfaSetupContent() {
+  const router = useRouter();
+  const params = useSearchParams();
+  const email = params.get("email") || "";
+
+  const [secret, setSecret] = useState("DEMO-MFA-SECRET");
   const [qrCodeUrl, setQrCodeUrl] = useState("");
   const [otp, setOtp] = useState("");
   const [error, setError] = useState("");
@@ -20,25 +21,47 @@ export default function MfaSetupPage() {
 
   useEffect(() => {
     async function initMfa() {
-      try {
-        const response = await authApi.setupMfa({
-          role: ROLES.INSTITUTION_ADMIN,
-        });
+      if (!email) {
+        setError("Missing email for MFA setup.");
+        return;
+      }
 
-        setSecret(response.secret || "MFA-SECRET-PLACEHOLDER");
-        setQrCodeUrl(response.qrCodeUrl || "");
-      } catch {
-        setSecret("MFA-SECRET-PLACEHOLDER");
+      try {
+        const response = await authApi.setupMfa({ email });
+
+        if (
+          response &&
+          typeof response === "object" &&
+          "secret" in response &&
+          typeof response.secret === "string"
+        ) {
+          setSecret(response.secret);
+        }
+
+        if (
+          response &&
+          typeof response === "object" &&
+          "qrCodeUrl" in response &&
+          typeof response.qrCodeUrl === "string"
+        ) {
+          setQrCodeUrl(response.qrCodeUrl);
+        }
+      } catch (err) {
+        setError(err instanceof Error ? err.message : "Failed to setup MFA.");
       }
     }
 
     void initMfa();
-  }, []);
+  }, [email]);
 
   async function handleActivate() {
-    const validationError = validateMfaCode(otp);
-    if (validationError) {
-      setError(validationError);
+    if (!email) {
+      setError("Missing email for MFA verification.");
+      return;
+    }
+
+    if (!otp || otp.length < 4) {
+      setError("Enter a valid MFA code.");
       return;
     }
 
@@ -47,14 +70,13 @@ export default function MfaSetupPage() {
       setError("");
 
       await authApi.verifyMfa({
-        role: ROLES.INSTITUTION_ADMIN,
+        email,
         otp,
-        setup: true,
       });
 
       router.push("/auth/institution-admin/success");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "MFA setup failed.");
+      setError(err instanceof Error ? err.message : "MFA verification failed.");
     } finally {
       setLoading(false);
     }
@@ -90,5 +112,13 @@ export default function MfaSetupPage() {
         </NeuButton>
       </div>
     </AuthShell>
+  );
+}
+
+export default function MfaSetupPage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-sm">Loading...</div>}>
+      <MfaSetupContent />
+    </Suspense>
   );
 }
