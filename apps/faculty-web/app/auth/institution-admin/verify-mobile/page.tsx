@@ -1,13 +1,13 @@
 "use client";
 
+import { Suspense, useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { useState } from "react";
 import AuthShell from "../../../../components/auth/AuthShell";
 import OtpInput from "../../../../components/auth/OtpInput";
 import NeuButton from "../../../../components/auth/NeuButton";
 import { authApi } from "../../../../lib/api";
 
-export default function VerifyMobilePage() {
+function VerifyMobileContent() {
   const router = useRouter();
   const params = useSearchParams();
 
@@ -94,5 +94,13 @@ export default function VerifyMobilePage() {
         </div>
       </div>
     </AuthShell>
+  );
+}
+
+export default function VerifyMobilePage() {
+  return (
+    <Suspense fallback={<div className="p-6 text-sm">Loading...</div>}>
+      <VerifyMobileContent />
+    </Suspense>
   );
 }
