@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import AuthShell from "../../../../components/auth/AuthShell";
 import QrPlaceholder from "../../../../components/auth/QrPlaceholder";
@@ -8,7 +8,7 @@ import OtpInput from "../../../../components/auth/OtpInput";
 import NeuButton from "../../../../components/auth/NeuButton";
 import { authApi } from "../../../../lib/api";
 
-export default function MfaSetupPage() {
+function MfaSetupContent() {
   const router = useRouter();
   const params = useSearchParams();
   const email = params.get("email") || "";
@@ -22,33 +22,23 @@ export default function MfaSetupPage() {
   useEffect(() => {
     async function initMfa() {
       try {
-        const response = await authApi.setupMfa({
-          email,
-        });
+        const response = await authApi.setupMfa({ email });
 
-        if (
-          response &&
-          typeof response === "object" &&
-          "secret" in response &&
-          typeof response.secret === "string"
-        ) {
-          setSecret(response.secret);
+        if (response && typeof response === "object" && "secret" in response) {
+          setSecret(String(response.secret));
         }
 
-        if (
-          response &&
-          typeof response === "object" &&
-          "qrCodeUrl" in response &&
-          typeof response.qrCodeUrl === "string"
-        ) {
-          setQrCodeUrl(response.qrCodeUrl);
+        if (response && typeof response === "object" && "qrCodeUrl" in response) {
+          setQrCodeUrl(String(response.qrCodeUrl));
         }
       } catch {
         setSecret("DEMO-MFA-SECRET");
       }
     }
 
-    void initMfa();
+    if (email) {
+      void initMfa();
+    }
   }, [email]);
 
   async function handleActivate() {
@@ -61,10 +51,7 @@ export default function MfaSetupPage() {
       setLoading(true);
       setError("");
 
-      await authApi.verifyMfa({
-        email,
-        otp,
-      });
+      await authApi.verifyMfa({ email, otp });
 
       router.push("/auth/institution-admin/success");
     } catch (err) {
@@ -104,5 +91,13 @@ export default function MfaSetupPage() {
         </NeuButton>
       </div>
     </AuthShell>
+  );
+}
+
+export default function MfaSetupPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <MfaSetupContent />
+    </Suspense>
   );
 }
