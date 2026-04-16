@@ -11,7 +11,7 @@ export class OtpService {
   private readonly resendCooldownSeconds = Number(
     process.env.OTP_RESEND_COOLDOWN_SECONDS ?? 30
   );
-  private readonly maxAttempts = Number(process.env.OTP_MAX_ATTEMPTS ?? 5);
+  private readonly maxAttempts = Number(process.env.OTP_MAX_ATTEMPTS ?? 10);
   private readonly maxResends = Number(process.env.OTP_MAX_RESENDS ?? 3);
   private readonly hashSecret = process.env.OTP_HASH_SECRET || "change_me";
 
