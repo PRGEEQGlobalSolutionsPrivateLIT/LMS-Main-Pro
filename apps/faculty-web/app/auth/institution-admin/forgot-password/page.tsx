@@ -13,10 +13,16 @@ export default function ForgotPasswordPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
+  function normalizeIdentifier(value: string) {
+    return value.trim();
+  }
+
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!identifier.trim()) {
+    const normalizedIdentifier = normalizeIdentifier(identifier);
+
+    if (!normalizedIdentifier) {
       setError("Enter your official email or phone number.");
       return;
     }
@@ -26,12 +32,12 @@ export default function ForgotPasswordPage() {
       setError("");
 
       await authApi.forgotPassword({
-        identifier: identifier.trim(),
+        identifier: normalizedIdentifier,
       });
 
       router.push(
         `/auth/institution-admin/reset-password?identifier=${encodeURIComponent(
-          identifier.trim()
+          normalizedIdentifier
         )}`
       );
     } catch (err) {
@@ -52,7 +58,10 @@ export default function ForgotPasswordPage() {
         <NeuInput
           label="Official Email or Phone Number"
           value={identifier}
-          onChange={(e) => setIdentifier(e.target.value)}
+          onChange={(e) => {
+            setIdentifier(e.target.value);
+            if (error) setError("");
+          }}
           placeholder="Enter official email or phone number"
         />
 
