@@ -28,24 +28,21 @@ async function request<T>(
     body: body !== undefined ? JSON.stringify(body) : undefined,
   });
 
-  let data: unknown = null;
-  const contentType = response.headers.get("content-type") || "";
+  const raw = await response.text();
+  let data: any = null;
 
-  if (contentType.includes("application/json")) {
-    data = await response.json();
-  } else {
-    const text = await response.text();
-    data = text ? { message: text } : null;
+  try {
+    data = raw ? JSON.parse(raw) : null;
+  } catch {
+    data = raw ? { message: raw } : null;
   }
 
   if (!response.ok) {
-    const errorMessage =
-      typeof data === "object" &&
-      data !== null &&
-      "message" in data &&
-      typeof (data as { message?: unknown }).message === "string"
-        ? (data as { message: string }).message
-        : "Request failed";
+    const errorMessage = Array.isArray(data?.message)
+      ? data.message.join(", ")
+      : typeof data?.message === "string"
+      ? data.message
+      : `Request failed with status ${response.status}`;
 
     throw new Error(errorMessage);
   }
