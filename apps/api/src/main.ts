@@ -5,6 +5,9 @@ import { AppModule } from "./app.module";
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
+  const expressApp = app.getHttpAdapter().getInstance();
+  expressApp.set("trust proxy", 1);
+
   const allowedOrigins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
