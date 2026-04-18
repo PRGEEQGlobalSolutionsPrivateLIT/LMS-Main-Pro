@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 type MenuKey =
   | "features"
@@ -14,6 +15,7 @@ type MenuKey =
 export default function Header() {
   const [activeMenu, setActiveMenu] = useState<MenuKey | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const router = useRouter();
 
   const toggleMenu = (menu: MenuKey) => {
     if (activeMenu === menu) {
@@ -216,8 +218,13 @@ export default function Header() {
             <div className="submenu-item">Financial Literacy</div>
           </div>
         </div>
+<button
+  className="signin"
+  onClick={() => router.push("/auth/signin")}
+>
+  Sign Help
+</button>
 
-        <button className="signin">Sign In</button>
       </nav>
     </header>
   );
