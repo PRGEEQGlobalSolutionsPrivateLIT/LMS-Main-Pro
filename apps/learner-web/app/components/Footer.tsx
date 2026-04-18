@@ -1,3 +1,5 @@
+"use client";
+
 import "./Footer.css";
 import {
   FaInstagram,
@@ -10,30 +12,48 @@ export default function Footer() {
   return (
     <footer className="footer-container">
       <div className="footer-content">
+        
         {/* Column 1: Brand Info */}
         <div className="footer-column">
           <h3 className="column-title">NeuroLXP LMS</h3>
+
           <p className="column-text">
             NeuroLXP LMS provides a holistic and future-ready learning
             environment, catering to diverse educational needs and fostering
             growth in the digital age.
           </p>
 
-          <button className="start-btn">Why Wait. Let&apos;s Start</button>
+          <button className="start-btn">
+            Why Wait. Let&apos;s Start
+          </button>
 
+          {/* SOCIAL ICONS */}
           <div className="social-icons">
-            <div className="icon-box">
-              <FaInstagram />
-            </div>
-            <div className="icon-box">
-              <FaFacebookF />
-            </div>
-            <div className="icon-box">
-              <FaYoutube />
-            </div>
-            <div className="icon-box">
-              <FaLinkedinIn />
-            </div>
+            
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+              <div className="icon-box instagram">
+                <FaInstagram />
+              </div>
+            </a>
+
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+              <div className="icon-box facebook">
+                <FaFacebookF />
+              </div>
+            </a>
+
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+              <div className="icon-box youtube">
+                <FaYoutube />
+              </div>
+            </a>
+
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+              <div className="icon-box linkedin">
+                <FaLinkedinIn />
+              </div>
+            </a>
+
           </div>
         </div>
 
@@ -75,11 +95,12 @@ export default function Footer() {
             />
           </div>
         </div>
+
       </div>
 
+      {/* COPYRIGHT */}
       <div className="copyright-bar">
-        Copyright © 2026 | Prgeeq Global Solutions Pvt. Ltd. | All rights
-        reserved.
+        Copyright © 2026 | Prgeeq Global Solutions Pvt. Ltd. | All rights reserved.
       </div>
     </footer>
   );
