@@ -13,7 +13,7 @@ body {
 
 .home-page {
   min-height: 100vh;
-  background-color: #fafbfe;
+  background-color: #e6e7ee;
   padding: 40px;
 }
 
@@ -144,44 +144,93 @@ body {
 }
 
 /* ================= PLATFORM FEATURES GRID ================= */
-
+/* 1. The Main Section - Background must be this shade for the effect to work */
 .platform-features {
-  padding: 80px 20px;
-  max-width: 1200px;
-  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  text-align: center;
+  padding: 50px;
+  background-color: #e6e9ef;
 }
 
+/* 2. The Outer Frame (The 'Carved' look) */
 .feature-box {
+  background-color: #e6e9ef;
+  padding: 20px; /* Space for the frame border */
+  border-radius: 30px;
+  position: relative;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  /* This creates the 'pressed-in' frame from Image 2 */
+  box-shadow: inset 8px 8px 16px #d1d9e6, 
+              inset -8px -8px 16px #ffffff;
+}
+
+/* 3. The Inner Card (The 'Floating' look) */
+/* We use ::after to create the inner card without changing your HTML */
+.feature-box::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background-color: #e6e9ef;
+  border-radius: 20px;
+  z-index: 1; /* Puts it behind the text but above the outer frame */
+  
+  /* This makes the inner card pop OUT of the frame */
+  box-shadow: 8px 8px 15px #d1d9e6, 
+              -4px -4px 15px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* 4. Ensure Content Sits on Top of the Pseudo-element */
+.feature-box > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* 5. The Icon Circle (Protruding style) */
+.icon-circle {
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 20px;
-  transition: transform 0.3s ease;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #e6e9ef;
+  color: #3182ce;
+  font-size: 26px;
+  
+  /* Double shadow for the icon to pop out */
+  box-shadow: 5px 5px 10px #d1d9e6, 
+              -5px -5px 10px #ffffff;
 }
 
-.feature-box:hover {
-  transform: translateY(-5px);
-}
-
+/* 6. Typography Styling */
 .feature-box h3 {
-  margin-top: 15px;
-  font-size: 20px;
-  font-weight: 600;
-  color: #2d3e50;
+  color: #2d3748;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
 .feature-box p {
-  margin-top: 10px;
-  font-size: 15px;
+  color: #718096;
+  font-size: 0.95rem;
   line-height: 1.6;
-  color: #555;
-  max-width: 280px;
+  padding: 0 10px;
 }
 
+/* 7. Hover Effect */
+.feature-box:hover::after {
+  transform: scale(1.02);
+  box-shadow: 12px 12px 20px #d1d9e6, 
+              -8px -8px 20px #ffffff;
+}
 /* ================= NEUMORPHIC ICON ================= */
 
 .icon-circle {
@@ -244,7 +293,6 @@ body {
 .ld-section .icon-circle {
   color: #2a9d8f;
 }
-
 /* ================= DIGITAL SECTION ================= */
 
 .digital-section {
@@ -290,6 +338,26 @@ body {
   padding: 15px;
 }
 
+/* UPDATED ICON PART */
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f0f2f5; /* Matches digital-card background */
+  font-size: 24px;
+  color: #e53e3e; /* Matches the red/pink icon color in your latest image */
+  
+  /* The "Pressed In" Inset Effect from Image 2 */
+  box-shadow: inset 6px 6px 12px #d1d9e6, 
+              inset -6px -6px 12px #ffffff;
+              
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .digital-item h3 {
   margin-top: 15px;
   font-size: 18px;
@@ -303,6 +371,8 @@ body {
   line-height: 1.6;
   color: #555;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
   .digital-grid {
@@ -341,7 +411,7 @@ body {
   }
 
   .digital-item {
-    padding: 0;
+    padding: 15px 0;
   }
 }
 
