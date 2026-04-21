@@ -83,7 +83,9 @@ export default function Header() {
       </div>
 
       <nav className={`nav ${mobileOpen ? "mobile-open" : ""}`}>
-        <div className="nav-item">genZgalaxy</div>
+        <div className="nav-item" onClick={() => router.push("/genZgalaxy")}>
+  genZgalaxy
+</div>
 
          <div
           className="nav-item dropdown-parent"
