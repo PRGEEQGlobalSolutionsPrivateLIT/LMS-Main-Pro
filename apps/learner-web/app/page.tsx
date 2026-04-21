@@ -1,5 +1,5 @@
 "use client";
-
+import styles from "./digital.module.css";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -17,13 +17,9 @@ import {
   FaChartBar,
 } from "react-icons/fa";
 
+
 export default function Home() {
   const slides = [
-    {
-      image: "/heroLMS.jpg",
-      title: "Advanced Learning Record Store",
-      desc: "Capture and analyze all learning activities across multiple platforms with neuroLxp's LRS. Our platform ensures you have a comprehensive view of your learners’ progress and performance, enabling data-driven decisions.",
-    },
     {
       image: "/heroLMS.jpg",
       title: "Comprehensive Learning Management System",
@@ -34,17 +30,22 @@ export default function Home() {
       title: "Personalized Learning Experience",
       desc: "Enhance learner engagement with neuroLxp's LXP features. Our platform delivers personalized learning paths, tailored content, and interactive experiences to meet each learner's unique needs and preferences.",
     },
+    {
+      image: "/heroLMS.jpg",
+      title: "Advanced Learning Record Store",
+      desc: "Capture and analyze all learning activities across multiple platforms with neuroLxp's LRS. Our platform ensures you have a comprehensive view of your learners' progress and performance, enabling data-driven decisions",
+    },
   ];
 
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+  const prevSlide = () => {
+    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
 
-    return () => clearInterval(timer);
-  }, [slides.length]);
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % slides.length);
+  };
 
   return (
     <div className="home-page">
@@ -55,23 +56,55 @@ export default function Home() {
             className="hero-bg"
             style={{ backgroundImage: `url(${slides[current].image})` }}
           >
+            <button
+              className="hero-arrow hero-arrow-left"
+              onClick={prevSlide}
+              aria-label="Previous slide"
+              type="button"
+            >
+              &#10094;
+            </button>
+
             <div className="hero-overlay">
               <h2>{slides[current].title}</h2>
               <p>{slides[current].desc}</p>
-
-              <div className="hero-dots">
-                {slides.map((_, index) => (
-                  <span
-                    key={index}
-                    className={current === index ? "dot active" : "dot"}
-                    onClick={() => setCurrent(index)}
-                  />
-                ))}
-              </div>
             </div>
+
+            <div className="hero-dots">
+              {slides.map((_, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  className={current === index ? "dot active" : "dot"}
+                  onClick={() => setCurrent(index)}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+
+            <button
+              className="hero-arrow hero-arrow-right"
+              onClick={nextSlide}
+              aria-label="Next slide"
+              type="button"
+            >
+              &#10095;
+            </button>
           </div>
         </div>
       </section>
+      
+      <section className="digital-section">
+      <div className="digital-header">
+          <h2>
+            Embark on a <strong>Learning Odyssey</strong> with neuroLxp.
+          </h2>
+
+          <p>
+            We're not just preparing you for tomorrow; we're guiding you to thrive in the rapidly transforming landscape of a digital society. Discover the perfect blend of knowledge, skills, and work readiness in our platform.
+          </p>
+        </div>
+        </section>
 
       <section className="platform-features">
         <div className="feature-box">
@@ -80,9 +113,7 @@ export default function Home() {
           </div>
           <h3>AI-Powered Learning</h3>
           <p>
-            Our AI algorithms personalize learning experiences by adapting to
-            each learner&apos;s pace, style, and preferences, ensuring
-            effective and engaging education.
+            Our AI algorithms personalize learning experiences by adapting to each learner's pace, style, and preferences, ensuring effective and engaging education.
           </p>
         </div>
 
@@ -92,9 +123,7 @@ export default function Home() {
           </div>
           <h3>Interactive Content</h3>
           <p>
-            Engage with immersive and interactive content including videos,
-            quizzes, simulations, and gamified elements that make learning fun
-            and effective.
+            Engage with immersive and interactive content including videos, quizzes, simulations, and gamified elements that make learning fun and effective.
           </p>
         </div>
 
@@ -104,9 +133,7 @@ export default function Home() {
           </div>
           <h3>Collaborative Learning</h3>
           <p>
-            Enhance learning experiences through collaboration with peers,
-            mentors, and industry experts using our integrated communication
-            tools.
+            Enhance learning experiences through collaboration with peers, mentors, and industry experts using our integrated communication tools.
           </p>
         </div>
 
@@ -116,9 +143,7 @@ export default function Home() {
           </div>
           <h3>Skill Development</h3>
           <p>
-            Focus on practical skill-building with courses and modules designed
-            to enhance real-world competencies, preparing learners for future
-            careers.
+            Focus on practical skill-building with courses and modules designed to enhance real-world competencies, preparing learners for future careers.
           </p>
         </div>
 
@@ -128,8 +153,7 @@ export default function Home() {
           </div>
           <h3>Continuous Learning</h3>
           <p>
-            Stay ahead with continuous learning opportunities including
-            up-to-date content and resources evolving with industry trends.
+            Stay ahead with continuous learning opportunities, including up-to-date content and resources that evolve with industry trends and demands.
           </p>
         </div>
 
@@ -139,8 +163,7 @@ export default function Home() {
           </div>
           <h3>Career Pathways</h3>
           <p>
-            Track progress and explore career opportunities connecting learning
-            outcomes to potential job roles and industries.
+            Track progress and explore career opportunities with our career pathway tools, connecting learning outcomes to potential job roles and industries.
           </p>
         </div>
 
@@ -150,8 +173,7 @@ export default function Home() {
           </div>
           <h3>Mobile-First Design</h3>
           <p>
-            Access learning anytime, anywhere with our mobile-first design,
-            ensuring a seamless experience across all devices.
+            Access learning anytime, anywhere with our mobile-first design, ensuring a seamless experience across all devices.
           </p>
         </div>
 
@@ -161,8 +183,7 @@ export default function Home() {
           </div>
           <h3>Customizable Interface</h3>
           <p>
-            Personalize your learning environment with customizable interfaces
-            aligned with your preferences.
+            Personalize your learning environment with customizable interfaces that align with your preferences and enhance your learning journey.
           </p>
         </div>
 
@@ -172,8 +193,7 @@ export default function Home() {
           </div>
           <h3>Secure and Scalable</h3>
           <p>
-            Benefit from a platform prioritizing security and scalability,
-            ensuring your data remains protected.
+            Benefit from a platform that prioritizes security and scalability, ensuring your data is protected and your learning can grow with you.
           </p>
         </div>
       </section>
@@ -185,10 +205,7 @@ export default function Home() {
           </h2>
 
           <p>
-            With our neuroLxps&apos; advanced eLearning, accessibility, and
-            content development services, we&apos;re redefining excellence in
-            learning and reshaping the future of education. Embark on a journey
-            of learning that&apos;s as seamless as it is enlightening.
+            With our neuroLxps' advanced eLearning, accessibility, and content development services, we're redefining excellence in learning and reshaping the future of education. Embark on a journey of learning that's as seamless as it is enlightening.
           </p>
         </div>
 
@@ -200,8 +217,7 @@ export default function Home() {
               </div>
               <h3>Get Discovered</h3>
               <p>
-                Increase your brand&apos;s visibility with our white label
-                neuroLxp solution tailored for your L&amp;D requirements.
+                Increase your brand's visibility with our white label neuroLxp solution, tailored for your L&D requirements, integrate into your legacy systems with course catalogues.
               </p>
             </div>
 
@@ -211,8 +227,7 @@ export default function Home() {
               </div>
               <h3>Deliver Excellence</h3>
               <p>
-                neuroLxp delivers excellence by offering cutting-edge learning
-                tools and personalized experiences.
+                neuroLxp delivers excellence by offering cutting-edge learning tools, personalized experiences, and insightful analytics that ensure optimal educational outcomes.
               </p>
             </div>
 
@@ -222,8 +237,7 @@ export default function Home() {
               </div>
               <h3>Engage Learners</h3>
               <p>
-                Drive learner engagement to new heights with multi-channel
-                notifications and better learning interaction.
+                Drive learner engagement to new heights by leveraging our multi-channel notification systems that guarantee high course completion rates and foster active participation.
               </p>
             </div>
 
@@ -233,8 +247,7 @@ export default function Home() {
               </div>
               <h3>Insightful Analytics</h3>
               <p>
-                Leverage powerful analytics and insights to refine course
-                offerings and enhance learner engagement.
+                Leverage powerful analytics and deep learning insights to refine course offerings and enhance learner engagement, ensuring optimal learning and educational outcomes.
               </p>
             </div>
           </div>
@@ -256,17 +269,11 @@ export default function Home() {
             <h2>L&amp;D with neuroLxp.</h2>
 
             <p>
-              Leverage the domain and technical expertise of neuroLxp in
-              enhancing your organization&apos;s learning and development
-              endeavors.
+              Leverage the domain and technical expertise of neuroLxp in enhancing your organization's learning and development endeavors.
             </p>
 
             <p>
-              Experience the rich tapestry of our dynamic L&amp;D associates for
-              whom innovation is at the forefront and positivity permeates every
-              interaction. Join us in charting a new course for the advancement
-              of learning. Together, we&apos;ll shape the future of educational
-              endeavors.
+              Experience the rich tapestry of our dynamic L&D associates for whom innovation is at the forefront and positivity permeates every interaction. Join us in charting a new course for the advancement of learning. Together, we'll shape the future of educational endeavors.
             </p>
 
             <span className="ld-sign">Parankumar C.</span>
@@ -281,15 +288,11 @@ export default function Home() {
           </h2>
 
           <p>
-            Our advanced and adaptable modules within the neuroLxp platform are
-            designed to ensure organizations stay ahead in the rapidly evolving
-            landscape of learning and development.
+            Our advanced and adaptable modules within the neuroLxp platform are designed to ensure organizations stay ahead in the rapidly evolving landscape of learning and development.
           </p>
 
           <p>
-            These modules are meticulously crafted to meet the dynamic needs of
-            tomorrow&apos;s workforce, empowering businesses to cultivate a
-            culture of continuous learning and innovation.
+            These modules are meticulously crafted to meet the dynamic needs of tomorrow's workforce, empowering businesses to cultivate a culture of continuous learning and innovation.
           </p>
         </div>
       </section>
@@ -309,10 +312,7 @@ export default function Home() {
             <h3>Learning Journey</h3>
 
             <p>
-              Embark on a personalized learning journey with our neuroLxp
-              platform. Discover your unique learning style through
-              comprehensive analytics, set personalized goals, and navigate
-              through tailored learning paths to achieve your objectives.
+              Embark on a personalized learning journey with our neuroLxp platform. Discover your unique learning style through comprehensive analytics, set personalized goals, and navigate through tailored learning paths to achieve your objectives.
             </p>
 
             <button className="learn-btn">Learn More</button>
@@ -331,11 +331,7 @@ export default function Home() {
             <h3>Learning Augmentation</h3>
 
             <p>
-              Experience an enhanced learning journey thru neuroLxp&apos;s
-              custom modules. Engage in gamified experiences, interactive
-              activities, and collaborative social learning opportunities with
-              curated content and features designed to augment your learning
-              experience.
+              Experience an enhanced learning journey thru neuroLxp's custom modules. Engage in gamified experiences, interactive activities, and collaborative social learning opportunities with curated content and features designed to augment your learning experience.
             </p>
 
             <button className="learn-btn">Learn More</button>
@@ -354,10 +350,7 @@ export default function Home() {
             <h3>Learning Ecosystem</h3>
 
             <p>
-              Dive into a comprehensive learning ecosystem with neuroLxp&apos;s
-              custom assessment and personalization modules. Explore skills and
-              career development opportunities, chart your career path, and
-              undergo assessments for continuous growth and development.
+              Dive into a comprehensive learning ecosystem with neuroLxp's custom assessment and personalization modules. Explore skills and career development opportunities, chart your career path, and undergo assessments for continuous growth and development.
             </p>
 
             <button className="learn-btn">Learn More</button>
@@ -376,9 +369,7 @@ export default function Home() {
             />
             <h3>Blended Learning</h3>
             <p>
-              Integrate the best of both worlds with neuroLxp&apos;s Blended
-              Learning module. Combine online and in-person learning to provide
-              a flexible and comprehensive learning experience.
+              Integrate the best of both worlds with neuroLxp's Blended Learning module. Combine online and in-person learning to provide a flexible and comprehensive learning experience.
             </p>
             <button className="learn-btn">Learn More</button>
           </div>
@@ -392,9 +383,7 @@ export default function Home() {
             />
             <h3>Onboarding &amp; Induction</h3>
             <p>
-              Ensure a smooth induction and transition for new hires. Streamline
-              the onboarding process and help new employees integrate seamlessly
-              into your organization.
+              Ensure a smooth induction and transition for new hires. Streamline the onboarding process and help new employees integrate seamlessly into your organization.
             </p>
             <button className="learn-btn">Learn More</button>
           </div>
@@ -408,9 +397,7 @@ export default function Home() {
             />
             <h3>Standards Training</h3>
             <p>
-              Maintain high standards with neuroLxp&apos;s Standards Training
-              module. Equip your team with the knowledge and skills necessary to
-              meet industry standards and regulations effectively.
+              Maintain high standards with neuroLxp's Standards Training module. Equip your team with the knowledge and skills necessary to meet industry standards and regulations effectively.
             </p>
             <button className="learn-btn">Learn More</button>
           </div>
@@ -422,8 +409,7 @@ export default function Home() {
           <div className="contact-text">
             <h2>Get in touch</h2>
             <p>
-              If you need any help with our products or services, choose one of
-              the following ways to contact us.
+              If you need any help with our products or services, choose one of the following ways to contact us.
             </p>
           </div>
 
@@ -443,20 +429,40 @@ export default function Home() {
         </p>
 
         <div className="store-buttons">
-          <button className="store-btn">
-            <span className="icon"></span>
-            <div>
-              <small>Download on the</small>
-              <strong>App Store</strong>
-            </div>
-          </button>
+  <button className="store-btn" type="button">
+    <span className="icon" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 384 512"
+        width="20"
+        height="20"
+        fill="currentColor"
+      >
+        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 49.9-84.8-18.7-26.6-47-41.3-84.3-44.2-35.3-2.8-73.8 20.6-87.9 20.6-14.8 0-49.4-19.7-79.5-19.1-41 .6-78.7 23.9-99.7 60.4-42.6 73.8-10.9 183 30.6 243 20.3 29.1 44.6 61.8 76.3 60.6 30.6-1.2 42.1-19.7 79-19.7 36.9 0 47.2 19.7 79.6 19.1 33-.6 53.8-29.7 73.9-58.9 23.4-33.7 33-66.3 33.5-68.1-.7-.3-64.3-24.7-64.9-98.9zM259.3 0c-19.1 23.2-31.9 54.2-28.4 85.2 29.3 2.3 58.9-15 77.8-37.7 18.9-22.7 32.3-53.6 28.4-84.5-29.9-2.4-58.7 14.5-77.8 37z" />
+      </svg>
+    </span>
+    <div>
+      <small>Download on the</small>
+      <strong>App Store</strong>
+    </div>
+  </button>
 
-          <button className="store-btn">
-            <span className="icon">▶</span>
-            <div>
-              <small>Download on the</small>
-              <strong>Google Play</strong>
-            </div>
+  <button className="store-btn" type="button">
+    <span className="icon" aria-hidden="true">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+        width="20"
+        height="20"
+        fill="currentColor"
+      >
+        <path d="M325.3 234.3L104.6 9.6C96.7 1.8 84.3-1.5 73.3 1.1c-11 2.6-19 10.7-21.5 21.7C48.6 37.3 48 48.2 48 64v384c0 15.8.6 26.7 3.8 41.2 2.5 11 10.5 19.1 21.5 21.7 11 2.6 23.4-.7 31.3-8.5l220.7-224.7c8.9-9 8.9-23.6 0-32.4zM372.5 281.4l53.7 54.7c12 12.2 31.5 12.3 43.7.3 12.2-12 12.3-31.5.3-43.7l-64-65.1 64-65.1c12-12.2 11.9-31.8-.3-43.7-12.2-12-31.7-11.9-43.7.3l-53.7 54.7-34.7 35.3 34.7 35.3z" />
+      </svg>
+    </span>
+    <div>
+      <small>Get it on</small>
+      <strong>Google Play</strong>
+    </div>
           </button>
         </div>
       </section>
