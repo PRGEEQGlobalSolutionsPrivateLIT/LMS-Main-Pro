@@ -116,6 +116,7 @@ body {
   cursor: pointer;
   transition: 0.2s;
   font-weight: 500;
+  position: relative;
 }
 
 .dropdown-item-label {
@@ -187,7 +188,6 @@ body {
     display: block;
   }
 
-  /* FULL SCREEN NAV */
   .nav {
     position: fixed;
     top: 60px;
@@ -210,7 +210,6 @@ body {
     display: flex;
   }
 
-  /* MAIN ITEMS */
   .nav-item {
     width: 100%;
     background: var(--neu-surface);
@@ -221,7 +220,6 @@ body {
       -5px -5px 12px var(--neu-shadow-light);
   }
 
-  /* DROPDOWN INLINE */
   .dropdown {
     position: static;
     display: none;
@@ -256,7 +254,6 @@ body {
     gap: 10px;
   }
 
-  /* SUBMENU INLINE */
   .submenu-parent {
     width: 100%;
   }
@@ -268,7 +265,6 @@ body {
     top: auto !important;
     width: 100% !important;
     max-width: 100% !important;
-    display: none !important;
     margin-top: 8px;
     margin-left: 0;
     padding: 8px 0 0 12px;
@@ -277,15 +273,18 @@ body {
     box-shadow: none;
     border-radius: 0;
     overflow: hidden;
+    display: none !important;
   }
 
-  .submenu-parent.mobile-submenu-open > .submenu {
-    display: block !important;
-  }
-
+  /* keep hover from affecting mobile/touch */
   .submenu-parent:hover > .submenu,
   .dropdown-item:hover > .submenu {
     display: none !important;
+  }
+
+  /* this must come AFTER the hover-hide rules */
+  .submenu-parent.mobile-submenu-open > .submenu {
+    display: block !important;
   }
 
   .submenu-item {
@@ -342,7 +341,6 @@ body {
   transition: all 0.2s ease;
 }
 
-/* hover = slight in effect */
 .signin:hover {
   background: #e8eef5;
   border-top: 2px solid #d9e2ec;
@@ -351,7 +349,6 @@ body {
   border-bottom: 2px solid #ffffff;
 }
 
-/* active = full pressed in effect */
 .signin:active {
   background: #e2e8f0;
   border-top: 2px solid #cfd8e3;
