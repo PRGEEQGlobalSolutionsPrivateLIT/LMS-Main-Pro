@@ -18,138 +18,318 @@ body {
 }
 
 /* ================= HERO SLIDER ================= */
+/* ================= HERO SLIDER ================= */
 
 .hero-slider {
+  width: 100%;
+  padding: 24px 16px;
+  background: transparent;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #f4f7f9;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  margin: 20px auto;
-  max-width: 1100px;
-  padding: 30px;
-  box-sizing: border-box;
 }
 
 .hero-card {
   width: 100%;
-  background-color: #ffffff;
-  border-radius: 12px;
+  max-width: 1200px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #f8fafc;
+  border: 1px solid #d9e1ea;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  padding: 18px;
+  box-sizing: border-box;
 }
 
 .hero-bg {
-  min-height: 400px;
-  background-size: cover;
-  background-position: center;
   position: relative;
+  width: 100%;
+  min-height: 540px;
+  border-radius: 14px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.72);
+  z-index: 1;
 }
 
 .hero-overlay {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.85);
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 48px 28px 90px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 40px 20px;
 }
 
 .hero-overlay h2 {
-  font-size: 26px;
+  margin: 0 0 14px;
+  font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+  line-height: 1.2;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 15px;
-  max-width: 800px;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+  max-width: 700px;
 }
 
 .hero-overlay p {
-  max-width: 650px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 25px;
+  margin: 0;
+  max-width: 640px;
+  font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+  line-height: 1.75;
+  color: #475569;
 }
 
-.hero-dots {
+/* ================= ARROWS ================= */
+
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.88);
+  color: #1e293b;
+  font-size: 24px;
+  font-weight: 700;
   display: flex;
-  gap: 10px;
+  align-items: center;
   justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+  transition: all 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.06);
+}
+
+.hero-arrow-left {
+  left: 20px;
+}
+
+.hero-arrow-right {
+  right: 20px;
+}
+
+/* ================= DOTS ================= */
+
+.hero-dots {
+  position: absolute;
+  bottom: 26px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .dot {
-  height: 10px;
-  width: 10px;
-  background: transparent;
-  border: 1px solid #333;
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
+  border: 1.5px solid #64748b;
+  background: transparent;
   cursor: pointer;
-  transition: background 0.3s ease;
+  padding: 0;
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.dot:hover {
+  transform: scale(1.08);
+  border-color: #334155;
 }
 
 .dot.active {
-  background: #2d3748;
+  background: #334155;
+  border-color: #334155;
+  transform: scale(1.08);
 }
 
-/* ================= RESPONSIVE QUERIES ================= */
+/* ================= RESPONSIVE ================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .hero-slider {
-    padding: 20px;
-    margin: 20px 15px;
+    padding: 20px 14px;
+  }
+
+  .hero-card {
+    padding: 14px;
+    border-radius: 16px;
   }
 
   .hero-bg {
-    min-height: 350px;
+    min-height: 480px;
   }
 
-  .hero-overlay h2 {
+  .hero-overlay {
+    max-width: 700px;
+    padding: 40px 24px 80px;
+  }
+
+  .hero-arrow {
+    width: 42px;
+    height: 42px;
     font-size: 22px;
+  }
+
+  .hero-arrow-left {
+    left: 16px;
+  }
+
+  .hero-arrow-right {
+    right: 16px;
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hero-slider {
-    padding: 10px;
-    border: none;
+    padding: 16px 12px;
+  }
+
+  .hero-card {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .hero-bg {
+    min-height: 420px;
+    background-position: center;
+  }
+
+  .hero-overlay {
+    padding: 36px 20px 72px;
+  }
+
+  .hero-overlay p {
+    line-height: 1.65;
+  }
+
+  .hero-arrow {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
+  .hero-arrow-left {
+    left: 12px;
+  }
+
+  .hero-arrow-right {
+    right: 12px;
+  }
+
+  .hero-dots {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-slider {
+    padding: 12px 10px;
     background: transparent;
   }
 
   .hero-card {
-    border-radius: 8px;
+    padding: 10px;
+    border-radius: 12px;
   }
 
   .hero-bg {
-    min-height: 450px;
+    min-height: 360px;
+    border-radius: 10px;
+  }
+
+  .hero-bg::before {
+    background: rgba(255, 255, 255, 0.78);
   }
 
   .hero-overlay {
-    padding: 30px 15px;
+    padding: 28px 16px 62px;
   }
 
   .hero-overlay h2 {
-    font-size: 20px;
-    line-height: 1.3;
+    margin-bottom: 12px;
   }
 
   .hero-overlay p {
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 0.92rem;
+    line-height: 1.6;
+  }
+
+  .hero-arrow {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .hero-arrow-left {
+    left: 10px;
+  }
+
+  .hero-arrow-right {
+    right: 10px;
+  }
+
+  .hero-dots {
+    bottom: 16px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
   }
 }
 
+@media (max-width: 400px) {
+  .hero-bg {
+    min-height: 320px;
+  }
+
+  .hero-overlay {
+    padding: 24px 14px 56px;
+  }
+
+  .hero-overlay p {
+    font-size: 0.88rem;
+  }
+
+  .hero-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
 /* ================= PLATFORM FEATURES GRID ================= */
 /* 1. The Main Section - Background must be this shade for the effect to work */
 .platform-features {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 40px;
-  padding: 50px;
+  padding: 20px;
   background-color: #e6e9ef;
 }
 
@@ -254,7 +434,7 @@ body {
   .platform-features {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
-    padding: 60px 30px;
+    padding: 20px 30px;
   }
 }
 
@@ -262,7 +442,7 @@ body {
   .platform-features {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 40px 20px;
+    padding: 0px 20px;
   }
 
   .feature-box p {
@@ -296,7 +476,7 @@ body {
 /* ================= DIGITAL SECTION ================= */
 
 .digital-section {
-  padding: 60px 20px;
+  padding: 20px 20px;
   text-align: center;
 }
 
@@ -387,11 +567,11 @@ body {
 
 @media (max-width: 600px) {
   .digital-section {
-    padding: 40px 15px;
+    padding: 20px 15px;
   }
 
   .digital-card {
-    padding: 30px 20px;
+    padding: 20px 20px;
     box-shadow:
       6px 6px 12px #d1d9e6,
       -6px -6px 12px #ffffff;
@@ -415,11 +595,142 @@ body {
   }
 }
 
+
+/* ================= DIGITAL SECTION ONLY ================= */
+
+.digital-section {
+  padding: 20px 20px;
+  text-align: center;
+}
+
+.digital-section .digital-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3e50;
+  margin-bottom: 15px;
+}
+
+.digital-section .digital-header p {
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  line-height: 1.7;
+  color: #666;
+  font-size: 16px;
+}
+
+/* CARD CONTAINER */
+.digital-section .digital-card {
+  padding: 40px 30px 40px;
+  background: #f0f2f5;
+  border-radius: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  box-shadow:
+    12px 12px 24px #d1d9e6,
+    -12px -12px 24px #ffffff;
+}
+
+/* GRID */
+.digital-section .digital-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* INDIVIDUAL CARD */
+.digital-section .digital-item {
+  position: relative;
+  padding: 60px 20px 25px;
+  border-radius: 16px;
+  background: #f0f2f5;
+  text-align: center;
+
+  box-shadow:
+    8px 8px 16px #d1d9e6,
+    -8px -8px 16px #ffffff;
+
+  transition: all 0.3s ease;
+}
+
+.digital-section .digital-item:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    10px 10px 20px #c9d1dd,
+    -10px -10px 20px #ffffff;
+}
+
+/* FLOATING ICON */
+.digital-section .icon-circle {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #f0f2f5;
+  font-size: 26px;
+  color: #e53e3e;
+
+  box-shadow:
+    6px 6px 12px #d1d9e6,
+    -6px -6px 12px #ffffff;
+
+  border: 4px solid #f0f2f5;
+}
+
+/* TITLE */
+.digital-section .digital-item h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3e50;
+}
+
+/* TEXT */
+.digital-section .digital-item p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 500px) {
+
+  .digital-section .digital-grid {
+    grid-template-columns: 1fr;
+    gap: 20px; /* 🔥 increased spacing between cards */
+  }
+
+  .digital-section .digital-card {
+    padding: 50px 20px 30px;
+  }
+
+  /* 🔥 ADD SPACE FOR FLOATING ICON */
+  .digital-section .digital-item {
+    margin-top: 40px;   /* pushes card down */
+    padding-top: 60px;  /* keeps content balanced */
+  }
+
+  /* 🔥 SLIGHTLY ADJUST ICON */
+  .digital-section .icon-circle {
+    top: -30px;
+  }
+}
+
 /* ================= L&D SECTION ================= */
 
 .ld-section {
-  padding: 80px 20px;
-  background-color: #f8f9fb;
+  padding: 20px 20px;
+  background-color: #f0f2f5;
 }
 
 .ld-container {
@@ -524,7 +835,7 @@ body {
 .modules-section {
   width: 100%;
   background: #e6e7ee;
-  padding: 80px 20px;
+  padding: 20px 20px;
   display: flex;
   justify-content: center;
 }
@@ -555,7 +866,7 @@ body {
 /* ================= LEARNING CARDS SECTION ================= */
 
 .learning-cards {
-  padding: 80px 20px;
+  padding: 20px 20px;
   background-color: #f0f2f5;
 }
 
@@ -667,7 +978,7 @@ body {
 /* ================= TRAINING SECTION ================= */
 
 .training-section {
-  padding: 80px 20px;
+  padding: 20px 20px;
   background-color: #f0f2f5;
 }
 
@@ -753,7 +1064,7 @@ body {
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
-  padding: 60px 20px;
+  padding: 20px 20px;
 }
 
 .contact-card {
@@ -812,7 +1123,7 @@ body {
 
 .download-section {
   text-align: center;
-  padding: 80px 20px;
+  padding: 20px 20px;
 }
 
 .download-section h2 {
@@ -917,3 +1228,4 @@ body {
     padding: 20px;
   }
 }
+
