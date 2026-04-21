@@ -68,15 +68,15 @@ export default function Header() {
 
   return (
     <header className="header">
-      <div className="logo">
-        <Image
-          src="/PRGEEQ-Logo.png"
-          alt="PRGeeQ Logo"
-          width={160}
-          height={40}
-          priority
-        />
-      </div>
+     <div className="logo" onClick={() => router.push("/")}>
+  <Image
+    src="/PRGEEQ-Logo.png"
+    alt="PRGeeQ Logo"
+    width={160}
+    height={40}
+    priority
+  />
+</div>
 
       <div className="menu-icon" onClick={() => setMobileOpen(!mobileOpen)}>
         ☰
