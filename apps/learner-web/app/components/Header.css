@@ -4,15 +4,21 @@
 }
 
 :root {
-  --neu-bg: #e6e7ee;
-  --neu-surface: #e6e7ee;
+  --neu-bg: #e6e6ee;
+  --neu-surface: #e6e6ee;
   --neu-surface-soft: #edf1f7;
   --neu-text: #4f5563;
   --neu-text-light: #6b7280;
+  --neu-heading: #2f3a4d;
   --neu-blue: #3b82f6;
+  --neu-blue-dark: #2563eb;
   --neu-shadow-dark: #c8cad1;
   --neu-shadow-light: #ffffff;
   --neu-border: rgba(0, 0, 0, 0.04);
+  --neu-border-soft: #d9e2ec;
+  --neu-surface-pressed: #e8eef5;
+  --neu-surface-active: #e2e8f0;
+  --neu-border-active: #cfd8e3;
 }
 
 body {
@@ -276,13 +282,11 @@ body {
     display: none !important;
   }
 
-  /* keep hover from affecting mobile/touch */
   .submenu-parent:hover > .submenu,
   .dropdown-item:hover > .submenu {
     display: none !important;
   }
 
-  /* this must come AFTER the hover-hide rules */
   .submenu-parent.mobile-submenu-open > .submenu {
     display: block !important;
   }
@@ -328,31 +332,31 @@ body {
   height: 46px;
   padding: 0 24px;
   border-radius: 12px;
-  background: #eef2f7;
-  color: #2563eb;
+  background: var(--neu-surface-soft);
+  color: var(--neu-blue-dark);
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   outline: none;
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #d9e2ec;
-  border-bottom: 2px solid #d9e2ec;
+  border-top: 2px solid var(--neu-shadow-light);
+  border-left: 2px solid var(--neu-shadow-light);
+  border-right: 2px solid var(--neu-border-soft);
+  border-bottom: 2px solid var(--neu-border-soft);
   transition: all 0.2s ease;
 }
 
 .signin:hover {
-  background: #e8eef5;
-  border-top: 2px solid #d9e2ec;
-  border-left: 2px solid #d9e2ec;
-  border-right: 2px solid #ffffff;
-  border-bottom: 2px solid #ffffff;
+  background: var(--neu-surface-pressed);
+  border-top: 2px solid var(--neu-border-soft);
+  border-left: 2px solid var(--neu-border-soft);
+  border-right: 2px solid var(--neu-shadow-light);
+  border-bottom: 2px solid var(--neu-shadow-light);
 }
 
 .signin:active {
-  background: #e2e8f0;
-  border-top: 2px solid #cfd8e3;
-  border-left: 2px solid #cfd8e3;
+  background: var(--neu-surface-active);
+  border-top: 2px solid var(--neu-border-active);
+  border-left: 2px solid var(--neu-border-active);
   border-right: 2px solid #f8fbff;
   border-bottom: 2px solid #f8fbff;
   transform: scale(0.98);
@@ -363,8 +367,8 @@ body {
 }
 
 .signin:focus-visible {
-  border-top: 2px solid #ffffff;
-  border-left: 2px solid #ffffff;
-  border-right: 2px solid #2563eb;
-  border-bottom: 2px solid #2563eb;
+  border-top: 2px solid var(--neu-shadow-light);
+  border-left: 2px solid var(--neu-shadow-light);
+  border-right: 2px solid var(--neu-blue-dark);
+  border-bottom: 2px solid var(--neu-blue-dark);
 }
