@@ -1,6 +1,20 @@
+:root {
+  --neu-bg: #e6e6ee;
+  --neu-surface: #e6e6ee;
+  --neu-surface-soft: #edf1f7;
+  --neu-text: #4f5563;
+  --neu-text-light: #6b7280;
+  --neu-heading: #2f3a4d;
+  --neu-blue: #3b82f6;
+  --neu-blue-dark: #2563eb;
+  --neu-shadow-dark: #c8cad1;
+  --neu-shadow-mid: #d1d9e6;
+  --neu-shadow-light: #ffffff;
+}
+
 .footer-container {
   padding: 60px 8% 30px 8%;
-  background-color: #f0f3f8;
+  background-color: var(--neu-bg);
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -16,7 +30,7 @@
 }
 
 .column-title {
-  color: #2b50d8;
+  color: var(--neu-blue-dark);
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 20px;
@@ -25,88 +39,80 @@
 .column-text {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: #555;
+  color: var(--neu-text);
   margin-bottom: 20px;
 }
 
 /* BUTTON */
 .start-btn {
-  background: #f0f3f8;
+  background: var(--neu-surface-soft);
   border: none;
   padding: 12px 30px;
   border-radius: 10px;
-  color: #444;
+  color: var(--neu-text);
   font-weight: 500;
   cursor: pointer;
-  box-shadow: 5px 5px 10px #d1d9e6, -5px -5px 10px #ffffff;
+  box-shadow:
+    5px 5px 10px var(--neu-shadow-mid),
+    -5px -5px 10px var(--neu-shadow-light);
   transition: all 0.2s ease-in-out;
   margin-bottom: 25px;
 }
 
 .start-btn:hover {
-  box-shadow: 2px 2px 5px #d1d9e6, -2px -2px 5px #ffffff;
+  box-shadow:
+    2px 2px 5px var(--neu-shadow-mid),
+    -2px -2px 5px var(--neu-shadow-light);
   transform: scale(0.98);
 }
 
-/* ================= SOCIAL ICONS (FIXED) ================= */
+/* ================= SOCIAL ICONS ================= */
 
 .social-icons {
   display: flex;
   gap: 12px;
 }
 
-/* REMOVE old color forcing */
 .icon-box {
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f0f3f8;
+  background: var(--neu-surface-soft);
   border-radius: 8px;
-  box-shadow: 4px 4px 8px #d1d9e6, -4px -4px 8px #ffffff;
+  box-shadow:
+    4px 4px 8px var(--neu-shadow-mid),
+    -4px -4px 8px var(--neu-shadow-light);
   transition: 0.3s;
   cursor: pointer;
 }
 
-/* ❌ REMOVE THIS (important)
-.icon-box {
-  color: #2b50d8;
-}
-*/
-
-/* ❌ REMOVE THIS (important)
-.icon-box:hover {
-  color: #1a3ab1;
-}
-*/
-
-/* DEFAULT ICON SIZE */
 .icon-box svg {
   font-size: 18px;
 }
 
-/* ✅ ORIGINAL BRAND COLORS (ALWAYS VISIBLE) */
 .icon-box.instagram svg {
-  color: #E4405F;
+  color: #e4405f;
 }
 
 .icon-box.facebook svg {
-  color: #1877F2;
+  color: #1877f2;
 }
 
 .icon-box.youtube svg {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .icon-box.linkedin svg {
-  color: #0A66C2;
+  color: #0a66c2;
 }
 
-/* OPTIONAL HOVER EFFECT */
 .icon-box:hover {
   transform: translateY(-3px);
-  box-shadow: inset 3px 3px 6px #d1d9e6, inset -3px -3px 6px #ffffff;
+  box-shadow:
+    inset 3px 3px 6px var(--neu-shadow-mid),
+    inset -3px -3px 6px var(--neu-shadow-light);
 }
 
 /* LINKS */
@@ -120,25 +126,29 @@
   padding: 8px 12px;
   border-radius: 8px;
   font-size: 0.95rem;
-  color: #444;
+  color: var(--neu-text);
   cursor: pointer;
   transition: all 0.3s ease;
   width: fit-content;
 }
 
 .footer-links li:hover {
-  background: #f0f3f8;
-  color: #2b50d8;
-  box-shadow: inset 4px 4px 8px #d1d9e6, inset -4px -4px 8px #ffffff;
+  background: var(--neu-surface-soft);
+  color: var(--neu-blue-dark);
+  box-shadow:
+    inset 4px 4px 8px var(--neu-shadow-mid),
+    inset -4px -4px 8px var(--neu-shadow-light);
   transform: translateX(5px);
 }
 
 /* MAP */
 .map-wrapper {
-  background: #f0f3f8;
+  background: var(--neu-surface-soft);
   padding: 12px;
   border-radius: 15px;
-  box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #ffffff;
+  box-shadow:
+    8px 8px 16px var(--neu-shadow-mid),
+    -8px -8px 16px var(--neu-shadow-light);
 }
 
 .map-wrapper iframe {
@@ -151,12 +161,14 @@
   margin-top: 30px;
   padding: 15px;
   text-align: center;
-  background: #f0f3f8;
+  background: var(--neu-surface-soft);
   border-radius: 10px;
-  color: #2b50d8;
+  color: var(--neu-blue-dark);
   font-size: 0.85rem;
   font-weight: 500;
-  box-shadow: 6px 6px 12px #d1d9e6, -6px -6px 12px #ffffff;
+  box-shadow:
+    6px 6px 12px var(--neu-shadow-mid),
+    -6px -6px 12px var(--neu-shadow-light);
 }
 
 /* RESPONSIVE */
@@ -183,7 +195,7 @@
   width: 100%;
   border-radius: 18px;
   overflow: hidden;
-  background: #eef2f7;
+  background: var(--neu-surface-soft);
   padding: 0;
   box-shadow:
     8px 8px 18px rgba(200, 202, 209, 0.7),
