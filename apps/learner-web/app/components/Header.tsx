@@ -104,7 +104,7 @@ export default function Header() {
           >
             <div className="submenu-item">Digital Literacy</div>
             <div className="nav-item" onClick={() => router.push("/information-literacy")}>Information Literacy</div>
-            <div className="submenu-item">Media Literacy</div>
+            <div className="nav-item" onClick={() => router.push("/media-literacy")}>Media Literacy</div>
             <div className="submenu-item">Financial Literacy</div>
           </div>
         </div>
