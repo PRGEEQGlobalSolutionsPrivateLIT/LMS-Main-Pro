@@ -103,7 +103,7 @@ export default function Header() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="submenu-item">Digital Literacy</div>
-            <div className="submenu-item">Information Literacy</div>
+            <div className="nav-item" onClick={() => router.push("/information-literacy")}>Information Literacy</div>
             <div className="submenu-item">Media Literacy</div>
             <div className="submenu-item">Financial Literacy</div>
           </div>
@@ -235,7 +235,7 @@ export default function Header() {
               <div className="submenu">
                 <div className="submenu-item">Learning Style Analysis</div>
                 <div className="submenu-item">Goal Setting &amp; Planning</div>
-                <div className="submenu-item">Learning Paths</div>
+                <div className="submenu-item" onClick={() => router.push("/learning-path")} > Learning Paths </div>
                 <div className="submenu-item">Personalization</div>
                 <div className="submenu-item">Progress Tracking</div>
               </div>
