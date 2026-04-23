@@ -1,4 +1,15 @@
 import "./information-literacy.css";
+import {
+  FaSearch,
+  FaShieldAlt,
+  FaBalanceScale,
+  FaCheckCircle,
+  FaBookOpen,
+  FaCompass,
+  FaGraduationCap,
+  FaBrain,
+  FaUniversity,
+} from "react-icons/fa";
 
 const understandingPoints = [
   "Identifying credible and trustworthy information sources",
@@ -30,7 +41,7 @@ const lifelongLearningPoints = [
 
 export default function InformationLiteracyPage() {
   return (
-    <main className="page">
+    <main className="information-literacy-page page">
       <section className="heroSection">
         <div className="heroGrid">
           <div className="heroContent">
@@ -67,15 +78,15 @@ export default function InformationLiteracyPage() {
 
             <div className="floatingStats">
               <div className="statPill">
-                <span className="iconText">🔎</span>
+                <FaSearch className="iconText" />
                 <span>Research Skills</span>
               </div>
               <div className="statPill">
-                <span className="iconText">🛡️</span>
+                <FaShieldAlt className="iconText" />
                 <span>Credible Sources</span>
               </div>
               <div className="statPill">
-                <span className="iconText">⚖️</span>
+                <FaBalanceScale className="iconText" />
                 <span>Ethical Use</span>
               </div>
             </div>
@@ -87,7 +98,7 @@ export default function InformationLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">✅</span>
+              <FaCheckCircle className="iconText" />
             </div>
             <h3>Understanding and Evaluating Information</h3>
           </div>
@@ -120,7 +131,7 @@ export default function InformationLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">📘</span>
+              <FaBookOpen className="iconText" />
             </div>
             <h3>Effective Research and Knowledge Discovery</h3>
           </div>
@@ -151,7 +162,7 @@ export default function InformationLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">🧭</span>
+              <FaCompass className="iconText" />
             </div>
             <h3>Ethical and Responsible Use of Information</h3>
           </div>
@@ -183,7 +194,7 @@ export default function InformationLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">🎓</span>
+              <FaGraduationCap className="iconText" />
             </div>
             <h3>Supporting Education and Lifelong Learning</h3>
           </div>
@@ -218,7 +229,7 @@ export default function InformationLiteracyPage() {
           <div className="highlightTextCard">
             <div className="cardHeader">
               <div className="iconWrap">
-                <span className="iconText">🧠</span>
+                <FaBrain className="iconText" />
               </div>
               <h3>NeuroLXP — Enabling Smarter Information Literacy</h3>
             </div>
@@ -232,15 +243,15 @@ export default function InformationLiteracyPage() {
 
             <div className="miniFeatures">
               <div className="miniFeature">
-                <span className="iconText">📚</span>
+                <FaBookOpen className="iconText" />
                 <span>Structured learning modules</span>
               </div>
               <div className="miniFeature">
-                <span className="iconText">🏛️</span>
+                <FaUniversity className="iconText" />
                 <span>Digital research tools</span>
               </div>
               <div className="miniFeature">
-                <span className="iconText">🔍</span>
+                <FaSearch className="iconText" />
                 <span>Interactive activities</span>
               </div>
             </div>
