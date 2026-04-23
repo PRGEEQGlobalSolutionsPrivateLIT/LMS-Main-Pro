@@ -1,4 +1,4 @@
-.media-literacy-page {
+:root {
   --bg: #eef2f7;
   --surface: #e9edf5;
   --surface-soft: #f3f6fb;
@@ -30,13 +30,15 @@
   --border-soft: rgba(255, 255, 255, 0.6);
 }
 
-.media-literacy-page * {
+* {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  background: var(--bg);
+  padding: 0;
+  background-color: var(--bg);
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
@@ -45,6 +47,7 @@ body {
   margin: 0 auto;
   padding: 34px 0 70px;
   color: var(--text);
+  background: transparent;
 }
 
 /* section spacing */
@@ -61,13 +64,7 @@ body {
   display: grid;
   grid-template-columns: 1.08fr 0.92fr;
   gap: 30px;
-  align-items: center;
-  padding: 32px;
-  border-radius: var(--radius-2xl);
-  background: var(--surface);
-  box-shadow:
-    18px 18px 38px var(--shadow-dark),
-    -18px -18px 38px var(--shadow-light);
+  align-items: start;
 }
 
 .media-literacy-page .heroContent {
@@ -216,58 +213,30 @@ body {
   line-height: 1;
 }
 
-/* main cards */
+/* main content on page, not cards */
 
 .media-literacy-page .cardsSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px 34px;
+  gap: 34px;
   align-items: start;
 }
 
 .media-literacy-page .contentCard {
   position: relative;
-  padding: 28px;
-  border-radius: var(--radius-xl);
-  background: var(--surface);
-  box-shadow:
-    14px 14px 28px var(--shadow-dark),
-    -14px -14px 28px var(--shadow-light);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .media-literacy-page .contentCard:nth-child(2),
 .media-literacy-page .contentCard:nth-child(4) {
-  margin-top: 34px;
+  margin-top: 0;
 }
 
 .media-literacy-page .contentCard::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 28px;
-  width: 84px;
-  height: 4px;
-  border-radius: 999px;
-  transform: translateY(-50%);
-  box-shadow:
-    3px 3px 8px rgba(207, 214, 223, 0.7),
-    -3px -3px 8px rgba(255, 255, 255, 0.95);
-}
-
-.media-literacy-page .contentCard:nth-child(1)::before {
-  background: linear-gradient(90deg, var(--primary), var(--secondary));
-}
-
-.media-literacy-page .contentCard:nth-child(2)::before {
-  background: linear-gradient(90deg, var(--accent), var(--primary));
-}
-
-.media-literacy-page .contentCard:nth-child(3)::before {
-  background: linear-gradient(90deg, var(--secondary), var(--success));
-}
-
-.media-literacy-page .contentCard:nth-child(4)::before {
-  background: linear-gradient(90deg, var(--warning), var(--accent));
+  display: none;
 }
 
 .media-literacy-page .cardHeader {
@@ -339,22 +308,7 @@ body {
   box-shadow:
     inset 7px 7px 16px rgba(207, 214, 223, 0.72),
     inset -7px -7px 16px rgba(255, 255, 255, 0.96);
-}
-
-.media-literacy-page .contentCard:nth-child(1) .insetBox {
-  border-left: 4px solid var(--primary);
-}
-
-.media-literacy-page .contentCard:nth-child(2) .insetBox {
-  border-left: 4px solid var(--accent);
-}
-
-.media-literacy-page .contentCard:nth-child(3) .insetBox {
-  border-left: 4px solid var(--secondary);
-}
-
-.media-literacy-page .contentCard:nth-child(4) .insetBox {
-  border-left: 4px solid var(--warning);
+  border-left: none;
 }
 
 .media-literacy-page .insetBox h4 {
@@ -397,16 +351,11 @@ body {
 }
 
 .media-literacy-page .highlightTextCard {
-  padding: 30px;
-  border-radius: var(--radius-2xl);
-  background: var(--surface);
-  box-shadow:
-    16px 16px 34px var(--shadow-dark),
-    -16px -16px 34px var(--shadow-light);
-}
-
-.media-literacy-page .highlightSection:first-of-type .highlightTextCard {
-  border-top: 4px solid var(--secondary);
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  border-top: none;
 }
 
 .media-literacy-page .secondaryVisualCard {
@@ -479,7 +428,6 @@ body {
 
 .media-literacy-page .highlightSection:last-of-type .highlightTextCard {
   text-align: center;
-  border-top: 4px solid var(--accent);
 }
 
 .media-literacy-page .highlightSection:last-of-type .cardHeader {
@@ -499,11 +447,6 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .media-literacy-page .contentCard:nth-child(2),
-  .media-literacy-page .contentCard:nth-child(4) {
-    margin-top: 0;
-  }
-
   .media-literacy-page .secondaryVisualCard .imagePlaceholderAlt {
     width: 100%;
     max-width: 300px;
@@ -516,9 +459,7 @@ body {
     padding: 20px 0 44px;
   }
 
-  .media-literacy-page .heroGrid,
-  .media-literacy-page .contentCard,
-  .media-literacy-page .highlightTextCard,
+  .media-literacy-page .heroVisualCard,
   .media-literacy-page .secondaryVisualCard {
     padding: 20px;
   }
