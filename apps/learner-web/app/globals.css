@@ -345,7 +345,6 @@ body {
     font-size: 16px;
   }
 }
-
 /* ================= PLATFORM FEATURES GRID ================= */
 .platform-features {
   display: grid;
@@ -361,12 +360,16 @@ body {
   border-radius: 30px;
   position: relative;
   text-align: center;
-  transition: all 0.3s ease;
+
+  /* ❌ remove animation */
+  transition: none;
+
+  /* ✅ keep only dark depth */
   box-shadow:
-    inset 8px 8px 16px var(--neu-shadow-mid),
-    inset -8px -8px 16px var(--neu-shadow-light);
+    inset 8px 8px 16px var(--neu-shadow-mid);
 }
 
+/* ❌ REMOVE GLOW SOURCE COMPLETELY */
 .feature-box::after {
   content: "";
   position: absolute;
@@ -377,33 +380,40 @@ body {
   background-color: var(--neu-bg);
   border-radius: 20px;
   z-index: 1;
+
+  /* ✅ only dark shadow */
   box-shadow:
-    8px 8px 15px var(--neu-shadow-mid),
-    -4px -4px 15px var(--neu-shadow-light);
-  border: 1px solid var(--neu-border-light);
+    8px 8px 15px var(--neu-shadow-mid);
+
+  /* ❌ remove white border */
+  border: none;
 }
 
+/* ensure content stays above */
 .feature-box > * {
   position: relative;
   z-index: 2;
 }
 
+/* ================= ICON ================= */
 .icon-circle {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
   margin: 0 auto 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--neu-bg);
+  background-color: var(--neu-surface-soft);
   color: var(--neu-blue);
   font-size: 26px;
+
+  /* ✅ only dark shadow */
   box-shadow:
-    5px 5px 10px var(--neu-shadow-mid),
-    -5px -5px 10px var(--neu-shadow-light);
+    6px 6px 12px var(--neu-shadow-mid);
 }
 
+/* ================= TEXT ================= */
 .feature-box h3 {
   color: var(--neu-heading);
   font-size: 1.3rem;
@@ -418,32 +428,15 @@ body {
   padding: 0 10px;
 }
 
+/* ❌ HARD DISABLE ANY HOVER EFFECT */
+.feature-box:hover,
 .feature-box:hover::after {
-  transform: scale(1.02);
-  box-shadow:
-    12px 12px 20px var(--neu-shadow-mid),
-    -8px -8px 20px var(--neu-shadow-light);
+  transform: none !important;
+  box-shadow: none !important;
+  border: none !important;
 }
 
-/* ================= NEUMORPHIC ICON ================= */
-
-.icon-circle {
-  width: 70px;
-  height: 70px;
-  background: var(--neu-surface-soft);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  margin: 0 auto 10px auto;
-  box-shadow:
-    6px 6px 12px var(--neu-shadow-mid),
-    -6px -6px 12px var(--neu-shadow-light);
-}
-
-/* ================= RESPONSIVE ADJUSTMENTS ================= */
-
+/* ================= RESPONSIVE ================= */
 @media (max-width: 992px) {
   .platform-features {
     grid-template-columns: repeat(2, 1fr);
@@ -473,7 +466,6 @@ body {
     font-size: 18px;
   }
 }
-
 /* ================= ICON COLORS ================= */
 
 .platform-features .icon-circle {
@@ -606,14 +598,15 @@ body {
     padding: 15px 0;
   }
 }
-
 /* ================= DIGITAL SECTION ONLY ================= */
 
 .digital-section {
-  padding: 20px 20px;
+  padding: 40px 20px;
   text-align: center;
+  background: transparent; /* ✅ prevent fake card look */
 }
 
+/* HEADER */
 .digital-section .digital-header h2 {
   font-size: 32px;
   font-weight: 700;
@@ -629,42 +622,45 @@ body {
   font-size: 16px;
 }
 
+/* ❌ FORCE REMOVE OUTER RECTANGLE COMPLETELY */
 .digital-section .digital-card {
-  padding: 40px 30px 40px;
-  background: var(--neu-surface-soft);
-  border-radius: 16px;
-  max-width: 1200px;
-  margin: 0 auto;
-  box-shadow:
-    12px 12px 24px var(--neu-shadow-mid),
-    -12px -12px 24px var(--neu-shadow-light);
+  all: unset !important;          /* removes ALL inherited styles */
+  display: contents;              /* removes box visually */
 }
 
+/* GRID */
 .digital-section .digital-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
+/* INDIVIDUAL CARDS */
 .digital-section .digital-item {
   position: relative;
   padding: 60px 20px 25px;
   border-radius: 16px;
   background: var(--neu-surface-soft);
   text-align: center;
+
+  /* soft neumorphism (only card-level) */
   box-shadow:
     8px 8px 16px var(--neu-shadow-mid),
     -8px -8px 16px var(--neu-shadow-light);
-  transition: all 0.3s ease;
+
+  /* ❌ no hover animation */
+  transition: none;
 }
 
+/* ❌ REMOVE HOVER EFFECT COMPLETELY */
 .digital-section .digital-item:hover {
-  transform: translateY(-6px);
+  transform: none;
   box-shadow:
-    10px 10px 20px #c9d1dd,
-    -10px -10px 20px var(--neu-shadow-light);
+    8px 8px 16px var(--neu-shadow-mid),
+    -8px -8px 16px var(--neu-shadow-light);
 }
 
+/* ICON */
 .digital-section .icon-circle {
   position: absolute;
   top: -35px;
@@ -679,12 +675,15 @@ body {
   background: var(--neu-surface-soft);
   font-size: 26px;
   color: var(--neu-red);
+
   box-shadow:
     6px 6px 12px var(--neu-shadow-mid),
     -6px -6px 12px var(--neu-shadow-light);
+
   border: 4px solid var(--neu-surface-soft);
 }
 
+/* TEXT */
 .digital-section .digital-item h3 {
   margin-top: 10px;
   font-size: 18px;
@@ -699,14 +698,28 @@ body {
   color: var(--neu-text);
 }
 
-@media (max-width: 500px) {
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1024px) {
   .digital-section .digital-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .digital-section {
+    padding: 20px 15px;
   }
 
+  /* KEEP IT REMOVED ON MOBILE */
   .digital-section .digital-card {
-    padding: 50px 20px 30px;
+    all: unset !important;
+    display: contents;
+  }
+
+  .digital-section .digital-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
   .digital-section .digital-item {
@@ -718,7 +731,6 @@ body {
     top: -30px;
   }
 }
-
 /* ================= L&D SECTION ================= */
 
 .ld-section {
@@ -854,61 +866,44 @@ body {
   line-height: 1.8;
   color: var(--neu-heading);
   margin: 8px 0;
-}
-
-/* ================= LEARNING CARDS SECTION ================= */
+}/* ================= LEARNING CARDS SECTION ================= */
 
 .learning-cards {
-  padding: 20px 20px;
-  background-color: var(--neu-surface-soft);
+  padding: 20px;
+  background-color: var(--neu-bg);
 }
 
+/* GRID */
 .cards-container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 40px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 60px 30px;
 }
 
+/* CARD */
 .learning-card {
-  background: var(--neu-surface-soft);
-  padding: 60px 25px 30px;
+  background: var(--neu-bg);
+  padding: 40px 25px;
   border-radius: 16px;
-  position: relative;
   text-align: center;
-  transition: transform 0.3s ease;
+  position: relative;
+
+  /* 🔥 INNER NEUMORPHISM */
   box-shadow:
-    9px 9px 16px var(--neu-shadow-mid),
-    -9px -9px 16px var(--neu-shadow-light);
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
+
+  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-.learning-card:hover {
-  transform: translateY(-5px);
-}
-
+/* ❌ REMOVE IMAGE */
 .card-image {
-  position: absolute;
-  top: -45px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: var(--neu-surface-soft);
-  padding: 8px;
-  box-shadow:
-    6px 6px 12px var(--neu-shadow-mid),
-    -6px -6px 12px var(--neu-shadow-light);
+  display: none;
 }
 
-.card-image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
+/* TEXT */
 .learning-card h3 {
   font-size: 20px;
   font-weight: 600;
@@ -923,43 +918,64 @@ body {
   margin-bottom: 25px;
 }
 
+/* ================= BUTTON (HOVER PUSH EFFECT) ================= */
+
 .learn-btn {
-  padding: 10px 20px;
-  border: none;
+  position: relative;
+  z-index: 10;
+
+  padding: 10px 22px;
   border-radius: 10px;
-  background: var(--neu-surface-soft);
-  color: var(--neu-heading);
-  font-weight: 600;
+  border: none;
+  background: var(--neu-bg);
   cursor: pointer;
+  font-weight: 600;
   font-size: 14px;
-  transition: all 0.2s ease;
+  color: var(--neu-heading);
+
+  /* 🔼 DEFAULT (RAISED) */
   box-shadow:
-    4px 4px 8px var(--neu-shadow-mid),
-    -4px -4px 8px var(--neu-shadow-light);
+    -5px -5px 10px var(--neu-shadow-light),
+    5px 5px 10px var(--neu-shadow-mid);
+
+  transition: all 0.2s ease;
+  outline: none;
 }
 
+/* 🔽 HOVER = PUSH INSIDE */
 .learn-btn:hover {
+  transform: scale(0.97);
   box-shadow:
     inset 4px 4px 8px var(--neu-shadow-mid),
     inset -4px -4px 8px var(--neu-shadow-light);
-  color: var(--neu-blue);
 }
+
+/* 🔥 CLICK = DEEP PRESS */
+.learn-btn:active {
+  transform: scale(0.94);
+  box-shadow:
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
+}
+
+/* ================= FIX FOR OVERLAY BLOCKING ================= */
+
+.learning-card::before,
+.learning-card::after {
+  pointer-events: none;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 992px) {
   .cards-container {
     grid-template-columns: repeat(2, 1fr);
-    gap: 80px 30px;
   }
 }
 
 @media (max-width: 650px) {
-  .learning-cards {
-    padding: 60px 20px;
-  }
-
   .cards-container {
     grid-template-columns: 1fr;
-    gap: 80px 0;
   }
 
   .learning-card {
@@ -967,48 +983,64 @@ body {
     margin: 0 auto;
   }
 }
-
+/* ================= TRAINING SECTION ================= */
 /* ================= TRAINING SECTION ================= */
 
 .training-section {
-  padding: 20px 20px;
-  background-color: var(--neu-surface-soft);
+  padding: 50px 20px;
+  background-color: var(--neu-bg);
 }
 
 .training-container {
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 50px auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
 }
 
+/* ✅ INNER (PRESSED) CARD */
 .training-card {
-  background: var(--neu-surface-soft);
+  background: var(--neu-bg);
   padding: 20px;
   border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+
+  /* 🔥 INSET NEUMORPHISM */
   box-shadow:
-    8px 8px 16px var(--neu-shadow-mid),
-    -8px -8px 16px var(--neu-shadow-light);
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
+
+  border: 1px solid rgba(0, 0, 0, 0.03);
+
+  transition: none;
 }
 
+/* ❌ REMOVE HOVER LIFT */
 .training-card:hover {
-  transform: translateY(-5px);
+  transform: none;
   box-shadow:
-    12px 12px 20px #c5ccd8,
-    -12px -12px 20px var(--neu-shadow-light);
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
 }
 
+/* IMAGE (slightly raised for contrast) */
 .training-card img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  /* slight outer shadow to "sit above" card */
+  box-shadow:
+    4px 4px 8px var(--neu-shadow-mid),
+    -4px -4px 8px var(--neu-shadow-light);
+
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+/* TEXT */
 .training-card h3 {
   font-size: 19px;
   font-weight: 600;
@@ -1022,6 +1054,8 @@ body {
   color: var(--neu-text);
   margin-bottom: 10px;
 }
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1024px) {
   .training-container {
@@ -1053,7 +1087,6 @@ body {
     font-size: 18px;
   }
 }
-
 /* ================= CONTACT SECTION ================= */
 
 .contact-section {
