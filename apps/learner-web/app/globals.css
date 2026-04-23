@@ -354,39 +354,26 @@ body {
   background-color: var(--neu-bg);
 }
 
+/* CARD */
 .feature-box {
-  background-color: var(--neu-bg);
-  padding: 20px;
-  border-radius: 30px;
+  background: var(--neu-bg);
+  padding: 40px 25px;
+  border-radius: 16px;
   position: relative;
   text-align: center;
 
-  /* ❌ remove animation */
-  transition: none;
-
-  /* ✅ keep only dark depth */
+  /* INNER NEUMORPHISM */
   box-shadow:
-    inset 8px 8px 16px var(--neu-shadow-mid);
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
+
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  transition: none;
 }
 
-/* ❌ REMOVE GLOW SOURCE COMPLETELY */
+/* REMOVE OLD INNER LAYER */
 .feature-box::after {
-  content: "";
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  background-color: var(--neu-bg);
-  border-radius: 20px;
-  z-index: 1;
-
-  /* ✅ only dark shadow */
-  box-shadow:
-    8px 8px 15px var(--neu-shadow-mid);
-
-  /* ❌ remove white border */
-  border: none;
+  display: none;
 }
 
 /* ensure content stays above */
@@ -404,36 +391,56 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background-color: var(--neu-surface-soft);
+  background: var(--neu-bg);
   color: var(--neu-blue);
   font-size: 26px;
 
-  /* ✅ only dark shadow */
+  /* RAISED ICON */
   box-shadow:
-    6px 6px 12px var(--neu-shadow-mid);
+    -5px -5px 10px var(--neu-shadow-light),
+    5px 5px 10px var(--neu-shadow-mid);
+
+  transition: all 0.2s ease;
+}
+
+/* OPTIONAL HOVER FOR ICON ONLY */
+.icon-circle:hover {
+  transform: scale(0.97);
+  box-shadow:
+    inset 4px 4px 8px var(--neu-shadow-mid),
+    inset -4px -4px 8px var(--neu-shadow-light);
 }
 
 /* ================= TEXT ================= */
 .feature-box h3 {
   color: var(--neu-heading);
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
 }
 
 .feature-box p {
-  color: var(--neu-text-light);
-  font-size: 0.95rem;
+  color: var(--neu-text);
+  font-size: 15px;
   line-height: 1.6;
-  padding: 0 10px;
+  margin-bottom: 0;
+  padding: 0;
 }
 
-/* ❌ HARD DISABLE ANY HOVER EFFECT */
+/* HARD DISABLE CARD HOVER EFFECT */
 .feature-box:hover,
-.feature-box:hover::after {
+.feature-box:active {
   transform: none !important;
-  box-shadow: none !important;
-  border: none !important;
+  box-shadow:
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light) !important;
+  border: 1px solid rgba(0, 0, 0, 0.03) !important;
+}
+
+/* prevent pseudo blocking */
+.feature-box::before,
+.feature-box::after {
+  pointer-events: none;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -449,11 +456,7 @@ body {
   .platform-features {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 0px 20px;
-  }
-
-  .feature-box p {
-    max-width: 100%;
+    padding: 0 20px;
   }
 
   .icon-circle {
@@ -464,6 +467,11 @@ body {
 
   .feature-box h3 {
     font-size: 18px;
+  }
+
+  .feature-box p {
+    max-width: 100%;
+    font-size: 14px;
   }
 }
 /* ================= ICON COLORS ================= */
@@ -866,7 +874,9 @@ body {
   line-height: 1.8;
   color: var(--neu-heading);
   margin: 8px 0;
-}/* ================= LEARNING CARDS SECTION ================= */
+}
+
+/* ================= LEARNING CARDS SECTION ================= */
 
 .learning-cards {
   padding: 20px;
