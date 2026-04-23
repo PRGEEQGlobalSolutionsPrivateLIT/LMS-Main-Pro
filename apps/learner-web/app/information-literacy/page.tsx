@@ -44,7 +44,7 @@ export default function InformationLiteracyPage() {
     <main className="information-literacy-page page">
       <section className="heroSection">
         <div className="heroGrid">
-          <div className="heroContent">
+          <div >
             <div className="eyebrow">NeuroLXP</div>
 
             <h1 className="heroTitle">Information Literacy</h1>
@@ -71,7 +71,7 @@ export default function InformationLiteracyPage() {
             </p>
           </div>
 
-          <div className="heroVisualCard">
+          <div>
             <div className="imagePlaceholder">
               <span className="imageLabel">Image Placeholder 01</span>
             </div>
