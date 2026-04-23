@@ -209,7 +209,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="digital-card">
+        <div>
           <div className="digital-grid">
             <div className="digital-item">
               <div className="icon-circle">
@@ -254,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ld-section">
+      <section>
         <div className="ld-container">
           <div className="ld-image">
             <Image
@@ -297,17 +297,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="learning-cards">
+      {/* <section>
         <div className="cards-container">
           <div className="learning-card">
-            <div className="card-image">
-              <Image
-                src="/heroLMS.jpg"
-                alt="Learning Journey"
-                width={90}
-                height={90}
-              />
-            </div>
 
             <h3>Learning Journey</h3>
 
@@ -319,14 +311,7 @@ export default function Home() {
           </div>
 
           <div className="learning-card">
-            <div className="card-image">
-              <Image
-                src="/heroLMS.jpg"
-                alt="Learning Augmentation"
-                width={90}
-                height={90}
-              />
-            </div>
+
 
             <h3>Learning Augmentation</h3>
 
@@ -338,14 +323,6 @@ export default function Home() {
           </div>
 
           <div className="learning-card">
-            <div className="card-image">
-              <Image
-                src="/heroLMS.jpg"
-                alt="Learning Ecosystem"
-                width={90}
-                height={90}
-              />
-            </div>
 
             <h3>Learning Ecosystem</h3>
 
@@ -356,14 +333,56 @@ export default function Home() {
             <button className="learn-btn">Learn More</button>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <section className="training-section">
+      <section>
+
+         <div className="training-container">
+          <div className="training-card">
+            <Image
+              src="/heroLMS.jpg"
+              alt="Onboarding"
+              width={400}
+              height={200}
+            />
+            <h3>Learning Journey</h3>
+            <p>
+              Embark on a personalized learning journey with our neuroLxp platform. Discover your unique learning style through comprehensive analytics, set personalized goals, and navigate through tailored learning paths to achieve your objectives.            </p>
+            <button className="learn-btn">Learn More</button>
+          </div>
+
+          <div className="training-card">
+            <Image
+              src="/heroLMS.jpg"
+              alt="Onboarding"
+              width={400}
+              height={200}
+            />
+            <h3>Learning Augmentation</h3>
+            <p>
+              Experience an enhanced learning journey thru neuroLxp's custom modules. Engage in gamified experiences, interactive activities, and collaborative social learning opportunities with curated content and features designed to augment your learning experience.            </p>
+            <button className="learn-btn">Learn More</button>
+          </div>
+
+          <div className="training-card">
+            <Image
+              src="/heroLMS.jpg"
+              alt="Standards Training"
+              width={400}
+              height={200}
+            />
+            <h3>Learning Ecosystem</h3>
+            <p>
+             Dive into a comprehensive learning ecosystem with neuroLxp's custom assessment and personalization modules. Explore skills and career development opportunities, chart your career path, and undergo assessments for continuous growth and development.            </p>
+            <button className="learn-btn">Learn More</button>
+          </div>
+        </div>
+
         <div className="training-container">
           <div className="training-card">
             <Image
               src="/heroLMS.jpg"
-              alt="Blended Learning"
+              alt="Onboarding"
               width={400}
               height={200}
             />
