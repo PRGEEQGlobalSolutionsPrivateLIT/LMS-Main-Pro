@@ -679,7 +679,7 @@ body {
 }
 
 /* ICON */
-.digital-section ..icon-circle {
+.digital-section .icon-circle {
   width: 70px;
   height: 70px;
   margin: 0 auto 20px;
@@ -688,7 +688,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   background: var(--neu-bg);
-  color: var(--neu-blue);
+  color: var(--neu-red);
   font-size: 26px;
   border: 1px solid rgba(255, 255, 255, 0.45);
   box-shadow:
