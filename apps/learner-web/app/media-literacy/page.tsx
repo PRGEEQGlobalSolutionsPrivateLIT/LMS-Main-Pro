@@ -1,4 +1,18 @@
 import "./media-literacy.css";
+import {
+  FaNewspaper,
+  FaExclamationTriangle,
+  FaBullseye,
+  FaTv,
+  FaSearch,
+  FaBrain,
+  FaPenNib,
+  FaGlobe,
+  FaComments,
+  FaShieldAlt,
+  FaBookOpen,
+  FaRocket,
+} from "react-icons/fa";
 
 const mediaUnderstandingPoints = [
   "Understanding different types of media platforms",
@@ -30,7 +44,7 @@ const contentCreationPoints = [
 
 export default function MediaLiteracyPage() {
   return (
-    <main className="page">
+    <main className="media-literacy-page page">
       <section className="heroSection">
         <div className="heroGrid">
           <div className="heroContent">
@@ -66,15 +80,15 @@ export default function MediaLiteracyPage() {
 
             <div className="floatingStats">
               <div className="statPill">
-                <span className="iconText">📰</span>
+                <FaNewspaper className="iconText" />
                 <span>Media Platforms</span>
               </div>
               <div className="statPill">
-                <span className="iconText">⚠️</span>
+                <FaExclamationTriangle className="iconText" />
                 <span>Misinformation</span>
               </div>
               <div className="statPill">
-                <span className="iconText">🎯</span>
+                <FaBullseye className="iconText" />
                 <span>Critical Thinking</span>
               </div>
             </div>
@@ -86,7 +100,7 @@ export default function MediaLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">📺</span>
+              <FaTv className="iconText" />
             </div>
             <h3>Understanding How Media Works</h3>
           </div>
@@ -119,7 +133,7 @@ export default function MediaLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">🔍</span>
+              <FaSearch className="iconText" />
             </div>
             <h3>Identifying Misinformation and Bias</h3>
           </div>
@@ -150,7 +164,7 @@ export default function MediaLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">🧠</span>
+              <FaBrain className="iconText" />
             </div>
             <h3>Critical Thinking and Responsible Media Consumption</h3>
           </div>
@@ -182,7 +196,7 @@ export default function MediaLiteracyPage() {
         <article className="contentCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">✍️</span>
+              <FaPenNib className="iconText" />
             </div>
             <h3>Creating Responsible Media Content</h3>
           </div>
@@ -218,7 +232,7 @@ export default function MediaLiteracyPage() {
           <div className="highlightTextCard">
             <div className="cardHeader">
               <div className="iconWrap">
-                <span className="iconText">🌐</span>
+                <FaGlobe className="iconText" />
               </div>
               <h3>Preparing Learners for the Digital Information Age</h3>
             </div>
@@ -239,15 +253,15 @@ export default function MediaLiteracyPage() {
 
             <div className="miniFeatures">
               <div className="miniFeature">
-                <span className="iconText">💬</span>
+                <FaComments className="iconText" />
                 <span>Meaningful discussions</span>
               </div>
               <div className="miniFeature">
-                <span className="iconText">🛡️</span>
+                <FaShieldAlt className="iconText" />
                 <span>Digital citizenship</span>
               </div>
               <div className="miniFeature">
-                <span className="iconText">📘</span>
+                <FaBookOpen className="iconText" />
                 <span>Responsible engagement</span>
               </div>
             </div>
@@ -265,7 +279,7 @@ export default function MediaLiteracyPage() {
         <div className="highlightTextCard">
           <div className="cardHeader">
             <div className="iconWrap">
-              <span className="iconText">🚀</span>
+              <FaRocket className="iconText" />
             </div>
             <h3>NeuroLXP — Building Media Literacy for a Connected World</h3>
           </div>
