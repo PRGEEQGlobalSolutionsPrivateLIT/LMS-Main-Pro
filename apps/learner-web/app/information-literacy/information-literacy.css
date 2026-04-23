@@ -1,4 +1,4 @@
-.information-literacy-page {
+:root {
   --bg: #eef3f6;
   --surface: #e8edf2;
   --surface-soft: #f2f6fa;
@@ -12,10 +12,6 @@
   --accent: #d97706;
   --support: #7c3aed;
 
-  --primary-soft: rgba(15, 118, 110, 0.08);
-  --secondary-soft: rgba(37, 99, 235, 0.08);
-  --accent-soft: rgba(217, 119, 6, 0.08);
-
   --shadow-light: #ffffff;
   --shadow-dark: #cfd6de;
 
@@ -27,13 +23,15 @@
   --border-soft: rgba(255, 255, 255, 0.62);
 }
 
-.information-literacy-page * {
+* {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
-  background: var(--bg);
+  padding: 0;
+  background-color: var(--bg);
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
@@ -42,6 +40,7 @@ body {
   margin: 0 auto;
   padding: 34px 0 70px;
   color: var(--text);
+  background: transparent;
 }
 
 .information-literacy-page .heroSection,
@@ -50,39 +49,13 @@ body {
   margin-bottom: 38px;
 }
 
-/* hero - different style: split panel with side rail accent */
+/* hero */
 
 .information-literacy-page .heroGrid {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
   gap: 28px;
-  align-items: stretch;
-  padding: 0;
-}
-
-.information-literacy-page .heroContent {
-  position: relative;
-  padding: 34px 34px 34px 42px;
-  border-radius: var(--radius-2xl);
-  background: var(--surface);
-  box-shadow:
-    18px 18px 38px var(--shadow-dark),
-    -18px -18px 38px var(--shadow-light);
-  overflow: hidden;
-}
-
-.information-literacy-page .heroContent::before {
-  content: "";
-  position: absolute;
-  top: 24px;
-  bottom: 24px;
-  left: 18px;
-  width: 6px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--primary), var(--secondary), var(--accent));
-  box-shadow:
-    3px 3px 8px rgba(207, 214, 222, 0.72),
-    -3px -3px 8px rgba(255, 255, 255, 0.96);
+  align-items: start;
 }
 
 .information-literacy-page .eyebrow {
@@ -126,18 +99,6 @@ body {
   color: var(--text);
 }
 
-.information-literacy-page .heroVisualCard {
-  display: grid;
-  align-content: start;
-  gap: 16px;
-  padding: 20px;
-  border-radius: var(--radius-2xl);
-  background: linear-gradient(180deg, var(--surface-soft), var(--surface));
-  box-shadow:
-    18px 18px 38px var(--shadow-dark),
-    -18px -18px 38px var(--shadow-light);
-}
-
 .information-literacy-page .imagePlaceholder,
 .information-literacy-page .imagePlaceholderAlt {
   width: 100%;
@@ -173,6 +134,7 @@ body {
 .information-literacy-page .floatingStats {
   display: grid;
   gap: 12px;
+  margin-top: 16px;
 }
 
 .information-literacy-page .statPill {
@@ -226,44 +188,21 @@ body {
   line-height: 1;
 }
 
-/* content - different style: panel cards with badge corners */
+/* content on page, not cards */
 
 .information-literacy-page .cardsSection {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  gap: 34px;
   align-items: start;
 }
 
 .information-literacy-page .contentCard {
-  position: relative;
-  padding: 28px;
-  border-radius: var(--radius-xl);
-  background: var(--surface);
-  box-shadow:
-    14px 14px 28px var(--shadow-dark),
-    -14px -14px 28px var(--shadow-light);
-}
-
-.information-literacy-page .contentCard:nth-child(1) {
-  border-top: 4px solid var(--primary);
-}
-
-.information-literacy-page .contentCard:nth-child(2) {
-  border-top: 4px solid var(--secondary);
-}
-
-.information-literacy-page .contentCard:nth-child(3) {
-  border-top: 4px solid var(--accent);
-}
-
-.information-literacy-page .contentCard:nth-child(4) {
-  border-top: 4px solid var(--support);
-}
-
-.information-literacy-page .contentCard:nth-child(2),
-.information-literacy-page .contentCard:nth-child(4) {
-  margin-top: 34px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .information-literacy-page .cardHeader {
@@ -364,7 +303,7 @@ body {
   line-height: 1.45;
 }
 
-/* highlight - different style: text prominent, visual secondary */
+/* highlight */
 
 .information-literacy-page .highlightGrid {
   display: grid;
@@ -374,13 +313,10 @@ body {
 }
 
 .information-literacy-page .highlightTextCard {
-  padding: 30px;
-  border-radius: var(--radius-2xl);
-  background: linear-gradient(180deg, var(--surface), var(--surface-soft));
-  box-shadow:
-    16px 16px 34px var(--shadow-dark),
-    -16px -16px 34px var(--shadow-light);
-  border-left: 6px solid var(--primary);
+  padding: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
 
 .information-literacy-page .secondaryVisualCard {
@@ -442,18 +378,11 @@ body {
     -12px -12px 24px rgba(255, 255, 255, 1);
 }
 
-/* responsive */
-
 @media (max-width: 1100px) {
   .information-literacy-page .heroGrid,
   .information-literacy-page .cardsSection,
   .information-literacy-page .highlightGrid {
     grid-template-columns: 1fr;
-  }
-
-  .information-literacy-page .contentCard:nth-child(2),
-  .information-literacy-page .contentCard:nth-child(4) {
-    margin-top: 0;
   }
 
   .information-literacy-page .secondaryVisualCard .imagePlaceholderAlt {
@@ -468,10 +397,6 @@ body {
     padding: 20px 0 44px;
   }
 
-  .information-literacy-page .heroContent,
-  .information-literacy-page .heroVisualCard,
-  .information-literacy-page .contentCard,
-  .information-literacy-page .highlightTextCard,
   .information-literacy-page .secondaryVisualCard {
     padding: 20px;
   }
