@@ -156,7 +156,7 @@ export default function Chatbot() {
 
     (async () => {
       await botSay(getTimeGreeting(), 600);
-      await botSay("I'm NeuroLXP Assistant! I'm here to help you get started 🤖", 1300);
+      await botSay("I'm NeuroLXP Assistant! I'm here to help you get started ", 1300);
       await botSay("Enter your College / Institution / University name", 1300);
       showTextInput('Type your college / institution name...');
     })();
@@ -319,40 +319,90 @@ export default function Chatbot() {
   // ── JSX ──
   return (
     <div className="chatbot-wrapper">
-      <div className="chatbot-container">
-        {/* Header */}
-        <div className="chatbot-header">
-          <div className="avatar">🤖</div>
-          <div className="header-text">
-            <span className="bot-name">NeuroLXP Assistant</span>
-            <span className="bot-status">● Online</span>
-          </div>
-        </div>
+  <div className="chatbot-container">
+    {/* Header */}
+    <div className="chatbot-header">
+      <div className="avatar">
+        <svg
+          width="36"
+          height="36"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect x="10" y="16" width="44" height="32" rx="14" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="4" />
+          <rect x="4" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+          <rect x="52" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+          <circle cx="24" cy="31" r="3" fill="#2F3E46" />
+          <circle cx="40" cy="31" r="3" fill="#2F3E46" />
+          <path d="M25 39C29 43 35 43 39 39" stroke="#2F3E46" strokeWidth="3" strokeLinecap="round" />
+          <path d="M40 47L50 56V46" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="3" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="header-text">
+        <span className="bot-name">NeuroLXP Assistant</span>
+        <span className="bot-status">● Online</span>
+      </div>
+    </div>
 
         {/* Messages */}
-        <div className="messages-area" ref={messagesAreaRef}>
-          {messages.map((msg) => (
-            <div key={msg.id} className={`msg-row ${msg.sender}`}>
-              {msg.sender === 'bot' && (
-                <div className="msg-avatar">🤖</div>
-              )}
-              <div className={`bubble ${msg.sender}`}>
-                {renderText(msg.text)}
-              </div>
-            </div>
-          ))}
+       <div className="messages-area" ref={messagesAreaRef}>
+  {messages.map((msg) => (
+    <div key={msg.id} className={`msg-row ${msg.sender}`}>
+      {msg.sender === 'bot' && (
+        <div className="msg-avatar">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 64 64"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="10" y="16" width="44" height="32" rx="14" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="4" />
+            <rect x="4" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+            <rect x="52" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+            <circle cx="24" cy="31" r="3" fill="#2F3E46" />
+            <circle cx="40" cy="31" r="3" fill="#2F3E46" />
+            <path d="M25 39C29 43 35 43 39 39" stroke="#2F3E46" strokeWidth="3" strokeLinecap="round" />
+            <path d="M40 47L50 56V46" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="3" strokeLinejoin="round" />
+          </svg>
+        </div>
+      )}
+      <div className={`bubble ${msg.sender}`}>
+        {renderText(msg.text)}
+      </div>
+    </div>
+  ))}
 
           {/* Typing indicator */}
-          {isTyping && (
-            <div className="msg-row bot">
-              <div className="msg-avatar">🤖</div>
-              <div className="bubble bot typing">
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
-          )}
+         {isTyping && (
+  <div className="msg-row bot">
+    <div className="msg-avatar">
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect x="10" y="16" width="44" height="32" rx="14" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="4" />
+        <rect x="4" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+        <rect x="52" y="26" width="8" height="14" rx="4" fill="#2F3E46" />
+        <circle cx="24" cy="31" r="3" fill="#2F3E46" />
+        <circle cx="40" cy="31" r="3" fill="#2F3E46" />
+        <path d="M25 39C29 43 35 43 39 39" stroke="#2F3E46" strokeWidth="3" strokeLinecap="round" />
+        <path d="M40 47L50 56V46" fill="#EAF6FA" stroke="#2F3E46" strokeWidth="3" strokeLinejoin="round" />
+      </svg>
+    </div>
+
+    <div className="bubble bot typing">
+      <span />
+      <span />
+      <span />
+    </div>
+  </div>
+)}
 
           {/* College not found card */}
           {showNotFound && (
