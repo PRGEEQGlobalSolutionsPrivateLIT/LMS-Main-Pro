@@ -1,0 +1,686 @@
+
+:root {
+  /* Neumorphic Core Colors */
+  --neu-bg: #E8EDF2;
+  --neu-surface: #E8EDF2;
+  
+  /* Neumorphic Shadows */
+  --neu-light: #FFFFFF;
+  --neu-dark: #A3B1C6;
+  
+  /* Text Colors */
+  --neu-text-primary: #2D3748;
+  --neu-text-secondary: #718096;
+  --neu-text-light: #A0AEC0;
+  
+  /* Accent Color (choose ONE) */
+  --neu-accent: #6C63FF;
+  --neu-accent-soft: rgba(108, 99, 255, 0.1);
+  
+  /* Neumorphic Shadow Utilities */
+  --shadow-neu-raised: 6px 6px 12px var(--neu-dark), -6px -6px 12px var(--neu-light);
+  --shadow-neu-pressed: inset 4px 4px 8px var(--neu-dark), inset -4px -4px 8px var(--neu-light);
+  --shadow-neu-flat: 2px 2px 5px var(--neu-dark), -2px -2px 5px var(--neu-light);
+  --shadow-neu-large: 10px 10px 20px var(--neu-dark), -10px -10px 20px var(--neu-light);
+  --shadow-neu-small: 3px 3px 6px var(--neu-dark), -3px -3px 6px var(--neu-light);
+  
+  /* Border Radius */
+  --radius-card: 24px;
+  --radius-btn: 14px;
+  --radius-input: 12px;
+  --radius-lg: 20px;
+  --radius-md: 16px;
+}
+
+/* Global Reset */
+.neumorphic-page * {
+  box-sizing: border-box;
+}
+
+/* Full-width neumorphic page with proper background */
+.neumorphic-page {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--neu-bg);
+  font-family: 'Segoe UI', 'Nunito', Arial, sans-serif;
+  color: var(--neu-text-primary);
+  padding: 0;
+  margin: 0;
+}
+
+/* Hero Section - Full Width */
+.hero {
+  width: 100%;
+  padding: 60px 40px 40px;
+  background: var(--neu-bg);
+}
+
+.heroContent {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  padding: 60px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-large);
+}
+
+.heroContent::before {
+  display: none;
+}
+
+.heroTitle {
+  margin: 0 0 16px;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  color: var(--neu-text-primary);
+  font-weight: 800;
+}
+
+.heroSubtitle {
+  margin: 0 0 24px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  line-height: 1.5;
+  color: var(--neu-text-secondary);
+  font-weight: 600;
+}
+
+.heroDescription {
+  margin: 20px 0;
+  max-width: 800px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--neu-text-secondary);
+}
+
+.heroButtons {
+  display: flex;
+  gap: 20px;
+  margin: 32px 0;
+  flex-wrap: wrap;
+}
+
+.heroImage {
+  margin-top: 40px;
+  width: 100%;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 48px 24px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-pressed);
+  min-height: 200px;
+}
+
+.imageLabel {
+  font-size: 0.9rem;
+  color: var(--neu-text-light);
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+/* Buttons - Pure Neumorphic (Only Background Color) */
+/* ============================================
+   NEUMORPHIC BUTTONS - STRICT UNIFORM STYLE
+   All buttons identical, only text differs
+   ============================================ */
+
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-outline {
+  /* Base neumorphic structure */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 14px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  
+  /* UNIFIED background - blends into surface */
+  background: #E8EDF2;
+  color: #2D3A4A;
+  
+  /* Raised neumorphic shadow */
+  box-shadow: 
+    -5px -5px 10px rgba(255, 255, 255, 0.9),
+    5px 5px 10px rgba(180, 195, 210, 0.75);
+}
+
+/* Hover state - ALL buttons */
+.btn:hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-outline:hover {
+  box-shadow: 
+    -7px -7px 14px rgba(255, 255, 255, 0.95),
+    7px 7px 14px rgba(180, 195, 210, 0.85);
+  transform: translateY(-1px);
+}
+
+/* Active/pressed state - ALL buttons */
+.btn:active,
+.btn-primary:active,
+.btn-secondary:active,
+.btn-outline:active {
+  box-shadow: 
+    inset 3px 3px 7px rgba(180, 195, 210, 0.7),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.85);
+  transform: scale(0.98);
+}
+
+/* Focus state - ALL buttons */
+.btn:focus,
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-outline:focus {
+  box-shadow: 
+    inset 3px 3px 7px rgba(180, 195, 210, 0.7),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.85),
+    0 0 0 3px rgba(45, 58, 74, 0.15);
+  outline: none;
+}
+
+/* Disabled state - ALL buttons */
+.btn:disabled,
+.btn-primary:disabled,
+.btn-secondary:disabled,
+.btn-outline:disabled {
+  box-shadow: 
+    2px 2px 5px rgba(180, 195, 210, 0.4),
+    -2px -2px 5px rgba(255, 255, 255, 0.6);
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+/* Button icon - uniform style */
+.btnIcon {
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  color: #2D3A4A;
+  flex-shrink: 0;
+  transition: transform 0.18s ease;
+}
+
+.btn:hover .btnIcon,
+.btn-primary:hover .btnIcon,
+.btn-secondary:hover .btnIcon,
+.btn-outline:hover .btnIcon {
+  transform: translateX(2px);
+}
+
+/* Section Headers */
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+  padding: 0 20px;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  color: var(--neu-text-primary);
+  margin: 0 0 16px;
+  font-weight: 800;
+}
+
+.sectionSubtitle {
+  font-size: 1.1rem;
+  color: var(--neu-text-secondary);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Challenges Section */
+.challenges {
+  width: 100%;
+  padding: 50px 40px;
+  background: var(--neu-bg);
+}
+
+.challengesGrid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 36px;
+}
+
+.challengeCard {
+  padding: 32px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.challengeCard:hover {
+  box-shadow: 10px 10px 20px var(--neu-dark), -10px -10px 20px var(--neu-light);
+  transform: translateY(-4px);
+}
+
+.challengeIcon {
+  font-size: 3rem;
+  color: var(--neu-accent);
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 16px;
+  border-radius: 50%;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-flat);
+}
+
+.challengeTitle {
+  font-size: 1.35rem;
+  color: var(--neu-text-primary);
+  margin: 0 0 16px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.challengeDescription {
+  color: var(--neu-text-secondary);
+  line-height: 1.8;
+  margin: 0 0 20px;
+}
+
+.solutionLabel {
+  font-weight: 700;
+  color: var(--neu-accent);
+  margin: 20px 0 12px;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 16px;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-pressed);
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.solutionDescription {
+  color: var(--neu-text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  padding: 16px;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-flat);
+  border-radius: 12px;
+}
+
+/* Benefits Section */
+.benefits {
+  width: 100%;
+  padding: 50px 40px;
+  background: var(--neu-bg);
+}
+
+.benefitsGrid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 36px;
+}
+
+.benefitCard {
+  padding: 32px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefitCard:hover {
+  box-shadow: 10px 10px 20px var(--neu-dark), -10px -10px 20px var(--neu-light);
+  transform: translateY(-4px);
+}
+
+.benefitIconWrapper {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+}
+
+.benefitIcon {
+  font-size: 2.5rem;
+  color: var(--neu-accent);
+}
+
+.benefitTitle {
+  font-size: 1.3rem;
+  color: var(--neu-text-primary);
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.benefitDescription {
+  color: var(--neu-text-secondary);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Use Cases Section */
+.useCases {
+  width: 100%;
+  padding: 50px 40px;
+  background: var(--neu-bg);
+}
+
+.useCasesGrid {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.useCaseCard {
+  padding: 28px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+  text-align: center;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.useCaseCard:hover {
+  box-shadow: 10px 10px 20px var(--neu-dark), -10px -10px 20px var(--neu-light);
+  transform: translateY(-4px);
+}
+
+.useCaseIconWrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-pressed);
+}
+
+.useCaseIcon {
+  font-size: 2rem;
+  color: var(--neu-accent);
+}
+
+.useCaseTitle {
+  font-size: 1.2rem;
+  color: var(--neu-text-primary);
+  margin: 0;
+  font-weight: 700;
+}
+
+/* CTA Section */
+.cta {
+  width: 100%;
+  padding: 60px 40px;
+  background: var(--neu-bg);
+}
+
+.ctaContent {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 48px 40px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+}
+
+.ctaTitle {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  margin: 0 0 24px;
+  color: var(--neu-text-primary);
+  font-weight: 800;
+}
+
+.ctaDescription {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin: 0 0 40px;
+  color: var(--neu-text-secondary);
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Footer CTA */
+.footerCta {
+  width: calc(100% - 80px);
+  max-width: 1400px;
+  margin: 60px auto 80px;
+  text-align: center;
+  padding: 48px 40px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-large);
+  position: relative;
+  z-index: 1;
+}
+
+.footerCta h3 {
+  font-size: 1.8rem;
+  color: var(--neu-text-primary);
+  margin: 0 0 20px;
+  font-weight: 800;
+}
+
+.footerCta p {
+  font-size: 1.1rem;
+  color: var(--neu-text-secondary);
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 28px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero,
+  .challenges,
+  .benefits,
+  .useCases,
+  .cta {
+    padding: 60px 40px;
+  }
+
+  .heroContent,
+  .ctaContent {
+    padding: 48px 40px;
+  }
+
+  .challengeCard,
+  .benefitCard,
+  .useCaseCard {
+    padding: 32px;
+  }
+
+  .footerCta {
+    width: calc(100% - 80px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero,
+  .challenges,
+  .benefits,
+  .useCases,
+  .cta {
+    padding: 48px 20px;
+  }
+
+  .heroContent,
+  .ctaContent {
+    padding: 36px 24px;
+  }
+
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .heroButtons,
+  .ctaButtons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .btn {
+    width: 100%;
+    padding: 16px 24px;
+  }
+
+  .challengesGrid,
+  .benefitsGrid,
+  .useCasesGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .challengeIcon {
+    font-size: 2.5rem;
+    padding: 12px;
+  }
+
+  .benefitIconWrapper,
+  .useCaseIconWrapper {
+    width: 70px;
+    height: 70px;
+  }
+
+  .benefitIcon,
+  .useCaseIcon {
+    font-size: 2rem;
+  }
+
+  .footerCta {
+    width: calc(100% - 40px);
+    margin: 48px auto;
+    padding: 40px 24px;
+  }
+}
+
+/* Industry Sections */
+.industry-section {
+  width: 100%;
+  padding: 50px 40px;
+  background: var(--neu-bg);
+}
+
+.industry-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  border-radius: var(--radius-card);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-raised);
+}
+
+.industry-content p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--neu-text-secondary);
+  margin: 20px 0;
+}
+
+.challenge-block {
+  margin: 32px 0;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-flat);
+}
+
+.challenge-title {
+  font-size: 1.25rem;
+  color: var(--neu-text-primary);
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.challenge-block h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--neu-accent);
+  margin: 16px 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.challenge-block p {
+  margin: 8px 0;
+  line-height: 1.7;
+}
+
+.benefits-section {
+  margin-top: 32px;
+  padding: 24px;
+  border-radius: var(--radius-md);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-neu-flat);
+}
+
+.benefits-section h4 {
+  font-size: 1.3rem;
+  color: var(--neu-text-primary);
+  margin: 0 0 16px;
+  font-weight: 700;
+}
+
+.benefits-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefits-section li {
+  padding: 8px 0;
+  color: var(--neu-text-secondary);
+  position: relative;
+  padding-left: 24px;
+}
+
+.benefits-section li::before {
+  content: "✓";
+  color: var(--neu-accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
