@@ -1,18 +1,17 @@
 import {
-  Code2,
-  Laptop,
-  TerminalSquare,
-  Bug,
-  Braces,
-  GraduationCap,
-} from "lucide-react";
+  FaCode,
+  FaLaptopCode,
+  FaTerminal,
+  FaBug,
+  FaCodeBranch,
+  FaGraduationCap,
+} from "react-icons/fa";
 import "./CodingLabs.css";
 
 export default function Page() {
   return (
     <section className="coding-page">
       <div className="coding-hero">
-        
         <h1>NeuroLabs Coding Labs</h1>
         <h2>Practice, Build, and Master Coding Skills</h2>
       </div>
@@ -31,11 +30,11 @@ export default function Page() {
       </p>
 
       <div className="coding-image-box">
-        <Laptop className="coding-box-icon" />
+        <FaLaptopCode className="coding-box-icon" />
         Interactive Coding Environment
       </div>
 
-      <h3><TerminalSquare /> Hands-On Programming Experience</h3>
+      <h3><FaTerminal /> Hands-On Programming Experience</h3>
 
       <p>
         Coding Labs allow learners to write, test, and debug code directly within the platform.
@@ -54,7 +53,7 @@ export default function Page() {
 
       <p>This hands-on approach improves coding confidence and technical proficiency.</p>
 
-      <h3><Braces /> Interactive Coding Challenges</h3>
+      <h3><FaCodeBranch /> Interactive Coding Challenges</h3>
 
       <p>
         NeuroLabs offers structured coding exercises that help learners gradually develop their
@@ -72,11 +71,11 @@ export default function Page() {
       </ul>
 
       <div className="coding-image-box second">
-        <Code2 className="coding-box-icon" />
+        <FaCode className="coding-box-icon" />
         Coding Practice Workspace
       </div>
 
-      <h3><Bug /> Real-World Skill Development</h3>
+      <h3><FaBug /> Real-World Skill Development</h3>
 
       <p>
         Coding Labs simulate real development environments, enabling learners to work on practical
@@ -97,7 +96,7 @@ export default function Page() {
         fields.
       </p>
 
-      <h3><GraduationCap /> Ideal for Educational Institutions and Training Programs</h3>
+      <h3><FaGraduationCap /> Ideal for Educational Institutions and Training Programs</h3>
 
       <p>
         NeuroLabs Coding Labs support a wide range of learning environments, including:
@@ -115,7 +114,7 @@ export default function Page() {
         programming experience alongside theoretical learning.
       </p>
 
-      <h3><Code2 /> NeuroLabs Coding Labs — Where Learning Meets Real Coding</h3>
+      <h3><FaCode /> NeuroLabs Coding Labs — Where Learning Meets Real Coding</h3>
 
       <p>
         With hands-on programming environments, interactive coding challenges, and real-world
