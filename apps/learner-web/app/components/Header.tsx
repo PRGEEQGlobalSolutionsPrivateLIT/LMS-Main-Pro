@@ -235,8 +235,8 @@ export default function Header() {
               <div className="submenu">
                 <div className="submenu-item">Learning Style Analysis</div>
                 <div className="submenu-item">Goal Setting &amp; Planning</div>
-                <div className="submenu-item" onClick={() => router.push("/learning-path")} > Learning Paths </div>
-                <div className="submenu-item">Personalization</div>
+                <div className="nav-item" onClick={() => router.push("/learning-path")}>Learning Paths</div>
+                <div className="nav-item" onClick={() => router.push("/personalization")}>Personalization</div>
                 <div className="submenu-item">Progress Tracking</div>
               </div>
             </div>
@@ -391,8 +391,11 @@ export default function Header() {
         </div>
 
 
-      <button className="signin" onClick={() => router.push("/auth/signin")}>
-  SignIn Help
+     <button
+  className="signin"
+  onClick={() => router.push("/chatboat/app")}
+>
+  Sign In Help
 </button>
       </nav>
     </header>
