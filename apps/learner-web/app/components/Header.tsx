@@ -192,11 +192,11 @@ export default function Header() {
                 </span>
               </div>
               <div className="submenu">
-                <div className="submenu-item">Corporate Training</div>
-                <div className="submenu-item">E-Learning</div>
-                <div className="submenu-item">Education</div>
-                <div className="submenu-item">Government</div>
-                <div className="submenu-item">Training Management</div>
+                <div className="nav-item" onClick={() => router.push("/corporate-training")}>Corporate Training</div>
+                <div className="nav-item" onClick={() => router.push("/E-Learning")}>E-Learning</div>
+                <div className="nav-item" onClick={() => router.push("/Education")}>Education</div>
+                <div className="nav-item" onClick={() => router.push("/Government")}>Government</div>
+                <div className="nav-item" onClick={() => router.push("/")}>Training Management</div>
               </div>
             </div>
           </div>
@@ -233,11 +233,11 @@ export default function Header() {
                 </span>
               </div>
               <div className="submenu">
-                <div className="submenu-item">Learning Style Analysis</div>
-                <div className="submenu-item">Goal Setting &amp; Planning</div>
+                <div className="nav-item" onClick={() => router.push("/learning-style-analysis")}>Learning Style Analysis</div>
+                <div className="nav-item" onClick={() => router.push("/goal-setting-planning")}>Goal Setting &amp; Planning</div>
                 <div className="nav-item" onClick={() => router.push("/learning-path")}>Learning Paths</div>
                 <div className="nav-item" onClick={() => router.push("/personalization")}>Personalization</div>
-                <div className="submenu-item">Progress Tracking</div>
+                <div className="nav-item" onClick={() => router.push("/progress-tracking")}>Progress Tracking</div>
               </div>
             </div>
 
@@ -261,9 +261,9 @@ export default function Header() {
               <div className="submenu">
                 <div className="nav-item" onClick={() => router.push("/gamification")}>Gamification</div>
                 <div className="nav-item" onClick={() => router.push("/interactivities")}>Interactivities</div>
-                <div className="submenu-item">Social Learning</div>
-                <div className="submenu-item">Content Curation</div>
-                <div className="submenu-item">Content Formats</div>
+                <div className="nav-item" onClick={() => router.push("/social-learning")}>Social Learning</div>
+                <div className="nav-item" onClick={() => router.push("/")}>Content Curation</div>
+                <div className="nav-item" onClick={() => router.push("/")}>Content Formats</div>
               </div>
             </div>
 
@@ -283,13 +283,11 @@ export default function Header() {
                 </span>
               </div>
               <div className="submenu">
-                <div className="submenu-item">Assessments</div>
-                <div className="submenu-item">Analytics &amp; Reporting</div>
-                <div className="submenu-item">Career Paths</div>
-                <div className="submenu-item">
-                  Career &amp; Skills Development
-                </div>
-                <div className="submenu-item">Compliances</div>
+                <div className="nav-item" onClick={() => router.push("/assessments")}>Assessments</div>
+                <div className="nav-item" onClick={() => router.push("/analytics-reporting")}>Analytics &amp; Reporting</div>
+                <div className="nav-item" onClick={() => router.push("/career-paths")}>Career Paths</div>
+                <div className="nav-item" onClick={() => router.push("/skilling-courses")}>Career &amp; Skills Development</div>
+                <div className="nav-item" onClick={() => router.push("/compliance-training")}>Compliances</div>
               </div>
             </div>
 
@@ -309,14 +307,11 @@ export default function Header() {
                 </span>
               </div>
               <div className="submenu">
-                <div className="submenu-item">
-                  Content Creation &amp; Management
-                </div>
+                <div className="nav-item" onClick={() => router.push("/content-creation-management")}>Content Creation &amp; Management</div>
+                <div className="nav-item" onClick={() => router.push("/user-support-community")}>User Support &amp; Community</div>
                 <div className="submenu-item">User Support &amp; Community</div>
                 <div className="submenu-item">Security &amp; Compliances</div>
-                <div className="submenu-item">
-                  Accessibility &amp; Inclusivity
-                </div>
+                <div className="submenu-item">Accessibility &amp; Inclusivity</div>
                 <div className="submenu-item">Mobile Learning</div>
                 <div className="submenu-item">Interconnectivity</div>
               </div>
