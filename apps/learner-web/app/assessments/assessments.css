@@ -1,0 +1,478 @@
+.assessments-page {
+  --bg: #eef3f6;
+  --surface: #e8edf2;
+  --surface-soft: #f2f6fa;
+  --surface-soft-2: #f8fbfd;
+  --text: #5a6572;
+  --text-light: #7e8896;
+  --heading: #213247;
+  --primary: #0f766e;
+  --secondary: #2563eb;
+  --accent: #d97706;
+  --support: #7c3aed;
+  --primary-soft: rgba(15, 118, 110, 0.08);
+  --secondary-soft: rgba(37, 99, 235, 0.08);
+  --accent-soft: rgba(217, 119, 6, 0.08);
+  --support-soft: rgba(124, 58, 237, 0.08);
+  --shadow-light: #ffffff;
+  --shadow-dark: #cfd6de;
+  --radius-2xl: 34px;
+  --radius-xl: 28px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --border-soft: rgba(255, 255, 255, 0.62);
+}
+
+.assessments-page * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.assessments-page {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 34px 0 70px;
+  color: var(--text);
+}
+
+.assessments-page .heroSection,
+.assessments-page .cardsSection,
+.assessments-page .formatsSection,
+.assessments-page .highlightSection {
+  margin-bottom: 38px;
+}
+
+.assessments-page .heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.assessments-page .heroContent {
+  position: relative;
+  padding: 34px 34px 34px 42px;
+  border-radius: var(--radius-2xl);
+  background: var(--surface);
+  box-shadow: 18px 18px 38px var(--shadow-dark), -18px -18px 38px var(--shadow-light);
+  overflow: hidden;
+}
+
+.assessments-page .heroContent::before {
+  content: "";
+  position: absolute;
+  top: 24px;
+  bottom: 24px;
+  left: 18px;
+  width: 6px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary), var(--accent));
+  box-shadow: 3px 3px 8px rgba(207, 214, 222, 0.72), -3px -3px 8px rgba(255, 255, 255, 0.96);
+}
+
+.assessments-page .heroTitle {
+  margin: 0 0 12px;
+  font-size: clamp(2.6rem, 4vw, 4.15rem);
+  line-height: 1.02;
+  color: var(--heading);
+}
+
+.assessments-page .heroSubtitle {
+  margin: 0 0 18px;
+  font-size: clamp(1.1rem, 2vw, 1.68rem);
+  line-height: 1.42;
+  color: #3f4d5e;
+  font-weight: 700;
+  max-width: 760px;
+}
+
+.assessments-page .heroText {
+  margin: 0 0 14px;
+  max-width: 760px;
+  font-size: 1rem;
+  line-height: 1.86;
+  color: var(--text);
+}
+
+.assessments-page .heroVisualCard {
+  display: grid;
+  align-content: start;
+  gap: 16px;
+  padding: 20px;
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(180deg, var(--surface-soft), var(--surface));
+  box-shadow: 18px 18px 38px var(--shadow-dark), -18px -18px 38px var(--shadow-light);
+}
+
+.assessments-page .imagePlaceholder,
+.assessments-page .imagePlaceholderAlt {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 22px;
+  background: var(--surface-soft-2);
+  border: 1px solid var(--border-soft);
+  box-shadow: inset 7px 7px 16px rgba(207, 214, 222, 0.74), inset -7px -7px 16px rgba(255, 255, 255, 0.96);
+  overflow: hidden;
+}
+
+.assessments-page .imagePlaceholder {
+  min-height: 155px;
+  max-height: 205px;
+}
+
+.assessments-page .imagePlaceholderAlt {
+  min-height: 180px;
+  max-height: 230px;
+}
+
+.assessments-page .heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.assessments-page .floatingStats {
+  display: grid;
+  gap: 12px;
+}
+
+.assessments-page .statPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 8px 8px 18px rgba(207, 214, 222, 0.9), -8px -8px 18px rgba(255, 255, 255, 1);
+  color: var(--heading);
+  font-size: 0.93rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.assessments-page .statPill:nth-child(1) { color: var(--secondary); }
+.assessments-page .statPill:nth-child(2) { color: var(--primary); }
+.assessments-page .statPill:nth-child(3) { color: var(--accent); }
+
+.assessments-page .statPill:hover {
+  transform: translateX(4px);
+  box-shadow: 12px 12px 24px rgba(207, 214, 222, 0.94), -12px -12px 24px rgba(255, 255, 255, 1);
+}
+
+.assessments-page .statPill:hover .iconText {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+.assessments-page .iconText {
+  font-size: 1.02rem;
+  line-height: 1;
+  transition: transform 0.28s ease;
+}
+
+.assessments-page .cardsSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.assessments-page .contentCard {
+  position: relative;
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: 14px 14px 28px var(--shadow-dark), -14px -14px 28px var(--shadow-light);
+}
+
+.assessments-page .contentCard:nth-child(1) { border-top: 4px solid var(--primary); }
+.assessments-page .contentCard:nth-child(2) { border-top: 4px solid var(--secondary); }
+.assessments-page .contentCard:nth-child(3) { border-top: 4px solid var(--accent); }
+.assessments-page .contentCard:nth-child(4) { border-top: 4px solid var(--support); }
+
+.assessments-page .contentCard:nth-child(1) .iconWrap { color: var(--primary); }
+.assessments-page .contentCard:nth-child(2) .iconWrap { color: var(--secondary); }
+.assessments-page .contentCard:nth-child(3) .iconWrap { color: var(--accent); }
+.assessments-page .contentCard:nth-child(4) .iconWrap { color: var(--support); }
+
+.assessments-page .contentCard p,
+.assessments-page .highlightTextCard p {
+  margin: 0 0 14px;
+  line-height: 1.84;
+  color: var(--text);
+}
+
+.assessments-page .cardHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.assessments-page .cardHeader h3 {
+  margin: 0;
+  color: var(--heading);
+  font-size: clamp(1.18rem, 1.8vw, 1.62rem);
+  line-height: 1.34;
+}
+
+.assessments-page .iconWrap {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  background: var(--surface-soft);
+  box-shadow: inset 4px 4px 10px rgba(207, 214, 222, 0.72), inset -4px -4px 10px rgba(255, 255, 255, 0.96);
+  transition: transform 0.28s ease;
+  font-size: 1.15rem;
+}
+
+.assessments-page .iconWrap:hover {
+  transform: translateY(-3px) rotate(-4deg);
+}
+
+.assessments-page .insetBox {
+  margin: 18px 0 14px;
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, var(--surface-soft), var(--surface-soft-2));
+  box-shadow: inset 7px 7px 16px rgba(207, 214, 222, 0.72), inset -7px -7px 16px rgba(255, 255, 255, 0.96);
+}
+
+.assessments-page .insetBox h4 {
+  margin: 0 0 14px;
+  color: var(--heading);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.assessments-page .featureList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.assessments-page .featureList li {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  gap: 10px;
+  align-items: start;
+  line-height: 1.72;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.assessments-page .listIcon {
+  color: var(--secondary);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.assessments-page .formatsSectionHeader {
+  margin-bottom: 28px;
+}
+
+.assessments-page .sectionTitle {
+  margin: 0 0 12px;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--heading);
+}
+
+.assessments-page .sectionDesc {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text);
+  max-width: 700px;
+}
+
+.assessments-page .formatsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.assessments-page .formatCard {
+  padding: 28px;
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: 14px 14px 28px var(--shadow-dark), -14px -14px 28px var(--shadow-light);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.assessments-page .formatCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 20px 20px 42px var(--shadow-dark), -20px -20px 42px var(--shadow-light);
+}
+
+.assessments-page .formatCard--primary { border-top: 4px solid var(--primary); }
+.assessments-page .formatCard--secondary { border-top: 4px solid var(--secondary); }
+.assessments-page .formatCard--accent { border-top: 4px solid var(--accent); }
+.assessments-page .formatCard--support { border-top: 4px solid var(--support); }
+
+.assessments-page .formatCard--primary .iconWrap { color: var(--primary); }
+.assessments-page .formatCard--secondary .iconWrap { color: var(--secondary); }
+.assessments-page .formatCard--accent .iconWrap { color: var(--accent); }
+.assessments-page .formatCard--support .iconWrap { color: var(--support); }
+
+.assessments-page .formatCard--primary .listIcon { color: var(--primary); }
+.assessments-page .formatCard--secondary .listIcon { color: var(--secondary); }
+.assessments-page .formatCard--accent .listIcon { color: var(--accent); }
+.assessments-page .formatCard--support .listIcon { color: var(--support); }
+
+.assessments-page .highlightGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.assessments-page .highlightTextCard {
+  padding: 30px;
+  border-radius: var(--radius-2xl);
+  background: linear-gradient(180deg, var(--surface), var(--surface-soft));
+  box-shadow: 16px 16px 34px var(--shadow-dark), -16px -16px 34px var(--shadow-light);
+  border-left: 6px solid var(--primary);
+}
+
+.assessments-page .highlightTextCard .iconWrap {
+  color: var(--primary);
+}
+
+.assessments-page .secondaryVisualCard {
+  padding: 18px;
+  border-radius: var(--radius-2xl);
+  background: var(--surface);
+  box-shadow: 16px 16px 34px var(--shadow-dark), -16px -16px 34px var(--shadow-light);
+}
+
+.assessments-page .secondaryVisualCard .imagePlaceholderAlt {
+  width: min(100%, 280px);
+  margin: 0 auto;
+}
+
+.assessments-page .miniFeatures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.assessments-page .miniFeature {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 16px;
+  border-radius: 999px;
+  background: var(--surface-soft);
+  box-shadow: 8px 8px 18px rgba(207, 214, 222, 0.84), -8px -8px 18px rgba(255, 255, 255, 1);
+  color: var(--heading);
+  font-size: 0.93rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.assessments-page .miniFeature:nth-child(1) { color: var(--primary); }
+.assessments-page .miniFeature:nth-child(2) { color: var(--accent); }
+.assessments-page .miniFeature:nth-child(3) { color: var(--secondary); }
+
+.assessments-page .miniFeature:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 12px 12px 24px rgba(207, 214, 222, 0.92), -12px -12px 24px rgba(255, 255, 255, 1);
+}
+
+@media (max-width: 1100px) {
+  .assessments-page .heroGrid,
+  .assessments-page .highlightGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .assessments-page .cardsSection,
+  .assessments-page .formatsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .assessments-page .contentCard:nth-child(2),
+  .assessments-page .contentCard:nth-child(4),
+  .assessments-page .formatCard:nth-child(2),
+  .assessments-page .formatCard:nth-child(4) {
+    margin-top: 0;
+  }
+
+  .assessments-page .secondaryVisualCard .imagePlaceholderAlt {
+    width: 100%;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .assessments-page {
+    width: min(100%, calc(100% - 20px));
+    padding: 20px 0 44px;
+  }
+
+  .assessments-page .heroContent,
+  .assessments-page .heroVisualCard,
+  .assessments-page .contentCard,
+  .assessments-page .formatCard,
+  .assessments-page .highlightTextCard,
+  .assessments-page .secondaryVisualCard {
+    padding: 20px;
+  }
+
+  .assessments-page .heroTitle {
+    font-size: 2rem;
+  }
+
+  .assessments-page .heroSubtitle {
+    font-size: 1.04rem;
+  }
+
+  .assessments-page .cardsSection,
+  .assessments-page .formatsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .assessments-page .imagePlaceholder {
+    min-height: 130px;
+    max-height: 170px;
+  }
+
+  .assessments-page .imagePlaceholderAlt {
+    min-height: 150px;
+    max-height: 190px;
+  }
+
+  .assessments-page .miniFeatures {
+    flex-direction: column;
+  }
+
+  .assessments-page .miniFeature {
+    width: 100%;
+  }
+
+  .assessments-page .iconWrap {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+}
