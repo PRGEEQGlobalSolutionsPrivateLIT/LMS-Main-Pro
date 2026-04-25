@@ -349,11 +349,11 @@ export default function Header() {
                 </span>
               </div>
               <div className="submenu">
-                <div className="submenu-item">Blended Learning</div>
-                <div className="submenu-item">Customer Training</div>
-                <div className="submenu-item">Employee Induction</div>
+                <div className="nav-item" onClick={() => router.push("/Blended-Learning")}>Blended Learning</div>
+                <div className="nav-item" onClick={() => router.push("/Customer-Training")}>Customer Training</div>
+                <div className="nav-item" onClick={() => router.push("/Employee-Induction")}>Employee Induction</div>
                 <div className="submenu-item">Standards Training</div>
-                <div className="submenu-item">Extended Enterprise</div>
+                <div className="nav-item" onClick={() => router.push("/Extended-Enterprise")}>Extended Enterprise</div>
               </div>
             </div>
           </div>
