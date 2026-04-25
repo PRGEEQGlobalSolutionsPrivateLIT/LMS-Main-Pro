@@ -106,10 +106,10 @@ export default function Header() {
             <div className="nav-item" onClick={() => router.push("/information-literacy")}>Information Literacy</div>
             <div className="nav-item" onClick={() => router.push("/media-literacy")}>Media Literacy</div>
             <div className="nav-item" onClick={() => router.push("/Financial-Literacy")}>Financial Literacy</div>
+            <div className="nav-item" onClick={() => router.push("/3Rs8Cs3Ms-Literacy")}>3Rs8Cs3Ms Literacy</div>
+
           </div>
         </div>
-
-
 
         <div
           className="nav-item dropdown-parent"
@@ -127,9 +127,9 @@ export default function Header() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="nav-item" onClick={() => router.push("/coding-labs")}>Coding Labs</div>
-            <div className="submenu-item">Coding Bootcamps</div>
-            <div className="submenu-item">Coding Challenges</div>
-            <div className="submenu-item">Coding Resources</div>
+            <div className="nav-item" onClick={() => router.push("/Coding-Bootcamps")}>Coding Bootcamps</div>
+            <div className="nav-item" onClick={() => router.push("/Coding-Challenges")}>Coding Challenges</div>
+            <div className="nav-item" onClick={() => router.push("/Coding-Resources")}>Coding Resources</div>
           </div>
         </div>
 
