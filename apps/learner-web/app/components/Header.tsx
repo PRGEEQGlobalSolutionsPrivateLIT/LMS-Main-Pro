@@ -262,7 +262,7 @@ export default function Header() {
                 <div className="nav-item" onClick={() => router.push("/gamification")}>Gamification</div>
                 <div className="nav-item" onClick={() => router.push("/interactivities")}>Interactivities</div>
                 <div className="nav-item" onClick={() => router.push("/social-learning")}>Social Learning</div>
-                <div className="nav-item" onClick={() => router.push("/")}>Content Curation</div>
+                <div className="nav-item" onClick={() => router.push("/content-curation")}>Content Curation</div>
                 <div className="nav-item" onClick={() => router.push("/")}>Content Formats</div>
               </div>
             </div>
@@ -309,11 +309,10 @@ export default function Header() {
               <div className="submenu">
                 <div className="nav-item" onClick={() => router.push("/content-creation-management")}>Content Creation &amp; Management</div>
                 <div className="nav-item" onClick={() => router.push("/user-support-community")}>User Support &amp; Community</div>
-                <div className="submenu-item">User Support &amp; Community</div>
-                <div className="submenu-item">Security &amp; Compliances</div>
-                <div className="submenu-item">Accessibility &amp; Inclusivity</div>
-                <div className="submenu-item">Mobile Learning</div>
-                <div className="submenu-item">Interconnectivity</div>
+                <div className="nav-item" onClick={() => router.push("/security-features")}>Security &amp; Compliances</div>
+                <div className="nav-item" onClick={() => router.push("/accessibility-inclusivity")}>Accessibility &amp; Inclusivity</div>
+                <div className="nav-item" onClick={() => router.push("/mobile-learning")}>Mobile Learning</div>
+                <div className="nav-item" onClick={() => router.push("/")}>Interconnectivity</div>
               </div>
             </div>
           </div>
