@@ -102,7 +102,7 @@ export default function Header() {
             className={`dropdown ${activeMenu === "neurolxp" ? "show" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="submenu-item">Digital Literacy</div>
+            <div className="nav-item" onClick={() => router.push("/digital-literacy")}>Digital Literacy</div>
             <div className="nav-item" onClick={() => router.push("/information-literacy")}>Information Literacy</div>
             <div className="nav-item" onClick={() => router.push("/media-literacy")}>Media Literacy</div>
             <div className="nav-item" onClick={() => router.push("/Financial-Literacy")}>Financial Literacy</div>
@@ -196,7 +196,7 @@ export default function Header() {
                 <div className="nav-item" onClick={() => router.push("/E-Learning")}>E-Learning</div>
                 <div className="nav-item" onClick={() => router.push("/Education")}>Education</div>
                 <div className="nav-item" onClick={() => router.push("/Government")}>Government</div>
-                <div className="nav-item" onClick={() => router.push("/")}>Training Management</div>
+                <div className="nav-item" onClick={() => router.push("/training-management")}>Training Management</div>
               </div>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function Header() {
                 <div className="nav-item" onClick={() => router.push("/interactivities")}>Interactivities</div>
                 <div className="nav-item" onClick={() => router.push("/social-learning")}>Social Learning</div>
                 <div className="nav-item" onClick={() => router.push("/content-curation")}>Content Curation</div>
-                <div className="nav-item" onClick={() => router.push("/")}>Content Formats</div>
+                <div className="nav-item" onClick={() => router.push("/content-formats")}>Content Formats</div>
               </div>
             </div>
 
@@ -312,7 +312,7 @@ export default function Header() {
                 <div className="nav-item" onClick={() => router.push("/security-features")}>Security &amp; Compliances</div>
                 <div className="nav-item" onClick={() => router.push("/accessibility-inclusivity")}>Accessibility &amp; Inclusivity</div>
                 <div className="nav-item" onClick={() => router.push("/mobile-learning")}>Mobile Learning</div>
-                <div className="nav-item" onClick={() => router.push("/")}>Interconnectivity</div>
+                <div className="nav-item" onClick={() => router.push("/interconnectivity")}>Interconnectivity</div>
               </div>
             </div>
           </div>
