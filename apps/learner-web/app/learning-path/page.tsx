@@ -1,14 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import {
-  BiFlag,
-  BiGitBranch,
-  BiPulse,
-  BiBarChartAlt2,
-  BiTrophy,
-} from 'react-icons/bi';
-import styles from "./learningpath.module.css";
+import { BiFlag, BiGitBranch, BiPulse, BiBarChartAlt2, BiTrophy, } from 'react-icons/bi';
+import "./learning-path.css";
+import Image from 'next/image';
 
 type BenefitTab = 'learners' | 'institutions' | 'training';
 
@@ -21,6 +16,10 @@ interface Stage {
   subtitle: string;
   items: string[];
   closing: string;
+  progress: number;
+  duration: string;
+  modules: number;
+  skills: string[];
 }
 
 interface PioneerCard {
@@ -134,6 +133,10 @@ const stages: Stage[] = [
       'Foundational learning modules',
     ],
     closing: 'This stage prepares learners for advanced skill development and deeper learning.',
+    progress: 25,
+    duration: '3 weeks',
+    modules: 4,
+    skills: ['Core Conceps', 'Frameworks', 'Foundation', 'Principle'],
   },
   {
     tag: 'Stage 02',
@@ -148,6 +151,10 @@ const stages: Stage[] = [
       'Guided problem-solving activities',
     ],
     closing: 'Learners start building real-world competencies and professional capabilities.',
+    progress: 50,
+    duration: '4 Weeks',
+    modules: 6,
+    skills: ['Problem Solving', 'Analytics', 'Applied skills', 'Practice'],
   },
   {
     tag: 'Stage 03',
@@ -162,6 +169,10 @@ const stages: Stage[] = [
       'Strategic problem-solving frameworks',
     ],
     closing: 'Learners strengthen professional confidence and advanced decision-making skills.',
+    progress: 75,
+    duration: '5 weeks',
+    modules: 8,
+    skills: ['Strategy', 'Expert Thinking', 'Leadership', 'Decision Making'],
   },
   {
     tag: 'Stage 04',
@@ -175,8 +186,11 @@ const stages: Stage[] = [
       'Real-world implementations',
       'Capability validation and assessment',
     ],
-    closing:
-      'Learners complete the learning journey ready to perform with confidence in professional environments.',
+    closing: 'Learners complete the learning journey ready to perform with confidence in professional environments.',
+    progress: 100,
+    duration: '6 Weeks',
+    modules: 10,
+    skills: ['Capstone Projects', 'Assessment', 'Career Readiness', 'Validation'],
   },
 ];
 
@@ -287,16 +301,16 @@ const LearningPaths: React.FC = () => {
   const activeData = benefitsData[activeTab];
 
   return (
-    <div className={styles.page}>
-      <section className={styles.hero}>
+    <div className="learning-path-page">
+      <section className="hero">
         <div>
-          <h1 className={styles.heroTitle}>
+          <h1 className="heroTitle">
             A Scientific Approach to{' '}
-            <span className={styles.highlight}>Structured Learning</span>{' '}
+            <span className="highlight">Structured Learning</span>{' '}
             by NeuroLXP
           </h1>
 
-          <p className={styles.heroText}>
+          <p className="heroText">
             Learning has evolved dramatically in recent years. With the rise of digital learning
             platforms, Learning Management Systems (LMS), and AI-powered Learning Experience
             Platforms (LXP), access to knowledge has never been easier. However, building deep
@@ -304,53 +318,53 @@ const LearningPaths: React.FC = () => {
             and scientifically designed learning journey.
           </p>
 
-          <p className={styles.heroText}>
+          <p className="heroText">
             NeuroLXP introduces a new generation of learning design through Scientific Learning
             Paths — a structured learning framework that guides learners through progressive stages
             of knowledge, skill development, and real-world capability building.
           </p>
 
-          <p className={styles.heroTextLast}>
+          <p className="heroTextLast">
             For the first time in the industry, NeuroLXP combines learning science, competency
             frameworks, and modern digital learning technologies to create systematically engineered
             learning paths that transform education and training into a carefully designed journey
             of mastery and growth.
           </p>
 
-          <div className={styles.heroActions}>
-            <a href="#stages" className={styles.btnPrimary}>Explore Learning Stages</a>
-            <a href="#benefits" className={styles.btnSecondary}>View Benefits</a>
+          <div className="heroActions">
+            <a href="#stages" className="btnPrimary">Explore Learning Stages</a>
+            <a href="#benefits" className="btnSecondary">View Benefits</a>
           </div>
         </div>
 
-        <div className={styles.heroVisual}>
-          <div className={styles.heroCard}>
-            <div className={styles.heroCardHeader}>
-              <div className={styles.heroCardTitle}>Your Learning Journey</div>
-              <div className={styles.heroCardSub}>NeuroLXP Structured Path — Active Progress</div>
+        <div className="heroVisual">
+          <div className="heroCard">
+            <div className="heroCardHeader">
+              <div className="heroCardTitle">Your Learning Journey</div>
+              <div className="heroCardSub">NeuroLXP Structured Path — Active Progress</div>
             </div>
 
-            <div className={styles.heroProgressList}>
+            <div className="heroProgressList">
               {heroProgress.map((item) => (
-                <div key={item.label} className={styles.heroProgressItem}>
-                  <div className={styles.heroProgressLabel}>
+                <div key={item.label} className="heroProgressItem">
+                  <div className="heroProgressLabel">
                     <span>{item.label}</span>
-                    <span className={styles.heroProgressPct}>{item.pct}</span>
+                    <span className="heroProgressPct">{item.pct}</span>
                   </div>
-                  <div className={styles.heroProgressBar}>
+                  <div className="heroProgressBar">
                     <div
-                      className={`${styles.heroProgressFill} ${styles[item.fillClass as keyof typeof styles]}`}
+                      className={`heroProgressFill ${item.fillClass}`}
                     />
                   </div>
                 </div>
               ))}
             </div>
 
-            <div className={styles.heroCardFooter}>
+            <div className="heroCardFooter">
               {heroStats.map((stat) => (
-                <div key={stat.label} className={styles.heroCardStat}>
-                  <div className={styles.heroCardStatNum}>{stat.num}</div>
-                  <div className={styles.heroCardStatLabel}>{stat.label}</div>
+                <div key={stat.label} className="heroCardStat">
+                  <div className="heroCardStatNum">{stat.num}</div>
+                  <div className="heroCardStatLabel">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -358,205 +372,263 @@ const LearningPaths: React.FC = () => {
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section className={styles.section}>
-        <div className={styles.whatIsGrid}>
+      <section className="section">
+        <div className="whatIsGrid">
           <div>
-            <h2 className={styles.whatIsTitle}>What is a Learning Path?</h2>
+            <h2 className="whatIsTitle">What is a Learning Path?</h2>
 
-            <p className={styles.bodyText}>
+            <p className="bodyText">
               A <strong>Learning Path</strong> is a structured sequence of learning experiences
               designed to help individuals progressively build knowledge, develop practical skills,
               and achieve professional expertise.
             </p>
 
-            <p className={styles.bodyText}>
+            <p className="bodyText">
               Instead of fragmented courses or isolated training sessions, a learning path organizes
               learning into a logical progression of modules, skills, and competencies.
             </p>
 
-            <p className={styles.bodyText}>
+            <p className="bodyText">
               Modern Learning Experience Platforms (LXP) and Learning Management Systems (LMS) use
               learning paths to guide learners through personalized and goal-oriented learning
               journeys.
             </p>
 
-            <p className={styles.listHeading}>A well-designed learning path provides:</p>
-            <ul className={styles.checkList}>
+            <p className="listHeading">A well-designed learning path provides:</p>
+            
+            <ul className="checkList">
               {whatIsItems.map((item) => (
-                <li key={item} className={styles.checkItem}>
-                  <span className={styles.checkDot} />
+                <li key={item} className="checkItem">
+                  <span className="checkDot" />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <div className={styles.closingStatement}>
+            <div className="closingStatement">
               With a learning path, learning becomes purposeful, organized, and outcome-driven.
             </div>
           </div>
 
-          <div className={styles.statsGrid}>
-            {statCards.map((stat) => (
-              <div key={stat.label} className={styles.statCard}>
-                <div className={styles.statNumber}>{stat.num}</div>
-                <div className={styles.statLabel}>{stat.label}</div>
+           <div className="whatIsRight">
+              <div className="statsGrid">
+                {statCards.map((stat) => (
+                  <div key={stat.label} className="statCard">
+                    <div className="statNumber">{stat.num}</div>
+                    <div className="statLabel">{stat.label}</div>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+
+              <div className="imageWrapperAlt">
+                <Image
+                  src="/photo-1434030216411-0b793f4b4173.jpeg"
+                  alt="Educator using learning analytics technology"
+                  width={520}
+                  height={300}
+                  className="heroImage"
+                />
+              </div>
+            </div>
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>NeuroLXP: Pioneering Scientific Learning Paths</h2>
+      <section className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">NeuroLXP: Pioneering Scientific Learning Paths</h2>
         </div>
 
-        <p className={styles.pioneerBodyText}>
+        <p className="pioneerBodyText">
           NeuroLXP is among the first AI-powered learning platforms to introduce scientifically
           designed learning paths. Unlike traditional LMS platforms that focus mainly on content
           delivery, NeuroLXP focuses on structured capability development through carefully
           engineered learning journeys.
         </p>
 
-        <p className={styles.pioneerBodyText}>
+        <p className="pioneerBodyText">
           NeuroLXP combines the following pillars to create transformational and career-focused
           learning:
         </p>
 
-        <div className={styles.pioneerGrid}>
+        <div className="pioneerGrid">
           {pioneerCards.map((card) => (
-            <div key={card.num} className={styles.pioneerCard}>
-              <div className={styles.pioneerCardNum}>{card.num}</div>
-              <h3 className={styles.pioneerCardTitle}>{card.title}</h3>
-              <p className={styles.pioneerCardDesc}>{card.desc}</p>
+            <div key={card.num} className="pioneerCard">
+              <div className="pioneerCardNum">{card.num}</div>
+              <h3 className="pioneerCardTitle">{card.title}</h3>
+              <p className="pioneerCardDesc">{card.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className={styles.pioneerDesignBox}>
-          <h4 className={styles.pioneerDesignTitle}>NeuroLXP Learning Paths are designed using:</h4>
-          <ul className={styles.twoColList}>
+        <div className="pioneerDesignBox">
+          <h4 className="pioneerDesignTitle">NeuroLXP Learning Paths are designed using:</h4>
+          <ul className="twoColList">
             {designedUsing.map((item) => (
-              <li key={item} className={styles.twoColItem}>
-                <span className={styles.bulletBar} />
+              <li key={item} className="twoColItem">
+                <span className="bulletBar" />
                 {item}
               </li>
             ))}
           </ul>
-          <div className={styles.pioneerClosing}>
+          <div className="pioneerClosing">
             This scientific approach ensures that learning is not just informative, but
             transformational and career-focused.
           </div>
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section id="stages" className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Four Progressive Stages of Mastery</h2>
+      <section id="stages" className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">Four Progressive Stages of Mastery</h2>
         </div>
 
-        <p className={styles.stagesIntroText}>
+        <p className="stagesIntroText">
           NeuroLXP organizes learning into structured stages that gradually build knowledge, skill
           mastery, and professional capability — from core foundations through to career-ready
           performance.
         </p>
 
-        <div className={styles.stagesTimeline}>
-          {stages.map((stage) => (
-            <div key={stage.tag} className={styles.stageRow}>
-              <div className={styles.stageMarker}>
-                <div className={styles.stageCircle}>
+        <div className="stagesTimeline">
+          {stages.map((stage) => {
+            const radius = 48;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (stage.progress / 100) * circumference;
+            const progressColors: Record<string, string> = {
+              circle1: '#5e72e4', circle2: '#7c3aed', circle3: '#00b4d8', circle4: '#10b981',
+            };
+            const color = progressColors[stage.circleClass] ?? '#5e72e4';
+            return (
+            <div key={stage.tag} className="stageRow">
+              <div className="stageMarker">
+                <div className="stageCircle">
                   <div
-                    className={`${styles.stageCircleInner} ${styles[stage.circleClass as keyof typeof styles]}`}
+                    className={`stageCircleInner ${stage.circleClass}`}
                   />
                 </div>
               </div>
 
-              <div className={styles.stageBody}>
-                <span className={`${styles.stageTag} ${styles[stage.tagClass as keyof typeof styles]}`}>
-                  {stage.tag}
-                </span>
-                <h3 className={styles.stageTitle}>{stage.title}</h3>
-                <p className={styles.stageSubtitle}>{stage.subtitle}</p>
-                <ul className={styles.stageList}>
-                  {stage.items.map((item) => (
-                    <li key={item} className={styles.stageListItem}>
-                      <span
-                        className={`${styles.stageDot} ${styles[stage.dotClass as keyof typeof styles]}`}
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <p className={styles.stageClosing}>{stage.closing}</p>
+              <div className="stageBody">
+                <div className='stageBodyInner'>
+                  <div className='stageContent'>
+                    <span className={`stageTag ${stage.tagClass}`}>{stage.tag}</span>
+                    <h3 className="stageTitle">{stage.title}</h3>
+                    <p className="stageSubtitle">{stage.subtitle}</p>
+                    <ul className="stageList">
+                      {stage.items.map((item) => (
+                        <li key={item} className="stageListItem">
+                          <span className={`stageDot ${stage.dotClass}`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="stageClosing">{stage.closing}</p>
+                  </div>
+
+                  <div className='stagePanel'>
+                    <div className='stagePanelRing'>
+                      <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r={radius} fill="none" stroke="var(--neu-shadow-dark)" strokeWidth="10" />
+                        <circle
+                          cx="60" cy="60" r={radius} fill="none"
+                          stroke={color} strokeWidth="10"
+                          strokeDasharray={circumference}
+                          strokeDashoffset={offset}
+                          strokeLinecap="round"
+                          transform="rotate(-90 60 60)"
+                          style={{ transition: 'stroke-dashoffset 0.8s ease' }}
+                        />
+                      </svg>
+                      <div className='stagePanelRingLabel'>
+                        <span className='stagePanelPct' style={{color}}>{stage.progress}%</span>
+                        <span className='stagePanelPctSub'>Mastery</span>
+                      </div>
+                    </div>
+
+                    <div className='stagePanelStats'>
+                      <div className='stagePanelStat'>
+                        <span className='stagePanelStatNum' style={{ color }}>{stage.modules}</span>
+                        <span className='stagePanelStatLabel'>Modules</span>
+                      </div>
+                      <div className='stagePanelStatDivider' />
+                      <div className="stagePanelStat">
+                        <span className="stagePanelStatNum" style={{ color }}>{stage.duration}</span>
+                        <span className="stagePanelStatLabel">Duration</span>
+                      </div>
+                    </div>
+
+                    <div className='stagePanelTags'>
+                      {stage.skills.map((skill) => (<span key={skill} className='stagePanelTag'>{skill}</span>))}
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          ))}
+            </div> 
+          );})}
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>
+      <section className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">
             Bringing Structure and Discipline to the Learning Process
           </h2>
         </div>
 
-        <p className={styles.structureIntroText}>
+        <p className="structureIntroText">
           A structured learning path introduces clarity, discipline, and measurable progress into
           the learning journey. NeuroLXP Learning Paths help establish:
         </p>
 
-        <div className={styles.milestoneGrid}>
+        <div className="milestoneGrid">
           {milestones.map((m) => {
             const Icon = m.icon;
 
             return (
-              <div key={m.title} className={styles.milestoneCard}>
-                <div className={styles.milestoneIconBox}>
+              <div key={m.title} className="milestoneCard">
+                <div className="milestoneIconBox">
                   <div
-                    className={`${styles.milestoneIconInner} ${styles[m.iconClass as keyof typeof styles]}`}
+                    className={`milestoneIconInner ${m.iconClass}`}
                   >
                     <Icon size={20} color={m.iconColor} />
                   </div>
                 </div>
-                <h4 className={styles.milestoneTitle}>{m.title}</h4>
-                <p className={styles.milestoneDesc}>{m.desc}</p>
+                <h4 className="milestoneTitle">{m.title}</h4>
+                <p className="milestoneDesc">{m.desc}</p>
               </div>
             );
           })}
         </div>
 
-        <div className={styles.structureClosing}>
+        <div className="structureClosing">
           This structured environment enables learners to stay focused, motivated, and committed
           while progressing steadily toward knowledge mastery and career growth.
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section id="benefits" className={styles.section}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Benefits of NeuroLXP Learning Paths</h2>
-          <p className={styles.sectionDesc}>
+      <section id="benefits" className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">Benefits of NeuroLXP Learning Paths</h2>
+          <p className="sectionDesc">
             Whether you are a learner, an academic institution, or a corporate training
             organization — NeuroLXP Learning Paths deliver measurable, transformational impact.
           </p>
         </div>
 
-        <div className={styles.benefitsTabs}>
+        <div className="benefitsTabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              className={`${styles.tabBtn} ${activeTab === tab.id ? styles.tabBtnActive : ''}`}
+              className={`tabBtn ${activeTab === tab.id ? "tabBtnActive" : ''}`}
               onClick={() => setActiveTab(tab.id)}
             >
               {tab.label}
@@ -564,15 +636,15 @@ const LearningPaths: React.FC = () => {
           ))}
         </div>
 
-        <div className={styles.benefitsTabContent}>
-          <div className={styles.benefitsLeft}>
-            <h3 className={styles.benefitsLeftTitle}>{activeData.title}</h3>
-            <p className={styles.benefitsLeftSub}>{activeData.subtitle}</p>
-            <ul className={styles.benefitsCheckList}>
+        <div className="benefitsTabContent">
+          <div className="benefitsLeft">
+            <h3 className="benefitsLeftTitle">{activeData.title}</h3>
+            <p className="benefitsLeftSub">{activeData.subtitle}</p>
+            <ul className="benefitsCheckList">
               {activeData.items.map((item) => (
-                <li key={item.text} className={styles.benefitsCheckItem}>
-                  <span className={styles.benefitsCheck}>
-                    <span className={styles.benefitsCheckMark} />
+                <li key={item.text} className="benefitsCheckItem">
+                  <span className="benefitsCheck">
+                    <span className="benefitsCheckMark" />
                   </span>
                   {item.text}
                 </li>
@@ -580,35 +652,40 @@ const LearningPaths: React.FC = () => {
             </ul>
           </div>
 
-          <div className={styles.benefitsRight}>
-            <div className={styles.benefitsRightLabel}>Key Outcome</div>
-            <div className={styles.benefitsClosingBox}>{activeData.closing}</div>
+          <div className="benefitsRight">
+            <div className="benefitsRightLabel">Key Outcome</div>
+            <div className="benefitsClosingBox">{activeData.closing}</div>
+
+            <div className="imageWrapperAlt">
+                <Image src="/photo-1509062522246-3755977927d7.jpeg"
+                  alt="Educator using learning analytics technology"
+                  width={520} height={300} className="heroImage" />
+              </div>
           </div>
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section className={styles.section}>
-        <div className={styles.designedCard}>
+      <section className="section">
+        <div className="designedCard">
           <div>
-            <span className={styles.designedEyebrow}>Platform Design</span>
-            <h2 className={styles.designedTitle}>Designed for Systematic Learning</h2>
+            <h2 className="designedTitle">Designed for Systematic Learning</h2>
 
-            <p className={styles.bodyText}>
+            <p className="bodyText">
               Unlike traditional LMS courses that deliver isolated content, NeuroLXP courses are
               designed as part of integrated learning ecosystems.
             </p>
 
-            <p className={styles.bodyText}>
+            <p className="bodyText">
               Every NeuroLXP Learning Path includes:
             </p>
 
-            <ul className={styles.featureList}>
+            <ul className="featureList">
               {ecosystemItems.map((item) => (
-                <li key={item.title} className={styles.featureItem}>
-                  <span className={styles.featureCheck}>
-                    <span className={styles.featureCheckMark} />
+                <li key={item.title} className="featureItem">
+                  <span className="featureCheck">
+                    <span className="featureCheckMark" />
                   </span>
                   <span>
                     <strong>{item.title}</strong>
@@ -617,20 +694,20 @@ const LearningPaths: React.FC = () => {
               ))}
             </ul>
 
-            <div className={styles.designedClosing}>
+            <div className="designedClosing">
               This ensures that every learning activity contributes to a larger journey of growth,
               mastery, and professional development.
             </div>
           </div>
 
           <div>
-            <div className={styles.ecosystemList}>
+            <div className="ecosystemList">
               {ecosystemItems.map((item) => (
-                <div key={item.title} className={styles.ecosystemItem}>
-                  <span className={styles.ecosystemDot} />
+                <div key={item.title} className="ecosystemItem">
+                  <span className="ecosystemDot" />
                   <div>
-                    <div className={styles.ecosystemItemTitle}>{item.title}</div>
-                    <div className={styles.ecosystemItemDesc}>{item.desc}</div>
+                    <div className="ecosystemItemTitle">{item.title}</div>
+                    <div className="ecosystemItemDesc">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -639,40 +716,38 @@ const LearningPaths: React.FC = () => {
         </div>
       </section>
 
-      <div className={styles.divider} />
+      <div className="divider" />
 
-      <section className={styles.section}>
-        <div className={styles.futureBanner}>
-          <div className={styles.futureBannerContent}>
-            <span className={styles.futureBannerEyebrow}>The Future of Learning</span>
+      <section className="section">
+        <div className="futureBanner">
+          <div className="futureBannerContent">
+            <h2 className="futureBannerTitle">The Future of Learning is Structured</h2>
 
-            <h2 className={styles.futureBannerTitle}>The Future of Learning is Structured</h2>
-
-            <p className={styles.futureBannerBody}>
+            <p className="futureBannerBody">
               As knowledge continues to grow in complexity, the need for structured learning design,
               competency-based training, and personalized learning paths becomes increasingly important.{` `}
               {!futureExpanded && (
-                <a className={styles.lnkToggle} onClick={() => setFutureExpanded(true)}>
+                <a className="lnkToggle" onClick={() => setFutureExpanded(true)}>
                   More▼
                 </a>
               )}
             </p>
 
             {futureExpanded && (
-              <p className={styles.futureBannerBodyLast}>
+              <p className="futureBannerBodyLast">
                 NeuroLXP is proud to pioneer a scientific learning path model that brings clarity,
                 structure, and purpose to digital learning. Through NeuroLXP Learning Paths, education evolves from isolated learning events into
                 a guided journey toward expertise and career readiness. Experience the future of AI-powered learning platforms, structured learning paths,
                 and competency-based digital education with NeuroLXP.{` `}
-                <a className={styles.lnkToggle} onClick={() => setFutureExpanded(false)}>
+                <a className="lnkToggle" onClick={() => setFutureExpanded(false)}>
                   Less ▲
                 </a>
               </p>
             )}
 
-            <div className={styles.futureBannerActions}>
-              <button className={styles.btnWhite}>Discover the Power of Structured Learning</button>
-              <button className={styles.btnOutlineWhite}>Explore Learning Paths</button>
+            <div className="futureBannerActions">
+              <button className="btnWhite">Discover the Power of Structured Learning</button>
+              <button className="btnOutlineWhite">Explore Learning Paths</button>
             </div>
           </div>
         </div>
