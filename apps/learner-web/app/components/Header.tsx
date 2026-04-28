@@ -376,11 +376,10 @@ export default function Header() {
             className={`dropdown ${activeMenu === "resources" ? "show" : ""}`}
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="submenu-item">Events</div>
-            <div className="submenu-item">Media Presence</div>
-            <div className="submenu-item">White Papers</div>
-            <div className="submenu-item">Blogs</div>
-            <div className="submenu-item">Help, Support &amp; FAQs</div>
+            <div className="nav-item" onClick={() => router.push("/media-presence")}>Media Presence</div>
+            <div className="nav-item" onClick={() => router.push("/white-papers")}>White Papers</div>
+            <div className="nav-item" onClick={() => router.push("/Blogs")}>Blogs</div>
+            <div className="nav-item" onClick={() => router.push("/help-support-faqs")}>Help, Support &amp; FAQs</div>
           </div>
         </div>
 
