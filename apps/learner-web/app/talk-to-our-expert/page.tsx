@@ -1,7 +1,15 @@
 "use client";
 
 import { FormEvent, useState, useRef, useEffect } from "react";
-import { User, Mail, Phone, Target, MessageSquare, X, ChevronDown } from "lucide-react";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaBullseye,
+  FaRegCommentDots,
+  FaTimes,
+  FaChevronDown,
+} from "react-icons/fa";
 import "./page.css";
 
 interface FormState {
@@ -123,7 +131,10 @@ const NeumorphicSelect = ({
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
         setIsOpen(false);
       }
     };
@@ -134,6 +145,7 @@ const NeumorphicSelect = ({
 
     document.addEventListener("mousedown", handleClickOutside);
     window.addEventListener("scroll", handleScroll, true);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
       window.removeEventListener("scroll", handleScroll, true);
@@ -145,9 +157,14 @@ const NeumorphicSelect = ({
   return (
     <label className="fieldLabel" htmlFor={id}>
       <span className="fieldTitle">{label}</span>
-      <div className={`dropdownContainer ${isOpen ? "open" : ""}`} ref={dropdownRef}>
+
+      <div
+        className={`dropdownContainer ${isOpen ? "open" : ""}`}
+        ref={dropdownRef}
+      >
         <div className="dropdownWrapper">
           {IconComponent && <div className="fieldIcon">{IconComponent}</div>}
+
           <button
             type="button"
             className={`dropdownButton ${isOpen ? "active" : ""}`}
@@ -156,7 +173,7 @@ const NeumorphicSelect = ({
             aria-expanded={isOpen}
           >
             <span className="dropdownLabel">{selectedLabel}</span>
-            <ChevronDown size={18} strokeWidth={2} className="dropdownArrow" />
+            <FaChevronDown size={14} className="dropdownArrow" />
           </button>
         </div>
 
@@ -178,6 +195,7 @@ const NeumorphicSelect = ({
           </div>
         )}
       </div>
+
       {error && <span className="fieldError">{error}</span>}
     </label>
   );
@@ -188,30 +206,48 @@ export default function TalkToOurExpertPage() {
   const [errors, setErrors] = useState<Partial<FormState>>({});
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    field: keyof FormState,
-    value: string | boolean
-  ) => {
+  const handleChange = (field: keyof FormState, value: string | boolean) => {
     setForm((prev) => ({
       ...prev,
       [field]: value,
     }));
-    setErrors((prev) => ({ ...prev, [field]: undefined }));
+
+    setErrors((prev) => ({
+      ...prev,
+      [field]: undefined,
+    }));
   };
 
   const validate = () => {
     const nextErrors: Partial<FormState> = {};
-    if (!form.name.trim()) nextErrors.name = "Full name is required.";
-    if (!form.email.trim()) nextErrors.email = "Email address is required.";
-    else if (!/^\S+@\S+\.\S+$/.test(form.email))
+
+    if (!form.name.trim()) {
+      nextErrors.name = "Full name is required.";
+    }
+
+    if (!form.email.trim()) {
+      nextErrors.email = "Email address is required.";
+    } else if (!/^\S+@\S+\.\S+$/.test(form.email)) {
       nextErrors.email = "Enter a valid email address.";
-    if (!form.phone.trim()) nextErrors.phone = "Mobile number is required.";
-    else if (!/^\d{10,15}$/.test(form.phone))
+    }
+
+    if (!form.phone.trim()) {
+      nextErrors.phone = "Mobile number is required.";
+    } else if (!/^\d{10,15}$/.test(form.phone)) {
       nextErrors.phone = "Enter a valid mobile number.";
-    if (!form.interest) nextErrors.interest = "Please select your interest.";
-    if (!form.message.trim()) nextErrors.message = "Please describe your query.";
-    if (!form.consent)
-      (nextErrors as any).consent = "Consent is required to proceed.";
+    }
+
+    if (!form.interest) {
+      nextErrors.interest = "Please select your interest.";
+    }
+
+    if (!form.message.trim()) {
+      nextErrors.message = "Please describe your query.";
+    }
+
+    if (!form.consent) {
+      nextErrors.consent = "Consent is required to proceed.";
+    }
 
     setErrors(nextErrors);
     return Object.keys(nextErrors).length === 0;
@@ -219,6 +255,7 @@ export default function TalkToOurExpertPage() {
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+
     if (validate()) {
       setSubmitted(true);
       setTimeout(() => setSubmitted(false), 2500);
@@ -233,18 +270,21 @@ export default function TalkToOurExpertPage() {
           <p className="eyebrow">Talk to Our Expert</p>
           <h1>We're here to help you find the perfect solution.</h1>
           <p className="subtitle">
-            Let us know how we can assist you today with a tailored consultation.
+            Let us know how we can assist you today with a tailored
+            consultation.
           </p>
         </div>
 
         <div className="panelGrid">
           <div className="imageCard">
             <div className="imageFrame" aria-hidden="true" />
+
             <div className="imageCardContent">
               <h2 className="imageTitle">Connect with Our Experts</h2>
               <p className="imageDescription">
                 Get personalized guidance and solutions tailored to your needs
               </p>
+
               <div className="imageButtons">
                 <a href="/" className="neumorphic-button-link">
                   Home
@@ -257,9 +297,14 @@ export default function TalkToOurExpertPage() {
           </div>
 
           <div className="formCard">
-            <button type="button" className="closeButton" aria-label="Close form">
-              <X size={20} strokeWidth={2} />
+            <button
+              type="button"
+              className="closeButton"
+              aria-label="Close form"
+            >
+              <FaTimes size={16} />
             </button>
+
             <div className="formHeading">
               <h2>Submit Your Query</h2>
             </div>
@@ -278,36 +323,43 @@ export default function TalkToOurExpertPage() {
                   onChange={(event) => handleChange("name", event.target.value)}
                   placeholder="Enter your full name"
                   error={errors.name}
-                  icon={<User size={18} strokeWidth={1.5} />}
+                  icon={<FaUser size={16} />}
                   required
                 />
               </div>
+
               <div style={{ "--index": 1 } as React.CSSProperties}>
                 <NeumorphicInput
                   label="Email Address *"
                   id="email"
                   type="email"
                   value={form.email}
-                  onChange={(event) => handleChange("email", event.target.value)}
+                  onChange={(event) =>
+                    handleChange("email", event.target.value)
+                  }
                   placeholder="Enter your email address"
                   error={errors.email}
-                  icon={<Mail size={18} strokeWidth={1.5} />}
+                  icon={<FaEnvelope size={16} />}
                   required
                 />
               </div>
+
               <div style={{ "--index": 2 } as React.CSSProperties}>
                 <NeumorphicInput
                   label="Mobile Number *"
                   id="phone"
                   type="tel"
                   value={form.phone}
-                  onChange={(event) => handleChange("phone", event.target.value)}
+                  onChange={(event) =>
+                    handleChange("phone", event.target.value)
+                  }
                   placeholder="Enter your mobile number"
                   error={errors.phone}
-                  icon={<Phone size={18} strokeWidth={1.5} />}
+                  icon={<FaPhoneAlt size={16} />}
                   required
                 />
               </div>
+
               <div style={{ "--index": 3 } as React.CSSProperties}>
                 <NeumorphicSelect
                   label="Select Your Interest *"
@@ -315,18 +367,21 @@ export default function TalkToOurExpertPage() {
                   value={form.interest}
                   onChange={(option) => handleChange("interest", option)}
                   error={errors.interest}
-                  icon={<Target size={18} strokeWidth={1.5} />}
+                  icon={<FaBullseye size={16} />}
                 />
               </div>
+
               <div style={{ "--index": 4 } as React.CSSProperties}>
                 <NeumorphicTextarea
                   label="Describe your query or question in detail *"
                   id="message"
                   value={form.message}
-                  onChange={(event) => handleChange("message", event.target.value)}
+                  onChange={(event) =>
+                    handleChange("message", event.target.value)
+                  }
                   placeholder="Write your message here around 200 characters."
                   error={errors.message}
-                  icon={<MessageSquare size={18} strokeWidth={1.5} />}
+                  icon={<FaRegCommentDots size={16} />}
                 />
               </div>
 
@@ -334,13 +389,19 @@ export default function TalkToOurExpertPage() {
                 <input
                   type="checkbox"
                   checked={form.consent}
-                  onChange={(event) => handleChange("consent", event.target.checked)}
+                  onChange={(event) =>
+                    handleChange("consent", event.target.checked)
+                  }
                 />
                 <span>
-                  I express my consent for PRGEEQ expert to reach me <span className="requiredStar">*</span>
+                  I express my consent for PRGEEQ expert to reach me{" "}
+                  <span className="requiredStar">*</span>
                 </span>
               </label>
-              {errors.consent && <span className="fieldError">{errors.consent}</span>}
+
+              {errors.consent && (
+                <span className="fieldError">{errors.consent}</span>
+              )}
 
               <button type="submit" className="neumorphic-button">
                 {submitted ? "Query Submitted" : "Submit Query"}
