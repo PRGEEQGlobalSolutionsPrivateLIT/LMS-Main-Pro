@@ -646,22 +646,22 @@ export default function Header() {
       </header>
 
       <div className="floating-action-buttons">
-        <button
-          className="floating-btn demo-btn"
-          type="button"
-          onClick={() => router.push("/book-demo")}
-        >
-          Book a Demo
-        </button>
+  <button
+    className="floating-btn demo-btn"
+    type="button"
+    onClick={() => router.push("/book-a-demo")}
+  >
+    Book a Demo
+  </button>
 
-        <button
-          className="floating-btn expert-btn"
-          type="button"
-          onClick={() => router.push("/contact")}
-        >
-          Talk to Our Expert
-        </button>
-      </div>
+  <button
+    className="floating-btn expert-btn"
+    type="button"
+    onClick={() => router.push("/talk-to-our-expert")}
+  >
+    Talk to Our Expert
+  </button>
+</div>
     </>
   );
 }
