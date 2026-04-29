@@ -1,0 +1,491 @@
+:root {
+  --neu-bg: #e0e0e0;
+  --neu-surface: #e0e0e0;
+  --neu-light: #ffffff;
+  --neu-dark: #cfcfcf;
+  --neu-text-primary: #2d3748;
+  --neu-text-secondary: #718096;
+  --neu-text-muted: #a0aec0;
+  --neu-primary: #d4856b;
+  --neu-secondary: #e8976f;
+  --neu-accent: #d4856b;
+  --neu-success: #2dbd91;
+  --neu-warning: #f5b35d;
+  --neu-danger: #f15b5b;
+  --shadow-raised: 8px 8px 16px #cfcfcf, -8px -8px 16px #ffffff;
+  --shadow-pressed: inset 4px 4px 8px #cfcfcf, inset -4px -4px 8px #ffffff;
+  --shadow-soft: 4px 4px 8px #cfcfcf, -4px -4px 8px #ffffff;
+  --shadow-large: 12px 12px 24px #cfcfcf, -12px -12px 24px #ffffff;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+}
+
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Card */
+.modalCard {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--neu-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-large);
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modalCard::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalCard::-webkit-scrollbar-track {
+  background: var(--neu-surface);
+  border-radius: 4px;
+}
+
+.modalCard::-webkit-scrollbar-thumb {
+  background: var(--neu-dark);
+  border-radius: 4px;
+  box-shadow: inset 2px 2px 4px rgba(163, 177, 198, 0.3), inset -2px -2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Gradient Header Bar */
+.gradientHeader {
+  height: 6px;
+  background: linear-gradient(90deg, #b8956a 0%, #d4856b 50%, #e8976f 100%);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--neu-surface);
+  color: var(--neu-primary);
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-raised);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.closeButton:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-2px);
+}
+
+.closeButton:active {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
+}
+
+/* Modal Header */
+.modalHeader {
+  padding: 2rem 2rem 1rem;
+  text-align: center;
+}
+
+.modalTitle {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--neu-text-primary);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Mandatory Message */
+.mandatoryMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.25rem;
+  margin: 1.5rem 2rem;
+  border-radius: var(--radius-md);
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-soft);
+  color: var(--neu-text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-left: 4px solid var(--neu-primary);
+}
+
+.messageIcon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Form Container */
+.formContainer {
+  padding: 1rem 2rem 2rem;
+}
+
+/* Field Label */
+.fieldLabel {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1.25rem;
+}
+
+.fieldTitle {
+  font-weight: 600;
+  color: var(--neu-text-primary);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.requiredStar {
+  color: var(--neu-danger);
+}
+
+/* Input Wrapper */
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.fieldIcon {
+  position: absolute;
+  left: 1rem;
+  z-index: 2;
+  font-size: 1rem;
+  pointer-events: none;
+  opacity: 0.7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neu-primary);
+}
+
+.fieldIcon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Neumorphic Input */
+.neumorphic-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--neu-text-primary);
+  background: var(--neu-surface);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  padding-left: 3rem;
+  box-shadow: var(--shadow-pressed);
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.neumorphic-input:focus {
+  box-shadow: var(--shadow-soft);
+  outline: 2px solid var(--neu-primary);
+  outline-offset: 2px;
+  background: linear-gradient(135deg, var(--neu-surface), rgba(255, 255, 255, 0.5));
+  transform: scale(1.01);
+}
+
+.neumorphic-input::placeholder {
+  color: var(--neu-text-muted);
+  font-weight: 400;
+}
+
+/* Neumorphic Textarea */
+.neumorphic-textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: var(--neu-text-primary);
+  background: var(--neu-surface);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.15rem;
+  padding-left: 3rem;
+  box-shadow: var(--shadow-pressed);
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+  min-height: 120px;
+  resize: vertical;
+}
+
+.neumorphic-textarea:focus {
+  box-shadow: var(--shadow-soft);
+  outline: 2px solid var(--neu-primary);
+  outline-offset: 2px;
+  background: linear-gradient(135deg, var(--neu-surface), rgba(255, 255, 255, 0.5));
+  transform: scale(1.01);
+}
+
+.neumorphic-textarea::placeholder {
+  color: var(--neu-text-muted);
+  font-weight: 400;
+}
+
+/* Checkbox Field */
+.checkboxField {
+  position: relative;
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  color: var(--neu-text-primary);
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.checkboxField:hover {
+  background: rgba(212, 133, 107, 0.05);
+}
+
+.checkboxField input[type="checkbox"] {
+  appearance: none;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-top: 0.1rem;
+  border-radius: 6px;
+  background: var(--neu-surface);
+  box-shadow: var(--shadow-pressed);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.checkboxField input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, var(--neu-primary), var(--neu-secondary));
+  box-shadow: var(--shadow-soft);
+}
+
+.checkboxField input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  animation: checkmark 0.2s ease-out;
+}
+
+@keyframes checkmark {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.checkboxField input[type="checkbox"]:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+/* Error Message */
+.fieldError {
+  color: var(--neu-danger);
+  font-size: 0.875rem;
+  margin-top: 0.45rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* Submit Button */
+.neumorphic-button {
+  width: 100%;
+  margin-top: 1.8rem;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #b8956a 0%, #d4856b 50%, #e8976f 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  box-shadow: var(--shadow-raised);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neumorphic-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.neumorphic-button:hover::before {
+  left: 100%;
+}
+
+.neumorphic-button:hover {
+  box-shadow: var(--shadow-large);
+  transform: translateY(-2px);
+}
+
+.neumorphic-button:active {
+  box-shadow: var(--shadow-pressed);
+  transform: translateY(1px);
+}
+
+.neumorphic-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success Message */
+.successMessage {
+  text-align: center;
+  padding: 3rem 2rem;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: var(--neu-surface);
+  border-radius: 50%;
+  box-shadow: var(--shadow-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  color: var(--neu-success);
+}
+
+.successMessage h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.5rem;
+  color: var(--neu-text-primary);
+}
+
+.successMessage p {
+  margin: 0;
+  color: var(--neu-text-secondary);
+  font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .modalOverlay {
+    padding: 0.75rem;
+  }
+
+  .modalHeader {
+    padding: 1.5rem 1.5rem 0.75rem;
+  }
+
+  .modalTitle {
+    font-size: 1.75rem;
+  }
+
+  .mandatoryMessage {
+    margin: 1.25rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .formContainer {
+    padding: 0.75rem 1.5rem 1.5rem;
+  }
+
+  .neumorphic-input,
+  .neumorphic-textarea {
+    padding: 0.9rem 1rem;
+    padding-left: 2.75rem;
+    font-size: 0.95rem;
+  }
+
+  .fieldIcon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .fieldIcon {
+    left: 0.9rem;
+  }
+
+  .neumorphic-button {
+    padding: 0.9rem 1rem;
+    font-size: 0.95rem;
+  }
+
+  .closeButton {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+  }
+}
