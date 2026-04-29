@@ -352,7 +352,7 @@ export default function Header() {
                 <div className="nav-item" onClick={() => router.push("/Blended-Learning")}>Blended Learning</div>
                 <div className="nav-item" onClick={() => router.push("/Customer-Training")}>Customer Training</div>
                 <div className="nav-item" onClick={() => router.push("/Employee-Induction")}>Employee Induction</div>
-                <div className="submenu-item">Standards Training</div>
+                 <div className="nav-item" onClick={() => router.push("/standards-training")}>Standards Training</div>
                 <div className="nav-item" onClick={() => router.push("/Extended-Enterprise")}>Extended Enterprise</div>
               </div>
             </div>
