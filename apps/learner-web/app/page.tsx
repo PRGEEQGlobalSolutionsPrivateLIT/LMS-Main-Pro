@@ -1,490 +1,759 @@
-"use client";
-import styles from "./digital.module.css";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import {
-  FaGraduationCap,
-  FaSyncAlt,
-  FaChartLine,
-  FaRocket,
-  FaLightbulb,
-  FaUsers,
-  FaMobileAlt,
-  FaTools,
-  FaShieldAlt,
-  FaBullhorn,
-  FaCogs,
-  FaChartBar,
-} from "react-icons/fa";
+'use client';
 
+import React, { useState } from 'react';
+import { BiFlag, BiGitBranch, BiPulse, BiBarChartAlt2, BiTrophy, } from 'react-icons/bi';
+import "./learning-path.css";
+import Image from 'next/image';
 
-export default function Home() {
-  const slides = [
-    {
-      image: "/heroLMS.jpg",
-      title: "Comprehensive Learning Management System",
-      desc: "Manage all your learning activities seamlessly with neuroLxp's robust LMS capabilities. From course creation to learner tracking, our platform provides all the tools you need to deliver effective education and training.",
-    },
-    {
-      image: "/heroLMS.jpg",
-      title: "Personalized Learning Experience",
-      desc: "Enhance learner engagement with neuroLxp's LXP features. Our platform delivers personalized learning paths, tailored content, and interactive experiences to meet each learner's unique needs and preferences.",
-    },
-    {
-      image: "/heroLMS.jpg",
-      title: "Advanced Learning Record Store",
-      desc: "Capture and analyze all learning activities across multiple platforms with neuroLxp's LRS. Our platform ensures you have a comprehensive view of your learners' progress and performance, enabling data-driven decisions",
-    },
+type BenefitTab = 'learners' | 'institutions' | 'training';
+
+interface Stage {
+  tag: string;
+  tagClass: string;
+  circleClass: string;
+  dotClass: string;
+  title: string;
+  subtitle: string;
+  items: string[];
+  closing: string;
+  progress: number;
+  duration: string;
+  modules: number;
+  skills: string[];
+}
+
+interface PioneerCard {
+  num: string;
+  title: string;
+  desc: string;
+}
+
+interface Milestone {
+  iconClass: string;
+  icon: React.ComponentType<{ size?: number; color?: string }>;
+  iconColor: string;
+  title: string;
+  desc: string;
+}
+
+interface BenefitItem {
+  text: string;
+}
+
+interface BenefitsData {
+  learners: {
+    title: string;
+    subtitle: string;
+    items: BenefitItem[];
+    closing: string;
+  };
+  institutions: {
+    title: string;
+    subtitle: string;
+    items: BenefitItem[];
+    closing: string;
+  };
+  training: {
+    title: string;
+    subtitle: string;
+    items: BenefitItem[];
+    closing: string;
+  };
+}
+
+const heroProgress = [
+  { label: 'foundation Stage', pct: '100%', fillClass: 'fill1' },
+  { label: 'Skill Development Stage', pct: '68%', fillClass: 'fill2' },
+  { label: 'Advanced Capability Stage', pct: '35%', fillClass: 'fill3' },
+  { label: 'Performance Readiness Stage', pct: '10%', fillClass: 'fill4' },
+];
+
+const heroStats = [
+  { num: '4', label: 'Stages' },
+  { num: '12+', label: 'Modules' },
+  { num: '85%', label: 'MAstery Rate' },
+];
+
+const whatIsItems: string[] = [
+  'Clear learning direction and career-oriented skill development',
+  'Structured knowledge progression',
+  'Logical sequencing of topics and competencies',
+  'Measurable learning outcomes and performance tracking',
+  'Continuous learner engagement and motivation',
+];
+
+const statCards = [
+  { num: '4×', label: 'Faster skill acquisition vs. unstructured learning' },
+  { num: '94%', label: 'Learner completion rate on structured paths' },
+  { num: '3×', label: 'Higher knowledge retention with progressive design' },
+  { num: '100+', label: 'Competency frameworks integrated in NeuroLXP' },
+];
+
+const pioneerCards: PioneerCard[] = [
+  {
+    num: '01',
+    title: 'Educational Psychology',
+    desc: 'Learning paths grounded in cognitive science and how humans truly absorb and retain knowledge over time.',
+  },
+  {
+    num: '02',
+    title: 'Competency-Based Frameworks',
+    desc: 'Every module aligns to measurable competencies and industry-recognized skill benchmarks.',
+  },
+  {
+    num: '03',
+    title: 'Progressive Skill Development Models',
+    desc: 'Skills are layered progressively — each stage builds naturally upon the last for deep mastery.',
+  },
+  {
+    num: '04',
+    title: 'Real-World Capability Building',
+    desc: 'Learning outcomes translate directly into professional, career-ready performance and confidence.',
+  }
+];
+
+const designedUsing: string[] = [
+  'Cognitive learning science',
+  'Structured knowledge architecture',
+  'Competency and skills frameworks',
+  'Industry-aligned learning progression models',
+];
+
+const stages: Stage[] = [
+  {
+    tag: 'Stage 01',
+    tagClass: 'tagColor1',
+    circleClass: 'circle1',
+    dotClass: 'dot1',
+    title: 'Foundation Stage',
+    subtitle: 'Build Core Knowledge and Conceptual Clarity',
+    items: [
+      'Core principles and essential knowledge',
+      'Fundamental concepts and frameworks',
+      'Foundational learning modules',
+    ],
+    closing: 'This stage prepares learners for advanced skill development and deeper learning.',
+    progress: 25,
+    duration: '3 weeks',
+    modules: 4,
+    skills: ['Core Conceps', 'Frameworks', 'Foundation', 'Principle'],
+  },
+  {
+    tag: 'Stage 02',
+    tagClass: 'tagColor2',
+    circleClass: 'circle2',
+    dotClass: 'dot2',
+    title: 'Skill Development Stage',
+    subtitle: 'Transform Knowledge into Practical Skills',
+    items: [
+      'Practical learning exercises',
+      'Analytical thinking development',
+      'Guided problem-solving activities',
+    ],
+    closing: 'Learners start building real-world competencies and professional capabilities.',
+    progress: 50,
+    duration: '4 Weeks',
+    modules: 6,
+    skills: ['Problem Solving', 'Analytics', 'Applied skills', 'Practice'],
+  },
+  {
+    tag: 'Stage 03',
+    tagClass: 'tagColor3',
+    circleClass: 'circle3',
+    dotClass: 'dot3',
+    title: 'Advanced Capability Stage',
+    subtitle: 'Develop Expertise and Strategic Thinking',
+    items: [
+      'Complex learning scenarios',
+      'Real-world application projects',
+      'Strategic problem-solving frameworks',
+    ],
+    closing: 'Learners strengthen professional confidence and advanced decision-making skills.',
+    progress: 75,
+    duration: '5 weeks',
+    modules: 8,
+    skills: ['Strategy', 'Expert Thinking', 'Leadership', 'Decision Making'],
+  },
+  {
+    tag: 'Stage 04',
+    tagClass: 'tagColor4',
+    circleClass: 'circle4',
+    dotClass: 'dot4',
+    title: 'Performance Readiness Stage',
+    subtitle: 'Prepare for Real-World Success',
+    items: [
+      'Project-based learning experiences',
+      'Real-world implementations',
+      'Capability validation and assessment',
+    ],
+    closing: 'Learners complete the learning journey ready to perform with confidence in professional environments.',
+    progress: 100,
+    duration: '6 Weeks',
+    modules: 10,
+    skills: ['Capstone Projects', 'Assessment', 'Career Readiness', 'Validation'],
+  },
+];
+
+const milestones: Milestone[] = [
+  {
+    iconClass: 'circle1',
+    icon: BiFlag,
+    iconColor: '#5e72e4',
+    title: 'Clear Learning Milestones',
+    desc: 'Track progress at every defined stage checkpoint'
+  },
+  {
+    iconClass: 'circle2',
+    icon: BiGitBranch,
+    iconColor: '#7c3aed',
+    title: 'Logical Topic Progression',
+    desc: 'Concepts flow naturally from simple to complex'
+  },
+  {
+    iconClass: 'circle3',
+    icon: BiPulse,
+    iconColor: '#00b4d8',
+    title: 'Continuous Learner Engagement',
+    desc: 'Built-in motivation and momentum throughout'
+  },
+  {
+    iconClass: 'circle4',
+    icon: BiBarChartAlt2,
+    iconColor: '#10b981',
+    title: 'Data-Driven Learning Analytics',
+    desc: 'Real-time insights on learner performance'
+  },
+  {
+    iconClass: 'circle1',
+    icon: BiTrophy,
+    iconColor: '#5e72e4',
+    title: 'Measurable Capability Development',
+    desc: 'Validate and track actual skill development'
+  },
+];
+
+const benefitsData: BenefitsData = {
+  learners: {
+    title: 'For Learners',
+    subtitle: 'Move from understanding concepts to mastering real-world skills.',
+    items: [
+      { text: 'Clear and personalized learning journey' },
+      { text: 'Strong conceptual foundations' },
+      { text: 'Practical skill development' },
+      { text: 'Improved confidence and professional competence' },
+      { text: 'Faster career-ready capability development' },
+    ],
+    closing: 'Learners move from understanding concepts to mastering real-world skills.',
+  },
+  institutions: {
+    title: 'For Educational Institutions',
+    subtitle: 'Build a future-ready digital learning ecosystem that supports academic excellence.',
+    items: [
+      { text: 'Structured curriculum frameworks' },
+      { text: 'Outcome-driven learning models' },
+      { text: 'Improved student engagement and academic performance' },
+      { text: 'Alignment with modern skill development demands' },
+    ],
+    closing: 'Institutions gain a future-ready digital learning ecosystem that supports academic excellence.',
+  },
+  training: {
+    title: 'For Training Organizations',
+    subtitle: 'Transform training programs into impactful, measurable, and results-driven systems.',
+    items: [
+      { text: 'Scalable corporate training program design' },
+      { text: 'Structured workforce skill development' },
+      { text: 'Measurable training outcomes and performance analytics' },
+      { text: 'Improved learner satisfaction and training effectiveness' },
+    ],
+    closing: 'Training programs become more impactful, measurable, and results-driven.',
+  },
+};
+
+const ecosystemItems = [
+  {
+    title: 'Clearly Defined Learning Progression Stages',
+    desc: 'Every learning path moves through a systematic sequence that builds knowledge layer by layer.',
+  },
+  {
+    title: 'Structured Modules and Competency Frameworks',
+    desc: 'Modules are mapped to real competency standards and professional skill benchmarks.',
+  },
+  {
+    title: 'Practical Application and Real-World Learning',
+    desc: 'Every stage includes applied exercises and real-world scenarios to deepen capability.',
+  },
+  {
+    title: 'Continuous Skill Development and Performance Tracking',
+    desc: 'Learner progress is tracked continuously with actionable performance analytics.',
+  },
+];
+
+const LearningPaths: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<BenefitTab>('learners');
+  const [futureExpanded, setFutureExpanded] = useState(false);
+
+  const tabs: { id: BenefitTab; label: string }[] = [
+    { id: 'learners', label: 'For Learners' },
+    { id: 'institutions', label: 'For Educational Institutions' },
+    { id: 'training', label: 'For Training Organizations' },
   ];
 
-  const [current, setCurrent] = useState(0);
-
-  const prevSlide = () => {
-    setCurrent((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-  };
-
-  const nextSlide = () => {
-    setCurrent((prev) => (prev + 1) % slides.length);
-  };
+  const activeData = benefitsData[activeTab];
 
   return (
-    <div className="home-page">
-      {/* HERO SLIDER */}
-      <section className="hero-slider">
-        <div className="hero-card">
-          <div
-            className="hero-bg"
-            style={{ backgroundImage: `url(${slides[current].image})` }}
-          >
-            <button
-              className="hero-arrow hero-arrow-left"
-              onClick={prevSlide}
-              aria-label="Previous slide"
-              type="button"
-            >
-              &#10094;
-            </button>
+    <div className="learning-path-page">
+      <section className="hero">
+        <div>
+          <h1 className="heroTitle">
+            A Scientific Approach to{' '}
+            <span className="highlight">Structured Learning</span>{' '}
+            by NeuroLXP
+          </h1>
 
-            <div className="hero-overlay">
-              <h2>{slides[current].title}</h2>
-              <p>{slides[current].desc}</p>
+          <p className="heroText">
+            Learning has evolved dramatically in recent years. With the rise of digital learning
+            platforms, Learning Management Systems (LMS), and AI-powered Learning Experience
+            Platforms (LXP), access to knowledge has never been easier. However, building deep
+            capability, professional skills, and real expertise still requires a clear, structured,
+            and scientifically designed learning journey.
+          </p>
+
+          <p className="heroText">
+            NeuroLXP introduces a new generation of learning design through Scientific Learning
+            Paths — a structured learning framework that guides learners through progressive stages
+            of knowledge, skill development, and real-world capability building.
+          </p>
+
+          <p className="heroTextLast">
+            For the first time in the industry, NeuroLXP combines learning science, competency
+            frameworks, and modern digital learning technologies to create systematically engineered
+            learning paths that transform education and training into a carefully designed journey
+            of mastery and growth.
+          </p>
+
+          <div className="heroActions">
+            <a href="#stages" className="btnPrimary">Explore Learning Stages</a>
+            <a href="#benefits" className="btnSecondary">View Benefits</a>
+          </div>
+        </div>
+
+        <div className="heroVisual">
+          <div className="heroCard">
+            <div className="heroCardHeader">
+              <div className="heroCardTitle">Your Learning Journey</div>
+              <div className="heroCardSub">NeuroLXP Structured Path — Active Progress</div>
             </div>
 
-            <div className="hero-dots">
-              {slides.map((_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={current === index ? "dot active" : "dot"}
-                  onClick={() => setCurrent(index)}
-                  aria-label={`Go to slide ${index + 1}`}
-                />
+            <div className="heroProgressList">
+              {heroProgress.map((item) => (
+                <div key={item.label} className="heroProgressItem">
+                  <div className="heroProgressLabel">
+                    <span>{item.label}</span>
+                    <span className="heroProgressPct">{item.pct}</span>
+                  </div>
+                  <div className="heroProgressBar">
+                    <div
+                      className={`heroProgressFill ${item.fillClass}`}
+                    />
+                  </div>
+                </div>
               ))}
             </div>
 
-            <button
-              className="hero-arrow hero-arrow-right"
-              onClick={nextSlide}
-              aria-label="Next slide"
-              type="button"
-            >
-              &#10095;
-            </button>
-          </div>
-        </div>
-      </section>
-      
-      <section className="digital-section">
-      <div className="digital-header">
-          <h2>
-            Embark on a <strong>Learning Odyssey</strong> with neuroLxp.
-          </h2>
-
-          <p>
-            We're not just preparing you for tomorrow; we're guiding you to thrive in the rapidly transforming landscape of a digital society. Discover the perfect blend of knowledge, skills, and work readiness in our platform.
-          </p>
-        </div>
-        </section>
-
-      <section className="platform-features">
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaRocket />
-          </div>
-          <h3>AI-Powered Learning</h3>
-          <p>
-            Our AI algorithms personalize learning experiences by adapting to each learner's pace, style, and preferences, ensuring effective and engaging education.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaLightbulb />
-          </div>
-          <h3>Interactive Content</h3>
-          <p>
-            Engage with immersive and interactive content including videos, quizzes, simulations, and gamified elements that make learning fun and effective.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaUsers />
-          </div>
-          <h3>Collaborative Learning</h3>
-          <p>
-            Enhance learning experiences through collaboration with peers, mentors, and industry experts using our integrated communication tools.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaGraduationCap />
-          </div>
-          <h3>Skill Development</h3>
-          <p>
-            Focus on practical skill-building with courses and modules designed to enhance real-world competencies, preparing learners for future careers.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaSyncAlt />
-          </div>
-          <h3>Continuous Learning</h3>
-          <p>
-            Stay ahead with continuous learning opportunities, including up-to-date content and resources that evolve with industry trends and demands.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaChartLine />
-          </div>
-          <h3>Career Pathways</h3>
-          <p>
-            Track progress and explore career opportunities with our career pathway tools, connecting learning outcomes to potential job roles and industries.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaMobileAlt />
-          </div>
-          <h3>Mobile-First Design</h3>
-          <p>
-            Access learning anytime, anywhere with our mobile-first design, ensuring a seamless experience across all devices.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaTools />
-          </div>
-          <h3>Customizable Interface</h3>
-          <p>
-            Personalize your learning environment with customizable interfaces that align with your preferences and enhance your learning journey.
-          </p>
-        </div>
-
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaShieldAlt />
-          </div>
-          <h3>Secure and Scalable</h3>
-          <p>
-            Benefit from a platform that prioritizes security and scalability, ensuring your data is protected and your learning can grow with you.
-          </p>
-        </div>
-      </section>
-
-      <section className="digital-section">
-        <div className="digital-header">
-          <h2>
-            Unlocking Seamless <strong>Digital Narratives.</strong>
-          </h2>
-
-          <p>
-            With our neuroLxps' advanced eLearning, accessibility, and content development services, we're redefining excellence in learning and reshaping the future of education. Embark on a journey of learning that's as seamless as it is enlightening.
-          </p>
-        </div>
-
-        <div>
-          <div className="digital-grid">
-            <div className="digital-item">
-              <div className="icon-circle">
-                <FaBullhorn />
-              </div>
-              <h3>Get Discovered</h3>
-              <p>
-                Increase your brand's visibility with our white label neuroLxp solution, tailored for your L&D requirements, integrate into your legacy systems with course catalogues.
-              </p>
-            </div>
-
-            <div className="digital-item">
-              <div className="icon-circle">
-                <FaCogs />
-              </div>
-              <h3>Deliver Excellence</h3>
-              <p>
-                neuroLxp delivers excellence by offering cutting-edge learning tools, personalized experiences, and insightful analytics that ensure optimal educational outcomes.
-              </p>
-            </div>
-
-            <div className="digital-item">
-              <div className="icon-circle">
-                <FaUsers />
-              </div>
-              <h3>Engage Learners</h3>
-              <p>
-                Drive learner engagement to new heights by leveraging our multi-channel notification systems that guarantee high course completion rates and foster active participation.
-              </p>
-            </div>
-
-            <div className="digital-item">
-              <div className="icon-circle">
-                <FaChartBar />
-              </div>
-              <h3>Insightful Analytics</h3>
-              <p>
-                Leverage powerful analytics and deep learning insights to refine course offerings and enhance learner engagement, ensuring optimal learning and educational outcomes.
-              </p>
+            <div className="heroCardFooter">
+              {heroStats.map((stat) => (
+                <div key={stat.label} className="heroCardStat">
+                  <div className="heroCardStatNum">{stat.num}</div>
+                  <div className="heroCardStatLabel">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section>
-        <div className="ld-container">
-          <div className="ld-image">
-            <Image
-              src="/heroLMS.jpg"
-              alt="L&D with neuroLxp"
-              width={420}
-              height={420}
-            />
-          </div>
+      <div className="divider" />
 
-          <div className="ld-content">
-            <h2>L&amp;D with neuroLxp.</h2>
+      <section className="section">
+        <div className="whatIsGrid">
+          <div>
+            <h2 className="whatIsTitle">What is a Learning Path?</h2>
 
-            <p>
-              Leverage the domain and technical expertise of neuroLxp in enhancing your organization's learning and development endeavors.
+            <p className="bodyText">
+              A <strong>Learning Path</strong> is a structured sequence of learning experiences
+              designed to help individuals progressively build knowledge, develop practical skills,
+              and achieve professional expertise.
             </p>
 
-            <p>
-              Experience the rich tapestry of our dynamic L&D associates for whom innovation is at the forefront and positivity permeates every interaction. Join us in charting a new course for the advancement of learning. Together, we'll shape the future of educational endeavors.
+            <p className="bodyText">
+              Instead of fragmented courses or isolated training sessions, a learning path organizes
+              learning into a logical progression of modules, skills, and competencies.
             </p>
 
-            <span className="ld-sign">Parankumar C.</span>
+            <p className="bodyText">
+              Modern Learning Experience Platforms (LXP) and Learning Management Systems (LMS) use
+              learning paths to guide learners through personalized and goal-oriented learning
+              journeys.
+            </p>
+
+            <p className="listHeading">A well-designed learning path provides:</p>
+            
+            <ul className="checkList">
+              {whatIsItems.map((item) => (
+                <li key={item} className="checkItem">
+                  <span className="checkDot" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="closingStatement">
+              With a learning path, learning becomes purposeful, organized, and outcome-driven.
+            </div>
           </div>
+
+           <div className="whatIsRight">
+              <div className="statsGrid">
+                {statCards.map((stat) => (
+                  <div key={stat.label} className="statCard">
+                    <div className="statNumber">{stat.num}</div>
+                    <div className="statLabel">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="imageWrapperAlt">
+                <Image
+                  src="/photo-1434030216411-0b793f4b4173.jpeg"
+                  alt="Educator using learning analytics technology"
+                  width={520}
+                  height={300}
+                  className="heroImage"
+                />
+              </div>
+            </div>
         </div>
       </section>
 
-      <section className="modules-section">
-        <div className="modules-container">
-          <h2>
-            Future Ready <strong>neuroLxp Modules.</strong>
-          </h2>
+      <div className="divider" />
 
-          <p>
-            Our advanced and adaptable modules within the neuroLxp platform are designed to ensure organizations stay ahead in the rapidly evolving landscape of learning and development.
-          </p>
-
-          <p>
-            These modules are meticulously crafted to meet the dynamic needs of tomorrow's workforce, empowering businesses to cultivate a culture of continuous learning and innovation.
-          </p>
-        </div>
-      </section>
-
-      {/* <section>
-        <div className="cards-container">
-          <div className="learning-card">
-
-            <h3>Learning Journey</h3>
-
-            <p>
-              Embark on a personalized learning journey with our neuroLxp platform. Discover your unique learning style through comprehensive analytics, set personalized goals, and navigate through tailored learning paths to achieve your objectives.
-            </p>
-
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="learning-card">
-
-
-            <h3>Learning Augmentation</h3>
-
-            <p>
-              Experience an enhanced learning journey thru neuroLxp's custom modules. Engage in gamified experiences, interactive activities, and collaborative social learning opportunities with curated content and features designed to augment your learning experience.
-            </p>
-
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="learning-card">
-
-            <h3>Learning Ecosystem</h3>
-
-            <p>
-              Dive into a comprehensive learning ecosystem with neuroLxp's custom assessment and personalization modules. Explore skills and career development opportunities, chart your career path, and undergo assessments for continuous growth and development.
-            </p>
-
-            <button className="learn-btn">Learn More</button>
-          </div>
-        </div>
-      </section> */}
-
-      <section>
-
-         <div className="training-container">
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Onboarding"
-              width={400}
-              height={200}
-            />
-            <h3>Learning Journey</h3>
-            <p>
-              Embark on a personalized learning journey with our neuroLxp platform. Discover your unique learning style through comprehensive analytics, set personalized goals, and navigate through tailored learning paths to achieve your objectives.            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Onboarding"
-              width={400}
-              height={200}
-            />
-            <h3>Learning Augmentation</h3>
-            <p>
-              Experience an enhanced learning journey thru neuroLxp's custom modules. Engage in gamified experiences, interactive activities, and collaborative social learning opportunities with curated content and features designed to augment your learning experience.            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Standards Training"
-              width={400}
-              height={200}
-            />
-            <h3>Learning Ecosystem</h3>
-            <p>
-             Dive into a comprehensive learning ecosystem with neuroLxp's custom assessment and personalization modules. Explore skills and career development opportunities, chart your career path, and undergo assessments for continuous growth and development.            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
+      <section className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">NeuroLXP: Pioneering Scientific Learning Paths</h2>
         </div>
 
-        <div className="training-container">
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Onboarding"
-              width={400}
-              height={200}
-            />
-            <h3>Blended Learning</h3>
-            <p>
-              Integrate the best of both worlds with neuroLxp's Blended Learning module. Combine online and in-person learning to provide a flexible and comprehensive learning experience.
-            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Onboarding"
-              width={400}
-              height={200}
-            />
-            <h3>Onboarding &amp; Induction</h3>
-            <p>
-              Ensure a smooth induction and transition for new hires. Streamline the onboarding process and help new employees integrate seamlessly into your organization.
-            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
-
-          <div className="training-card">
-            <Image
-              src="/heroLMS.jpg"
-              alt="Standards Training"
-              width={400}
-              height={200}
-            />
-            <h3>Standards Training</h3>
-            <p>
-              Maintain high standards with neuroLxp's Standards Training module. Equip your team with the knowledge and skills necessary to meet industry standards and regulations effectively.
-            </p>
-            <button className="learn-btn">Learn More</button>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-section">
-        <div className="contact-card">
-          <div className="contact-text">
-            <h2>Get in touch</h2>
-            <p>
-              If you need any help with our products or services, choose one of the following ways to contact us.
-            </p>
-          </div>
-
-          <button className="contact-btn">
-            <span className="contact-icon">🎧</span>
-            Contact Us
-          </button>
-        </div>
-      </section>
-
-      <section className="download-section">
-        <h2>Ready to change your learning life?</h2>
-
-        <p>
-          Download neuroLxp today and take the first step to organize your
-          learning, achieve your personal goals and reflect on your career.
+        <p className="pioneerBodyText">
+          NeuroLXP is among the first AI-powered learning platforms to introduce scientifically
+          designed learning paths. Unlike traditional LMS platforms that focus mainly on content
+          delivery, NeuroLXP focuses on structured capability development through carefully
+          engineered learning journeys.
         </p>
 
-        <div className="store-buttons">
-  <button className="store-btn" type="button">
-    <span className="icon" aria-hidden="true">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 384 512"
-        width="20"
-        height="20"
-        fill="currentColor"
-      >
-        <path d="M318.7 268.7c-.2-36.7 16.4-64.4 49.9-84.8-18.7-26.6-47-41.3-84.3-44.2-35.3-2.8-73.8 20.6-87.9 20.6-14.8 0-49.4-19.7-79.5-19.1-41 .6-78.7 23.9-99.7 60.4-42.6 73.8-10.9 183 30.6 243 20.3 29.1 44.6 61.8 76.3 60.6 30.6-1.2 42.1-19.7 79-19.7 36.9 0 47.2 19.7 79.6 19.1 33-.6 53.8-29.7 73.9-58.9 23.4-33.7 33-66.3 33.5-68.1-.7-.3-64.3-24.7-64.9-98.9zM259.3 0c-19.1 23.2-31.9 54.2-28.4 85.2 29.3 2.3 58.9-15 77.8-37.7 18.9-22.7 32.3-53.6 28.4-84.5-29.9-2.4-58.7 14.5-77.8 37z" />
-      </svg>
-    </span>
-    <div>
-      <small>Download on the</small>
-      <strong>App Store</strong>
-    </div>
-  </button>
+        <p className="pioneerBodyText">
+          NeuroLXP combines the following pillars to create transformational and career-focused
+          learning:
+        </p>
 
-  <button className="store-btn" type="button">
-    <span className="icon" aria-hidden="true">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        width="20"
-        height="20"
-        fill="currentColor"
-      >
-        <path d="M325.3 234.3L104.6 9.6C96.7 1.8 84.3-1.5 73.3 1.1c-11 2.6-19 10.7-21.5 21.7C48.6 37.3 48 48.2 48 64v384c0 15.8.6 26.7 3.8 41.2 2.5 11 10.5 19.1 21.5 21.7 11 2.6 23.4-.7 31.3-8.5l220.7-224.7c8.9-9 8.9-23.6 0-32.4zM372.5 281.4l53.7 54.7c12 12.2 31.5 12.3 43.7.3 12.2-12 12.3-31.5.3-43.7l-64-65.1 64-65.1c12-12.2 11.9-31.8-.3-43.7-12.2-12-31.7-11.9-43.7.3l-53.7 54.7-34.7 35.3 34.7 35.3z" />
-      </svg>
-    </span>
-    <div>
-      <small>Get it on</small>
-      <strong>Google Play</strong>
-    </div>
-          </button>
+        <div className="pioneerGrid">
+          {pioneerCards.map((card) => (
+            <div key={card.num} className="pioneerCard">
+              <div className="pioneerCardNum">{card.num}</div>
+              <h3 className="pioneerCardTitle">{card.title}</h3>
+              <p className="pioneerCardDesc">{card.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="pioneerDesignBox">
+          <h4 className="pioneerDesignTitle">NeuroLXP Learning Paths are designed using:</h4>
+          <ul className="twoColList">
+            {designedUsing.map((item) => (
+              <li key={item} className="twoColItem">
+                <span className="bulletBar" />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <div className="pioneerClosing">
+            This scientific approach ensures that learning is not just informative, but
+            transformational and career-focused.
+          </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section id="stages" className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">Four Progressive Stages of Mastery</h2>
+        </div>
+
+        <p className="stagesIntroText">
+          NeuroLXP organizes learning into structured stages that gradually build knowledge, skill
+          mastery, and professional capability — from core foundations through to career-ready
+          performance.
+        </p>
+
+        <div className="stagesTimeline">
+          {stages.map((stage) => {
+            const radius = 48;
+            const circumference = 2 * Math.PI * radius;
+            const offset = circumference - (stage.progress / 100) * circumference;
+            const progressColors: Record<string, string> = {
+              circle1: '#5e72e4', circle2: '#7c3aed', circle3: '#00b4d8', circle4: '#10b981',
+            };
+            const color = progressColors[stage.circleClass] ?? '#5e72e4';
+            return (
+            <div key={stage.tag} className="stageRow">
+              <div className="stageMarker">
+                <div className="stageCircle">
+                  <div
+                    className={`stageCircleInner ${stage.circleClass}`}
+                  />
+                </div>
+              </div>
+
+              <div className="stageBody">
+                <div className='stageBodyInner'>
+                  <div className='stageContent'>
+                    <span className={`stageTag ${stage.tagClass}`}>{stage.tag}</span>
+                    <h3 className="stageTitle">{stage.title}</h3>
+                    <p className="stageSubtitle">{stage.subtitle}</p>
+                    <ul className="stageList">
+                      {stage.items.map((item) => (
+                        <li key={item} className="stageListItem">
+                          <span className={`stageDot ${stage.dotClass}`} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="stageClosing">{stage.closing}</p>
+                  </div>
+
+                  <div className='stagePanel'>
+                    <div className='stagePanelRing'>
+                      <svg width="120" height="120" viewBox="0 0 120 120">
+                        <circle cx="60" cy="60" r={radius} fill="none" stroke="var(--neu-shadow-dark)" strokeWidth="10" />
+                        <circle
+                          cx="60" cy="60" r={radius} fill="none"
+                          stroke={color} strokeWidth="10"
+                          strokeDasharray={circumference}
+                          strokeDashoffset={offset}
+                          strokeLinecap="round"
+                          transform="rotate(-90 60 60)"
+                          style={{ transition: 'stroke-dashoffset 0.8s ease' }}
+                        />
+                      </svg>
+                      <div className='stagePanelRingLabel'>
+                        <span className='stagePanelPct' style={{color}}>{stage.progress}%</span>
+                        <span className='stagePanelPctSub'>Mastery</span>
+                      </div>
+                    </div>
+
+                    <div className='stagePanelStats'>
+                      <div className='stagePanelStat'>
+                        <span className='stagePanelStatNum' style={{ color }}>{stage.modules}</span>
+                        <span className='stagePanelStatLabel'>Modules</span>
+                      </div>
+                      <div className='stagePanelStatDivider' />
+                      <div className="stagePanelStat">
+                        <span className="stagePanelStatNum" style={{ color }}>{stage.duration}</span>
+                        <span className="stagePanelStatLabel">Duration</span>
+                      </div>
+                    </div>
+
+                    <div className='stagePanelTags'>
+                      {stage.skills.map((skill) => (<span key={skill} className='stagePanelTag'>{skill}</span>))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          );})}
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">
+            Bringing Structure and Discipline to the Learning Process
+          </h2>
+        </div>
+
+        <p className="structureIntroText">
+          A structured learning path introduces clarity, discipline, and measurable progress into
+          the learning journey. NeuroLXP Learning Paths help establish:
+        </p>
+
+        <div className="milestoneGrid">
+          {milestones.map((m) => {
+            const Icon = m.icon;
+
+            return (
+              <div key={m.title} className="milestoneCard">
+                <div className="milestoneIconBox">
+                  <div
+                    className={`milestoneIconInner ${m.iconClass}`}
+                  >
+                    <Icon size={20} color={m.iconColor} />
+                  </div>
+                </div>
+                <h4 className="milestoneTitle">{m.title}</h4>
+                <p className="milestoneDesc">{m.desc}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="structureClosing">
+          This structured environment enables learners to stay focused, motivated, and committed
+          while progressing steadily toward knowledge mastery and career growth.
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section id="benefits" className="section">
+        <div className="sectionHeader">
+          <h2 className="sectionTitle">Benefits of NeuroLXP Learning Paths</h2>
+          <p className="sectionDesc">
+            Whether you are a learner, an academic institution, or a corporate training
+            organization — NeuroLXP Learning Paths deliver measurable, transformational impact.
+          </p>
+        </div>
+
+        <div className="benefitsTabs">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`tabBtn ${activeTab === tab.id ? "tabBtnActive" : ''}`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="benefitsTabContent">
+          <div className="benefitsLeft">
+            <h3 className="benefitsLeftTitle">{activeData.title}</h3>
+            <p className="benefitsLeftSub">{activeData.subtitle}</p>
+            <ul className="benefitsCheckList">
+              {activeData.items.map((item) => (
+                <li key={item.text} className="benefitsCheckItem">
+                  <span className="benefitsCheck">
+                    <span className="benefitsCheckMark" />
+                  </span>
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="benefitsRight">
+            <div className="benefitsRightLabel">Key Outcome</div>
+            <div className="benefitsClosingBox">{activeData.closing}</div>
+
+            <div className="imageWrapperAlt">
+                <Image src="/photo-1509062522246-3755977927d7.jpeg"
+                  alt="Educator using learning analytics technology"
+                  width={520} height={300} className="heroImage" />
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section className="section">
+        <div className="designedCard">
+          <div>
+            <h2 className="designedTitle">Designed for Systematic Learning</h2>
+
+            <p className="bodyText">
+              Unlike traditional LMS courses that deliver isolated content, NeuroLXP courses are
+              designed as part of integrated learning ecosystems.
+            </p>
+
+            <p className="bodyText">
+              Every NeuroLXP Learning Path includes:
+            </p>
+
+            <ul className="featureList">
+              {ecosystemItems.map((item) => (
+                <li key={item.title} className="featureItem">
+                  <span className="featureCheck">
+                    <span className="featureCheckMark" />
+                  </span>
+                  <span>
+                    <strong>{item.title}</strong>
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="designedClosing">
+              This ensures that every learning activity contributes to a larger journey of growth,
+              mastery, and professional development.
+            </div>
+          </div>
+
+          <div>
+            <div className="ecosystemList">
+              {ecosystemItems.map((item) => (
+                <div key={item.title} className="ecosystemItem">
+                  <span className="ecosystemDot" />
+                  <div>
+                    <div className="ecosystemItemTitle">{item.title}</div>
+                    <div className="ecosystemItemDesc">{item.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div className="divider" />
+
+      <section className="section">
+        <div className="futureBanner">
+          <div className="futureBannerContent">
+            <h2 className="futureBannerTitle">The Future of Learning is Structured</h2>
+
+            <p className="futureBannerBody">
+              As knowledge continues to grow in complexity, the need for structured learning design,
+              competency-based training, and personalized learning paths becomes increasingly important.{` `}
+              {!futureExpanded && (
+                <a className="lnkToggle" onClick={() => setFutureExpanded(true)}>
+                  More▼
+                </a>
+              )}
+            </p>
+
+            {futureExpanded && (
+              <p className="futureBannerBodyLast">
+                NeuroLXP is proud to pioneer a scientific learning path model that brings clarity,
+                structure, and purpose to digital learning. Through NeuroLXP Learning Paths, education evolves from isolated learning events into
+                a guided journey toward expertise and career readiness. Experience the future of AI-powered learning platforms, structured learning paths,
+                and competency-based digital education with NeuroLXP.{` `}
+                <a className="lnkToggle" onClick={() => setFutureExpanded(false)}>
+                  Less ▲
+                </a>
+              </p>
+            )}
+
+            <div className="futureBannerActions">
+              <button className="btnWhite">Discover the Power of Structured Learning</button>
+              <button className="btnOutlineWhite">Explore Learning Paths</button>
+            </div>
+          </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default LearningPaths;
