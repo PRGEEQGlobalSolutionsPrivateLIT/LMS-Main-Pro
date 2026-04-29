@@ -1,7 +1,14 @@
 "use client";
 
 import { FormEvent, useState, useEffect } from "react";
-import { User, Mail, Phone, Target, X, CheckCircle } from "lucide-react";
+import {
+  FaUser,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaBullseye,
+  FaTimes,
+  FaCheckCircle,
+} from "react-icons/fa";
 import { NeumorphicInput, NeumorphicTextarea } from "./components/Input";
 import "./page.css";
 
@@ -63,9 +70,13 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
       ...prev,
       [field]: value,
     }));
+
     // Clear error when user starts typing
     if (errors[field as keyof ValidationErrors]) {
-      setErrors((prev) => ({ ...prev, [field]: undefined }));
+      setErrors((prev) => ({
+        ...prev,
+        [field]: undefined,
+      }));
     }
   };
 
@@ -105,6 +116,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
 
     if (validate()) {
       setSubmitted(true);
+
       // Auto-close after showing success message
       setTimeout(() => {
         setSubmitted(false);
@@ -146,7 +158,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
           onClick={handleClose}
           aria-label="Close modal"
         >
-          <X size={20} strokeWidth={2} />
+          <FaTimes size={16} />
         </button>
 
         {!submitted ? (
@@ -174,7 +186,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   onChange={(event) => handleChange("name", event.target.value)}
                   placeholder="Enter your full name"
                   error={errors.name}
-                  icon={<User size={18} strokeWidth={1.5} />}
+                  icon={<FaUser size={16} />}
                   required
                 />
 
@@ -186,7 +198,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   onChange={(event) => handleChange("email", event.target.value)}
                   placeholder="Enter your email address"
                   error={errors.email}
-                  icon={<Mail size={18} strokeWidth={1.5} />}
+                  icon={<FaEnvelope size={16} />}
                   required
                 />
 
@@ -198,7 +210,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   onChange={(event) => handleChange("phone", event.target.value)}
                   placeholder="Enter 10-digit mobile number"
                   error={errors.phone}
-                  icon={<Phone size={18} strokeWidth={1.5} />}
+                  icon={<FaPhoneAlt size={16} />}
                   required
                   maxLength={10}
                   onKeyPress={(event) => {
@@ -217,7 +229,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                   }
                   placeholder="Describe what you'd like to see in the demo..."
                   error={errors.interest}
-                  icon={<Target size={18} strokeWidth={1.5} />}
+                  icon={<FaBullseye size={16} />}
                   required
                   rows={4}
                   maxLength={300}
@@ -236,6 +248,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
                     <span className="requiredStar">*</span>
                   </span>
                 </label>
+
                 {errors.consent && (
                   <span className="fieldError">⚠️ {errors.consent}</span>
                 )}
@@ -250,7 +263,7 @@ export default function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
           /* Success Message */
           <div className="successMessage">
             <div className="successIcon">
-              <CheckCircle size={48} strokeWidth={2} />
+              <FaCheckCircle size={44} />
             </div>
             <h3>Demo Booked Successfully!</h3>
             <p>
