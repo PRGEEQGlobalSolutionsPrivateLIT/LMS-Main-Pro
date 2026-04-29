@@ -21,6 +21,8 @@ interface FormState {
   consent: boolean;
 }
 
+type FormErrors = Partial<Record<keyof FormState, string>>;
+
 const interestOptions = [
   "Product demo",
   "Pricing details",
@@ -203,7 +205,7 @@ const NeumorphicSelect = ({
 
 export default function TalkToOurExpertPage() {
   const [form, setForm] = useState<FormState>(initialForm);
-  const [errors, setErrors] = useState<Partial<FormState>>({});
+  const [errors, setErrors] = useState<FormErrors>({});
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (field: keyof FormState, value: string | boolean) => {
@@ -219,7 +221,7 @@ export default function TalkToOurExpertPage() {
   };
 
   const validate = () => {
-    const nextErrors: Partial<FormState> = {};
+    const nextErrors: FormErrors = {};
 
     if (!form.name.trim()) {
       nextErrors.name = "Full name is required.";
