@@ -26,7 +26,7 @@ export default function GenZGalaxyPage() {
           <div className="hero-image-wrap">
             <div className="hero-image-card neu-card-inner">
               <Image
-                src="/dummy-genzgalaxy.jpg"
+                src="/GenZgalaxy-learning-illustration.jpeg"
                 alt="GenZgalaxy learning illustration"
                 width={700}
                 height={520}
@@ -107,7 +107,7 @@ export default function GenZGalaxyPage() {
           <div className="feature-side">
             <div className="mini-card neu-card">
               <img
-                src="https://via.placeholder.com/600x350?text=GenZgalaxy+Learning+Experience"
+                src="/GenZgalaxy-Learning.jpeg"
                 alt="GenZgalaxy Learning"
                 className="feature-placeholder"
               />
