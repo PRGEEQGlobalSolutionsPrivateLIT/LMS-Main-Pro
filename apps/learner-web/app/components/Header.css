@@ -27,6 +27,7 @@ body {
   background: var(--neu-bg);
   font-family: "Segoe UI", sans-serif;
   color: var(--neu-text);
+  padding-top: 62px;
 }
 
 /* ================= HEADER ================= */
@@ -34,8 +35,10 @@ body {
   display: flex;
   align-items: center;
   padding: 10px 14px 10px 18px;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 3000;
   background: var(--neu-bg);
   border-bottom: 1px solid var(--neu-border);
@@ -350,6 +353,10 @@ body {
 
 /* ================= MOBILE ================= */
 @media (max-width: 900px) {
+  body {
+    padding-top: 60px;
+  }
+
   .header {
     min-height: 60px;
   }
@@ -615,7 +622,6 @@ body {
     -7px -7px 14px rgba(255, 255, 255, 0.95);
 }
 
-
 /* ================= RIGHT SIDE VERTICAL FLOATING BUTTONS ================= */
 
 .floating-action-buttons {
@@ -640,9 +646,10 @@ body {
   align-items: center;
   justify-content: center;
 
-  border: none;
+  border: 1px solid var(--neu-border-soft);
   border-radius: 14px 0 0 14px;
-  background: var(--neu-surface-soft);
+
+  background: var(--neu-bg);
   color: var(--neu-blue-dark);
 
   font-size: 13px;
@@ -654,37 +661,39 @@ body {
   text-orientation: mixed;
 
   box-shadow:
-    5px 5px 12px rgba(200, 202, 209, 0.85),
-    -5px -5px 12px rgba(255, 255, 255, 0.95);
+    5px 5px 12px var(--neu-shadow-mid),
+    -5px -5px 12px var(--neu-shadow-light);
 
   transition:
-    box-shadow 0.2s ease,
-    background 0.2s ease,
+    background-color 0.2s ease,
     color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .demo-btn,
 .expert-btn {
-  background: var(--neu-surface-soft);
+  background: var(--neu-bg);
   color: var(--neu-blue-dark);
 }
 
 /* HOVER */
 .floating-btn:hover {
-  background: var(--neu-surface);
+  background: var(--neu-surface-soft);
+  color: var(--neu-blue-dark);
   transform: translateX(-3px);
   box-shadow:
-    inset 4px 4px 8px rgba(200, 202, 209, 0.8),
-    inset -4px -4px 8px rgba(255, 255, 255, 0.95);
+    inset 4px 4px 8px var(--neu-shadow-mid),
+    inset -4px -4px 8px var(--neu-shadow-light);
 }
 
 /* ACTIVE */
 .floating-btn:active {
+  background: var(--neu-bg);
   transform: translateX(-1px) scale(0.98);
   box-shadow:
-    inset 6px 6px 12px rgba(200, 202, 209, 0.9),
-    inset -6px -6px 12px rgba(255, 255, 255, 0.85);
+    inset 6px 6px 12px var(--neu-shadow-mid),
+    inset -6px -6px 12px var(--neu-shadow-light);
 }
 
 /* ================= TABLET ================= */
