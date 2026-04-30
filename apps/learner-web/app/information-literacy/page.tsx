@@ -44,7 +44,7 @@ export default function InformationLiteracyPage() {
     <main className="information-literacy-page page">
       <section className="heroSection">
         <div className="heroGrid">
-          <div >
+          <div>
             <div className="eyebrow">NeuroLXP</div>
 
             <h1 className="heroTitle">Information Literacy</h1>
@@ -73,8 +73,12 @@ export default function InformationLiteracyPage() {
 
           <div>
             <div className="imagePlaceholder">
-              <span className="imageLabel">Image Placeholder 01</span>
-            </div>
+            <img
+              src="/Information-Literacy.png"
+              alt="Information literacy learning"
+              className="placeholderImage"
+            />
+          </div>
 
             <div className="floatingStats">
               <div className="statPill">
@@ -94,132 +98,140 @@ export default function InformationLiteracyPage() {
         </div>
       </section>
 
-      <section className="cardsSection">
-        <article className="contentCard">
-          <div className="cardHeader">
+      <section className="cardsSection cardsSectionAligned">
+        <article className="contentCard alignedContentCard">
+          <div className="cardHeader alignedCardHeader">
             <div className="iconWrap">
               <FaCheckCircle className="iconText" />
             </div>
             <h3>Understanding and Evaluating Information</h3>
           </div>
 
-          <p>
-            Learners today encounter information from multiple sources such as
-            websites, social media, research publications, and digital
-            platforms. Information literacy teaches learners how to evaluate the
-            reliability, relevance, and authenticity of these sources.
-          </p>
+          <div className="cardBody">
+            <p>
+              Learners today encounter information from multiple sources such as
+              websites, social media, research publications, and digital
+              platforms. Information literacy teaches learners how to evaluate
+              the reliability, relevance, and authenticity of these sources.
+            </p>
 
-          <div className="insetBox">
-            <h4>Key competencies include:</h4>
-            <ul className="featureList">
-              {understandingPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="insetBox alignedInsetBox">
+              <h4>Key competencies include:</h4>
+              <ul className="featureList">
+                {understandingPoints.map((item) => (
+                  <li key={item}>
+                    <span className="listIcon">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p>
+              These skills help learners make informed decisions and avoid
+              misinformation.
+            </p>
           </div>
-
-          <p>
-            These skills help learners make informed decisions and avoid
-            misinformation.
-          </p>
         </article>
 
-        <article className="contentCard">
-          <div className="cardHeader">
+        <article className="contentCard alignedContentCard">
+          <div className="cardHeader alignedCardHeader">
             <div className="iconWrap">
               <FaBookOpen className="iconText" />
             </div>
             <h3>Effective Research and Knowledge Discovery</h3>
           </div>
 
-          <p>
-            Information literacy enables learners to develop strong research
-            skills that support academic, professional, and personal growth.
-          </p>
+          <div className="cardBody">
+            <p>
+              Information literacy enables learners to develop strong research
+              skills that support academic, professional, and personal growth.
+            </p>
 
-          <div className="insetBox">
-            <h4>Through structured guidance, learners learn how to:</h4>
-            <ul className="featureList">
-              {researchPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="insetBox alignedInsetBox">
+              <h4>Through structured guidance, learners learn how to:</h4>
+              <ul className="featureList">
+                {researchPoints.map((item) => (
+                  <li key={item}>
+                    <span className="listIcon">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p>
+              These capabilities help learners build deeper understanding and
+              develop analytical thinking skills.
+            </p>
           </div>
-
-          <p>
-            These capabilities help learners build deeper understanding and
-            develop analytical thinking skills.
-          </p>
         </article>
 
-        <article className="contentCard">
-          <div className="cardHeader">
+        <article className="contentCard alignedContentCard">
+          <div className="cardHeader alignedCardHeader">
             <div className="iconWrap">
               <FaCompass className="iconText" />
             </div>
             <h3>Ethical and Responsible Use of Information</h3>
           </div>
 
-          <p>
-            Using information responsibly is a key component of information
-            literacy. Learners must understand the importance of respecting
-            intellectual property, citing sources, and avoiding plagiarism.
-          </p>
+          <div className="cardBody">
+            <p>
+              Using information responsibly is a key component of information
+              literacy. Learners must understand the importance of respecting
+              intellectual property, citing sources, and avoiding plagiarism.
+            </p>
 
-          <div className="insetBox">
-            <h4>Information literacy training helps learners practice:</h4>
-            <ul className="featureList">
-              {ethicalPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="insetBox alignedInsetBox">
+              <h4>Information literacy training helps learners practice:</h4>
+              <ul className="featureList">
+                {ethicalPoints.map((item) => (
+                  <li key={item}>
+                    <span className="listIcon">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <p>
+              These practices promote responsible knowledge creation and
+              collaboration.
+            </p>
           </div>
-
-          <p>
-            These practices promote responsible knowledge creation and
-            collaboration.
-          </p>
         </article>
 
-        <article className="contentCard">
-          <div className="cardHeader">
+        <article className="contentCard alignedContentCard">
+          <div className="cardHeader alignedCardHeader">
             <div className="iconWrap">
               <FaGraduationCap className="iconText" />
             </div>
             <h3>Supporting Education and Lifelong Learning</h3>
           </div>
 
-          <p>
-            Information literacy is an essential skill for students,
-            professionals, and lifelong learners. By strengthening the ability
-            to search, analyze, and interpret information, learners become more
-            confident and capable in both academic and professional
-            environments.
-          </p>
+          <div className="cardBody">
+            <p>
+              Information literacy is an essential skill for students,
+              professionals, and lifelong learners. By strengthening the ability
+              to search, analyze, and interpret information, learners become
+              more confident and capable in both academic and professional
+              environments.
+            </p>
 
-          <div className="insetBox">
-            <h4>
-              Institutions can use NeuroLXP to deliver structured information
-              literacy programs that support:
-            </h4>
-            <ul className="featureList">
-              {lifelongLearningPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="insetBox alignedInsetBox">
+              <h4>
+                Institutions can use NeuroLXP to deliver structured information
+                literacy programs that support:
+              </h4>
+              <ul className="featureList">
+                {lifelongLearningPoints.map((item) => (
+                  <li key={item}>
+                    <span className="listIcon">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </article>
       </section>
@@ -227,7 +239,7 @@ export default function InformationLiteracyPage() {
       <section className="highlightSection">
         <div className="highlightGrid">
           <div className="highlightTextCard">
-            <div className="cardHeader">
+            <div className="cardHeader alignedCardHeader">
               <div className="iconWrap">
                 <FaBrain className="iconText" />
               </div>
@@ -258,9 +270,13 @@ export default function InformationLiteracyPage() {
           </div>
 
           <div className="secondaryVisualCard">
-            <div className="imagePlaceholderAlt">
-              <span className="imageLabel">Image Placeholder 02</span>
-            </div>
+          <div className="imagePlaceholderAlt">
+            <img
+              src="/NeuroLXP-Enabling-Smarter-Information-Literacy.png"
+              alt="Information literacy visual"
+              className="placeholderImage"
+            />
+          </div>
           </div>
         </div>
       </section>
