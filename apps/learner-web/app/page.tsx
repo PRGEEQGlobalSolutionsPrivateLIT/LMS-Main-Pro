@@ -21,19 +21,16 @@ import {
 export default function Home() {
   const slides = [
     {
-      image: "/Comprehensive-Learning-Management-System.png",
+      image: "/pexels-darlene-alderson-4384864.jpg",
       title: "Comprehensive Learning Management System",
-      desc: "Manage all your learning activities seamlessly with neuroLxp's robust LMS capabilities. From course creation to learner tracking, our platform provides all the tools you need to deliver effective education and training.",
     },
     {
-      image: "/Personalized-Learning-Experience.png",
+      image: "/huzefa-pithawala-kerK4xolE4o-unsplash.jpg",
       title: "Personalized Learning Experience",
-      desc: "Enhance learner engagement with neuroLxp's LXP features. Our platform delivers personalized learning paths, tailored content, and interactive experiences to meet each learner's unique needs and preferences.",
     },
     {
-      image: "/Advanced-Learning-Record-Store.png",
+      image: "/pexels-karola-g-5908764.jpg",
       title: "Advanced Learning Record Store",
-      desc: "Capture and analyze all learning activities across multiple platforms with neuroLxp's LRS. Our platform ensures you have a comprehensive view of your learners' progress and performance, enabling data-driven decisions",
     },
   ];
 
@@ -67,7 +64,7 @@ export default function Home() {
 
             <div className="hero-overlay">
               <h2>{slides[current].title}</h2>
-              <p>{slides[current].desc}</p>
+              {/* <p>{slides[current].desc}</p> */}
             </div>
 
             <div className="hero-dots">
@@ -97,7 +94,7 @@ export default function Home() {
       <section className="digital-section">
       <div className="digital-header">
           <h2>
-            Embark on a <strong>Learning Odyssey</strong> with neuroLxp.
+            Embark on a <strong>Learning Odyssey</strong> with neuroLxp
           </h2>
 
           <p>
@@ -201,7 +198,7 @@ export default function Home() {
       <section className="digital-section">
         <div className="digital-header">
           <h2>
-            Unlocking Seamless <strong>Digital Narratives.</strong>
+            Unlocking Seamless <strong>Digital Narratives</strong>
           </h2>
 
           <p>
@@ -254,37 +251,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <div className="ld-container">
-          <div className="ld-image">
-            <Image
-              src="/heroLMS.jpg"
-              alt="L&D with neuroLxp"
-              width={420}
-              height={420}
-            />
-          </div>
+      <section className="ld-section">
+  <div className="ld-container">
+    <div className="ld-image">
+      <div className="ld-image-frame">
+        <Image
+          src="/L&D-with-neuroLxp.jpeg"
+          alt="L&D with neuroLxp"
+          width={420}
+          height={420}
+        />
+      </div>
+    </div>
 
-          <div className="ld-content">
-            <h2>L&amp;D with neuroLxp.</h2>
+    <div className="ld-content">
+      <h2>L&amp;D with neuroLxp</h2>
 
-            <p>
-              Leverage the domain and technical expertise of neuroLxp in enhancing your organization's learning and development endeavors.
-            </p>
+      <p>
+        Leverage the domain and technical expertise of neuroLxp in enhancing your organization's learning and development endeavors.
+      </p>
 
-            <p>
-              Experience the rich tapestry of our dynamic L&D associates for whom innovation is at the forefront and positivity permeates every interaction. Join us in charting a new course for the advancement of learning. Together, we'll shape the future of educational endeavors.
-            </p>
+      <p>
+        Experience the rich tapestry of our dynamic L&D associates for whom innovation is at the forefront and positivity permeates every interaction. Join us in charting a new course for the advancement of learning. Together, we'll shape the future of educational endeavors.
+      </p>
 
-            <span className="ld-sign">Parankumar C.</span>
-          </div>
-        </div>
-      </section>
+      <span className="ld-sign">Parankumar C.</span>
+    </div>
+  </div>
+</section>
 
       <section className="modules-section">
         <div className="modules-container">
           <h2>
-            Future Ready <strong>neuroLxp Modules.</strong>
+            Future Ready <strong>neuroLxp Modules</strong>
           </h2>
 
           <p>
@@ -302,7 +301,7 @@ export default function Home() {
          <div className="training-container">
           <div className="training-card">
             <Image
-              src="/Learning Journey -- home.png"
+              src="/Learning-Journey.jpeg"
               alt="Onboarding"
               width={400}
               height={200}
@@ -315,7 +314,7 @@ export default function Home() {
 
           <div className="training-card">
             <Image
-              src="/Learning Augmentation.png"
+              src="/Learning-Augmentation.png"
               alt="Onboarding"
               width={400}
               height={200}
@@ -328,7 +327,7 @@ export default function Home() {
 
           <div className="training-card">
             <Image
-              src="/Learning Ecosystem.png"
+              src="/Learning-Ecosystem.png"
               alt="Standards Training"
               width={400}
               height={200}
@@ -343,7 +342,7 @@ export default function Home() {
         <div className="training-container">
           <div className="training-card">
             <Image
-              src="/Blended Learning.png"
+              src="/Blended-Learning.png"
               alt="Onboarding"
               width={400}
               height={200}
@@ -357,7 +356,7 @@ export default function Home() {
 
           <div className="training-card">
             <Image
-              src="/Onboarding & Induction.png"
+              src="/Onboarding-&-Induction.png"
               alt="Onboarding"
               width={400}
               height={200}
@@ -371,7 +370,7 @@ export default function Home() {
 
           <div className="training-card">
             <Image
-              src="/Standards Training.png"
+              src="/Standards-Training.png"
               alt="Standards Training"
               width={400}
               height={200}
