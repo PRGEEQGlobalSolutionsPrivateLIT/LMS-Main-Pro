@@ -1,31 +1,35 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   FaGraduationCap,
   FaBookOpen,
   FaChartLine,
   FaBriefcase,
   FaMobileAlt,
-  FaLightbulb,
+  FaBrain,
   FaUsers,
   FaCheckCircle,
   FaArrowRight,
   FaPlay,
   FaLaptopCode,
-  FaBrain,
+  FaRocket,
+  FaShieldAlt,
 } from 'react-icons/fa';
 import './HigherEducation.css';
 
+const heroIllustration = '/Modern-Learning.jpg';
+
 export const metadata: Metadata = {
-  title: 'Higher Education Solutions | Industries We Serve',
+  title: 'Higher Education Solutions | NeuroLXP',
   description:
-    'Transform higher education with our modern, integrated learning management platform designed for universities and colleges. Comprehensive features for teaching, learning, and institutional growth.',
+    'Transform higher education with NeuroLXP — a modern, AI-powered learning experience platform designed for universities and colleges.',
   keywords:
     'higher education, university LMS, college learning management, online education, blended learning, institutional analytics',
   openGraph: {
-    title: 'Higher Education Solutions | Industries We Serve',
+    title: 'Higher Education Solutions | NeuroLXP',
     description:
-      'Empower universities and colleges with integrated learning management solutions.',
+      'Empower universities and colleges with intelligent, integrated learning management solutions.',
     type: 'website',
   },
 };
@@ -45,6 +49,18 @@ interface Benefit {
   description: string;
 }
 
+interface FeatureItem {
+  id: number;
+  icon: React.ReactNode;
+  text: string;
+}
+
+interface MiniCard {
+  id: number;
+  icon: React.ReactNode;
+  label: string;
+}
+
 export default function HigherEducationPage() {
   const challenges: Challenge[] = [
     {
@@ -52,45 +68,45 @@ export default function HigherEducationPage() {
       icon: <FaBookOpen className="challengeIcon" />,
       challenge: 'Passive Learning in Traditional Classrooms',
       description:
-        'Traditional lecture-based teaching often results in passive learning where students absorb information but do not actively engage with it.',
+        'Traditional lecture-based teaching often results in passive learning where students absorb information without active engagement.',
       solution:
-        'NeuroLXP introduces interactive learning experiences such as gamified activities, simulations, quizzes, discussion forums, and collaborative learning modules. These features encourage students to actively participate and improve knowledge retention.',
+        'NeuroLXP introduces interactive learning experiences — gamified activities, simulations, quizzes, discussion forums, and collaborative modules — encouraging students to actively participate and dramatically improve knowledge retention.',
     },
     {
       id: 2,
       icon: <FaLaptopCode className="challengeIcon" />,
       challenge: 'Managing Large Volumes of Learning Content',
       description:
-        'Universities manage extensive academic materials including lecture notes, videos, research papers, and study resources.',
+        'Universities manage extensive academic materials: lecture notes, videos, research papers, and study resources spread across disconnected systems.',
       solution:
-        'NeuroLXP provides a centralized content management system that allows institutions to organize, manage, and distribute learning resources efficiently. AI-powered tools can also convert long study materials into summaries, exam-oriented content, and interactive learning modules.',
+        'NeuroLXP provides a centralized content management system to organize and distribute resources efficiently. AI-powered tools convert lengthy materials into concise summaries, exam-oriented content, and interactive modules.',
     },
     {
       id: 3,
       icon: <FaChartLine className="challengeIcon" />,
       challenge: 'Tracking Student Progress and Performance',
       description:
-        'Educators often struggle to monitor student engagement, learning progress, and academic performance across large student populations.',
+        'Educators struggle to monitor engagement, learning progress, and academic performance across large, diverse student populations.',
       solution:
-        'NeuroLXP\'s learning analytics and reporting tools provide real-time insights into student progress, course completion rates, assessment performance, and engagement levels. These data-driven insights help educators identify learning gaps and provide targeted support.',
+        'Real-time analytics and reporting tools deliver instant insights into course completion rates, assessment performance, and engagement levels — helping educators identify gaps and provide targeted, timely support.',
     },
     {
       id: 4,
       icon: <FaBriefcase className="challengeIcon" />,
       challenge: 'Preparing Students for Real-World Careers',
       description:
-        'Higher education institutions increasingly focus on preparing students for the workforce by developing practical skills and career readiness.',
+        'Higher education must bridge the gap between academic knowledge and the practical competencies employers demand in a rapidly evolving job market.',
       solution:
-        'NeuroLXP supports career pathways, skill-based learning programs, and industry-aligned courses that help students develop job-ready competencies. Institutions can design learning journeys that connect academic knowledge with real-world applications.',
+        'NeuroLXP supports career pathways, skill-based learning programs, and industry-aligned courses. Institutions can design learning journeys that directly connect academic knowledge with real-world professional applications.',
     },
     {
       id: 5,
       icon: <FaMobileAlt className="challengeIcon" />,
       challenge: 'Delivering Flexible Learning Experiences',
       description:
-        'Modern students expect learning experiences that are accessible anytime and from any device.',
+        'Modern students expect learning that is accessible anytime, from any device, with seamless transitions between physical and digital environments.',
       solution:
-        'NeuroLXP supports mobile learning, blended learning models, and microlearning formats, allowing students to learn at their own pace while staying connected to instructors and peers.',
+        'NeuroLXP supports mobile learning, blended learning models, and microlearning formats — allowing students to learn at their own pace while staying connected to instructors and peers across all touchpoints.',
     },
   ];
 
@@ -99,129 +115,239 @@ export default function HigherEducationPage() {
       id: 1,
       icon: <FaGraduationCap className="benefitIcon" />,
       title: 'Engaging Digital & Blended Learning',
-      description: 'Deliver engaging digital and blended learning programs that enhance student participation',
+      description:
+        'Deliver immersive digital and blended programs that drive meaningful student participation and outcomes.',
     },
     {
       id: 2,
       icon: <FaUsers className="benefitIcon" />,
       title: 'Improved Student Engagement',
-      description: 'Improve student engagement and participation through interactive learning tools',
+      description:
+        'Boost engagement through interactive tools, social learning features, and personalized learning paths.',
     },
     {
       id: 3,
       icon: <FaBrain className="benefitIcon" />,
       title: 'AI-Powered Learning Resources',
-      description: 'Provide AI-powered learning resources and assessments for personalized education',
+      description:
+        'Leverage intelligent content generation and adaptive assessments for truly personalized education at scale.',
     },
     {
       id: 4,
       icon: <FaChartLine className="benefitIcon" />,
       title: 'Advanced Analytics',
-      description: 'Monitor student performance through advanced analytics and real-time insights',
+      description:
+        'Monitor student performance with real-time dashboards, predictive insights, and actionable reporting.',
     },
     {
       id: 5,
       icon: <FaBriefcase className="benefitIcon" />,
       title: 'Career Development',
-      description: 'Support career development and skill-based learning for workforce readiness',
+      description:
+        'Support students with skill-based learning programs and industry-aligned pathways to workforce readiness.',
     },
     {
       id: 6,
       icon: <FaCheckCircle className="benefitIcon" />,
       title: 'Scalable Digital Education',
-      description: 'Scale digital education across large student populations efficiently',
+      description:
+        'Efficiently scale digital education initiatives across thousands of students without compromising quality.',
     },
+  ];
+
+  const featureItems: FeatureItem[] = [
+    { id: 1, icon: <FaBrain />, text: 'AI-powered content summarization and quiz generation' },
+    { id: 2, icon: <FaChartLine />, text: 'Real-time student progress tracking dashboards' },
+    { id: 3, icon: <FaMobileAlt />, text: 'Mobile-first, responsive learning environment' },
+    { id: 4, icon: <FaShieldAlt />, text: 'Enterprise-grade security and data compliance' },
+    { id: 5, icon: <FaRocket />, text: 'Seamless integration with existing campus systems' },
+  ];
+
+  const miniCards: MiniCard[] = [
+    { id: 1, icon: <FaGraduationCap />, label: 'Smart Assessments' },
+    { id: 2, icon: <FaChartLine />, label: 'Live Analytics' },
+    { id: 3, icon: <FaUsers />, label: 'Collaboration Hubs' },
+    { id: 4, icon: <FaBrain />, label: 'AI Tutoring' },
   ];
 
   return (
     <main className="neumorphic-page">
-      {/* Hero Section */}
       <section className="hero">
         <div className="heroContent">
-          <h1 className="heroTitle">Higher Education</h1>
-          <p className="heroSubtitle">
-            Empowering Universities and Colleges with Modern Learning Experiences
-          </p>
+          <div className="heroGrid">
+            <div className="heroText">
+              <div className="heroBadge">
+                <span className="badge-label">
+                  <span className="badge-dot" />
+                  Higher Education Solutions
+                </span>
+              </div>
 
-          <div className="heroButtons">
-            <button className="btn">
-              <span>Request Demo</span>
-              <FaArrowRight className="btnIcon" />
-            </button>
-            <button className="btn">
-              <FaPlay className="btnIcon" />
-              <span>Watch Overview</span>
-            </button>
+              <h1 className="heroTitle">
+                Empowering Universities with <span className="accent-word">Modern Learning</span>
+              </h1>
+
+              <p className="heroSubtitle">
+                NeuroLXP delivers an AI-powered Learning Experience Platform built exclusively for higher education — enabling engaging, scalable, and outcome-driven digital campuses.
+              </p>
+
+              <div className="heroButtons">
+                <button className="btn">
+                  <span>Request a Demo</span>
+                  <FaArrowRight className="btnIcon" />
+                </button>
+                <button className="btn btn-play">
+                  <span className="playDot">
+                    <svg width="10" height="12" viewBox="0 0 10 12">
+                      <path d="M0 0L10 6L0 12V0Z" />
+                    </svg>
+                  </span>
+                  <span>Watch Overview</span>
+                </button>
+              </div>
+
+              <p className="heroDescription">
+                Universities and colleges need flexible, technology-enabled learning environments that support digital education, blended learning, skill development, and career readiness. NeuroLXP is the platform built for exactly that challenge.
+              </p>
+            </div>
+
+            <div className="heroMedia">
+              <div className="heroImage">
+                <Image
+                  src={heroIllustration}
+                  alt="NeuroLXP University Learning Management Dashboard"
+                  className="heroImageAsset"
+                  width={800}
+                  height={520}
+                  priority
+                />
+              </div>
+              <div className="heroStats heroStatsBelow">
+                <div className="statItem">
+                  <span className="statNumber">500+</span>
+                  <span className="statLabel">Institutions Worldwide</span>
+                </div>
+                <div className="statItem">
+                  <span className="statNumber">2M+</span>
+                  <span className="statLabel">Active Learners</span>
+                </div>
+                <div className="statItem">
+                  <span className="statNumber">94%</span>
+                  <span className="statLabel">Completion Rate</span>
+                </div>
+                <div className="statItem">
+                  <span className="statNumber">4.9</span>
+                  <span className="statLabel">Average Rating</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Challenges ── */}
+      <section className="section-wrap challenges">
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <div className="sectionEyebrow">Key Challenges</div>
+            <h2 className="sectionTitle">Solving Higher Education's Toughest Problems</h2>
+            <p className="sectionSubtitle">
+              From passive classrooms to career readiness, NeuroLXP addresses every critical pain point modern institutions face.
+            </p>
           </div>
 
-          <p className="heroDescription">
-            Higher education institutions today are transforming the way they deliver learning. Universities and colleges need flexible, technology-enabled learning environments that support digital education, blended learning, skill development, and career readiness.
-          </p>
-          
-          <p className="heroDescription">
-            NeuroLXP provides an advanced Learning Experience Platform (LXP) designed specifically for Higher Education, enabling institutions to deliver engaging, scalable, and outcome-driven learning experiences.
-          </p>
-
-          {/* Hero Image */}
-          <div className="heroImage">
-            <img src="/Gemini_Generated_Image_ercdp4ercdp4ercd.png" alt="University Learning Management Dashboard" style={{ width: '100%', height: 'auto', borderRadius: '16px' }} />
+          <div className="challengesGrid">
+            {challenges.map((item) => (
+              <div key={item.id} className="challengeCard">
+                <div className="challengeIconWrap">{item.icon}</div>
+                <span className="challengeChip">Challenge</span>
+                <h3 className="challengeTitle">{item.challenge}</h3>
+                <p className="challengeDescription">{item.description}</p>
+                <div className="solutionBox">
+                  <div className="solutionLabel">How NeuroLXP Helps</div>
+                  <p className="solutionDescription">{item.solution}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Challenges Section */}
-      <section className="challenges">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Addressing Key Challenges in Higher Education</h2>
-        </div>
+      {/* ── Benefits ── */}
+      <section className="section-wrap benefits">
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <div className="sectionEyebrow">Platform Benefits</div>
+            <h2 className="sectionTitle">Everything Your Institution Needs</h2>
+            <p className="sectionSubtitle">
+              Universities and colleges using NeuroLXP consistently improve learning outcomes, student satisfaction, and institutional performance.
+            </p>
+          </div>
 
-        <div className="challengesGrid">
-          {challenges.map((item) => (
-            <div key={item.id} className="challengeCard">
-              {item.icon}
-              <h3 className="challengeTitle">Challenge: {item.challenge}</h3>
-              <p className="challengeDescription">{item.description}</p>
-              <div className="solutionLabel">How NeuroLXP Helps</div>
-              <p className="solutionDescription">{item.solution}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="benefits">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Benefits for Higher Education Institutions</h2>
-          <p className="sectionSubtitle">
-            Universities and colleges using NeuroLXP can enhance their learning outcomes and student success
-          </p>
-        </div>
-
-        <div className="benefitsGrid">
-          {benefits.map((benefit) => (
-            <div key={benefit.id} className="benefitCard">
-              <div className="benefitIconWrapper">{benefit.icon}</div>
-              <h3 className="benefitTitle">{benefit.title}</h3>
-              <p className="benefitDescription">{benefit.description}</p>
-            </div>
-          ))}
+          <div className="benefitsGrid">
+            {benefits.map((benefit) => (
+              <div key={benefit.id} className="benefitCard">
+                <div className="benefitIconWrapper">{benefit.icon}</div>
+                <h3 className="benefitTitle">{benefit.title}</h3>
+                <p className="benefitDescription">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="cta">
+      {/* ── Feature Highlight ── */}
+      <section className="section-wrap featureHighlight">
+        <div className="section-inner">
+          <div className="featureHighlightInner">
+            <div className="featureText">
+              <div className="sectionEyebrow">Platform Intelligence</div>
+              <h2 className="sectionTitle">
+                Built for the <span className="accent-span">Future of Higher Education</span>
+              </h2>
+              <p className="featureBody">
+                NeuroLXP combines the latest in AI, learning science, and enterprise technology to give institutions a competitive edge in delivering exceptional education outcomes.
+              </p>
+              <div className="featureCards">
+                {featureItems.map((fi) => (
+                  <div key={fi.id} className="featureCard">
+                    <span className="ficon">{fi.icon}</span>
+                    <p>{fi.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="featureVisual">
+              {miniCards.map((mc) => (
+                <div key={mc.id} className="featureMiniCard">
+                  <span className="miniCardIcon">{mc.icon}</span>
+                  <span className="miniCardLabel">{mc.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="section-wrap cta">
         <div className="ctaContent">
-          <h2 className="ctaTitle">Transforming Higher Education with Digital Learning</h2>
+          <div className="sectionEyebrow" style={{ display: 'inline-flex', marginBottom: 20 }}>
+            Get Started
+          </div>
+          <h2 className="ctaTitle">
+            Transforming Higher Education with <span className="accent-span">Digital Learning</span>
+          </h2>
           <p className="ctaDescription">
-            By leveraging modern learning technologies, universities and colleges can create engaging, personalized learning experiences that prepare students for success in a digital world. NeuroLXP helps institutions build scalable, technology-enabled learning ecosystems that support student success and institutional excellence.
+            By leveraging modern learning technologies, universities and colleges can create engaging, personalized learning experiences that prepare students for success in a digital world.
           </p>
-
           <div className="ctaButtons">
             <button className="btn">
               Schedule a Demo
               <FaArrowRight className="btnIcon" />
             </button>
-            <button className="btn btn-outline">
+            <button className="btn">
               <span>Contact Sales</span>
               <FaArrowRight className="btnIcon" />
             </button>
@@ -229,11 +355,11 @@ export default function HigherEducationPage() {
         </div>
       </section>
 
-      {/* Footer CTA */}
+      {/* ── Footer CTA ── */}
       <section className="footerCta">
         <h3>NeuroLXP — Powering Learning for Higher Education</h3>
         <p>
-          With AI-powered learning tools, interactive content capabilities, and advanced analytics, NeuroLXP helps universities create modern digital campuses that empower students, educators, and administrators.
+          With AI-powered learning tools, interactive content capabilities, and advanced analytics, NeuroLXP helps universities create modern digital campuses that empower students, educators, and administrators alike.
         </p>
         <button className="btn">
           Get Started Today
