@@ -57,7 +57,7 @@ body {
 .genzgalaxy-page {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 42px 0 80px;
+  padding: 110px 0 80px;
   background: var(--neu-bg);
   color: var(--neu-text);
   position: relative;
@@ -79,24 +79,24 @@ body {
 }
 
 .genzgalaxy-page h1 {
-  font-size: clamp(32px, 4vw, 40px);
+  font-size: 40px;
 }
 
 .genzgalaxy-page h2 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 32px;
 }
 
 .genzgalaxy-page h3 {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: 24px;
 }
 
 .genzgalaxy-page h4 {
-  font-size: clamp(18px, 1.6vw, 20px);
+  font-size: 20px;
 }
 
 .genzgalaxy-page p {
   margin: 0 0 14px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.75;
   color: var(--neu-text);
 }
@@ -216,7 +216,7 @@ body {
 
 .genzgalaxy-page .hero-text h1 {
   max-width: 760px;
-  font-size: clamp(32px, 4vw, 40px);
+  font-size: 40px;
   line-height: 1.15;
   margin-bottom: 12px;
 }
@@ -238,7 +238,7 @@ body {
 
 .genzgalaxy-page .hero-text h2 {
   max-width: 680px;
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 32px;
   line-height: 1.35;
   font-weight: 700;
   margin-bottom: 18px;
@@ -394,7 +394,7 @@ body {
 }
 
 .genzgalaxy-page .info-card h3 {
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: 24px;
   line-height: 1.35;
   margin-bottom: 16px;
   display: flex;
@@ -471,7 +471,7 @@ body {
 }
 
 .genzgalaxy-page .section-heading h2 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 32px;
   line-height: 1.2;
 }
 
@@ -671,7 +671,7 @@ body {
 
 .genzgalaxy-page .skill-box h4 {
   max-width: 160px;
-  font-size: clamp(18px, 1.6vw, 20px);
+  font-size: 20px;
   line-height: 1.45;
   color: var(--neu-heading);
   font-weight: 700;
@@ -697,7 +697,7 @@ body {
 }
 
 .genzgalaxy-page .community-left h2 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 32px;
   line-height: 1.2;
   margin-bottom: 16px;
 }
@@ -780,7 +780,7 @@ body {
 }
 
 .genzgalaxy-page .closing-card h2 {
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 32px;
   line-height: 1.2;
   margin-bottom: 16px;
 }
@@ -791,7 +791,7 @@ body {
 
 .genzgalaxy-page .closing-line {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -812,11 +812,39 @@ body {
 @media (max-width: 768px) {
   .genzgalaxy-page {
     width: min(100%, calc(100% - 22px));
-    padding: 20px 0 52px;
+    padding: 90px 0 52px;
   }
 
   .genzgalaxy-page section {
     margin-bottom: 28px;
+  }
+
+  .genzgalaxy-page h1,
+  .genzgalaxy-page .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .genzgalaxy-page h2,
+  .genzgalaxy-page .hero-text h2,
+  .genzgalaxy-page .section-heading h2,
+  .genzgalaxy-page .community-left h2,
+  .genzgalaxy-page .closing-card h2 {
+    font-size: 28px;
+  }
+
+  .genzgalaxy-page h3,
+  .genzgalaxy-page .info-card h3 {
+    font-size: 22px;
+  }
+
+  .genzgalaxy-page h4,
+  .genzgalaxy-page .skill-box h4 {
+    font-size: 20px;
+  }
+
+  .genzgalaxy-page p,
+  .genzgalaxy-page .closing-line {
+    font-size: 18px;
   }
 
   .genzgalaxy-page .hero-content {
