@@ -30,8 +30,7 @@ export default function Page() {
       </p>
 
       <div className="coding-image-box">
-        <FaLaptopCode className="coding-box-icon" />
-        Interactive Coding Environment
+        <img src="/pexels-mizunokozuki-12903294.jpg" alt="Interactive coding environment" />
       </div>
 
       <h3><FaTerminal /> Hands-On Programming Experience</h3>
@@ -71,8 +70,7 @@ export default function Page() {
       </ul>
 
       <div className="coding-image-box second">
-        <FaCode className="coding-box-icon" />
-        Coding Practice Workspace
+        <img src="/pexels-mikhail-nilov-7988116.jpg" alt="Coding practice workspace" />
       </div>
 
       <h3><FaBug /> Real-World Skill Development</h3>
