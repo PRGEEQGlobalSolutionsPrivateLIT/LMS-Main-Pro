@@ -224,9 +224,12 @@ export default function Page() {
 
       <section className="bootcamp-bottom">
         <div className="bootcamp-image-placeholder">
-          <FaUserGraduate />
-          <span>Image Placeholder 2</span>
-        </div>
+        <img
+          src="/pexels-goumbik-574073.jpg"
+          alt="Student learning in a bootcamp session"
+          className="bootcamp-image"
+        />
+      </div>
 
         <div>
           <h2>NeuroLabs Coding Bootcamps — Fast-Track Your Coding Journey</h2>
