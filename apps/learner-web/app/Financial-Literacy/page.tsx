@@ -21,7 +21,9 @@ export default function FinancialLiteracy() {
         financial systems responsibly.
       </p>
 
-      <div className="image-box">Image 1</div>
+      <div className="image-box">
+  <img src="/pexels-rdne-7821554.jpg" alt="Financial illustration" />
+</div>
 
       <h3>Understanding the Basics of Personal Finance</h3>
 
@@ -62,7 +64,9 @@ export default function FinancialLiteracy() {
         These skills empower individuals to take control of their financial future.
       </p>
 
-      <div className="image-box">Image 2</div>
+       <div className="image-box">
+  <img src="/pexels-rdne-7413936.jpg" alt="Financial illustration" />
+</div>
 
       <h3>Promoting Responsible Financial Behavior</h3>
 
