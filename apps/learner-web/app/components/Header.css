@@ -139,9 +139,7 @@ body {
   border-radius: 16px;
   display: none;
   z-index: 1000;
-  box-shadow:
-    10px 10px 20px var(--neu-shadow-dark),
-    -10px -10px 20px var(--neu-shadow-light);
+  box-shadow: 10px 10px 20px var(--neu-shadow-dark);
 }
 
 .dropdown.show {
@@ -232,9 +230,7 @@ body {
   border-radius: 16px;
   display: none;
   z-index: 1200;
-  box-shadow:
-    10px 10px 20px var(--neu-shadow-dark),
-    -10px -10px 20px var(--neu-shadow-light);
+  box-shadow: 10px 10px 20px var(--neu-shadow-dark);
 }
 
 /* Small bridge between dropdown and submenu */
