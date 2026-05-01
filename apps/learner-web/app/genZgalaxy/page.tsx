@@ -11,11 +11,11 @@ export default function GenZGalaxyPage() {
             <h1>GenZgalaxy</h1>
             <h2>A Learning Universe Designed for the Gen Z Generation</h2>
             <p>
-              <strong>GenZgalaxy by NeuroLXP</strong> is a dynamic learning ecosystem created specifically for the <strong>digital-native generation</strong>. Today’s Gen Z learners grow up in a world of smartphones, social media, interactive apps, and instant information. Traditional learning environments often struggle to match their expectations for speed, engagement, and interactivity.
-            </p>
-            <p>
-              GenZgalaxy reimagines learning as an <strong>immersive, interactive, and highly engaging digital experience</strong> that aligns with how Gen Z prefers to explore knowledge, build skills, and connect with learning communities.
-            </p>
+  <strong>GenZgalaxy by NeuroLXP</strong> is a dynamic learning ecosystem for the <strong>digital-native generation</strong>. Gen Z learners grow up with smartphones, social media, interactive apps, and instant information, so traditional learning environments often fail to meet their expectations for speed, engagement, and interactivity.
+</p>
+<p>
+  GenZgalaxy reimagines learning as an <strong>immersive, interactive digital experience</strong> that helps Gen Z explore knowledge, build skills, and connect with learning communities.
+</p>
 
             <div className="hero-actions">
               <button className="neu-btn">Explore Platform</button>
