@@ -1,16 +1,45 @@
 .financial-page {
+  --fp-bg: #e6e7ee;
+  --fp-surface: #e6e7ee;
+  --fp-surface-soft: #eef1f6;
+
+  --fp-heading: #1f2a44;
+  --fp-text: #525b70;
+  --fp-muted: #6b7280;
+
+  --fp-primary: #2563eb;
+  --fp-secondary: #0f766e;
+  --fp-accent: #7c3aed;
+  --fp-success: #16a34a;
+  --fp-cyan: #06b6d4;
+
+  --fp-shadow-dark: #b8b9be;
+  --fp-shadow-mid: #c8ccd4;
+  --fp-shadow-light: #ffffff;
+
+  --fp-radius-xl: 30px;
+  --fp-radius-lg: 22px;
+  --fp-radius-md: 16px;
+
   width: 100%;
   min-height: 100vh;
-  padding: 0px 0 80px;
-  background: #e6e7ee;
-  color: #31344b;
+  padding: 110px 0 80px;
+  background: var(--fp-bg);
+  color: var(--fp-text);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow-x: hidden;
+}
+
+.financial-page *,
+.financial-page *::before,
+.financial-page *::after {
+  box-sizing: border-box;
 }
 
 .financial-page h1,
 .financial-page h2,
 .financial-page h3,
+.financial-page h4,
 .financial-page p,
 .financial-page ul,
 .image-box {
@@ -20,54 +49,87 @@
 }
 
 .financial-page h1 {
-  margin-bottom: 16px;
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1;
-  font-weight: 800;
+  margin-bottom: 18px;
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 850;
   text-align: center;
-  color: #4f46e5;
+  color: var(--fp-heading);
+  letter-spacing: -0.04em;
+}
+
+.financial-page h1::after {
+  content: "";
+  display: block;
+  width: 112px;
+  height: 5px;
+  margin: 22px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--fp-primary),
+    var(--fp-cyan),
+    var(--fp-secondary)
+  );
+  box-shadow:
+    4px 4px 10px var(--fp-shadow-dark),
+    -4px -4px 10px var(--fp-shadow-light);
 }
 
 .financial-page h2 {
-  margin-bottom: 36px;
-  font-size: clamp(21px, 3vw, 34px);
-  color: #0f766e;
-  font-weight: 700;
-  line-height: 1.3;
+  max-width: 900px;
+  margin-bottom: 40px;
+  font-size: 32px;
+  color: var(--fp-secondary);
+  font-weight: 750;
+  line-height: 1.35;
   text-align: center;
 }
 
 .financial-page h3 {
-  margin-top: 56px;
+  margin-top: 58px;
   margin-bottom: 18px;
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: 24px;
   line-height: 1.3;
-  color: #31344b;
+  color: var(--fp-heading);
   font-weight: 800;
+  display: flex;
+  align-items: center;
+}
+
+.financial-page h4 {
+  margin-top: 34px;
+  margin-bottom: 14px;
+  font-size: 20px;
+  line-height: 1.35;
+  color: var(--fp-heading);
+  font-weight: 750;
 }
 
 .financial-page h3::before {
   content: "";
   display: inline-block;
   width: 12px;
-  height: 32px;
+  height: 34px;
   margin-right: 14px;
   border-radius: 999px;
-  background: linear-gradient(180deg, #6366f1, #06b6d4);
+  background: linear-gradient(180deg, var(--fp-primary), var(--fp-cyan));
   vertical-align: middle;
-  box-shadow: 4px 4px 8px #b8b9be, -4px -4px 8px #ffffff;
+  box-shadow:
+    4px 4px 8px var(--fp-shadow-dark),
+    -4px -4px 8px var(--fp-shadow-light);
 }
 
 .financial-page p {
   margin-bottom: 18px;
-  font-size: 17px;
-  line-height: 1.85;
-  color: #525480;
+  font-size: 18px;
+  line-height: 1.82;
+  color: var(--fp-text);
 }
 
 .financial-page ul {
-  margin-top: 20px;
-  margin-bottom: 30px;
+  margin-top: 22px;
+  margin-bottom: 34px;
   padding: 0;
   list-style: none;
   display: grid;
@@ -77,72 +139,169 @@
 
 .financial-page li {
   position: relative;
-  padding: 18px 20px 18px 52px;
-  border-radius: 18px;
-  background: #e6e7ee;
+  padding: 20px 22px 20px 56px;
+  border-radius: var(--fp-radius-lg);
+  background: var(--fp-surface);
   color: #3f4661;
-  font-weight: 600;
-  line-height: 1.55;
-  box-shadow: inset 3px 3px 7px #b8b9be, inset -3px -3px 7px #ffffff;
+  font-weight: 650;
+  line-height: 1.58;
+  box-shadow:
+    inset 4px 4px 9px var(--fp-shadow-dark),
+    inset -4px -4px 9px var(--fp-shadow-light);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    background 0.24s ease,
+    color 0.24s ease;
+}
+
+.financial-page li:hover {
+  transform: translateY(-3px);
+  background: var(--fp-surface-soft);
+  color: var(--fp-heading);
+  box-shadow:
+    8px 8px 18px var(--fp-shadow-mid),
+    -8px -8px 18px var(--fp-shadow-light);
 }
 
 .financial-page li::before {
   content: "✓";
   position: absolute;
-  left: 18px;
-  top: 18px;
-  width: 22px;
-  height: 22px;
+  left: 20px;
+  top: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #22c55e, #06b6d4);
+  background: linear-gradient(135deg, var(--fp-success), var(--fp-cyan));
   color: #ffffff;
   font-size: 13px;
-  line-height: 22px;
+  font-weight: 800;
+  line-height: 24px;
   text-align: center;
+  box-shadow: 4px 4px 8px rgba(22, 163, 74, 0.25);
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease;
+}
+
+.financial-page li:hover::before {
+  transform: scale(1.12) rotate(-6deg);
+  box-shadow: 6px 6px 12px rgba(22, 163, 74, 0.35);
 }
 
 .image-box {
-  height: 320px;
-  margin-top: 44px;
-  margin-bottom: 48px;
-  border-radius: 30px;
+  height: 340px;
+  margin-top: 46px;
+  margin-bottom: 50px;
+  border-radius: var(--fp-radius-xl);
   color: #ffffff;
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 850;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 10px 10px 20px #b8b9be, -10px -10px 20px #ffffff;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.88), rgba(15, 118, 110, 0.88)),
+    var(--fp-surface);
+  box-shadow:
+    12px 12px 26px var(--fp-shadow-dark),
+    -12px -12px 26px var(--fp-shadow-light);
+  overflow: hidden;
+  position: relative;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    filter 0.28s ease;
 }
 
 .image-box::before {
   content: "💡";
   margin-right: 10px;
-  font-size: 28px;
+  font-size: 30px;
+  transition: transform 0.28s ease;
+}
+
+.image-box::after {
+  content: "";
+  position: absolute;
+  inset: 18px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  pointer-events: none;
+}
+
+.image-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 18px 18px 36px var(--fp-shadow-dark);
+  filter: saturate(1.08);
+}
+
+.image-box:hover::before {
+  transform: scale(1.12) rotate(-8deg);
 }
 
 .financial-page p:last-child {
-  margin-top: 32px;
-  padding: 36px 40px;
-  border-radius: 28px;
-  background: #e6e7ee;
-  box-shadow: 8px 8px 18px #b8b9be, -8px -8px 18px #ffffff;
-  font-weight: 600;
-  border-left: 6px solid #6366f1;
+  margin-top: 34px;
+  padding: 38px 42px;
+  border-radius: var(--fp-radius-xl);
+  background: var(--fp-surface);
+  box-shadow:
+    10px 10px 22px var(--fp-shadow-dark),
+    -10px -10px 22px var(--fp-shadow-light);
+  font-weight: 650;
+  border-left: 6px solid var(--fp-primary);
+  position: relative;
+  transition:
+    transform 0.24s ease,
+    box-shadow 0.24s ease,
+    border-color 0.24s ease,
+    background 0.24s ease;
+}
+
+.financial-page p:last-child:hover {
+  transform: translateY(-3px);
+  background: var(--fp-surface-soft);
+  border-left-color: var(--fp-secondary);
+  box-shadow:
+    14px 14px 30px var(--fp-shadow-dark),
+    -14px -14px 30px var(--fp-shadow-light);
 }
 
 @media (max-width: 850px) {
   .financial-page {
-    padding: 48px 0 64px;
+    padding: 90px 0 64px;
   }
 
   .financial-page h1,
   .financial-page h2,
   .financial-page h3,
+  .financial-page h4,
   .financial-page p,
   .financial-page ul,
   .image-box {
     width: min(100% - 24px, 1120px);
+  }
+
+  .financial-page h1 {
+    font-size: 40px;
+  }
+
+  .financial-page h2 {
+    font-size: 32px;
+    margin-bottom: 32px;
+  }
+
+  .financial-page h3 {
+    font-size: 24px;
+    margin-top: 42px;
+  }
+
+  .financial-page h4 {
+    font-size: 20px;
+  }
+
+  .financial-page p {
+    font-size: 18px;
   }
 
   .financial-page ul {
@@ -150,11 +309,18 @@
   }
 
   .image-box {
-    height: 220px;
-    border-radius: 22px;
+    height: 240px;
+    border-radius: var(--fp-radius-lg);
   }
 
   .financial-page p:last-child {
     padding: 28px 24px;
   }
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
 }
