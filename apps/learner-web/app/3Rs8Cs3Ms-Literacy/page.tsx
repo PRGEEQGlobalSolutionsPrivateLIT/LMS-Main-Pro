@@ -27,8 +27,8 @@ export default function Page() {
         </div>
 
         <div className="literacy-image-placeholder">
-          <span>Image Placeholder 1</span>
-        </div>
+  <img src="/pexels-marcio-ribeiro-608242116-32218635.jpg" alt="Financial literacy illustration" />
+</div>
       </section>
 
       <section className="literacy-content-section">
@@ -121,9 +121,9 @@ export default function Page() {
       </section>
 
       <section className="literacy-bottom">
-        <div className="literacy-image-placeholder">
-          <span>Image Placeholder 2</span>
-        </div>
+         <div className="literacy-image-placeholder">
+  <img src="/pexels-mikhail-nilov-8923561.jpg" alt="Financial literacy illustration" />
+</div>
 
         <div>
           <h2>NeuroLXP — Enabling Holistic Literacy and Future-Ready Skills</h2>
