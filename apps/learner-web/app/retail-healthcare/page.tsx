@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import {
   FaShoppingCart,
   FaUsers,
@@ -16,6 +17,8 @@ import {
   FaHospital,
 } from 'react-icons/fa';
 import './RetailHealthcare.css';
+
+const heroIllustration = '/Retail-&-Healthcare.jpg';
 
 export const metadata: Metadata = {
   title: 'Retail & Healthcare Solutions | Industries We Serve',
@@ -175,35 +178,80 @@ export default function RetailHealthcarePage() {
 
   return (
     <main className="neumorphic-page">
-      {/* Hero Section */}
       <section className="hero">
         <div className="heroContent">
-          <h1 className="heroTitle">Retail & Healthcare</h1>
-          <p className="heroSubtitle">
-            Empowering Teams with Continuous Learning Solutions
-          </p>
+          <div className="heroGrid">
+            <div className="heroText">
+              <div className="heroBadge">
+                <span className="badge-label">
+                  <span className="badge-dot" />
+                  Retail & Healthcare Solutions
+                </span>
+              </div>
 
-          <div className="heroButtons">
-            <button className="btn">
-              <span>Request Demo</span>
-              <FaArrowRight className="btnIcon" />
-            </button>
-            <button className="btn">
-              <FaPlay className="btnIcon" />
-              <span>Watch Overview</span>
-            </button>
+              <h1 className="heroTitle">Retail & <span className="accent-word">Healthcare</span></h1>
+
+              <p className="heroSubtitle">
+                NeuroLXP delivers a polished learning experience built for high-performance retail and healthcare teams.
+              </p>
+
+              <div className="heroButtons">
+                <button className="btn">
+                  <span>Request Demo</span>
+                  <FaArrowRight className="btnIcon" />
+                </button>
+                <button className="btn btn-play">
+                  <span className="playDot">
+                    <svg width="10" height="12" viewBox="0 0 10 12">
+                      <path d="M0 0L10 6L0 12V0Z" />
+                    </svg>
+                  </span>
+                  <span>Watch Overview</span>
+                </button>
+              </div>
+
+              <p className="heroDescription">
+                Drive faster onboarding, better compliance, and higher service quality with a premium learning platform designed for distributed retail stores and clinical teams.
+              </p>
+            </div>
+
+            <div className="heroMedia">
+              <div className="heroVisual">
+                <div className="heroVisualBadge">Enterprise Experience</div>
+                <div className="heroVisualImage">
+                  <Image
+                    src={heroIllustration}
+                    alt="Retail & Healthcare hero"
+                    className="heroVisualAsset"
+                    width={800}
+                    height={520}
+                    priority
+                  />
+                </div>
+                <div className="heroVisualHeading">Smart training dashboards for retail and healthcare</div>
+                <div className="heroVisualCopy">
+                  A premium, secure workspace for learning, performance tracking, and compliance visibility.
+                </div>
+              </div>
+            </div>
           </div>
 
-          <p className="heroDescription">
-            Retail and healthcare industries operate in dynamic environments where continuous learning is essential for success. NeuroLXP provides powerful digital learning solutions for both sectors.
-          </p>
-
-          {/* Hero Image Placeholder */}
-          <div className="heroImage">
-            <div className="imagePlaceholder">
-              <FaStore style={{ fontSize: '4rem', marginBottom: '1rem', opacity: 0.5 }} />
-              <div>Retail & Healthcare Learning Platform Dashboard</div>
-              <div className="imageLabel">Image: 1000x450px - Multi-sector training management dashboard</div>
+          <div className="heroStatGrid">
+            <div className="statCard">
+              <span className="statNumber">10K+</span>
+              <span className="statLabel">Retail Locations</span>
+            </div>
+            <div className="statCard">
+              <span className="statNumber">500+</span>
+              <span className="statLabel">Healthcare Facilities</span>
+            </div>
+            <div className="statCard">
+              <span className="statNumber">5M+</span>
+              <span className="statLabel">Trained Employees</span>
+            </div>
+            <div className="statCard">
+              <span className="statNumber">4.9</span>
+              <span className="statLabel">Average Rating</span>
             </div>
           </div>
         </div>
@@ -211,75 +259,91 @@ export default function RetailHealthcarePage() {
 
       {/* Retail Challenges Section */}
       <section className="challenges">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Retail Industry</h2>
-          <p className="sectionSubtitle">Empowering Retail Teams with Continuous Learning</p>
-        </div>
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Retail: Key <span className="accent-span">Challenges</span></h2>
+            <p className="sectionSubtitle">Empowering Retail Teams with Continuous Learning</p>
+          </div>
 
-        <div className="challengesGrid">
-          {retailChallenges.map((item) => (
-            <div key={item.id} className="challengeCard">
-              {item.icon}
-              <h3 className="challengeTitle">Challenge: {item.challenge}</h3>
-              <p className="challengeDescription">{item.description}</p>
-              <div className="solutionLabel">How NeuroLXP Helps</div>
-              <p className="solutionDescription">{item.solution}</p>
-            </div>
-          ))}
+          <div className="challengesGrid">
+            {retailChallenges.map((item) => (
+              <div key={item.id} className="challengeCard">
+                <div className="challengeIconWrap">
+                  {item.icon}
+                </div>
+                <h3 className="challengeTitle">{item.challenge}</h3>
+                <p className="challengeDescription">{item.description}</p>
+                <div className="solutionBox">
+                  <div className="solutionLabel">How NeuroLXP Helps</div>
+                  <p className="solutionDescription">{item.solution}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Retail Benefits Section */}
       <section className="benefits">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Benefits for Retail Organizations</h2>
-        </div>
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Benefits for <span className="accent-span">Retail Organizations</span></h2>
+          </div>
 
-        <div className="benefitsGrid">
-          {retailBenefits.map((benefit) => (
-            <div key={benefit.id} className="benefitCard">
-              <div className="benefitIconWrapper">{benefit.icon}</div>
-              <h3 className="benefitTitle">{benefit.title}</h3>
-              <p className="benefitDescription">{benefit.description}</p>
-            </div>
-          ))}
+          <div className="benefitsGrid">
+            {retailBenefits.map((benefit) => (
+              <div key={benefit.id} className="benefitCard">
+                <div className="benefitIconWrapper">{benefit.icon}</div>
+                <h3 className="benefitTitle">{benefit.title}</h3>
+                <p className="benefitDescription">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Healthcare Challenges Section */}
       <section className="challenges">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Healthcare Industry</h2>
-          <p className="sectionSubtitle">Enabling Continuous Learning for Healthcare Professionals</p>
-        </div>
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Healthcare: Key <span className="accent-span">Challenges</span></h2>
+            <p className="sectionSubtitle">Enabling Continuous Learning for Healthcare Professionals</p>
+          </div>
 
-        <div className="challengesGrid">
-          {healthcareChallenges.map((item) => (
-            <div key={item.id} className="challengeCard">
-              {item.icon}
-              <h3 className="challengeTitle">Challenge: {item.challenge}</h3>
-              <p className="challengeDescription">{item.description}</p>
-              <div className="solutionLabel">How NeuroLXP Helps</div>
-              <p className="solutionDescription">{item.solution}</p>
-            </div>
-          ))}
+          <div className="challengesGrid">
+            {healthcareChallenges.map((item) => (
+              <div key={item.id} className="challengeCard">
+                <div className="challengeIconWrap">
+                  {item.icon}
+                </div>
+                <h3 className="challengeTitle">{item.challenge}</h3>
+                <p className="challengeDescription">{item.description}</p>
+                <div className="solutionBox">
+                  <div className="solutionLabel">How NeuroLXP Helps</div>
+                  <p className="solutionDescription">{item.solution}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Healthcare Benefits Section */}
       <section className="benefits">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Benefits for Healthcare Organizations</h2>
-        </div>
+        <div className="section-inner">
+          <div className="sectionHeader">
+            <h2 className="sectionTitle">Benefits for <span className="accent-span">Healthcare Organizations</span></h2>
+          </div>
 
-        <div className="benefitsGrid">
-          {healthcareBenefits.map((benefit) => (
-            <div key={benefit.id} className="benefitCard">
-              <div className="benefitIconWrapper">{benefit.icon}</div>
-              <h3 className="benefitTitle">{benefit.title}</h3>
-              <p className="benefitDescription">{benefit.description}</p>
-            </div>
-          ))}
+          <div className="benefitsGrid">
+            {healthcareBenefits.map((benefit) => (
+              <div key={benefit.id} className="benefitCard">
+                <div className="benefitIconWrapper">{benefit.icon}</div>
+                <h3 className="benefitTitle">{benefit.title}</h3>
+                <p className="benefitDescription">{benefit.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
