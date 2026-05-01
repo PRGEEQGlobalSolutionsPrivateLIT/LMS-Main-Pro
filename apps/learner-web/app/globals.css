@@ -38,6 +38,8 @@ body {
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
+/* ================= GLOBAL TYPOGRAPHY ================= */
+
 h1,
 h2,
 h3,
@@ -65,6 +67,12 @@ h4 {
   font-size: 20px;
 }
 
+p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: var(--neu-text);
+}
+
 p,
 li,
 span,
@@ -75,7 +83,6 @@ strong {
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
-p,
 li,
 span,
 small {
@@ -130,6 +137,7 @@ a:focus-visible,
   width: 100%;
   max-width: 1200px;
   padding: 18px;
+  margin-top: 24px;
   border-radius: 18px;
   overflow: hidden;
   background: var(--neu-surface);
@@ -137,6 +145,11 @@ a:focus-visible,
   box-shadow:
     10px 10px 24px var(--neu-shadow-dark),
     -10px -10px 24px var(--neu-shadow-light);
+}
+
+.highlight-text {
+  color: var(--neu-blue-dark);
+  font-weight: 800;
 }
 
 .hero-bg {
@@ -186,7 +199,7 @@ a:focus-visible,
 }
 
 .hero-overlay h2 {
-  margin: 0;
+  margin: 0 0 30px;
   max-width: 780px;
   font-size: 40px;
   font-weight: 700;
@@ -197,8 +210,8 @@ a:focus-visible,
 
 .hero-overlay p {
   margin: 12px 0 0;
-  max-width: 640px;
-  font-size: 16px;
+  max-width: 720px;
+  font-size: 18px;
   line-height: 1.7;
   color: #ffffff;
   text-shadow: 0 3px 12px rgba(15, 23, 42, 0.75);
@@ -356,8 +369,8 @@ a:focus-visible,
 
 .feature-box p {
   margin: 0;
-  font-size: 15px;
-  line-height: 1.65;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
 
@@ -381,7 +394,7 @@ a:focus-visible,
   max-width: 750px;
   margin: 0 auto 40px;
   color: var(--neu-text-light);
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -432,10 +445,11 @@ a:focus-visible,
 .digital-item p,
 .digital-section .digital-item p {
   margin: 10px 0 0;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
+
 /* ================= L&D SECTION ================= */
 
 .ld-section {
@@ -466,7 +480,6 @@ a:focus-visible,
   justify-content: center;
 }
 
-/* Image frame added so image does not mix with page background */
 .ld-image-frame {
   width: 100%;
   max-width: 440px;
@@ -502,7 +515,7 @@ a:focus-visible,
 
 .ld-content p {
   margin: 0 0 20px;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.7;
   color: var(--neu-text);
 }
@@ -517,30 +530,6 @@ a:focus-visible,
   color: var(--neu-heading);
 }
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 768px) {
-  .ld-container {
-    flex-direction: column;
-    gap: 34px;
-    padding: 24px;
-    text-align: center;
-  }
-
-  .ld-image,
-  .ld-content {
-    min-width: 0;
-    width: 100%;
-  }
-
-  .ld-image-frame {
-    max-width: 420px;
-  }
-
-  .ld-content h2 {
-    font-size: 28px;
-  }
-}
 /* ================= FUTURE READY MODULES ================= */
 
 .modules-section {
@@ -564,8 +553,8 @@ a:focus-visible,
 
 .modules-container p {
   margin: 8px 0;
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
 
@@ -632,8 +621,8 @@ a:focus-visible,
 
 .learning-card p {
   margin: 0 0 25px;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
 
@@ -694,8 +683,8 @@ a:focus-visible,
 .training-card p {
   margin: 0 0 20px;
   flex-grow: 1;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
 
@@ -780,10 +769,11 @@ a:focus-visible,
 
 .contact-text p {
   max-width: 500px;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 18px;
+  line-height: 1.7;
   color: var(--neu-text);
 }
+
 /* ================= DOWNLOAD APP ================= */
 
 .download-section {
@@ -800,7 +790,7 @@ a:focus-visible,
 .download-section p {
   max-width: 750px;
   margin: 0 auto 40px;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.7;
   color: var(--neu-text);
 }
@@ -812,7 +802,6 @@ a:focus-visible,
   flex-wrap: wrap;
 }
 
-/* BUTTON BASE */
 .store-btn {
   min-width: 180px;
   min-height: 56px;
@@ -825,31 +814,21 @@ a:focus-visible,
   display: flex;
   align-items: center;
   gap: 12px;
-
   box-shadow:
     -5px -5px 10px var(--neu-shadow-light),
     5px 5px 10px var(--neu-shadow-mid);
-
   transition: all 0.25s ease;
 }
 
-/* 🔵 HOVER EFFECT WITH COLOR */
 .store-btn:hover {
   transform: translateY(-4px);
-  background: linear-gradient(
-    135deg,
-    #e0ecff,
-    #c7dbff
-  );
-
+  background: linear-gradient(135deg, #e0ecff, #c7dbff);
   box-shadow:
     -7px -7px 14px var(--neu-shadow-light),
     7px 7px 14px var(--neu-shadow-mid);
-
   color: var(--neu-blue-dark);
 }
 
-/* 🔵 ICON COLOR ON HOVER */
 .store-btn .icon {
   font-size: 22px;
   color: var(--neu-blue);
@@ -861,7 +840,6 @@ a:focus-visible,
   color: var(--neu-blue-dark);
 }
 
-/* TEXT */
 .store-btn small {
   font-size: 12px;
   color: var(--neu-text-light);
@@ -873,21 +851,19 @@ a:focus-visible,
   color: var(--neu-heading);
 }
 
-/* 🔵 ACTIVE (PRESS EFFECT) */
 .store-btn:active {
   transform: scale(0.96);
   background: #dbeafe;
-
   box-shadow:
     inset 4px 4px 8px var(--neu-shadow-mid),
     inset -4px -4px 8px var(--neu-shadow-light);
 }
 
-/* 🔵 FOCUS (ACCESSIBILITY) */
 .store-btn:focus-visible {
   outline: 3px solid var(--neu-blue);
   outline-offset: 4px;
 }
+
 /* ================= FOOTER SOCIAL ================= */
 
 .footer-social {
@@ -946,7 +922,7 @@ a:focus-visible,
 
   h1,
   .hero-overlay h2 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   h2,
@@ -955,7 +931,7 @@ a:focus-visible,
   .modules-container h2,
   .contact-text h2,
   .download-section h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   h3,
@@ -963,10 +939,24 @@ a:focus-visible,
   .digital-item h3,
   .learning-card h3,
   .training-card h3 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   h4 {
+    font-size: 20px;
+  }
+
+  p,
+  .hero-overlay p,
+  .feature-box p,
+  .digital-header p,
+  .digital-item p,
+  .ld-content p,
+  .modules-container p,
+  .learning-card p,
+  .training-card p,
+  .contact-text p,
+  .download-section p {
     font-size: 18px;
   }
 
@@ -1016,7 +1006,7 @@ a:focus-visible,
   }
 
   .hero-overlay p {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .hero-arrow {
@@ -1054,6 +1044,6 @@ a:focus-visible,
 
   h1,
   .hero-overlay h2 {
-    font-size: 32px;
+    font-size: 40px;
   }
 }
