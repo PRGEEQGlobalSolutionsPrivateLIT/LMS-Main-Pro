@@ -62,7 +62,7 @@ export default function Footer() {
           <h3 className="column-title">NeuroLXP</h3>
           <ul className="footer-links">
             <li>Our NeuroLXP Team</li>
-            <li>About NeuroLXP LMS</li>
+            <li>About NeuroLXP</li>
             <li>AI-Powered Content Curation</li>
             <li>Our Adaptive Learning Pathways</li>
             <li>Inclusivity and Accessibility</li>
