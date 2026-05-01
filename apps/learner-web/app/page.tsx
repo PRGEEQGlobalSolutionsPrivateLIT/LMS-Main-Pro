@@ -20,9 +20,14 @@ import {
 
 export default function Home() {
   const slides = [
-    {
+      {
       image: "/pexels-darlene-alderson-4384864.jpg",
-      title: "Comprehensive Learning Management System",
+      title: (
+        <>
+          Comprehensive <br />
+          Learning Experience Platform
+        </>
+      ),
     },
     {
       image: "/huzefa-pithawala-kerK4xolE4o-unsplash.jpg",
@@ -93,8 +98,8 @@ export default function Home() {
       
       <section className="digital-section">
       <div className="digital-header">
-          <h2>
-            Embark on a <strong>Learning Odyssey</strong> with neuroLxp
+         <h2>
+            Embark on a <strong className="highlight-text">Learning Odyssey</strong> with neuroLxp
           </h2>
 
           <p>
@@ -198,7 +203,7 @@ export default function Home() {
       <section className="digital-section">
         <div className="digital-header">
           <h2>
-            Unlocking Seamless <strong>Digital Narratives</strong>
+            Unlocking Seamless <strong className="highlight-text">Digital Narratives</strong>
           </h2>
 
           <p>
@@ -265,7 +270,7 @@ export default function Home() {
     </div>
 
     <div className="ld-content">
-      <h2>L&amp;D with neuroLxp</h2>
+      <h2><strong className="highlight-text">L&amp;D </strong> with neuroLxp</h2>
 
       <p>
         Leverage the domain and technical expertise of neuroLxp in enhancing your organization's learning and development endeavors.
@@ -283,7 +288,7 @@ export default function Home() {
       <section className="modules-section">
         <div className="modules-container">
           <h2>
-            Future Ready <strong>neuroLxp Modules</strong>
+            Future Ready <strong className="highlight-text">neuroLxp Modules</strong>
           </h2>
 
           <p>
