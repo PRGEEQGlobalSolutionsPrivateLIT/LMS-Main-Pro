@@ -1,669 +1,260 @@
-.skilling-page {
-  min-height: 100vh;
-  background-color: #e6e7ee;
-  font-family: "Segoe UI", system-ui, sans-serif;
-  color: #172554;
-  padding: 80px 6%;
-}
-
-.skilling-page h1 {
-  font-size: 40px;
-  line-height: 1.15;
-  margin: 14px 0 22px;
-  color: #172554;
-}
-
-.skilling-page h2 {
-  font-size: 32px;
-  line-height: 1.25;
-  margin: 0 0 18px;
-  color: #1e293b;
-}
-
-.skilling-page h3 {
-  font-size: 24px;
-  line-height: 1.35;
-  margin: 0 0 12px;
-  color: #1e293b;
-}
-
-.skilling-page h4 {
-  font-size: 20px;
-  line-height: 1.35;
-  margin: 0;
-  color: #111827;
-  font-weight: 500;
-}
-
-.skilling-page p {
-  font-size: 18px;
-  line-height: 1.75;
-  color: #475569;
-  margin: 0 0 18px;
-}
-
-.skilling-page span {
-  font-size: 15px;
-}
-
-.skilling-neumorphic-card {
-  border-radius: 30px;
-  background: #e6e7ee;
-  box-shadow: 10px 10px 22px #c5c8d2, -10px -10px 22px #ffffff;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  padding: 38px;
-  transition: all 0.35s ease;
-}
-
-.skilling-neumorphic-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 14px 14px 28px #bcc0cc, -14px -14px 28px #ffffff;
-}
-
-.skilling-hero {
-  max-width: 1200px;
-  margin: 0 auto 56px;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 36px;
-  align-items: center;
-  border-top: 5px solid #30c98b;
-}
-
-.skilling-hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.skilling-eyebrow {
-  width: fit-content;
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: 999px;
-  color: #ffffff;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: #30354f;
-  box-shadow: 5px 5px 12px #c5c8d2, -5px -5px 12px #ffffff;
-}
-
-.skilling-visual-card {
-  position: relative;
-  min-height: 360px;
-  border-radius: 30px;
-  background:
-    radial-gradient(circle at center, rgba(48, 201, 139, 0.16), transparent 55%),
-    #e6e7ee;
-  box-shadow: inset 8px 8px 18px #c5c8d2, inset -8px -8px 18px #ffffff;
-  border: 1px solid rgba(48, 201, 139, 0.32);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 34px;
-}
-
-.skilling-skill-ring {
-  width: 178px;
-  height: 178px;
-  border-radius: 50%;
-  background: #e6e7ee;
-  box-shadow: 10px 10px 22px #c5c8d2, -10px -10px 22px #ffffff;
-  border: 8px solid rgba(48, 201, 139, 0.35);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.skilling-skill-ring span {
-  color: #475569;
-  font-weight: 700;
-}
-
-.skilling-skill-ring strong {
-  font-size: 28px;
-  color: #172554;
-}
-
-.skilling-floating-pill {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  background: #e6e7ee;
-  box-shadow: 8px 8px 18px #c5c8d2, -8px -8px 18px #ffffff;
-  color: #172554;
-  font-weight: 700;
-}
-
-.skilling-floating-pill svg {
-  color: #30c98b;
-}
-
-.skilling-pill-one {
-  top: 46px;
-  left: 42px;
-}
-
-.skilling-pill-two {
-  right: 38px;
-  top: 118px;
-}
-
-.skilling-pill-three {
-  left: 70px;
-  bottom: 48px;
-}
-
-.skilling-open-section,
-.skilling-section-heading {
-  max-width: 900px;
-  margin: 0 auto 60px;
-  text-align: center;
-  position: relative;
-  padding-top: 20px;
-}
-
-.skilling-open-section::before,
-.skilling-section-heading::before {
-  content: "";
-  width: 70px;
-  height: 4px;
-  display: block;
-  margin: 0 auto 18px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, #30c98b, #0ebcd9, #5b6ee1);
-}
-
-.skilling-open-section > span {
-  display: inline-block;
-  margin-bottom: 14px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: #30354f;
-  color: #ffffff;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.skilling-open-section p,
-.skilling-section-heading p {
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.skilling-industry-layout {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  align-items: stretch;
-}
-
-.skilling-industry-card {
-  border-top: 5px solid #30c98b;
-}
-
-.skilling-icon-box,
-.skilling-final-icon,
-.skilling-interactive-icon,
-.skilling-ideal-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: 18px;
-  background: #ffffff;
-  color: #30c98b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 22px;
-  box-shadow: 8px 8px 16px #c5c8d2, -8px -8px 16px #ffffff;
-}
-
-.skilling-icon-box svg,
-.skilling-final-icon svg,
-.skilling-interactive-icon svg,
-.skilling-ideal-icon svg {
-  font-size: 24px;
-}
-
-.skilling-benefit-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-  margin-top: 28px;
-}
-
-.skilling-benefit-grid div {
-  min-height: 116px;
-  padding: 22px;
-  border-radius: 22px;
-  background: #e6e7ee;
-  box-shadow: inset 6px 6px 14px #c5c8d2, inset -6px -6px 14px #ffffff;
-  border-bottom: 4px solid #30c98b;
-}
-
-.skilling-benefit-grid div:nth-child(2) {
-  border-bottom-color: #5b6ee1;
-}
-
-.skilling-benefit-grid div:nth-child(3) {
-  border-bottom-color: #ff6045;
-}
-
-.skilling-benefit-grid div:nth-child(4) {
-  border-bottom-color: #0ebcd9;
-}
-
-.skilling-benefit-grid svg {
-  font-size: 24px;
-  color: #30c98b;
-  margin-bottom: 14px;
-}
-
-.skilling-benefit-grid div:nth-child(2) svg {
-  color: #5b6ee1;
-}
-
-.skilling-benefit-grid div:nth-child(3) svg {
-  color: #ff6045;
-}
-
-.skilling-benefit-grid div:nth-child(4) svg {
-  color: #0ebcd9;
-}
-
-.skilling-progress-panel {
-  border-radius: 30px;
-  background: #e6e7ee;
-  box-shadow: inset 8px 8px 18px #c5c8d2, inset -8px -8px 18px #ffffff;
-  border: 1px solid rgba(48, 201, 139, 0.32);
-  padding: 38px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.skilling-progress-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 34px;
-}
-
-.skilling-progress-header span {
-  color: #172554;
-  font-weight: 800;
-}
-
-.skilling-progress-header svg {
-  font-size: 34px;
-  color: #30c98b;
-}
-
-.skilling-progress-row {
-  display: grid;
-  grid-template-columns: 150px 1fr 46px;
-  gap: 14px;
-  align-items: center;
-  margin-bottom: 22px;
-}
-
-.skilling-progress-row p {
-  margin: 0;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.skilling-progress-row div {
-  height: 16px;
-  border-radius: 999px;
-  background: #e6e7ee;
-  box-shadow: inset 4px 4px 8px #c5c8d2, inset -4px -4px 8px #ffffff;
-  overflow: hidden;
-}
-
-.skilling-progress-row strong {
-  display: block;
-  height: 100%;
-  border-radius: 999px;
-}
-
-.skilling-progress-row span {
-  color: #172554;
-  font-weight: 800;
-}
-
-.skilling-progress-one {
-  width: 84%;
-  background: linear-gradient(90deg, #30c98b, #0ebcd9);
-}
-
-.skilling-progress-two {
-  width: 78%;
-  background: linear-gradient(90deg, #5b6ee1, #0ebcd9);
-}
-
-.skilling-progress-three {
-  width: 89%;
-  background: linear-gradient(90deg, #ff6045, #7c3aed);
-}
-
-.skilling-progress-summary {
-  margin-top: 32px;
-  padding: 26px;
-  border-radius: 26px;
-  background: #e6e7ee;
-  box-shadow: 8px 8px 18px #c5c8d2, -8px -8px 18px #ffffff;
-  border-bottom: 5px solid #30c98b;
-}
-
-.skilling-progress-summary svg {
-  color: #30c98b;
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.skilling-progress-summary p {
-  margin: 0;
-}
-
-.skilling-pathway-section {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 36px;
-  align-items: center;
-  border-top: 5px solid #5b6ee1;
-}
-
-.skilling-pathway-list {
-  display: grid;
-  gap: 18px;
-}
-
-.skilling-pathway-item {
-  display: grid;
-  grid-template-columns: 70px 1fr;
-  align-items: center;
-  gap: 18px;
-  padding: 18px 22px;
-  border-radius: 22px;
-  background: #e6e7ee;
-  box-shadow: inset 6px 6px 14px #c5c8d2, inset -6px -6px 14px #ffffff;
-  border-left: 4px solid #30c98b;
-  transition: all 0.3s ease;
-}
-
-.skilling-pathway-item:hover {
-  transform: translateX(8px);
-  box-shadow: 8px 8px 18px #c5c8d2, -8px -8px 18px #ffffff;
-}
-
-.skilling-pathway-item:nth-child(2) {
-  border-left-color: #5b6ee1;
-}
-
-.skilling-pathway-item:nth-child(3) {
-  border-left-color: #ff6045;
-}
-
-.skilling-pathway-item:nth-child(4) {
-  border-left-color: #0ebcd9;
-}
-
-.skilling-pathway-item:nth-child(5) {
-  border-left-color: #7c3aed;
-}
-
-.skilling-pathway-item span {
-  width: 48px;
-  height: 48px;
-  border-radius: 16px;
-  background: #ffffff;
-  color: #30c98b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  box-shadow: 6px 6px 14px #c5c8d2, -6px -6px 14px #ffffff;
-}
-
-.skilling-pathway-item h4 {
-  font-weight: 400;
-}
-
-.skilling-flexible-section {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-}
-
-.skilling-flex-card {
-  padding: 38px;
-  border-radius: 30px;
-  background: #e6e7ee;
-  box-shadow: 10px 10px 22px #c5c8d2, -10px -10px 22px #ffffff;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  border-top: 5px solid #0ebcd9;
-  transition: all 0.35s ease;
-}
-
-.skilling-flex-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 14px 14px 28px #bcc0cc, -14px -14px 28px #ffffff;
-}
-
-.skilling-flex-card-alt {
-  border-top-color: #ff6045;
-}
-
-.skilling-clock-icon {
-  color: #0ebcd9;
-}
-
-.skilling-tools-icon {
-  color: #ff6045;
-}
-
-.skilling-interactive-section,
-.skilling-ideal-section {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-}
-
-.skilling-interactive-grid,
-.skilling-ideal-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-}
-
-.skilling-interactive-card,
-.skilling-ideal-card {
-  min-height: 220px;
-  padding: 30px 26px;
-  border-radius: 28px;
-  background: #e6e7ee;
-  box-shadow: 9px 9px 20px #c5c8d2, -9px -9px 20px #ffffff;
-  border: 1px solid rgba(148, 163, 184, 0.45);
-  border-top: 5px solid #30c98b;
-  transition: all 0.35s ease;
-}
-
-.skilling-interactive-card:nth-child(2),
-.skilling-ideal-card:nth-child(2) {
-  border-top-color: #5b6ee1;
-}
-
-.skilling-interactive-card:nth-child(3),
-.skilling-ideal-card:nth-child(3) {
-  border-top-color: #ff6045;
-}
-
-.skilling-interactive-card:nth-child(4),
-.skilling-ideal-card:nth-child(4) {
-  border-top-color: #0ebcd9;
-}
-
-.skilling-interactive-card:hover,
-.skilling-ideal-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 13px 13px 26px #bcc0cc, -13px -13px 26px #ffffff;
-}
-
-.skilling-interactive-card:nth-child(2) .skilling-interactive-icon,
-.skilling-ideal-card:nth-child(2) .skilling-ideal-icon {
-  color: #5b6ee1;
-}
-
-.skilling-interactive-card:nth-child(3) .skilling-interactive-icon,
-.skilling-ideal-card:nth-child(3) .skilling-ideal-icon {
-  color: #ff6045;
-}
-
-.skilling-interactive-card:nth-child(4) .skilling-interactive-icon,
-.skilling-ideal-card:nth-child(4) .skilling-ideal-icon {
-  color: #0ebcd9;
-}
-
-.skilling-tracking-section {
-  max-width: 1200px;
-  margin: 0 auto 60px;
-  display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 36px;
-  align-items: center;
-  border-top: 5px solid #30c98b;
-}
-
-.skilling-tracking-list {
-  display: grid;
-  gap: 18px;
-}
-
-.skilling-tracking-list div {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 18px;
-  align-items: center;
-  padding: 18px 22px;
-  border-radius: 22px;
-  background: #e6e7ee;
-  box-shadow: inset 6px 6px 14px #c5c8d2, inset -6px -6px 14px #ffffff;
-  border-left: 4px solid #30c98b;
-}
-
-.skilling-tracking-list svg {
-  width: 46px;
-  height: 46px;
-  padding: 12px;
-  border-radius: 16px;
-  background: #ffffff;
-  color: #30c98b;
-  box-shadow: 6px 6px 14px #c5c8d2, -6px -6px 14px #ffffff;
-}
-
-.skilling-final-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-  border-top: 5px solid #30c98b;
-}
-
-.skilling-final-icon {
-  margin: 0 auto 24px;
-}
-
-.skilling-final-section p {
-  max-width: 820px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (max-width: 1050px) {
-  .skilling-hero,
-  .skilling-industry-layout,
-  .skilling-pathway-section,
-  .skilling-flexible-section,
-  .skilling-tracking-section {
-    grid-template-columns: 1fr;
-  }
-
-  .skilling-interactive-grid,
-  .skilling-ideal-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 760px) {
-  .skilling-page {
-    padding: 56px 5%;
-  }
-
-  .skilling-benefit-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skilling-progress-row {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .skilling-page h1 {
-    font-size: 34px;
-  }
-
-  .skilling-page h2 {
-    font-size: 28px;
-  }
-
-  .skilling-floating-pill {
-    position: static;
-    margin-top: 14px;
-  }
-
-  .skilling-visual-card {
-    flex-direction: column;
-    gap: 12px;
-  }
-}
-
-@media (max-width: 560px) {
-  .skilling-neumorphic-card,
-  .skilling-flex-card {
-    padding: 26px;
-    border-radius: 22px;
-  }
-
-  .skilling-interactive-grid,
-  .skilling-ideal-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .skilling-page h1 {
-    font-size: 30px;
-  }
-
-  .skilling-page h2 {
-    font-size: 24px;
-  }
-
-  .skilling-page h3 {
-    font-size: 22px;
-  }
-
-  .skilling-page p {
-    font-size: 17px;
-  }
+import "./social-learning.css";
+import { FaUsers, FaShieldAlt, FaComments, FaLightbulb, FaHandshake, FaGlobe, FaStar, FaChalkboardTeacher, FaShareAlt, } from "react-icons/fa";
+
+const peerSharingPoints = [
+  "Participate in discussion forums and learning communities",
+  "Share insights, resources, and experiences",
+  "Collaborate on ideas and problem-solving",
+  "Engage in peer feedback and knowledge exchange",
+];
+
+const collaborationFeatures = [
+  {
+    icon: <FaComments className="iconText" />,
+    title: "Discussion Forums",
+    desc: "Structured spaces where learners exchange ideas, ask questions, and deepen understanding through guided conversations.",
+  },
+  {
+    icon: <FaChalkboardTeacher className="iconText" />,
+    title: "Mentor & Expert Connect",
+    desc: "Bridge learners with mentors and subject-matter experts for targeted guidance and real-world knowledge transfer.",
+  },
+  {
+    icon: <FaShareAlt className="iconText" />,
+    title: "Resource Sharing",
+    desc: "Enable learners to contribute and access a growing library of shared insights, documents, and learning materials.",
+  },
+];
+
+export default function SocialLearningPage() {
+  return (
+    <main className="social-learning-page page">
+
+      <section className="heroSection">
+        <div className="heroGrid">
+          <div className="heroContent">
+
+            <h1 className="heroTitle">Social Learning</h1>
+
+            <h2 className="heroSubtitle">
+              Learn Together. Grow Faster.
+            </h2>
+
+            <p className="heroText">
+              Learning becomes more powerful when it happens together. NeuroLXP
+              enables social learning by creating a collaborative environment
+              where learners can share knowledge, exchange ideas, and learn from
+              one another in a safe and structured space.
+            </p>
+
+            <p className="heroText">
+              By combining modern learning technology with community-driven
+              engagement, NeuroLXP transforms individual learning into a
+              collective learning experience.
+            </p>
+          </div>
+
+          <div className="heroVisualCard">
+            <div className="imagePlaceholder">
+            
+              <img
+                src="/photo-1522071820081-009f0129c71c.jpeg"
+                alt="A diverse team collaborating and learning together around a table"
+                className="heroImage"
+              />
+            </div>
+
+            <div className="floatingStats">
+              <div className="statPill">
+                <FaUsers className="iconText" />
+                <span>Peer Collaboration</span>
+              </div>
+              <div className="statPill">
+                <FaShieldAlt className="iconText" />
+                <span>Safe Environment</span>
+              </div>
+              <div className="statPill">
+                <FaGlobe className="iconText" />
+                <span>Knowledge Community</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="cardsSection">
+
+        <article className="contentCard">
+          <div className="cardHeader">
+            <div className="iconWrap">
+              <FaHandshake className="iconText" />
+            </div>
+            <h3>Collaboration that Enhances Learning</h3>
+          </div>
+
+          <p>
+            NeuroLXP encourages learners to actively participate in discussions,
+            ask questions, and contribute insights. Through built-in collaboration
+            features, learners can connect with peers, mentors, and experts,
+            making learning more dynamic and meaningful.
+          </p>
+
+          <div className="insetBox">
+            <h4>Moving beyond isolated learning:</h4>
+            <p className="insetText">
+              Instead of learning in isolation, learners become part of a
+              knowledge-sharing community where experiences, perspectives, and
+              ideas drive deeper understanding. Every interaction adds to a
+              growing collective intelligence that benefits the entire group.
+            </p>
+          </div>
+        </article>
+
+        <article className="contentCard">
+          <div className="cardHeader">
+            <div className="iconWrap">
+              <FaShieldAlt className="iconText" />
+            </div>
+            <h3>A Safe and Supportive Learning Environment</h3>
+          </div>
+
+          <p>
+            NeuroLXP is designed to ensure that social learning takes place in a
+            secure and respectful environment. With moderated discussions,
+            controlled access, and structured collaboration spaces, organizations
+            can foster open communication while maintaining a professional
+            learning atmosphere.
+          </p>
+
+          <div className="insetBox">
+            <h4>Confidence through structure:</h4>
+            <p className="insetText">
+              This safe environment empowers learners to confidently share ideas,
+              ask questions, and engage in meaningful conversations — free from
+              judgment, with every voice valued and every contribution respected.
+            </p>
+          </div>
+        </article>
+
+        <article className="contentCard">
+          <div className="cardHeader">
+            <div className="iconWrap">
+              <FaUsers className="iconText" />
+            </div>
+            <h3>Encourage Peer-to-Peer Knowledge Sharing</h3>
+          </div>
+
+          <p>
+            With NeuroLXP, learners benefit from the collective intelligence of
+            their peers. Social learning features allow users to collaborate, share,
+            and grow together across every stage of their learning journey.
+          </p>
+
+          <div className="insetBox">
+            <h4>Learners can:</h4>
+            <ul className="featureList">
+              {peerSharingPoints.map((item) => (
+                <li key={item}>
+                  <span className="listIcon">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <p>
+            These interactions promote continuous learning and strengthen
+            knowledge retention across the organisation.
+          </p>
+        </article>
+
+        <article className="contentCard">
+          <div className="cardHeader">
+            <div className="iconWrap">
+              <FaStar className="iconText" />
+            </div>
+            <h3>Building a Learning Community</h3>
+          </div>
+
+          <p>
+            NeuroLXP helps organisations build vibrant learning communities where
+            collaboration drives growth. By encouraging social interaction around
+            learning content, the platform creates an environment where knowledge
+            flows freely and learners support each other's development.
+          </p>
+
+          <div className="insetBox">
+            <h4>The outcome:</h4>
+            <p className="insetText">
+              A more engaging, inclusive, and effective learning experience. When
+              learners feel part of a community, motivation rises, retention
+              improves, and collective growth accelerates for every individual
+              within it.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <section className="featureStrip">
+        {collaborationFeatures.map((feat, i) => (
+          <div key={i} className="stripCard">
+            <div className="stripIconWrap">{feat.icon}</div>
+            <h4>{feat.title}</h4>
+            <p>{feat.desc}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="highlightSection">
+        <div className="highlightGrid">
+          <div className="highlightTextCard">
+            <div className="cardHeader">
+              <div className="iconWrap">
+                <FaLightbulb className="iconText" />
+              </div>
+              <h3>NeuroLXP — Connecting Learners, Building Skills Together</h3>
+            </div>
+
+            <p>
+              NeuroLXP's social learning capabilities go beyond simple chat
+              tools. They create a living, breathing knowledge ecosystem where
+              every learner contributes to — and benefits from — the collective
+              wisdom of the group.
+            </p>
+
+            <p>
+              Sharing knowledge, building skills, growing together — NeuroLXP
+              makes every learning journey a shared one.
+            </p>
+
+            <div className="miniFeatures">
+              <div className="miniFeature">
+                <FaComments className="iconText" />
+                <span>Discussion Forums</span>
+              </div>
+              <div className="miniFeature">
+                <FaUsers className="iconText" />
+                <span>Learning Communities</span>
+              </div>
+              <div className="miniFeature">
+                <FaShareAlt className="iconText" />
+                <span>Peer Knowledge Exchange</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="secondaryVisualCard">
+            <div className="imagePlaceholderAlt">
+              <img
+                src="/photo-1529390079861-591de354faf5.jpeg"
+                alt="Learners engaged in peer knowledge sharing and collaborative discussion online"
+                className="heroImage"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  );
 }
