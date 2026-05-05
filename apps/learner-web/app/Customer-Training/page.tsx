@@ -1,4 +1,4 @@
-import "./compliance-training.css";
+import "./CustomerTraining.css";
 import {
   FaShieldAlt,
   FaClipboardCheck,
