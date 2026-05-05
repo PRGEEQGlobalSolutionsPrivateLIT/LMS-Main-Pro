@@ -1,16 +1,16 @@
 import {
-  Network,
-  Users,
-  Globe2,
-  BadgeCheck,
-  BarChart3,
-  Handshake,
-  BookOpen,
-  Target,
-  ShieldCheck,
-  TrendingUp,
-  ArrowRight,
-} from "lucide-react";
+  FaNetworkWired,
+  FaUsers,
+  FaGlobe,
+  FaCheckCircle,
+  FaChartBar,
+  FaHandshake,
+  FaBookOpen,
+  FaBullseye,
+  FaShieldAlt,
+  FaArrowUp,
+  FaArrowRight,
+} from "react-icons/fa";
 import "./ExtendedEnterpriseLearning.css";
 
 export default function ExtendedEnterpriseLearning() {
@@ -35,7 +35,7 @@ export default function ExtendedEnterpriseLearning() {
         </div>
 
         <div className="enterprise-hero-panel">
-          <Network />
+          <FaNetworkWired />
           <h4>Connected Learning Ecosystem</h4>
           <p>
             Train partners, vendors, distributors, and customers through one
@@ -56,7 +56,7 @@ export default function ExtendedEnterpriseLearning() {
       <section className="enterprise-challenges">
         <article className="enterprise-card">
           <div className="enterprise-card-icon">
-            <Handshake />
+            <FaHandshake />
           </div>
           <div>
             <span>Challenge 01</span>
@@ -77,7 +77,7 @@ export default function ExtendedEnterpriseLearning() {
 
         <article className="enterprise-card">
           <div className="enterprise-card-icon">
-            <Globe2 />
+            <FaGlobe />
           </div>
           <div>
             <span>Challenge 02</span>
@@ -97,7 +97,7 @@ export default function ExtendedEnterpriseLearning() {
 
         <article className="enterprise-card">
           <div className="enterprise-card-icon">
-            <BadgeCheck />
+            <FaCheckCircle />
           </div>
           <div>
             <span>Challenge 03</span>
@@ -118,7 +118,7 @@ export default function ExtendedEnterpriseLearning() {
 
         <article className="enterprise-card">
           <div className="enterprise-card-icon">
-            <BarChart3 />
+            <FaChartBar />
           </div>
           <div>
             <span>Challenge 04</span>
@@ -147,31 +147,31 @@ export default function ExtendedEnterpriseLearning() {
 
         <div className="enterprise-benefits-grid">
           <div>
-            <BookOpen />
+            <FaBookOpen />
             <h4>Consistent Training</h4>
             <p>Deliver consistent training to partners, vendors, and distributors.</p>
           </div>
 
           <div>
-            <Target />
+            <FaBullseye />
             <h4>Product Knowledge</h4>
             <p>Improve product knowledge across the business ecosystem.</p>
           </div>
 
           <div>
-            <ShieldCheck />
+            <FaShieldAlt />
             <h4>Brand Consistency</h4>
             <p>Strengthen brand representation and customer experience.</p>
           </div>
 
           <div>
-            <Globe2 />
+            <FaGlobe />
             <h4>Global Scale</h4>
             <p>Scale training programs globally with ease.</p>
           </div>
 
           <div>
-            <TrendingUp />
+            <FaArrowUp />
             <h4>Compliance Tracking</h4>
             <p>Monitor certification and training compliance.</p>
           </div>
@@ -192,10 +192,10 @@ export default function ExtendedEnterpriseLearning() {
 
         <div className="enterprise-final-action">
           <img
-          src="/pexels-divinetechygirl-1181435.jpg"
-          alt="Learners using digital learning resources"
-          className="placeholder-image"
-        />
+            src="/pexels-divinetechygirl-1181435.jpg"
+            alt="Learners using digital learning resources"
+            className="placeholder-image"
+          />
         </div>
       </section>
     </main>
