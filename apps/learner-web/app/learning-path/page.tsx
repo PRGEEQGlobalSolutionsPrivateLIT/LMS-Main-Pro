@@ -1,7 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { BiFlag, BiGitBranch, BiPulse, BiBarChartAlt2, BiTrophy, } from 'react-icons/bi';
+import {
+  FaFlag,
+  FaCodeBranch,
+  FaHeartbeat,
+  FaChartBar,
+  FaTrophy,
+} from 'react-icons/fa';
 import "./learning-path.css";
 import Image from 'next/image';
 
@@ -197,35 +203,35 @@ const stages: Stage[] = [
 const milestones: Milestone[] = [
   {
     iconClass: 'circle1',
-    icon: BiFlag,
+    icon: FaFlag,
     iconColor: '#5e72e4',
     title: 'Clear Learning Milestones',
     desc: 'Track progress at every defined stage checkpoint'
   },
   {
     iconClass: 'circle2',
-    icon: BiGitBranch,
+    icon: FaCodeBranch,
     iconColor: '#7c3aed',
     title: 'Logical Topic Progression',
     desc: 'Concepts flow naturally from simple to complex'
   },
   {
     iconClass: 'circle3',
-    icon: BiPulse,
+    icon: FaHeartbeat,
     iconColor: '#00b4d8',
     title: 'Continuous Learner Engagement',
     desc: 'Built-in motivation and momentum throughout'
   },
   {
     iconClass: 'circle4',
-    icon: BiBarChartAlt2,
+    icon: FaChartBar,
     iconColor: '#10b981',
     title: 'Data-Driven Learning Analytics',
     desc: 'Real-time insights on learner performance'
   },
   {
     iconClass: 'circle1',
-    icon: BiTrophy,
+    icon: FaTrophy,
     iconColor: '#5e72e4',
     title: 'Measurable Capability Development',
     desc: 'Validate and track actual skill development'
@@ -352,9 +358,7 @@ const LearningPaths: React.FC = () => {
                     <span className="heroProgressPct">{item.pct}</span>
                   </div>
                   <div className="heroProgressBar">
-                    <div
-                      className={`heroProgressFill ${item.fillClass}`}
-                    />
+                    <div className={`heroProgressFill ${item.fillClass}`} />
                   </div>
                 </div>
               ))}
@@ -412,26 +416,26 @@ const LearningPaths: React.FC = () => {
             </div>
           </div>
 
-           <div className="whatIsRight">
-              <div className="statsGrid">
-                {statCards.map((stat) => (
-                  <div key={stat.label} className="statCard">
-                    <div className="statNumber">{stat.num}</div>
-                    <div className="statLabel">{stat.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              <div className="imageWrapperAlt">
-                <Image
-                  src="/photo-1434030216411-0b793f4b4173.jpeg"
-                  alt="Educator using learning analytics technology"
-                  width={520}
-                  height={300}
-                  className="heroImage"
-                />
-              </div>
+          <div className="whatIsRight">
+            <div className="statsGrid">
+              {statCards.map((stat) => (
+                <div key={stat.label} className="statCard">
+                  <div className="statNumber">{stat.num}</div>
+                  <div className="statLabel">{stat.label}</div>
+                </div>
+              ))}
             </div>
+
+            <div className="imageWrapperAlt">
+              <Image
+                src="/photo-1434030216411-0b793f4b4173.jpeg"
+                alt="Educator using learning analytics technology"
+                width={520}
+                height={300}
+                className="heroImage"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
@@ -500,76 +504,85 @@ const LearningPaths: React.FC = () => {
             const circumference = 2 * Math.PI * radius;
             const offset = circumference - (stage.progress / 100) * circumference;
             const progressColors: Record<string, string> = {
-              circle1: '#5e72e4', circle2: '#7c3aed', circle3: '#00b4d8', circle4: '#10b981',
+              circle1: '#5e72e4',
+              circle2: '#7c3aed',
+              circle3: '#00b4d8',
+              circle4: '#10b981',
             };
             const color = progressColors[stage.circleClass] ?? '#5e72e4';
+
             return (
-            <div key={stage.tag} className="stageRow">
-              <div className="stageMarker">
-                <div className="stageCircle">
-                  <div
-                    className={`stageCircleInner ${stage.circleClass}`}
-                  />
-                </div>
-              </div>
-
-              <div className="stageBody">
-                <div className='stageBodyInner'>
-                  <div className='stageContent'>
-                    <span className={`stageTag ${stage.tagClass}`}>{stage.tag}</span>
-                    <h3 className="stageTitle">{stage.title}</h3>
-                    <p className="stageSubtitle">{stage.subtitle}</p>
-                    <ul className="stageList">
-                      {stage.items.map((item) => (
-                        <li key={item} className="stageListItem">
-                          <span className={`stageDot ${stage.dotClass}`} />
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <p className="stageClosing">{stage.closing}</p>
-                  </div>
-
-                  <div className='stagePanel'>
-                    <div className='stagePanelRing'>
-                      <svg width="120" height="120" viewBox="0 0 120 120">
-                        <circle cx="60" cy="60" r={radius} fill="none" stroke="var(--neu-shadow-dark)" strokeWidth="10" />
-                        <circle
-                          cx="60" cy="60" r={radius} fill="none"
-                          stroke={color} strokeWidth="10"
-                          strokeDasharray={circumference}
-                          strokeDashoffset={offset}
-                          strokeLinecap="round"
-                          transform="rotate(-90 60 60)"
-                          style={{ transition: 'stroke-dashoffset 0.8s ease' }}
-                        />
-                      </svg>
-                      <div className='stagePanelRingLabel'>
-                        <span className='stagePanelPct' style={{color}}>{stage.progress}%</span>
-                        <span className='stagePanelPctSub'>Mastery</span>
-                      </div>
-                    </div>
-
-                    <div className='stagePanelStats'>
-                      <div className='stagePanelStat'>
-                        <span className='stagePanelStatNum' style={{ color }}>{stage.modules}</span>
-                        <span className='stagePanelStatLabel'>Modules</span>
-                      </div>
-                      <div className='stagePanelStatDivider' />
-                      <div className="stagePanelStat">
-                        <span className="stagePanelStatNum" style={{ color }}>{stage.duration}</span>
-                        <span className="stagePanelStatLabel">Duration</span>
-                      </div>
-                    </div>
-
-                    <div className='stagePanelTags'>
-                      {stage.skills.map((skill) => (<span key={skill} className='stagePanelTag'>{skill}</span>))}
-                    </div>
+              <div key={stage.tag} className="stageRow">
+                <div className="stageMarker">
+                  <div className="stageCircle">
+                    <div className={`stageCircleInner ${stage.circleClass}`} />
                   </div>
                 </div>
+
+                <div className="stageBody">
+                  <div className="stageBodyInner">
+                    <div className="stageContent">
+                      <span className={`stageTag ${stage.tagClass}`}>{stage.tag}</span>
+                      <h3 className="stageTitle">{stage.title}</h3>
+                      <p className="stageSubtitle">{stage.subtitle}</p>
+                      <ul className="stageList">
+                        {stage.items.map((item) => (
+                          <li key={item} className="stageListItem">
+                            <span className={`stageDot ${stage.dotClass}`} />
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="stageClosing">{stage.closing}</p>
+                    </div>
+
+                    <div className="stagePanel">
+                      <div className="stagePanelRing">
+                        <svg width="120" height="120" viewBox="0 0 120 120">
+                          <circle cx="60" cy="60" r={radius} fill="none" stroke="var(--neu-shadow-dark)" strokeWidth="10" />
+                          <circle
+                            cx="60"
+                            cy="60"
+                            r={radius}
+                            fill="none"
+                            stroke={color}
+                            strokeWidth="10"
+                            strokeDasharray={circumference}
+                            strokeDashoffset={offset}
+                            strokeLinecap="round"
+                            transform="rotate(-90 60 60)"
+                            style={{ transition: 'stroke-dashoffset 0.8s ease' }}
+                          />
+                        </svg>
+                        <div className="stagePanelRingLabel">
+                          <span className="stagePanelPct" style={{ color }}>{stage.progress}%</span>
+                          <span className="stagePanelPctSub">Mastery</span>
+                        </div>
+                      </div>
+
+                      <div className="stagePanelStats">
+                        <div className="stagePanelStat">
+                          <span className="stagePanelStatNum" style={{ color }}>{stage.modules}</span>
+                          <span className="stagePanelStatLabel">Modules</span>
+                        </div>
+                        <div className="stagePanelStatDivider" />
+                        <div className="stagePanelStat">
+                          <span className="stagePanelStatNum" style={{ color }}>{stage.duration}</span>
+                          <span className="stagePanelStatLabel">Duration</span>
+                        </div>
+                      </div>
+
+                      <div className="stagePanelTags">
+                        {stage.skills.map((skill) => (
+                          <span key={skill} className="stagePanelTag">{skill}</span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div> 
-          );})}
+            );
+          })}
         </div>
       </section>
 
@@ -594,9 +607,7 @@ const LearningPaths: React.FC = () => {
             return (
               <div key={m.title} className="milestoneCard">
                 <div className="milestoneIconBox">
-                  <div
-                    className={`milestoneIconInner ${m.iconClass}`}
-                  >
+                  <div className={`milestoneIconInner ${m.iconClass}`}>
                     <Icon size={20} color={m.iconColor} />
                   </div>
                 </div>
@@ -657,10 +668,14 @@ const LearningPaths: React.FC = () => {
             <div className="benefitsClosingBox">{activeData.closing}</div>
 
             <div className="imageWrapperAlt">
-                <Image src="/photo-1509062522246-3755977927d7.jpeg"
-                  alt="Educator using learning analytics technology"
-                  width={520} height={300} className="heroImage" />
-              </div>
+              <Image
+                src="/pexels-olly-3932570.jpg"
+                alt="Educator using learning analytics technology"
+                width={520}
+                height={300}
+                className="heroImage"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -736,9 +751,10 @@ const LearningPaths: React.FC = () => {
             {futureExpanded && (
               <p className="futureBannerBodyLast">
                 NeuroLXP is proud to pioneer a scientific learning path model that brings clarity,
-                structure, and purpose to digital learning. Through NeuroLXP Learning Paths, education evolves from isolated learning events into
-                a guided journey toward expertise and career readiness. Experience the future of AI-powered learning platforms, structured learning paths,
-                and competency-based digital education with NeuroLXP.{` `}
+                structure, and purpose to digital learning. Through NeuroLXP Learning Paths, education
+                evolves from isolated learning events into a guided journey toward expertise and
+                career readiness. Experience the future of AI-powered learning platforms, structured
+                learning paths, and competency-based digital education with NeuroLXP.{` `}
                 <a className="lnkToggle" onClick={() => setFutureExpanded(false)}>
                   Less ▲
                 </a>
