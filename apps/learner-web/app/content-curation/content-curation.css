@@ -1,6 +1,6 @@
 .content-curation-page {
-  --bg: #eef3f6;
-  --surface: #e8edf2;
+  --bg: #e6e7ee;
+  --surface: #e6e7ee;
   --surface-soft: #f2f6fa;
   --surface-soft-2: #f8fbfd;
   --text: #5a6572;
@@ -54,10 +54,6 @@ body {
   position: relative;
   padding: 34px 34px 34px 42px;
   border-radius: var(--radius-2xl);
-  background: var(--surface);
-  box-shadow:
-    18px 18px 38px var(--shadow-dark),
-    -18px -18px 38px var(--shadow-light);
   overflow: hidden;
 }
 
@@ -67,29 +63,19 @@ body {
   top: 24px;
   bottom: 24px;
   left: 18px;
-  width: 6px;
-  border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    var(--primary),
-    var(--secondary),
-    var(--accent)
-  );
-  box-shadow:
-    3px 3px 8px rgba(207, 214, 222, 0.72),
-    -3px -3px 8px rgba(255, 255, 255, 0.96);
+  width: 6px;  
 }
 
 .content-curation-page .heroTitle {
   margin: 0 0 12px;
-  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+  font-size: 40px;
   line-height: 1.04;
   color: var(--heading);
 }
 
 .content-curation-page .heroSubtitle {
   margin: 0 0 18px;
-  font-size: clamp(1.05rem, 1.9vw, 1.6rem);
+  font-size: 32px;
   line-height: 1.42;
   color: #3f4d5e;
   font-weight: 700;
@@ -110,10 +96,6 @@ body {
   gap: 16px;
   padding: 20px;
   border-radius: var(--radius-2xl);
-  background: linear-gradient(180deg, var(--surface-soft), var(--surface));
-  box-shadow:
-    18px 18px 38px var(--shadow-dark),
-    -18px -18px 38px var(--shadow-light);
 }
 
 .content-curation-page .imagePlaceholder,
@@ -133,7 +115,7 @@ body {
 
 .content-curation-page .imagePlaceholder {
   min-height: 200px;
-  max-height: 200px;
+  max-height: 263px;
 }
 
 .content-curation-page .imagePlaceholderAlt {
@@ -161,9 +143,7 @@ body {
   padding: 14px 16px;
   border-radius: 18px;
   background: var(--surface);
-  box-shadow:
-    8px 8px 18px rgba(207, 214, 222, 0.9),
-    -8px -8px 18px rgba(255, 255, 255, 1);
+  box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
   font-size: 0.93rem;
   font-weight: 700;
   cursor: pointer;
@@ -189,7 +169,7 @@ body {
 }
 
 .content-curation-page .iconText {
-  font-size: 1.02rem;
+  font-size: 38px;
   line-height: 1;
 }
 
@@ -205,9 +185,7 @@ body {
   padding: 28px;
   border-radius: var(--radius-xl);
   background: var(--surface);
-  box-shadow:
-    14px 14px 28px var(--shadow-dark),
-    -14px -14px 28px var(--shadow-light);
+  box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff!important
 }
 
 .content-curation-page .contentCard:nth-child(1) { border-top: 4px solid var(--primary); }
@@ -237,7 +215,7 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 16px;
-  background: var(--surface-soft);
+  background: var(--surface);
   box-shadow:
     inset 4px 4px 10px rgba(207, 214, 222, 0.72),
     inset -4px -4px 10px rgba(255, 255, 255, 0.96);
@@ -257,13 +235,13 @@ body {
   margin: 0 0 14px;
   line-height: 1.84;
   color: var(--text);
+  font-size: 18px;
 }
 
 .content-curation-page .insetBox {
   margin: 18px 0 14px;
   padding: 22px;
   border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, var(--surface-soft), var(--surface-soft-2));
   box-shadow:
     inset 7px 7px 16px rgba(207, 214, 222, 0.72),
     inset -7px -7px 16px rgba(255, 255, 255, 0.96);
@@ -272,7 +250,7 @@ body {
 .content-curation-page .insetBox h4 {
   margin: 0 0 14px;
   color: var(--heading);
-  font-size: 1rem;
+  font-size: 20px;
   line-height: 1.7;
 }
 
@@ -291,6 +269,7 @@ body {
   align-items: start;
   line-height: 1.72;
   color: var(--text);
+  font-size: 15px;
 }
 
 .content-curation-page .listIcon {
@@ -301,18 +280,9 @@ body {
 
 .content-curation-page .insightGrid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
+  grid-template-columns: 1fr;
   gap: 28px;
   align-items: center;
-}
-
-.content-curation-page .insightVisualCard {
-  padding: 18px;
-  border-radius: var(--radius-2xl);
-  background: var(--surface);
-  box-shadow:
-    16px 16px 34px var(--shadow-dark),
-    -16px -16px 34px var(--shadow-light);
 }
 
 .content-curation-page .insightCard {
@@ -335,9 +305,7 @@ body {
   padding: 28px;
   border-radius: var(--radius-xl);
   background: var(--surface);
-  box-shadow:
-    14px 14px 28px var(--shadow-dark),
-    -14px -14px 28px var(--shadow-light);
+  box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff!important;
 }
 
 .content-curation-page .stakeholderCard--institution {
@@ -372,9 +340,7 @@ body {
   padding: 30px;
   border-radius: var(--radius-2xl);
   background: linear-gradient(180deg, var(--surface), var(--surface-soft));
-  box-shadow:
-    16px 16px 34px var(--shadow-dark),
-    -16px -16px 34px var(--shadow-light);
+  box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff !important;
   border-left: 6px solid var(--primary);
 }
 
@@ -392,9 +358,7 @@ body {
   padding: 18px;
   border-radius: var(--radius-2xl);
   background: var(--surface);
-  box-shadow:
-    16px 16px 34px var(--shadow-dark),
-    -16px -16px 34px var(--shadow-light);
+  box-shadow: 6px 6px 12px #b8b9be,-6px -6px 12px #fff !important;
 }
 
 .content-curation-page .secondaryVisualCard .imagePlaceholderAlt {
