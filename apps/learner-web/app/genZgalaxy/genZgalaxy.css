@@ -1,35 +1,26 @@
+/* ================= GENZGALAXY CLEAN NEUMORPHIC UI ================= */
+
 :root {
   --neu-bg: #e6e6ee;
   --neu-surface: #e6e6ee;
-  --neu-surface-soft: #edf1f7;
 
-  --neu-text: #4f5563;
+  --neu-text: #4b5563;
   --neu-text-light: #6b7280;
-  --neu-heading: #2f3a4d;
-  --neu-blue: #3b82f6;
-  --neu-blue-dark: #2563eb;
-  --neu-red: #e53e3e;
+  --neu-heading: #1f2937;
 
-  --neu-shadow-dark: #c8cad1;
-  --neu-shadow-mid: #d1d9e6;
-  --neu-shadow-light: #ffffff;
+  --neu-blue: #5b72e8;
+  --neu-blue-dark: #4659d8;
 
-  --neu-border: rgba(0, 0, 0, 0.04);
-  --neu-border-light: rgba(255, 255, 255, 0.6);
-  --neu-border-soft: #d9e2ec;
+  --neu-shadow-dark: #c9ced8;
+  --neu-shadow-light: rgba(255, 255, 255, 0.72);
 
-  --radius-xl: 30px;
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
+  --neu-border: rgba(31, 41, 55, 0.1);
+  --neu-border-blue: rgba(91, 114, 232, 0.28);
 
-  --accent-indigo: #6366f1;
-  --accent-purple: #8b5cf6;
-  --accent-green: #10b981;
-  --accent-cyan: #06b6d4;
-  --accent-orange: #f97316;
-  --accent-yellow: #f59e0b;
-  --accent-pink: #ec4899;
+  --radius-xl: 28px;
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
 }
 
 * {
@@ -40,7 +31,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--neu-bg);
+  background: #e6e6ee;
   color: var(--neu-text);
   font-family: "Segoe UI", system-ui, sans-serif;
 }
@@ -58,7 +49,7 @@ body {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
   padding: 110px 0 80px;
-  background: var(--neu-bg);
+  background: #e6e6ee;
   color: var(--neu-text);
   position: relative;
 }
@@ -74,8 +65,8 @@ body {
   margin: 0;
   color: var(--neu-heading);
   font-weight: 700;
-  line-height: 1.25;
-  letter-spacing: -0.02em;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
 }
 
 .genzgalaxy-page h1 {
@@ -97,7 +88,7 @@ body {
 .genzgalaxy-page p {
   margin: 0 0 14px;
   font-size: 18px;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--neu-text);
 }
 
@@ -111,7 +102,7 @@ body {
   list-style: none;
 }
 
-/* ================= BASE NEUMORPHIC ELEMENTS ================= */
+/* ================= SHARED FINISH ================= */
 
 .genzgalaxy-page .neu-card {
   background: transparent;
@@ -120,39 +111,105 @@ body {
   border-radius: 0;
 }
 
+.genzgalaxy-page .neu-card-inner,
+.genzgalaxy-page .neu-inset,
+.genzgalaxy-page .eyebrow,
+.genzgalaxy-page .hero-content,
+.genzgalaxy-page .hero-image-card,
+.genzgalaxy-page .neu-btn,
+.genzgalaxy-page .info-card li,
+.genzgalaxy-page .neu-chip,
+.genzgalaxy-page .mini-card,
+.genzgalaxy-page .skill-box,
+.genzgalaxy-page .point,
+.genzgalaxy-page .closing-card {
+  background: var(--neu-bg);
+  border: 1px solid var(--neu-border);
+  box-shadow:
+    inset 6px 6px 13px var(--neu-shadow-dark),
+    inset -6px -6px 13px var(--neu-shadow-light);
+}
+
 .genzgalaxy-page .neu-card-inner {
   padding: 26px;
-  background: var(--neu-surface-soft);
-  border: 1px solid var(--neu-border-light);
   border-radius: var(--radius-lg);
-  box-shadow:
-    inset 4px 4px 10px var(--neu-shadow-mid),
-    inset -4px -4px 10px var(--neu-shadow-light);
-  transition:
-    box-shadow 0.2s ease,
-    transform 0.2s ease,
-    border-color 0.2s ease;
+  transition: transform 0.22s ease, border-color 0.22s ease;
 }
 
 .genzgalaxy-page .neu-card-inner:hover {
-  transform: translateY(-1px);
-  border-color: rgba(59, 130, 246, 0.18);
-  box-shadow:
-    inset 5px 5px 12px var(--neu-shadow-mid),
-    inset -5px -5px 12px var(--neu-shadow-light);
+  transform: translateY(-2px);
+  border-color: var(--neu-border-blue);
 }
 
 .genzgalaxy-page .neu-inset {
-  background: var(--neu-surface-soft);
-  border: 1px solid var(--neu-border-light);
+  border-radius: var(--radius-md);
+}
+
+/* ================= ICON CLASSES FOR REACT ICONS ================= */
+
+.genzgalaxy-page .section-icon,
+.genzgalaxy-page .list-icon,
+.genzgalaxy-page .skill-icon,
+.genzgalaxy-page .point-icon,
+.genzgalaxy-page .eyebrow-icon,
+.genzgalaxy-page .btn-icon,
+.genzgalaxy-page .chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--neu-blue);
+}
+
+.genzgalaxy-page .section-icon {
+  width: 42px;
+  height: 42px;
+  font-size: 21px;
+  border-radius: var(--radius-md);
+  background: var(--neu-bg);
+  border: 1px solid var(--neu-border);
   box-shadow:
-    inset 4px 4px 10px var(--neu-shadow-mid),
-    inset -4px -4px 10px var(--neu-shadow-light);
-  transition:
-    box-shadow 0.18s ease,
-    transform 0.18s ease,
-    color 0.18s ease,
-    border-color 0.18s ease;
+    inset 5px 5px 10px var(--neu-shadow-dark),
+    inset -5px -5px 10px var(--neu-shadow-light);
+}
+
+.genzgalaxy-page .list-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  transform: translateY(-50%);
+}
+
+.genzgalaxy-page .skill-icon {
+  margin-bottom: 16px;
+  font-size: 28px;
+}
+
+.genzgalaxy-page .point-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  font-size: 18px;
+  transform: translateY(-50%);
+}
+
+.genzgalaxy-page .eyebrow-icon {
+  margin-right: 8px;
+  font-size: 15px;
+}
+
+.genzgalaxy-page .btn-icon {
+  margin-left: 8px;
+  font-size: 15px;
+  color: currentColor;
+  transition: transform 0.2s ease;
+}
+
+.genzgalaxy-page .chip-icon {
+  font-size: 16px;
 }
 
 /* ================= EYEBROW ================= */
@@ -164,31 +221,15 @@ body {
   min-height: 38px;
   padding: 9px 16px;
   margin-bottom: 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   color: var(--neu-blue-dark);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.04em;
-  cursor: pointer;
-  background: var(--neu-surface-soft);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  box-shadow:
-    5px 5px 12px var(--neu-shadow-mid),
-    -5px -5px 12px var(--neu-shadow-light);
-}
-
-.genzgalaxy-page .eyebrow::before {
-  content: "✦";
-  margin-right: 8px;
-  color: var(--accent-purple);
-  font-size: 15px;
 }
 
 .genzgalaxy-page .eyebrow:hover {
-  color: var(--accent-indigo);
-  box-shadow:
-    inset 5px 5px 12px var(--neu-shadow-mid),
-    inset -5px -5px 12px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 /* ================= HERO ================= */
@@ -200,12 +241,7 @@ body {
   align-items: center;
   position: relative;
   padding: 36px 34px;
-  border-radius: 34px;
-  background: var(--neu-surface);
-  border: 1px solid var(--neu-border-light);
-  box-shadow:
-    14px 14px 30px var(--neu-shadow-mid),
-    -14px -14px 30px var(--neu-shadow-light);
+  border-radius: var(--radius-xl);
 }
 
 .genzgalaxy-page .hero-text,
@@ -217,7 +253,7 @@ body {
 .genzgalaxy-page .hero-text h1 {
   max-width: 760px;
   font-size: 40px;
-  line-height: 1.15;
+  line-height: 1.12;
   margin-bottom: 12px;
 }
 
@@ -225,24 +261,17 @@ body {
   content: "";
   display: block;
   width: 96px;
-  height: 5px;
+  height: 4px;
   margin-top: 18px;
   border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    var(--neu-blue),
-    var(--accent-purple),
-    var(--accent-pink)
-  );
+  background: linear-gradient(90deg, var(--neu-blue), var(--neu-blue-dark));
 }
 
 .genzgalaxy-page .hero-text h2 {
   max-width: 680px;
   font-size: 32px;
-  line-height: 1.35;
-  font-weight: 700;
+  line-height: 1.32;
   margin-bottom: 18px;
-  color: var(--neu-heading);
 }
 
 .genzgalaxy-page .hero-text p {
@@ -264,10 +293,8 @@ body {
   min-width: 150px;
   min-height: 48px;
   padding: 14px 24px;
-  border-radius: 16px;
-  border: 1px solid var(--neu-border-light);
+  border-radius: var(--radius-md);
   outline: none;
-  background: var(--neu-surface);
   color: var(--neu-heading);
   font-size: 15px;
   font-weight: 700;
@@ -276,48 +303,35 @@ body {
   cursor: pointer;
   user-select: none;
   -webkit-tap-highlight-color: transparent;
-  position: relative;
   transform: translateY(0);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   transition:
-    box-shadow 0.18s ease,
     transform 0.18s ease,
     color 0.18s ease,
-    background-color 0.18s ease,
     border-color 0.18s ease;
-  box-shadow:
-    6px 6px 12px var(--neu-shadow-mid),
-    -6px -6px 12px var(--neu-shadow-light);
 }
 
 .genzgalaxy-page .neu-btn:first-child {
-  background: linear-gradient(135deg, var(--neu-blue), var(--neu-blue-dark));
   color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.42);
+  background: var(--neu-blue-dark);
+  border-color: var(--neu-blue-dark);
+  box-shadow: none;
 }
 
-.genzgalaxy-page .neu-btn:first-child::after {
-  content: "→";
-  margin-left: 8px;
-  transition: transform 0.2s ease;
-}
-
-.genzgalaxy-page .neu-btn:first-child:hover::after {
+.genzgalaxy-page .neu-btn:first-child:hover .btn-icon {
   transform: translateX(3px);
 }
 
 .genzgalaxy-page .neu-btn:hover {
   color: var(--neu-blue-dark);
-  box-shadow:
-    inset 5px 5px 10px var(--neu-shadow-mid),
-    inset -5px -5px 10px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 .genzgalaxy-page .neu-btn:first-child:hover {
   color: #ffffff;
-  background: linear-gradient(135deg, var(--neu-blue-dark), var(--accent-indigo));
+  background: var(--neu-blue);
 }
 
 .genzgalaxy-page .neu-btn:active {
@@ -325,12 +339,6 @@ body {
 }
 
 .genzgalaxy-page .neu-btn-secondary {
-  color: var(--neu-blue);
-  background: var(--neu-surface);
-  border-color: rgba(59, 130, 246, 0.18);
-}
-
-.genzgalaxy-page .neu-btn-secondary:hover {
   color: var(--neu-blue-dark);
 }
 
@@ -341,43 +349,23 @@ body {
 }
 
 .genzgalaxy-page .hero-image-card {
-  padding: 16px;
-  background: var(--neu-surface);
-  border: 1px solid var(--neu-border-light);
+  padding: 14px;
   border-radius: var(--radius-xl);
-  box-shadow:
-    10px 10px 22px var(--neu-shadow-mid),
-    -10px -10px 22px var(--neu-shadow-light);
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.genzgalaxy-page .hero-image-card::before {
-  content: "";
-  position: absolute;
-  inset: 10px;
-  border-radius: 22px;
-  border: 1px solid rgba(59, 130, 246, 0.16);
-  pointer-events: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .genzgalaxy-page .hero-image-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(59, 130, 246, 0.22);
-  box-shadow:
-    16px 16px 34px var(--neu-shadow-mid),
-    -16px -16px 34px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 .genzgalaxy-page .hero-image {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   object-fit: cover;
 }
 
@@ -402,65 +390,20 @@ body {
   gap: 12px;
 }
 
-.genzgalaxy-page .info-card:nth-child(1) h3::before {
-  content: "🎯";
-}
-
-.genzgalaxy-page .info-card:nth-child(2) h3::before {
-  content: "🚀";
-}
-
-.genzgalaxy-page .info-card h3::before {
-  width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 42px;
-  border-radius: 14px;
-  font-size: 19px;
-  background: var(--neu-surface);
-  box-shadow:
-    5px 5px 10px var(--neu-shadow-mid),
-    -5px -5px 10px var(--neu-shadow-light);
-}
-
 .genzgalaxy-page .info-card li {
   position: relative;
-  padding: 12px 14px 12px 44px;
-  line-height: 1.72;
-  color: var(--neu-text);
-  margin-bottom: 10px;
-  border-radius: 14px;
-  background: var(--neu-surface-soft);
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  padding: 14px 18px 14px 52px;
+  line-height: 1.65;
+  color: var(--neu-heading);
+  margin-bottom: 12px;
+  border-radius: var(--radius-lg);
+  font-weight: 650;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .genzgalaxy-page .info-card li:hover {
   transform: translateX(3px);
-  box-shadow:
-    inset 3px 3px 7px var(--neu-shadow-mid),
-    inset -3px -3px 7px var(--neu-shadow-light);
-}
-
-.genzgalaxy-page .info-card li::before {
-  content: "✓";
-  position: absolute;
-  left: 14px;
-  top: 14px;
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-color: var(--neu-border-blue);
 }
 
 /* ================= SECTION HEADINGS ================= */
@@ -481,13 +424,10 @@ body {
   content: "";
   display: block;
   width: 104px;
-  height: 5px;
+  height: 4px;
   margin-top: 14px;
   border-radius: 999px;
-}
-
-.genzgalaxy-page .section-heading h2::after {
-  background: linear-gradient(90deg, var(--accent-cyan), var(--neu-blue));
+  background: linear-gradient(90deg, var(--neu-blue), var(--neu-blue-dark));
 }
 
 /* ================= FEATURES ================= */
@@ -514,50 +454,22 @@ body {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   padding: 12px 18px;
-  border-radius: 16px;
-  background: var(--neu-surface);
-  border: 1px solid var(--neu-border-light);
-  box-shadow:
-    5px 5px 10px var(--neu-shadow-mid),
-    -5px -5px 10px var(--neu-shadow-light);
+  border-radius: var(--radius-lg);
   color: var(--neu-heading);
   font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
+  font-weight: 650;
   transition:
-    box-shadow 0.18s ease,
     transform 0.18s ease,
     color 0.18s ease,
-    background 0.18s ease;
-}
-
-.genzgalaxy-page .neu-chip::before {
-  content: "●";
-  font-size: 11px;
-  color: var(--neu-blue);
-}
-
-.genzgalaxy-page .neu-chip:nth-child(2n)::before {
-  color: var(--accent-purple);
-}
-
-.genzgalaxy-page .neu-chip:nth-child(3n)::before {
-  color: var(--accent-green);
-}
-
-.genzgalaxy-page .neu-chip:nth-child(4n)::before {
-  color: var(--accent-orange);
+    border-color 0.18s ease;
 }
 
 .genzgalaxy-page .neu-chip:hover {
   transform: translateY(-2px);
   color: var(--neu-blue-dark);
-  background: var(--neu-surface-soft);
-  box-shadow:
-    inset 4px 4px 8px var(--neu-shadow-mid),
-    inset -4px -4px 8px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 /* ================= MINI CARD ================= */
@@ -567,27 +479,16 @@ body {
 }
 
 .genzgalaxy-page .mini-card {
-  padding: 16px;
-  background: var(--neu-surface);
-  border: 1px solid var(--neu-border-light);
+  padding: 14px;
   border-radius: var(--radius-xl);
-  box-shadow:
-    10px 10px 22px var(--neu-shadow-mid),
-    -10px -10px 22px var(--neu-shadow-light);
   position: relative;
   overflow: hidden;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    border-color 0.25s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
 .genzgalaxy-page .mini-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(59, 130, 246, 0.22);
-  box-shadow:
-    16px 16px 34px var(--neu-shadow-mid),
-    -16px -16px 34px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 .genzgalaxy-page .feature-placeholder {
@@ -596,7 +497,7 @@ body {
   min-height: 280px;
   height: auto;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: var(--radius-lg);
   position: relative;
   z-index: 1;
 }
@@ -620,70 +521,32 @@ body {
 }
 
 .genzgalaxy-page .skill-box {
-  min-height: 130px;
-  padding: 20px 16px;
+  min-height: 145px;
+  padding: 26px 18px 22px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  border-radius: var(--radius-xl);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border-radius: 22px;
-  background: var(--neu-surface-soft);
-  border: 1px solid var(--neu-border-light);
-  box-shadow:
-    inset 4px 4px 10px var(--neu-shadow-mid),
-    inset -4px -4px 10px var(--neu-shadow-light);
-  transition: 0.2s ease;
-}
-
-.genzgalaxy-page .skill-box::before {
-  content: "★";
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 26px;
-  height: 26px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: #ffffff;
-  background: linear-gradient(135deg, var(--neu-blue), var(--neu-blue-dark));
-}
-
-.genzgalaxy-page .skill-box:nth-child(2)::before {
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
-}
-
-.genzgalaxy-page .skill-box:nth-child(3)::before {
-  background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
-}
-
-.genzgalaxy-page .skill-box:nth-child(4)::before {
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
-}
-
-.genzgalaxy-page .skill-box:nth-child(5)::before {
-  background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
 .genzgalaxy-page .skill-box h4 {
-  max-width: 160px;
+  max-width: 190px;
   font-size: 20px;
-  line-height: 1.45;
+  line-height: 1.42;
   color: var(--neu-heading);
-  font-weight: 700;
+  font-weight: 750;
   position: relative;
   z-index: 1;
 }
 
 .genzgalaxy-page .skill-box:hover {
   transform: translateY(-2px);
-  box-shadow:
-    8px 8px 18px var(--neu-shadow-mid),
-    -8px -8px 18px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 /* ================= COMMUNITY ================= */
@@ -702,68 +565,26 @@ body {
   margin-bottom: 16px;
 }
 
-.genzgalaxy-page .community-left h2::after {
-  background: linear-gradient(90deg, var(--accent-purple), var(--accent-pink));
-}
-
 .genzgalaxy-page .community-points {
   display: grid;
   gap: 16px;
 }
 
 .genzgalaxy-page .point {
-  padding: 18px 20px 18px 54px;
-  font-weight: 600;
+  padding: 18px 20px 18px 58px;
+  font-weight: 700;
   color: var(--neu-heading);
   line-height: 1.55;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  border-radius: 18px;
-  background: var(--neu-surface-soft);
-  border: 1px solid var(--neu-border-light);
-  box-shadow:
-    5px 5px 10px var(--neu-shadow-mid),
-    -5px -5px 10px var(--neu-shadow-light);
-  transition:
-    box-shadow 0.18s ease,
-    transform 0.18s ease,
-    border-color 0.18s ease;
-}
-
-.genzgalaxy-page .point::before {
-  content: "✦";
-  position: absolute;
-  left: 18px;
-  top: 18px;
-  width: 24px;
-  height: 24px;
-  border-radius: 9px;
-  background: linear-gradient(135deg, var(--neu-blue), var(--accent-cyan));
-  color: #ffffff;
-  font-size: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.genzgalaxy-page .point:nth-child(2)::before {
-  background: linear-gradient(135deg, var(--accent-purple), var(--accent-pink));
-}
-
-.genzgalaxy-page .point:nth-child(3)::before {
-  background: linear-gradient(135deg, var(--accent-green), var(--accent-cyan));
-}
-
-.genzgalaxy-page .point:nth-child(4)::before {
-  background: linear-gradient(135deg, var(--accent-orange), var(--accent-yellow));
+  border-radius: var(--radius-lg);
+  transition: transform 0.18s ease, border-color 0.18s ease;
 }
 
 .genzgalaxy-page .point:hover {
   transform: translateY(-2px);
-  box-shadow:
-    inset 5px 5px 10px var(--neu-shadow-mid),
-    inset -5px -5px 10px var(--neu-shadow-light);
+  border-color: var(--neu-border-blue);
 }
 
 /* ================= CLOSING ================= */
@@ -771,22 +592,13 @@ body {
 .genzgalaxy-page .closing-card {
   padding: 34px;
   position: relative;
-  border-radius: 30px;
-  background: var(--neu-surface-soft);
-  border: 1px solid var(--neu-border-light);
-  box-shadow:
-    10px 10px 24px var(--neu-shadow-mid),
-    -10px -10px 24px var(--neu-shadow-light);
+  border-radius: var(--radius-xl);
 }
 
 .genzgalaxy-page .closing-card h2 {
   font-size: 32px;
   line-height: 1.2;
   margin-bottom: 16px;
-}
-
-.genzgalaxy-page .closing-card h2::after {
-  background: linear-gradient(90deg, var(--accent-green), var(--accent-cyan));
 }
 
 .genzgalaxy-page .closing-line {
@@ -821,7 +633,7 @@ body {
 
   .genzgalaxy-page h1,
   .genzgalaxy-page .hero-text h1 {
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .genzgalaxy-page h2,
@@ -829,12 +641,12 @@ body {
   .genzgalaxy-page .section-heading h2,
   .genzgalaxy-page .community-left h2,
   .genzgalaxy-page .closing-card h2 {
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .genzgalaxy-page h3,
   .genzgalaxy-page .info-card h3 {
-    font-size: 22px;
+    font-size: 24px;
   }
 
   .genzgalaxy-page h4,
@@ -849,7 +661,7 @@ body {
 
   .genzgalaxy-page .hero-content {
     padding: 26px 20px;
-    border-radius: 24px;
+    border-radius: var(--radius-xl);
   }
 
   .genzgalaxy-page .hero-actions {
@@ -872,7 +684,7 @@ body {
   }
 
   .genzgalaxy-page .skill-box {
-    min-height: 112px;
+    min-height: 120px;
   }
 
   .genzgalaxy-page .feature-placeholder {
@@ -884,11 +696,10 @@ body {
   }
 
   .genzgalaxy-page .point {
-    padding-left: 50px;
+    padding-left: 54px;
   }
 
   .genzgalaxy-page .closing-card {
     padding: 24px 20px;
-    border-radius: 24px;
   }
 }
