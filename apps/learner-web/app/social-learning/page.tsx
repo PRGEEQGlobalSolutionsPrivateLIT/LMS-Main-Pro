@@ -2,10 +2,9 @@ import "./social-learning.css";
 import { FaUsers, FaShieldAlt, FaComments, FaLightbulb, FaHandshake, FaGlobe, FaStar, FaChalkboardTeacher, FaShareAlt, } from "react-icons/fa";
 
 const peerSharingPoints = [
-  "Participate in discussion forums and learning communities",
-  "Share insights, resources, and experiences",
-  "Collaborate on ideas and problem-solving",
-  "Engage in peer feedback and knowledge exchange",
+  {
+    items: "Learners participate in discussion forums and communities, share insights and resources, collaborate on ideas and problem-solving, and engage in peer feedback and meaningful knowledge exchange.",
+  }
 ];
 
 const collaborationFeatures = [
@@ -56,7 +55,7 @@ export default function SocialLearningPage() {
 
           <div className="heroVisualCard">
             <div className="imagePlaceholder">
-            
+
               <img
                 src="/photo-1522071820081-009f0129c71c.jpeg"
                 alt="A diverse team collaborating and learning together around a table"
@@ -115,23 +114,23 @@ export default function SocialLearningPage() {
             <div className="iconWrap">
               <FaShieldAlt className="iconText" />
             </div>
-            <h3>A Safe and Supportive Learning Environment</h3>
+            <h3>Supportive Learning Environment</h3>
           </div>
 
           <p>
-            NeuroLXP is designed to ensure that social learning takes place in a
+            NeuroLXP ensure that social learning takes place in a
             secure and respectful environment. With moderated discussions,
             controlled access, and structured collaboration spaces, organizations
-            can foster open communication while maintaining a professional
-            learning atmosphere.
+            have open communication to maintain a professional learning.
           </p>
 
           <div className="insetBox">
             <h4>Confidence through structure:</h4>
-            <p className="insetText">
-              This safe environment empowers learners to confidently share ideas,
-              ask questions, and engage in meaningful conversations — free from
-              judgment, with every voice valued and every contribution respected.
+            <p className="insetText">              
+              In this safe and supportive environment, learners confidently
+              share ideas, ask questions, and engage in open conversations.
+              Free from judgment and rich in mutual respect,
+              every voice is valued and every contribution truly counts.
             </p>
           </div>
         </article>
@@ -141,7 +140,7 @@ export default function SocialLearningPage() {
             <div className="iconWrap">
               <FaUsers className="iconText" />
             </div>
-            <h3>Encourage Peer-to-Peer Knowledge Sharing</h3>
+            <h3>Encourage Knowledge Sharing</h3>
           </div>
 
           <p>
@@ -152,20 +151,11 @@ export default function SocialLearningPage() {
 
           <div className="insetBox">
             <h4>Learners can:</h4>
-            <ul className="featureList">
-              {peerSharingPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <p className="insetText">
+              {peerSharingPoints[0].items}
+            </p>
           </div>
 
-          <p>
-            These interactions promote continuous learning and strengthen
-            knowledge retention across the organisation.
-          </p>
         </article>
 
         <article className="contentCard">
@@ -177,10 +167,9 @@ export default function SocialLearningPage() {
           </div>
 
           <p>
-            NeuroLXP helps organisations build vibrant learning communities where
-            collaboration drives growth. By encouraging social interaction around
-            learning content, the platform creates an environment where knowledge
-            flows freely and learners support each other's development.
+            NeuroLXP empowers organisations to build thriving learning communities
+            where social interaction fuels growth and knowledge flows freely.
+            Together, learners inspire, support, and elevate each other's development.
           </p>
 
           <div className="insetBox">
