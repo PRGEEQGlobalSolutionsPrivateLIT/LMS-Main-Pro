@@ -1,6 +1,5 @@
 import "./media-literacy.css";
 
-/* ── Feather-style SVG icons (inline, no external dep) ── */
 const IconMonitor = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -9,6 +8,7 @@ const IconMonitor = () => (
     <line x1="12" y1="17" x2="12" y2="21"/>
   </svg>
 );
+
 const IconAlertTriangle = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -17,6 +17,7 @@ const IconAlertTriangle = () => (
     <line x1="12" y1="17" x2="12.01" y2="17"/>
   </svg>
 );
+
 const IconSearch = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -24,6 +25,7 @@ const IconSearch = () => (
     <line x1="21" y1="21" x2="16.65" y2="16.65"/>
   </svg>
 );
+
 const IconCpu = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -39,6 +41,7 @@ const IconCpu = () => (
     <line x1="1" y1="14" x2="4" y2="14"/>
   </svg>
 );
+
 const IconEdit3 = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -46,6 +49,7 @@ const IconEdit3 = () => (
     <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
   </svg>
 );
+
 const IconGlobe = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -54,12 +58,14 @@ const IconGlobe = () => (
     <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
   </svg>
 );
+
 const IconShield = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>
 );
+
 const IconUsers = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -69,12 +75,14 @@ const IconUsers = () => (
     <path d="M16 3.13a4 4 0 010 7.75"/>
   </svg>
 );
+
 const IconZap = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
   </svg>
 );
+
 const IconEye = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -82,6 +90,7 @@ const IconEye = () => (
     <circle cx="12" cy="12" r="3"/>
   </svg>
 );
+
 const IconBookOpen = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -89,24 +98,28 @@ const IconBookOpen = () => (
     <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
   </svg>
 );
+
 const IconArrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon svg-icon--sm">
     <polyline points="9 18 15 12 9 6"/>
   </svg>
 );
+
 const IconTick = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon svg-icon--sm">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 );
+
 const IconStar = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 );
+
 const IconAward = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -115,7 +128,6 @@ const IconAward = () => (
   </svg>
 );
 
-/* ── Image URLs (Unsplash CDN — works on localhost & all domains) ── */
 const IMG = {
   hero:    "/Hero-Image.jpeg",
   detect:  "/unreliable-sources.jpeg",
@@ -127,8 +139,15 @@ export default function MediaLiteracyPage() {
   return (
     <main className="ml">
 
-      {/* ── HERO ── */}
       <section className="ml__hero">
+        <div className="ml__hero-img-panel">
+          <img src={IMG.hero} alt="Learners engaging with media" className="ml__hero-img"/>
+          <div className="ml__hero-badge">
+            <IconGlobe/>
+            <span>Digital Citizenship</span>
+          </div>
+        </div>
+
         <div className="ml__hero-text">
           <span className="ml__eyebrow">NeuroLXP Platform</span>
           <h1 className="ml__title">Media<br/>Literacy</h1>
@@ -155,16 +174,9 @@ export default function MediaLiteracyPage() {
             </div>
           </div>
         </div>
-        <div className="ml__hero-img-panel">
-          <img src={IMG.hero} alt="Learners engaging with media" className="ml__hero-img"/>
-          <div className="ml__hero-badge">
-            <IconGlobe/>
-            <span>Digital Citizenship</span>
-          </div>
-        </div>
+        
       </section>
 
-      {/* ── BAND — How Media Works ── */}
       <section className="ml__band">
         <div className="ml__band-content">
           <div className="ml__icon-pill ml__icon-pill--primary">
@@ -191,8 +203,15 @@ export default function MediaLiteracyPage() {
         </div>
       </section>
 
-      {/* ── SPLIT — Misinformation ── */}
       <section className="ml__split ml__split--reverse">
+        <div className="ml__split-img-wrap">
+          <img src={IMG.detect} alt="Fact checking and verification" className="ml__split-img" loading="lazy"/>
+          <div className="ml__split-badge">
+            <IconAlertTriangle/>
+            <span>Fact-Check</span>
+          </div>
+        </div>
+
         <div className="ml__split-content">
           <div className="ml__icon-pill ml__icon-pill--secondary">
             <IconSearch/><span>Misinformation Detection</span>
@@ -223,17 +242,28 @@ export default function MediaLiteracyPage() {
             ))}
           </ul>
         </div>
-        <div className="ml__split-img-wrap">
-          <img src={IMG.detect} alt="Fact checking and verification" className="ml__split-img" loading="lazy"/>
-          <div className="ml__split-badge">
-            <IconAlertTriangle/>
-            <span>Fact-Check</span>
-          </div>
-        </div>
+        
       </section>
 
-      {/* ── TRIO — Critical Thinking ── */}
       <section className="ml__trio">
+        
+        <div className="ml__trio-stats">
+          {[
+            { val: "95%",   lbl: "Bias Recognition",  icon: <IconEye/>,       c: "accent"    },
+            { val: "Live",  lbl: "Case Studies",       icon: <IconBookOpen/>,  c: "primary"   },
+            { val: "∞",     lbl: "Practice Scenarios", icon: <IconCpu/>,       c: "secondary" },
+            { val: "Top",   lbl: "Rated Skill",        icon: <IconStar/>,      c: "support"   },
+          ].map(({ val, lbl, icon, c }) => (
+            <div className={`ml__trio-stat ml__trio-stat--${c}`} key={lbl}>
+              <span className={`ml__trio-stat-icon ml__trio-stat-icon--${c}`}>{icon}</span>
+              <div>
+                <span className="ml__trio-stat-val">{val}</span>
+                <span className="ml__trio-stat-lbl">{lbl}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
         <div className="ml__trio-text">
           <div className="ml__icon-pill ml__icon-pill--accent">
             <IconCpu/><span>Critical Thinking</span>
@@ -253,25 +283,8 @@ export default function MediaLiteracyPage() {
             ))}
           </ul>
         </div>
-        <div className="ml__trio-stats">
-          {[
-            { val: "95%",   lbl: "Bias Recognition",  icon: <IconEye/>,       c: "accent"    },
-            { val: "Live",  lbl: "Case Studies",       icon: <IconBookOpen/>,  c: "primary"   },
-            { val: "∞",     lbl: "Practice Scenarios", icon: <IconCpu/>,       c: "secondary" },
-            { val: "Top",   lbl: "Rated Skill",        icon: <IconStar/>,      c: "support"   },
-          ].map(({ val, lbl, icon, c }) => (
-            <div className={`ml__trio-stat ml__trio-stat--${c}`} key={lbl}>
-              <span className={`ml__trio-stat-icon ml__trio-stat-icon--${c}`}>{icon}</span>
-              <div>
-                <span className="ml__trio-stat-val">{val}</span>
-                <span className="ml__trio-stat-lbl">{lbl}</span>
-              </div>
-            </div>
-          ))}
-        </div>
       </section>
 
-      {/* ── BANNER — Responsible Creation ── */}
       <section className="ml__banner">
         <img src={IMG.banner} alt="Responsible digital content creation" className="ml__banner-img" loading="lazy"/>
         <div className="ml__banner-overlay">
@@ -292,7 +305,6 @@ export default function MediaLiteracyPage() {
         </div>
       </section>
 
-      {/* ── BENTO — Why NeuroLXP ── */}
       <section className="ml__bento">
         <div className="ml__bento-main">
           <img src={IMG.bento} alt="Learners in a connected world" className="ml__bento-main-img" loading="lazy"/>
