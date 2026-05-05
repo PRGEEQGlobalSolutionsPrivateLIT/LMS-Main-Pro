@@ -6,22 +6,22 @@ const modernLearnerPoints = [
   {
     icon: <FaHandPointer className="iconText" />,
     label: "Interactive",
-    desc: "Hands-on activities that make learning memorable",
+    desc: "Activities that make learning memorable. Turning knowledge into confidence.",
   },
   {
     icon: <FaSlidersH className="iconText" />,
     label: "Adaptive",
-    desc: "Personalized learning journeys tailored to individual progress",
+    desc: "Personalized learning journeys tailored to individual progress.",
   },
   {
     icon: <FaStar className="iconText" />,
     label: "Engaging",
-    desc: "Rich multimedia and interactive content that captures attention",
+    desc: "Rich multimedia and interactive content that captures attention.",
   },
   {
     icon: <FaFlask className="iconText" />,
     label: "Practical",
-    desc: "Real-world scenarios that build applicable skills",
+    desc: "Real-world scenarios that build applicable skills. Skills that truly matter",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function InteractivitiesPage() {
             </h2>
 
             <p className="heroText">
-              Welcome to <strong>NeuroLXP</strong>, a next-generation Learning
+              Welcome to NeuroLXP, a next-generation Learning
               Experience Platform designed to make learning engaging, interactive,
               and impactful. NeuroLXP goes beyond traditional Learning Management
               Systems by combining powerful learning tools with immersive
@@ -63,16 +63,8 @@ export default function InteractivitiesPage() {
 
             <p className="heroText">
               With NeuroLXP, every learning experience becomes an opportunity to{" "}
-              <strong>think, interact, and master new skills</strong>.
+              think, interact, and master new skills.
             </p>
-          </div>
-
-          <div className="heroVisualCard">
-            <div className="imagePlaceholder">
-              <Image src="/photo-1522202176988-66273c2fd55f.webp"
-                alt="Students collaborating on an interactive digital learning platform"
-                width ={800} height={480} className="heroImg" priority />
-            </div>
 
             <div className="floatingStats">
               <div className="statPill">
@@ -103,7 +95,7 @@ export default function InteractivitiesPage() {
 
           <p>
             At NeuroLXP, we believe learning should never feel passive. Our
-            platform integrates <strong>dynamic interactivities</strong> that
+            platform integrates dynamic interactivities that
             turn lessons into experiences. Instead of simply reading or watching,
             learners actively participate, explore concepts, and apply their
             knowledge in real time.
@@ -175,8 +167,9 @@ export default function InteractivitiesPage() {
             </div>
 
             <p>
-              NeuroLXP empowers organizations, educators, and training teams to
-              deliver high-quality learning experiences at scale.
+              NeuroLXP empowers organizations, educators, and training teams
+              to deliver high-quality learning experiences at scale.
+              Built for impact — wherever and however learning happens. Applied learning that makes a real difference..
             </p>
 
             <div className="insetBox">
@@ -198,7 +191,7 @@ export default function InteractivitiesPage() {
         <div className="ctaCard">
           <div className="ctaVisual">
             <div className="imagePlaceholderAlt">
-              <Image src="/photo-1571260899304-425eee4c7efc.webp"
+              <Image src="/pexels-pavel-danilyuk-6340629.jpg"
                 alt="Learner confidently engaged in a digital learning experience"
                 width={800} height={560} className="ctaImg" />
             </div>
