@@ -1,0 +1,349 @@
+.white-paper-page {
+  min-height: 100vh;
+  background-color: #e6e7ee;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #172554;
+  padding: 80px 6%;
+}
+
+.white-paper-page h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin: 14px 0 22px;
+  color: #172554;
+}
+
+.white-paper-page h2 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 0 0 18px;
+  color: #1e3a8a;
+}
+
+.white-paper-page h3 {
+  font-size: 24px;
+  line-height: 1.35;
+  margin: 0 0 12px;
+  color: #2563eb;
+}
+
+.white-paper-page h4 {
+  font-size: 20px;
+  line-height: 1.35;
+  margin: 0;
+  color: #172554;
+}
+
+.white-paper-page p {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #475569;
+  margin: 0 0 18px;
+}
+
+.white-paper-page span {
+  font-size: 15px;
+}
+
+.neumorphic-card {
+  border-radius: 28px;
+  background: #e6e7ee;
+  box-shadow: 10px 10px 22px #c3c6d1, -10px -10px 22px #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  padding: 38px;
+  transition: all 0.35s ease;
+}
+
+.neumorphic-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 14px 14px 28px #bcc0cc, -14px -14px 28px #ffffff;
+}
+
+.white-paper-hero {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 36px;
+  align-items: center;
+  border-left: 5px solid #2563eb;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.eyebrow {
+  width: fit-content;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 999px;
+  color: #1d4ed8;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #e6e7ee;
+  box-shadow: inset 4px 4px 8px #c5c8d2, inset -4px -4px 8px #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.22);
+}
+
+.image-placeholder {
+  min-height: 320px;
+  border-radius: 28px;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(14, 165, 233, 0.1)),
+    #e6e7ee;
+  box-shadow: inset 8px 8px 18px #c3c6d1, inset -8px -8px 18px #ffffff;
+  border: 2px dashed rgba(37, 99, 235, 0.42);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  padding: 30px;
+  transition: all 0.35s ease;
+}
+
+.image-placeholder:hover {
+  transform: scale(1.02);
+  border-color: #2563eb;
+}
+
+.image-placeholder svg {
+  font-size: 42px;
+  color: #2563eb;
+}
+
+.image-placeholder span {
+  font-weight: 700;
+  color: #1d4ed8;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.image-placeholder p {
+  max-width: 280px;
+  margin: 0;
+  color: #64748b;
+}
+
+.intro-section,
+.access-section {
+  max-width: 900px;
+  margin: 0 auto 60px;
+  text-align: center;
+  position: relative;
+  padding-top: 20px;
+}
+
+.intro-section::before,
+.access-section::before {
+  content: "";
+  width: 64px;
+  height: 4px;
+  display: block;
+  margin: 0 auto 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563eb, #0ea5e9);
+}
+
+.intro-section span {
+  display: block;
+  margin-bottom: 12px;
+  color: #2563eb;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.intro-section p,
+.access-section p {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.topics-section {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 34px;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.topic-card {
+  min-height: 145px;
+  padding: 24px;
+  border-radius: 24px;
+  background: #e6e7ee;
+  box-shadow: 8px 8px 18px #c3c6d1, -8px -8px 18px #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  transition: all 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(37, 99, 235, 0.4);
+}
+
+.topic-icon,
+.icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #5b6ee1;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 5px 5px 12px #c3c6d1, -5px -5px 12px #ffffff;
+}
+
+.topic-icon svg,
+.icon-box svg {
+  font-size: 20px;
+}
+
+.insight-wrapper {
+  max-width: 1200px;
+  margin: 0 auto 56px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.insight-card {
+  border-left: 5px solid #2563eb;
+}
+
+.image-card {
+  padding: 24px;
+  border-left: 5px solid #0ea5e9;
+}
+
+.image-card .image-placeholder {
+  height: 100%;
+  min-height: 100%;
+}
+
+.white-paper-page ul {
+  list-style: none;
+  margin: 26px 0 0;
+  padding: 0;
+}
+
+.white-paper-page li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  line-height: 1.55;
+  color: #475569;
+  padding: 13px 0;
+}
+
+.white-paper-page li svg {
+  color: #2563eb;
+  flex-shrink: 0;
+}
+
+.innovation-section {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 32px;
+  align-items: center;
+  border-left: 5px solid #7c3aed;
+}
+
+.innovation-points {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.innovation-points div {
+  padding: 26px;
+  border-radius: 24px;
+  background: #e6e7ee;
+  box-shadow: inset 6px 6px 14px #c3c6d1, inset -6px -6px 14px #ffffff;
+  border: 1px solid rgba(124, 58, 237, 0.16);
+}
+
+.access-section h3 {
+  max-width: 820px;
+  margin: 24px auto 0;
+  padding: 20px 28px;
+  border-radius: 22px;
+  color: #1d4ed8;
+  background: #e6e7ee;
+  box-shadow: 6px 6px 14px #c3c6d1, -6px -6px 14px #ffffff;
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+
+@media (max-width: 960px) {
+  .white-paper-page {
+    padding: 56px 5%;
+  }
+
+  .white-paper-hero,
+  .insight-wrapper,
+  .innovation-section {
+    grid-template-columns: 1fr;
+  }
+
+  .topics-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .white-paper-page h1 {
+    font-size: 34px;
+  }
+
+  .white-paper-page h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .neumorphic-card {
+    padding: 26px;
+    border-radius: 22px;
+  }
+
+  .topics-grid,
+  .innovation-points {
+    grid-template-columns: 1fr;
+  }
+
+  .white-paper-page h1 {
+    font-size: 30px;
+  }
+
+  .white-paper-page h2 {
+    font-size: 24px;
+  }
+
+  .white-paper-page h3 {
+    font-size: 22px;
+  }
+
+  .white-paper-page p,
+  .white-paper-page li {
+    font-size: 17px;
+  }
+}
