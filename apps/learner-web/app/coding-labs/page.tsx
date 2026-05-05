@@ -30,7 +30,7 @@ export default function Page() {
       </p>
 
       <div className="coding-image-box">
-        <img src="/pexels-mizunokozuki-12903294.jpg" alt="Interactive coding environment" />
+        <img src="/pexels-dothanhyb-5539290.jpg" alt="Interactive coding environment" />
       </div>
 
       <h3><FaTerminal /> Hands-On Programming Experience</h3>
@@ -69,8 +69,8 @@ export default function Page() {
         <li>Prepare for technical interviews and coding assessments</li>
       </ul>
 
-      <div className="coding-image-box second">
-        <img src="/pexels-mikhail-nilov-7988116.jpg" alt="Coding practice workspace" />
+       <div className="coding-image-box">
+        <img src="/pexels-mikhail-nilov-7988116.jpg" alt="Interactive coding environment" />
       </div>
 
       <h3><FaBug /> Real-World Skill Development</h3>
