@@ -12,7 +12,7 @@ import {
   FaBullhorn,
   FaClipboardCheck,
 } from "react-icons/fa";
-import "./Nonprofit.css";
+import "./NonProfit.css";
 
 export default function NonprofitPage() {
   const challenges = [
