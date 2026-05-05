@@ -1,115 +1,190 @@
+import {
+  FaChartLine,
+  FaCheckCircle,
+  FaCoins,
+  FaCreditCard,
+  FaPiggyBank,
+  FaShieldAlt,
+  FaUniversity,
+  FaWallet,
+} from "react-icons/fa";
 import "./FinancialLiteracy.css";
 
 export default function FinancialLiteracy() {
   return (
     <section className="financial-page">
+      <div className="financial-hero">
+        <div className="financial-hero-content">
+          <span className="financial-badge">
+            <FaCoins />
+            NeuroLXP Financial Education
+          </span>
 
-      <h1>Financial Literacy</h1>
+          <h1>Financial Literacy</h1>
 
-      <h2>Empowering Learners with Essential Money Management Skills</h2>
+          <h2>Empowering Learners with Essential Money Management Skills</h2>
+
+          <p>
+            Financial literacy helps individuals manage money wisely, make
+            informed decisions, and plan for a secure future. Understanding
+            budgeting, saving, investing, and credit is essential for personal
+            and professional success.
+          </p>
+
+          <p>
+            NeuroLXP enables institutions and organizations to deliver
+            structured Financial Literacy programs that build financial knowledge,
+            confidence, and responsible decision-making.
+          </p>
+        </div>
+
+        <div className="image-box">
+          <img src="/pexels-rdne-7821554.jpg" alt="Financial illustration" />
+        </div>
+      </div>
+
+      <div className="financial-section-heading">
+        <span className="section-icon">
+          <FaWallet />
+        </span>
+        <h3>Understanding the Basics of Personal Finance</h3>
+      </div>
 
       <p>
-        Financial literacy is a critical life skill that enables individuals to manage money wisely,
-        make informed financial decisions, and plan for a secure future. In today’s complex financial
-        environment, understanding how to budget, save, invest, and manage credit is essential for
-        both personal and professional success.
-      </p>
-
-      <p>
-        NeuroLXP enables institutions and organizations to deliver structured Financial Literacy
-        programs that help learners develop the knowledge and confidence needed to navigate
-        financial systems responsibly.
-      </p>
-
-      <div className="image-box">
-  <img src="/pexels-rdne-7821554.jpg" alt="Financial illustration" />
-</div>
-
-      <h3>Understanding the Basics of Personal Finance</h3>
-
-      <p>
-        Financial literacy begins with a strong foundation in personal money management. Through
-        guided learning modules, learners develop essential financial skills such as:
+        Financial literacy begins with a strong foundation in personal money
+        management. Through guided learning modules, learners develop practical
+        financial skills.
       </p>
 
       <ul>
-        <li>Budgeting and managing personal expenses</li>
-        <li>Understanding income, savings, and investments</li>
-        <li>Managing debt and credit responsibly</li>
-        <li>Planning for financial goals and future needs</li>
+        <li>
+          <FaCheckCircle />
+          Budgeting and managing personal expenses
+        </li>
+        <li>
+          <FaCheckCircle />
+          Understanding income, savings, and investments
+        </li>
+        <li>
+          <FaCheckCircle />
+          Managing debt and credit responsibly
+        </li>
+        <li>
+          <FaCheckCircle />
+          Planning for financial goals and future needs
+        </li>
       </ul>
 
-      <p>
-        These foundational concepts help learners build responsible financial habits.
-      </p>
+      <p>These concepts help learners build responsible financial habits.</p>
 
-      <h3>Making Informed Financial Decisions</h3>
+      <div className="financial-section-heading">
+        <span className="section-icon">
+          <FaChartLine />
+        </span>
+        <h3>Making Informed Financial Decisions</h3>
+      </div>
 
       <p>
-        Modern financial environments offer numerous choices—from banking services and loans to
-        investment opportunities. Financial literacy helps learners understand these options and
-        evaluate them carefully.
+        Modern financial environments offer many choices, from banking services
+        and loans to investment opportunities. Financial literacy helps learners
+        evaluate these options with confidence.
       </p>
 
       <p>Learners gain the ability to:</p>
 
       <ul>
-        <li>Compare financial products and services</li>
-        <li>Understand interest rates, loans, and credit systems</li>
-        <li>Evaluate financial risks and opportunities</li>
-        <li>Make informed decisions about spending and saving</li>
+        <li>
+          <FaCheckCircle />
+          Compare financial products and services
+        </li>
+        <li>
+          <FaCheckCircle />
+          Understand interest rates, loans, and credit systems
+        </li>
+        <li>
+          <FaCheckCircle />
+          Evaluate financial risks and opportunities
+        </li>
+        <li>
+          <FaCheckCircle />
+          Make informed decisions about spending and saving
+        </li>
       </ul>
 
-      <p>
-        These skills empower individuals to take control of their financial future.
-      </p>
+      <p>These skills empower individuals to control their financial future.</p>
 
-       <div className="image-box">
+     <div className="image-box image-box-small">
   <img src="/pexels-rdne-7413936.jpg" alt="Financial illustration" />
 </div>
 
-      <h3>Promoting Responsible Financial Behavior</h3>
+      <div className="financial-section-heading">
+        <span className="section-icon">
+          <FaPiggyBank />
+        </span>
+        <h3>Promoting Responsible Financial Behavior</h3>
+      </div>
 
       <p>
-        Financial literacy also encourages responsible financial practices that support long-term
-        stability.
+        Financial literacy encourages responsible practices that support
+        long-term stability and financial well-being.
       </p>
 
       <p>Through structured learning, learners understand how to:</p>
 
       <ul>
-        <li>Develop healthy saving habits</li>
-        <li>Avoid unnecessary debt and financial risks</li>
-        <li>Plan for emergencies and future expenses</li>
-        <li>Maintain financial discipline and accountability</li>
+        <li>
+          <FaCheckCircle />
+          Develop healthy saving habits
+        </li>
+        <li>
+          <FaCheckCircle />
+          Avoid unnecessary debt and financial risks
+        </li>
+        <li>
+          <FaCheckCircle />
+          Plan for emergencies and future expenses
+        </li>
+        <li>
+          <FaCheckCircle />
+          Maintain financial discipline and accountability
+        </li>
       </ul>
 
-      <p>
-        These practices help individuals build sustainable financial well-being.
-      </p>
+      <p>These practices help individuals build sustainable financial well-being.</p>
 
-      <h3>Supporting Financial Education Across Communities</h3>
-
-      <p>
-        Financial literacy programs are valuable across many sectors including schools, universities,
-        workforce development initiatives, and community education programs. By strengthening
-        financial knowledge, institutions can help individuals improve their economic independence
-        and decision-making capabilities.
-      </p>
+      <div className="financial-section-heading">
+        <span className="section-icon">
+          <FaUniversity />
+        </span>
+        <h3>Supporting Financial Education Across Communities</h3>
+      </div>
 
       <p>
-        NeuroLXP enables organizations to deliver engaging financial literacy training programs that
-        support learners at different stages of life.
+        Financial literacy programs are valuable for schools, universities,
+        workforce initiatives, and community education programs. Strong financial
+        knowledge improves economic independence and decision-making.
       </p>
-
-      <h3>NeuroLXP — Building Financial Confidence Through Learning</h3>
 
       <p>
-        With structured learning modules, practical examples, and interactive learning experiences,
-        NeuroLXP helps learners develop strong financial literacy skills that support smarter
-        financial decisions and long-term financial well-being.
+        NeuroLXP enables organizations to deliver engaging financial literacy
+        training for learners at different stages of life.
       </p>
 
+      <div className="financial-final-card">
+        <span className="section-icon">
+          <FaShieldAlt />
+        </span>
+
+        <div>
+          <h3>NeuroLXP — Building Financial Confidence Through Learning</h3>
+
+          <p>
+            With structured modules, practical examples, and interactive learning
+            experiences, NeuroLXP helps learners develop financial literacy
+            skills for smarter decisions and long-term financial well-being.
+          </p>
+        </div>
+      </div>
     </section>
   );
 }
