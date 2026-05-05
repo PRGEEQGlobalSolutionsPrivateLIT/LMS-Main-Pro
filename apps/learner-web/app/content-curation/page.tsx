@@ -17,9 +17,9 @@ const institutionPoints = [
 ];
 
 const educatorPoints = [
-  "Reduce time spent preparing summaries, questions, and discussions",
-  "Automatically convert teaching materials into structured learning resources",
-  "Focus more on mentoring and guiding learners",
+  "Reduce time spent preparing learning resources",
+  "Automatically convert teaching materials into structured learning",
+  "Focus more on mentoring and guiding",
 ];
 
 const learnerPoints = [
@@ -59,14 +59,7 @@ export default function AIContentCurationPage() {
           </div>
 
           <div className="heroVisualCard">
-            <div className="imagePlaceholder">
-              <img
-                src="/photo-1677442136019-21780ecad995.jpeg"
-                alt="AI-powered learning and content analysis"
-                className="heroImage"
-              />
-            </div>
-
+            
             <div className="floatingStats">
               <div className="statPill">
                 <FaBrain className="iconText" />
@@ -80,6 +73,14 @@ export default function AIContentCurationPage() {
                 <FaBolt className="iconText" />
                 <span>Intelligent Questions</span>
               </div>
+            </div>
+
+            <div className="imagePlaceholder">
+              <img
+                src="/pexels-pnw-prod-9219061.jpg"
+                alt="AI-powered learning and content analysis"
+                className="heroImage"
+              />
             </div>
           </div>
         </div>
@@ -172,10 +173,9 @@ export default function AIContentCurationPage() {
           </div>
 
           <p>
-            NeuroLXP enables a more dynamic approach to learning by turning
-            content into interactive assessment opportunities. AI analyzes study
-            materials and creates meaningful assessments that test
-            comprehension, critical thinking, and application of knowledge.
+            With NeuroLXP, AI analyzes study materials and transforms them
+            into meaningful assessments that test comprehension and critical thinking.
+            A smarter, more dynamic way to measure real learning. Focus more on mentoring and guiding your learners.
           </p>
 
           <div className="insetBox">
@@ -202,7 +202,7 @@ export default function AIContentCurationPage() {
 
           <p>
             Active learning and continuous knowledge reinforcement are promoted
-            by integrating assessments directly with learning content.
+            by integrating assessments directly with learning.
           </p>
         </article>
 
@@ -252,16 +252,7 @@ export default function AIContentCurationPage() {
 
       <section className="insightSection">
         <div className="insightGrid">
-          <div className="insightVisualCard">
-            <div className="imagePlaceholderAlt">
-              <img
-                src="/photo-1551288049-bebda4e38f71.jpeg"
-                alt="AI unlocking new insights from learning content"
-                className="heroImage"
-              />
-            </div>
-          </div>
-
+         
           <article className="contentCard insightCard">
             <div className="cardHeader">
               <div className="iconWrap">
