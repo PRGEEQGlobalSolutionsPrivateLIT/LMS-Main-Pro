@@ -1,15 +1,15 @@
 import {
-  BookOpen,
-  GraduationCap,
-  BarChart3,
-  ClipboardCheck,
-  Users,
-  Building2,
-  Target,
-  Award,
-  Briefcase,
-  CheckCircle,
-} from "lucide-react";
+  FaBookOpen,
+  FaGraduationCap,
+  FaChartBar,
+  FaClipboardCheck,
+  FaUsers,
+  FaBuilding,
+  FaBullseye,
+  FaAward,
+  FaBriefcase,
+  FaCheckCircle,
+} from "react-icons/fa";
 import "./standards-training.css";
 
 export default function StandardsTraining() {
@@ -33,7 +33,7 @@ export default function StandardsTraining() {
         </div>
 
         <div className="standards-visual">
-          <GraduationCap />
+          <FaGraduationCap />
           <h4>Faculty and students in a structured learning environment</h4>
           <div className="standards-tags">
             <span>Outcome-Based Learning</span>
@@ -53,15 +53,15 @@ export default function StandardsTraining() {
 
         <div className="standards-points">
           <div>
-            <CheckCircle />
+            <FaCheckCircle />
             <p>Align curriculum with accreditation and industry requirements</p>
           </div>
           <div>
-            <CheckCircle />
+            <FaCheckCircle />
             <p>Improve student performance and faculty development</p>
           </div>
           <div>
-            <CheckCircle />
+            <FaCheckCircle />
             <p>Ensure compliance with academic and regulatory frameworks</p>
           </div>
         </div>
@@ -75,7 +75,7 @@ export default function StandardsTraining() {
       <section className="standards-features">
         <article className="standards-card">
           <div className="standards-icon">
-            <BookOpen />
+            <FaBookOpen />
           </div>
           <div>
             <h3>Standardised Curriculum Framework</h3>
@@ -95,7 +95,7 @@ export default function StandardsTraining() {
 
         <article className="standards-card">
           <div className="standards-icon">
-            <Users />
+            <FaUsers />
           </div>
           <div>
             <h3>Faculty Training & Development</h3>
@@ -118,7 +118,7 @@ export default function StandardsTraining() {
 
         <article className="standards-card">
           <div className="standards-icon">
-            <BarChart3 />
+            <FaChartBar />
           </div>
           <div>
             <h3>Assessment, Evaluation & Accreditation</h3>
@@ -147,7 +147,7 @@ export default function StandardsTraining() {
 
         <div className="benefits-grid">
           <div>
-            <GraduationCap />
+            <FaGraduationCap />
             <h4>For Students</h4>
             <p>High-quality structured learning</p>
             <p>Better career readiness</p>
@@ -155,7 +155,7 @@ export default function StandardsTraining() {
           </div>
 
           <div>
-            <Building2 />
+            <FaBuilding />
             <h4>For Universities & Colleges</h4>
             <p>Academic consistency across departments</p>
             <p>Improved rankings and reputation</p>
@@ -163,7 +163,7 @@ export default function StandardsTraining() {
           </div>
 
           <div>
-            <Users />
+            <FaUsers />
             <h4>For Faculty & Trainers</h4>
             <p>Improved teaching effectiveness</p>
             <p>Standardised resources and tools</p>
@@ -171,7 +171,7 @@ export default function StandardsTraining() {
           </div>
 
           <div>
-            <Briefcase />
+            <FaBriefcase />
             <h4>For Training Institutes</h4>
             <p>Industry-aligned training programs</p>
             <p>Scalable training delivery</p>
@@ -183,10 +183,10 @@ export default function StandardsTraining() {
       <section className="standards-final">
         <div className="final-visual">
           <img
-          src="/pexels-pavel-danilyuk-8761325.jpg"
-          alt="Learners using digital learning resources"
-          className="placeholder-image"
-        />
+            src="/pexels-pavel-danilyuk-8761325.jpg"
+            alt="Learners using digital learning resources"
+            className="placeholder-image"
+          />
         </div>
 
         <div>
