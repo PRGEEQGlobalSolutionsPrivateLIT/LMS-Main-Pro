@@ -9,7 +9,6 @@ const coreFormats = [
     title: "Documents & Presentations",
     color: "primary",
     items: [
-      "PDF",
       "DOC / DOCX",
       "PPT / PPTX",
       "Google Slides (cloud presentations)",
@@ -39,7 +38,7 @@ const coreFormats = [
   },
   {
     icon: FaCode,
-    title: "eLearning Standards & Packages",
+    title: "E-Learning Standards & Packages",
     color: "accent",
     items: [
       "SCORM 1.2",
@@ -58,7 +57,6 @@ const coreFormats = [
     title: "Modern & Web-Based Content",
     color: "support",
     items: [
-      "HTML5 content modules",
       "Web-based scrolling presentations",
       "Progressive Web Apps (PWA)",
       "API-driven content delivery",
@@ -76,9 +74,8 @@ const coreFormats = [
     items: [
       "Microlearning modules",
       "Gamified learning content",
-      "Simulations",
       "Scenario-based branching content",
-      "Interactive presentation tools (Mentimeter, Slido)",
+      "Interactive presentation tools",
     ],
     image: {
       src: "/photo-1611532736597-de2d4265fba3.webp",
@@ -98,20 +95,6 @@ const coreFormats = [
     image: {
       src: "/photo-1558655146-9f40138edfeb.webp",
       alt: "Creative design tools and knowledge management",
-    },
-  },
-  {
-    icon: FaVrCardboard,
-    title: "Next-Gen & Immersive Formats",
-    color: "accent",
-    items: [
-      "AR/VR content",
-      "Chat-based learning (bots, assistants)",
-      "Flash (legacy support for older systems)",
-    ],
-    image: {
-      src: "/photo-1626379953822-baec19c3accd.webp",
-      alt: "Virtual reality and immersive learning experience",
     },
   },
 ];
@@ -154,7 +137,7 @@ export default function ContentFormatsPage() {
           <div className="heroContent">
 
             <h1 className="heroTitle">
-              The World's Most Advanced Content Compatibility
+              Advanced Content Compatibility
             </h1>
 
             <h2 className="heroSubtitle">
@@ -186,35 +169,7 @@ export default function ContentFormatsPage() {
               <button className="ctaSecondary">Request Demo</button>
             </div>
           </div>
-
-          <div className="heroVisualCard">
-            <div className="heroImageWrap">
-              <Image
-                src="/photo-1516321318423-f06f85e504b3.jpeg"
-                alt="NeuroLXP platform content compatibility dashboard"
-                width={700}
-                height={420}
-                className="heroImg"
-                priority
-              />
-              <div className="heroImgOverlay" />
-            </div>
-
-            <div className="floatingStats">
-              <div className="statPill">
-                <FaFileAlt className="iconText" />
-                <span>All File Formats</span>
-              </div>
-              <div className="statPill">
-                <FaShieldAlt className="iconText" />
-                <span>SCORM & xAPI Ready</span>
-              </div>
-              <div className="statPill">
-                <FaInfinity className="iconText" />
-                <span>No Conversions Needed</span>
-              </div>
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -290,15 +245,6 @@ export default function ContentFormatsPage() {
             </div>
           </div>
 
-          <div className="secondaryVisualCard">
-            <Image
-              src="/photo-1552664730-d307ca884978.webp"
-              alt="Team collaborating on a unified learning platform"
-              width={520}
-              height={340}
-              className="highlightImg"
-            />
-          </div>
         </div>
       </section>
 
@@ -322,17 +268,6 @@ export default function ContentFormatsPage() {
           </div>
 
           <div className="diffVisual">
-            <div className="diffImageWrap">
-              <Image
-                src="/photo-1460925895917-afdab827c52f.jpeg"
-                alt="Data analytics dashboard representing NeuroLXP capabilities"
-                width={540}
-                height={320}
-                className="diffImg"
-              />
-              <div className="diffImgGlow" />
-            </div>
-
             <div className="miniFeatures">
               {differentiatorFeatures.map((f) => {
                 const Icon = f.icon;
