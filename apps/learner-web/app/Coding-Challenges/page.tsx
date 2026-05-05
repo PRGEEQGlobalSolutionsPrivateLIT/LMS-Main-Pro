@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   FaCode,
   FaPuzzlePiece,
@@ -219,9 +220,14 @@ export default function Page() {
 
       <section className="challenge-final">
         <div className="challenge-image-placeholder">
-          <FaUserGraduate />
-          <span>Image Placeholder</span>
-        </div>
+  <Image
+    src="/pexels-mizunokozuki-12903294 (1).jpg"
+    alt="Challenge learning illustration"
+    width={700}
+    height={520}
+    className="challenge-image"
+  />
+</div>
 
         <div>
           <span className="challenge-badge">Strengthen Programming Skills</span>
