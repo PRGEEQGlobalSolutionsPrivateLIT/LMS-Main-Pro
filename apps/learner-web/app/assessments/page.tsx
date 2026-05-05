@@ -1,58 +1,93 @@
 import "./assessments.css";
-import { FaBrain, FaListAlt, FaPuzzlePiece, FaPhotoVideo, FaProjectDiagram, FaUsers, FaRobot, FaUniversity, FaCheckCircle, FaBolt, FaLayerGroup, FaStar, } from "react-icons/fa";
+import {
+  FaBrain,
+  FaChartLine,
+  FaCheckCircle,
+  FaClipboardList,
+  FaGraduationCap,
+  FaPuzzlePiece,
+  FaRobot,
+  FaSchool,
+  FaUsers,
+  FaVideo,
+  FaProjectDiagram,
+  FaClock,
+  FaArrowRight,
+} from "react-icons/fa";
 
-const whyPoints = [
-  "Interactive and engaging for all learner types",
-  "Aligned with learning outcomes and course objectives",
+const assessmentBenefits = [
+  "Interactive and engaging",
+  "Aligned with learning outcomes",
   "Suitable for online education and remote learning",
-  "Scalable for universities, schools, and corporate programs",
-  "Optimised for exam preparation and skill development",
+  "Scalable for universities, schools, and corporate training",
+  "Optimized for exam preparation and skill development",
 ];
 
-const popularFormats = [
-  "Multiple Choice Questions (MCQs)",
-  "True or False",
-  "Fill in the Blanks",
-  "One-Word Answers",
-  "Short Answer Questions",
-  "Long Descriptive Answers",
+const assessmentCategories = [
+  {
+    icon: <FaClipboardList />,
+    title: "Popular Online Quiz Formats",
+    color: "blue",
+    items: [
+      "Multiple Choice Questions",
+      "True or False",
+      "Fill in the Blanks",
+      "One-Word Answers",
+      "Short Answer Questions",
+      "Long Descriptive Answers",
+    ],
+  },
+  {
+    icon: <FaPuzzlePiece />,
+    title: "Interactive Assessment Types",
+    color: "green",
+    items: [
+      "Drag and Drop",
+      "Match the Following",
+      "Sequencing and Ordering",
+      "Clickable Hotspots",
+      "Puzzle-Based Questions",
+      "Memory Games",
+    ],
+  },
+  {
+    icon: <FaVideo />,
+    title: "Multimedia-Based Assessments",
+    color: "orange",
+    items: [
+      "Image-Based Questions",
+      "Audio-Based Assessments",
+      "Video-Based Questions",
+      "Visual Concept Identification",
+    ],
+  },
+  {
+    icon: <FaProjectDiagram />,
+    title: "Real-World Application Assessments",
+    color: "purple",
+    items: [
+      "Case Study Evaluations",
+      "Scenario-Based Assessments",
+      "Project-Based Submissions",
+      "Assignment Evaluations",
+      "Reflection-Based Assessments",
+    ],
+  },
+  {
+    icon: <FaUsers />,
+    title: "Collaborative and Continuous Learning",
+    color: "cyan",
+    items: [
+      "Peer Assessments",
+      "Self-Assessments",
+      "Discussion-Based Evaluations",
+      "Continuous Learning Quizzes",
+      "Timed Quiz Challenges",
+    ],
+  },
 ];
 
-const interactiveFormats = [
-  "Drag and Drop",
-  "Match the Following",
-  "Sequencing and Ordering",
-  "Connect the Dots",
-  "Clickable Hotspots",
-  "Puzzle-Based Questions",
-  "Memory Games",
-  "Interactive Diagram Identification",
-];
-
-const multimediaFormats = [
-  "Image-Based Questions",
-  "Audio-Based Assessments",
-  "Video-Based Questions",
-  "Visual Concept Identification",
-];
-
-const realWorldFormats = [
-  "Case Study Evaluations",
-  "Scenario-Based Assessments",
-  "Project-Based Submissions",
-  "Assignment Evaluations",
-  "Reflection-Based Assessments",
-];
-
-const collaborativeFormats = [
-  "Peer Assessments",
-  "Self-Assessments",
-  "Discussion-Based Evaluations",
-  "Continuous Learning Quizzes",
-  "Timed Quiz Challenges",
-];
-
-const aiCapabilities = [
+const aiFeatures = [
   "Generate exam-style questions from study materials",
   "Create practice quizzes from uploaded content",
   "Recommend questions based on historical exam patterns",
@@ -67,294 +102,164 @@ const idealFor = [
   "Professional certification programs",
 ];
 
-const formatGroups = [
-  {
-    icon: <FaListAlt className="iconText" />,
-    title: "Popular Quiz Formats",
-    items: popularFormats,
-    colorVar: "primary",
-  },
-  {
-    icon: <FaPuzzlePiece className="iconText" />,
-    title: "Interactive Assessment Types",
-    items: interactiveFormats,
-    colorVar: "secondary",
-  },
-  {
-    icon: <FaPhotoVideo className="iconText" />,
-    title: "Multimedia-Based Assessments",
-    items: multimediaFormats,
-    colorVar: "accent",
-  },
-  {
-    icon: <FaProjectDiagram className="iconText" />,
-    title: "Real-World Application",
-    items: realWorldFormats,
-    colorVar: "support",
-  },
-];
-
-export default function AssessmentsPage() {
+export default function Assessments() {
   return (
-    <main className="assessments-page page">
-
-      <section className="heroSection">
-        <div className="heroGrid">
-          <div className="heroContent">
-
-            <h1 className="heroTitle">Online Assessments</h1>
-
-            <h2 className="heroSubtitle">
-              60+ Assessment Types in a Powerful AI-Driven LMS
-            </h2>
-
-            <p className="heroText">
-              Assessments are a critical part of effective digital learning.
-              NeuroLXP, a next-generation AI-powered LMS, offers 60+ online
-              assessment formats designed to evaluate knowledge, measure skills,
-              and improve learner engagement.
-            </p>
-
-            <p className="heroText">
-              Unlike traditional platforms that offer only a few basic test
-              formats, NeuroLXP provides a comprehensive assessment ecosystem
-              supporting interactive quizzes, skill-based evaluations, exam
-              preparation, and continuous learning assessments.
-            </p>
-          </div>
-
-          <div className="heroVisualCard">
-            <div className="imagePlaceholder">
-            
-              <img
-                src="/photo-1606326608606-aa0b62935f2b.jpeg"
-                alt="Digital online assessment platform with quiz interface on screen"
-                className="heroImage"
-              />
-            </div>
-
-            <div className="floatingStats">
-              <div className="statPill">
-                <FaLayerGroup className="iconText" />
-                <span>60+ Assessment Formats</span>
-              </div>
-              <div className="statPill">
-                <FaRobot className="iconText" />
-                <span>AI-Powered Intelligence</span>
-              </div>
-              <div className="statPill">
-                <FaBolt className="iconText" />
-                <span>Adaptive Testing</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cardsSection">
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaCheckCircle className="iconText" />
-            </div>
-            <h3>Why Modern LMS Assessments Matter</h3>
-          </div>
-
+    <main className="assessments-page">
+      <section className="assessments-hero assessments-neumorphic-card">
+        <div className="assessments-hero-content">
+          <span className="assessments-eyebrow">Advanced Online Assessments</span>
+          <h1>60+ Assessment Types in a Powerful AI-Driven LMS</h1>
           <p>
-            Today's learners require more than simple tests. Effective online
-            learning platforms must support interactive, gamified, and adaptive
-            assessments that evaluate not just memorisation but also critical
-            thinking, application of knowledge, and real-world problem solving.
+            Assessments are a critical part of effective digital learning.
+            NeuroLXP offers 60+ online assessment formats designed to evaluate
+            knowledge, measure skills, and improve learner engagement.
           </p>
-
-          <div className="insetBox">
-            <h4>NeuroLXP delivers assessments that are:</h4>
-            <ul className="featureList">
-              {whyPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaUsers className="iconText" />
-            </div>
-            <h3>Collaborative &amp; Continuous Learning Assessments</h3>
-          </div>
-
           <p>
-            NeuroLXP supports modern educational assessment strategies that
-            encourage active participation, self-reflection, and collaborative
-            learning — going far beyond traditional, one-dimensional testing.
-          </p>
-
-          <div className="insetBox">
-            <h4>Formats include:</h4>
-            <ul className="featureList">
-              {collaborativeFormats.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            These formats encourage active participation and strengthen
-            collaborative learning across all environments.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaRobot className="iconText" />
-            </div>
-            <h3>AI-Powered Assessment Intelligence</h3>
-          </div>
-
-          <p>
-            NeuroLXP goes beyond basic LMS testing by integrating AI-driven
-            assessment capabilities that personalise and elevate the evaluation
-            experience for every learner.
-          </p>
-
-          <div className="insetBox">
-            <h4>The platform can:</h4>
-            <ul className="featureList">
-              {aiCapabilities.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            This makes NeuroLXP one of the most advanced AI-powered LMS
-            platforms for assessments available today.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaUniversity className="iconText" />
-            </div>
-            <h3>Perfect for Schools, Universities &amp; Corporate Training</h3>
-          </div>
-
-          <p>
-            NeuroLXP is designed for organisations that want to build modern
-            digital learning environments. The platform supports online exams,
-            skill evaluation, training assessments, and certification testing.
-          </p>
-
-          <div className="insetBox">
-            <h4>Ideal for:</h4>
-            <ul className="featureList">
-              {idealFor.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </article>
-      </section>
-
-      <section className="formatsSection">
-        <div className="formatsSectionHeader">
-          <h2 className="sectionTitle">Explore Every Assessment Type</h2>
-          <p className="sectionDesc">
-            NeuroLXP supports more than 60 LMS assessment types, enabling
-            instructors to create flexible and engaging evaluation experiences
-            across every learning context.
+            Unlike traditional LMS platforms, NeuroLXP provides a comprehensive
+            online assessment ecosystem for interactive quizzes, skill-based
+            evaluations, exam preparation, and continuous learning assessments.
           </p>
         </div>
 
-        <div className="formatsGrid">
-          {formatGroups.map((group, i) => (
-            <article key={i} className={`formatCard formatCard--${group.colorVar}`}>
-              <div className="cardHeader">
-                <div className="iconWrap">{group.icon}</div>
-                <h3>{group.title}</h3>
+        <div className="assessments-image-placeholder">
+          <img src="/pexels-andy-barbour-6684255.jpg" alt="Descriptive image text" className="placeholder-image"/>
+        </div>
+      </section>
+
+      <section className="assessments-stats-card assessments-neumorphic-card">
+        <div className="assessments-stat-item">
+          <h2>60+</h2>
+          <p>Assessment formats</p>
+        </div>
+        <div className="assessments-stat-item">
+          <h2>AI</h2>
+          <p>Question generation</p>
+        </div>
+        <div className="assessments-stat-item">
+          <h2>5+</h2>
+          <p>Learning sectors</p>
+        </div>
+      </section>
+
+      <section className="assessments-open-section">
+        <span>Why Assessments Matter</span>
+        <h2>Modern LMS Assessments Go Beyond Simple Tests</h2>
+        <p>
+          Effective online learning platforms must support interactive,
+          gamified, and adaptive assessments that evaluate critical thinking,
+          application of knowledge, and real-world problem solving.
+        </p>
+      </section>
+
+      <section className="assessments-benefits-grid">
+        {assessmentBenefits.map((benefit, index) => (
+          <article className="assessments-benefit-card" key={benefit}>
+            <FaCheckCircle />
+            <h4>{benefit}</h4>
+            <span>{String(index + 1).padStart(2, "0")}</span>
+          </article>
+        ))}
+      </section>
+
+      <section className="assessments-section-heading">
+        <h2>60+ Online Assessment Formats</h2>
+        <p>
+          NeuroLXP enables instructors to create flexible, engaging, and
+          meaningful evaluation experiences across multiple learning contexts.
+        </p>
+      </section>
+
+      <section className="assessments-category-grid">
+        {assessmentCategories.map((category) => (
+          <article
+            className={`assessments-category-card assessments-${category.color}`}
+            key={category.title}
+          >
+            <div className="assessments-category-icon">{category.icon}</div>
+            <h3>{category.title}</h3>
+            <ul>
+              {category.items.map((item) => (
+                <li key={item}>
+                  <FaArrowRight />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
+      </section>
+
+      <section className="assessments-ai-section assessments-neumorphic-card">
+        <div>
+          <span className="assessments-eyebrow">AI Intelligence</span>
+          <h2>AI-Powered Assessment Intelligence</h2>
+          <p>
+            NeuroLXP goes beyond basic LMS testing features by integrating
+            AI-driven assessment capabilities for smarter evaluation and
+            adaptive learning.
+          </p>
+        </div>
+
+        <div className="assessments-ai-list">
+          {aiFeatures.map((feature, index) => (
+            <div key={feature}>
+              <div className="assessments-ai-icon">
+                {index === 0 && <FaRobot />}
+                {index === 1 && <FaBrain />}
+                {index === 2 && <FaChartLine />}
+                {index === 3 && <FaClock />}
               </div>
-              <ul className="featureList">
-                {group.items.map((item) => (
-                  <li key={item}>
-                    <span className="listIcon">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </article>
+              <h4>{feature}</h4>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="highlightSection">
-        <div className="highlightGrid">
-          <div className="highlightTextCard">
-            <div className="cardHeader">
-              <div className="iconWrap">
-                <FaBrain className="iconText" />
-              </div>
-              <h3>NeuroLXP — A Smarter LMS for Digital Learning</h3>
-            </div>
-
-            <p>
-              Traditional LMS platforms often limit educators to only a few
-              question types. NeuroLXP changes that with 60+ assessment formats,
-              enabling institutions to create interactive, engaging, and
-              meaningful online evaluations.
-            </p>
-
-            <p>
-              With advanced technology, interactive formats, and AI-powered
-              intelligence, NeuroLXP ensures assessments become an essential
-              part of effective digital learning and learner success.
-            </p>
-
-            <div className="miniFeatures">
-              <div className="miniFeature">
-                <FaListAlt className="iconText" />
-                <span>60+ Question Types</span>
-              </div>
-              <div className="miniFeature">
-                <FaRobot className="iconText" />
-                <span>AI Question Generation</span>
-              </div>
-              <div className="miniFeature">
-                <FaStar className="iconText" />
-                <span>Adaptive Testing</span>
-              </div>
-            </div>
+      <section className="assessments-ideal-layout">
+        <article className="assessments-neumorphic-card assessments-ideal-card">
+          <div className="assessments-icon-box">
+            <FaSchool />
           </div>
+          <h2>Perfect for Schools, Universities, and Corporate Training</h2>
+          <p>
+            NeuroLXP is designed for organizations that want to build modern
+            digital learning environments with online exams, skill evaluation,
+            training assessments, and certification testing.
+          </p>
 
-          <div className="secondaryVisualCard">
-            <div className="imagePlaceholderAlt">
+          <ul className="assessments-list">
+            {idealFor.map((item) => (
+              <li key={item}>
+                <FaGraduationCap />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
 
-              <img
-                src="/photo-1581091226825-a6a2a5aee158.jpeg"
-                alt="AI-powered adaptive assessment technology evaluating student performance"
-                className="heroImage"
-              />
-            </div>
+        <article className="assessments-neumorphic-card assessments-image-card">
+          <div className="assessments-image-placeholder">
+            <img src="/pexels-pavel-danilyuk-6716014.jpg" alt="Learners using digital learning resources" className="placeholder-image"/>
           </div>
-        </div>
+        </article>
       </section>
 
+      <section className="assessments-final-section assessments-neumorphic-card">
+        <div className="assessments-final-icon">
+          <FaBrain />
+        </div>
+        <h2>A Smarter LMS for Digital Learning</h2>
+        <p>
+          Traditional LMS platforms often limit educators to only a few question
+          types. NeuroLXP changes that with 60+ assessment formats, enabling
+          institutions to create interactive, engaging, and meaningful online
+          evaluations.
+        </p>
+        <h3>
+          NeuroLXP — The AI-Powered LMS for Smarter Assessments, Engaging
+          Learning, and Modern Education.
+        </h3>
+      </section>
     </main>
   );
 }
