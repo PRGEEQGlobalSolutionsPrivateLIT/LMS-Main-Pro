@@ -1,24 +1,26 @@
 import "./information-literacy.css";
 
-/* ── Feather-style SVG icons ── */
 const IconSearch = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
   </svg>
 );
+
 const IconShield = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
   </svg>
 );
+
 const IconBook = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
   </svg>
 );
+
 const IconCompass = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -26,6 +28,7 @@ const IconCompass = () => (
     <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
   </svg>
 );
+
 const IconGlobe = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -34,6 +37,7 @@ const IconGlobe = () => (
     <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
   </svg>
 );
+
 const IconCpu = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -45,6 +49,7 @@ const IconCpu = () => (
     <line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/>
   </svg>
 );
+
 const IconAward = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -52,30 +57,35 @@ const IconAward = () => (
     <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/>
   </svg>
 );
+
 const IconZap = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
   </svg>
 );
+
 const IconStar = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
   </svg>
 );
+
 const IconArrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon svg-icon--sm">
     <polyline points="9 18 15 12 9 6"/>
   </svg>
 );
+
 const IconTick = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon svg-icon--sm">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 );
+
 const IconStack = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
     strokeLinecap="round" strokeLinejoin="round" className="svg-icon">
@@ -86,20 +96,26 @@ const IconStack = () => (
 );
 
 const IMG = {
-  hero:      "/Information-Literacy.png",
-  research:  "/NeuroLXP-Enabling-Smarter-Information-Literacy.png",
+  hero: "/learners-beyond-classroom.jpeg",
+  research: "/connected-world.jpeg",
   highlight: "/learners-beyond-classroom.jpeg",
 };
+
+const IPlay = () => (
+  <svg viewBox="0 0 24 24" fill="currentColor" stroke="none"
+    className="svg-icon svg-icon--sm">
+    <polygon points="5 3 19 12 5 21 5 3"/>
+  </svg>
+);
 
 export default function InformationLiteracyPage() {
   return (
     <main className="il">
 
-      {/* ── HERO ── */}
       <section className="il__hero">
         <div className="il__hero-text">
           <span className="il__eyebrow">NeuroLXP · Information Skills</span>
-          <h1 className="il__title">Information<br/>Literacy</h1>
+          <h1 className="il__title">Information Literacy</h1>
           <h2 className="il__subtitle">Find, Evaluate & Use Knowledge Responsibly</h2>
           <p className="il__body">
             NeuroLXP equips learners to cut through digital noise — identifying credible sources,
@@ -121,23 +137,20 @@ export default function InformationLiteracyPage() {
               <span className="il__stat-lbl">Lifelong Use</span>
             </div>
           </div>
-        </div>
-        <div className="il__hero-img-panel">
-          <img src={IMG.hero} alt="Learners collaborating with information" className="il__hero-img"/>
-          <div className="il__hero-badge">
-            <IconGlobe/>
-            <span>Digital Information Age</span>
+
+          <div className="dl__hero-ctas">
+            <button className="dl__btn dl__btn--primary"><IPlay/><span>Start Learning</span></button>
+            <button className="dl__btn dl__btn--ghost">Request Demo</button>
           </div>
         </div>
       </section>
 
-      {/* ── BAND: Evaluating Information ── */}
       <section className="il__band il__band--teal">
         <div className="il__band-content">
           <div className="il__icon-pill il__icon-pill--primary">
             <IconShield/><span>Evaluate & Verify</span>
           </div>
-          <h3 className="il__section-title">Not all information is equal — learners need to know the difference</h3>
+          <h3 className="il__section-title">Not all information is equal — <br/> learners need to know the difference</h3>
           <p className="il__body">
             From social media to research journals, learners encounter information everywhere.
             NeuroLXP trains them to assess reliability, spot bias, and distinguish fact from opinion.
@@ -159,13 +172,12 @@ export default function InformationLiteracyPage() {
         </div>
       </section>
 
-      {/* ── SPLIT: Research Skills ── */}
       <section className="il__split il__split--reverse">
         <div className="il__split-content">
           <div className="il__icon-pill il__icon-pill--secondary">
             <IconBook/><span>Research & Discovery</span>
           </div>
-          <h3 className="il__section-title">From searching to synthesising — research done right</h3>
+          <h3 className="il__section-title">From searching to synthesising — <br/> research done right</h3>
           <p className="il__body">
             Strong research skills drive academic success and professional growth.
             NeuroLXP guides learners from finding sources to building original insights.
@@ -201,13 +213,12 @@ export default function InformationLiteracyPage() {
         </div>
       </section>
 
-      {/* ── TRIO: Ethical Use ── */}
       <section className="il__trio">
         <div className="il__trio-text">
           <div className="il__icon-pill il__icon-pill--accent">
             <IconCompass/><span>Ethics & Integrity</span>
           </div>
-          <h3 className="il__section-title">Using knowledge responsibly is a skill — not an afterthought</h3>
+          <h3 className="il__section-title">Using knowledge responsibly is a skill — <br/> not an afterthought</h3>
           <p className="il__body">
             Information literacy includes understanding intellectual property, proper citation,
             and the responsibilities that come with access to knowledge.
@@ -241,7 +252,6 @@ export default function InformationLiteracyPage() {
         </div>
       </section>
 
-      {/* ── JOURNEY: 4-step horizontal learning path ── */}
       <section className="il__journey">
         <div className="il__journey-header">
           <div className="il__icon-pill il__icon-pill--support">
@@ -255,16 +265,15 @@ export default function InformationLiteracyPage() {
           {[
             { step: "01", label: "Discover",   desc: "Identify what information you need and where to find it.",        icon: <IconSearch/>,  c: "primary"   },
             { step: "02", label: "Evaluate",   desc: "Assess credibility, bias, and relevance of every source.",        icon: <IconShield/>,  c: "secondary" },
-            { step: "03", label: "Synthesise", desc: "Connect ideas across sources to form your own clear perspective.",icon: <IconBook/>,    c: "accent"    },
+            { step: "03", label: "Synthesise", desc: "Connect ideas across sources to form your own perspective.",      icon: <IconBook/>,    c: "accent"    },
             { step: "04", label: "Apply",      desc: "Use knowledge ethically — cite, share, and act responsibly.",     icon: <IconCompass/>, c: "support"   },
-          ].map(({ step, label, desc, icon, c }, i) => (
+          ].map(({ step, label, desc, icon, c }) => (
             <div className={`il__journey-node il__journey-node--${c}`} key={step}>
               <div className={`il__journey-bubble il__journey-bubble--${c}`}>
                 <span className="il__journey-step">{step}</span>
-                <span className={`il__journey-icon il__journey-icon--${c}`}>{icon}</span>
               </div>
               <div className="il__journey-card">
-                <h4 className="il__journey-label">{label}</h4>
+                <h4 className={`il__journey-label il__journey-icon--${c}`}>{label}</h4>
                 <p className="il__journey-desc">{desc}</p>
               </div>
             </div>
@@ -274,20 +283,15 @@ export default function InformationLiteracyPage() {
 
       {/* ── SPOTLIGHT: Image + ring stats ── */}
       <section className="il__spotlight">
-       <div className="il__spotlight-img-col">
-        <img
-          src="/pexels-mikhail-nilov-9159064.jpg"
-          alt="NeuroLXP platform in action"
-          className="il__spotlight-img"
-          loading="lazy"
-        />
-      </div>
+        <div className="il__spotlight-img-col">
+          <img src={IMG.highlight} alt="NeuroLXP platform in action" className="il__spotlight-img" loading="lazy"/>
+        </div>
         <div className="il__spotlight-content">
           <span className="il__eyebrow">Why NeuroLXP</span>
           <h3 className="il__section-title" style={{marginTop:"8px"}}>Built for the way learners actually think</h3>
           <p className="il__body">
-            NeuroLXP's information literacy modules combine structured skill-building with
-            real-world practice — so learners don't just know the theory, they live it.
+            NeuroLXP&apos;s information literacy modules combine structured skill-building with
+            real-world practice — so learners don&apos;t just know the theory, they live it.
           </p>
           <div className="il__rings">
             {[
@@ -297,15 +301,12 @@ export default function InformationLiteracyPage() {
             ].map(({ pct, label, c, r }) => {
               const circ = 2 * Math.PI * r;
               const dash = (pct / 100) * circ;
+              const gap = circ - dash;
               return (
                 <div className={`il__ring il__ring--${c}`} key={label}>
                   <svg viewBox="0 0 72 72" className="il__ring-svg">
                     <circle cx="36" cy="36" r={r} className="il__ring-track"/>
-                    <circle cx="36" cy="36" r={r}
-                      className={`il__ring-fill il__ring-fill--${c}`}
-                      strokeDasharray={`${dash} ${circ}`}
-                      strokeDashoffset={circ * 0.25}
-                    />
+                    <circle cx="36" cy="36" r={r} className={`il__ring-fill il__ring-fill--${c}`} strokeDasharray={`${dash} ${gap}`} strokeDashoffset={0} transform="rotate(-90 36 36)" />
                   </svg>
                   <div className="il__ring-inner">
                     <span className={`il__ring-pct il__ring-pct--${c}`}>{pct}%</span>
