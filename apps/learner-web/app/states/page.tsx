@@ -1,248 +1,218 @@
-import React from 'react';
-import type { Metadata } from 'next';
+import React from "react";
 import {
   FaLandmark,
   FaUsers,
-  FaBookOpen,
+  FaGlobe,
   FaShieldAlt,
-  FaClipboardCheck,
+  FaBuilding,
   FaChartLine,
-  FaGraduationCap,
   FaCheckCircle,
   FaArrowRight,
-  FaPlay,
-  FaBuilding,
-  FaGlobe,
-} from 'react-icons/fa';
-import './States.css';
-
-export const metadata: Metadata = {
-  title: 'Government & State Institutions | Industries We Serve',
-  description:
-    'Scalable Learning Experience Platform for state governments and public institutions. NeuroLXP delivers structured training, compliance programs, and citizen skill development at scale.',
-  keywords:
-    'government training, state institutions, public sector learning, compliance training, workforce development, citizen skilling',
-  openGraph: {
-    title: 'Government & State Institutions | Industries We Serve',
-    description:
-      'Empowering state governments with scalable, technology-enabled learning ecosystems.',
-    type: 'website',
-  },
-};
-
-interface Challenge {
-  id: number;
-  icon: React.ReactNode;
-  challenge: string;
-  description: string;
-  solution: string;
-}
-
-interface Benefit {
-  id: number;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
+  FaClipboardCheck,
+  FaGraduationCap,
+} from "react-icons/fa";
+import "./State.css";
 
 export default function StatesPage() {
-  const challenges: Challenge[] = [
+  const highlights = [
     {
-      id: 1,
-      icon: <FaShieldAlt className="challengeIcon" />,
-      challenge: 'Regulatory Compliance and Policy Training',
-      description:
-        'Government institutions must ensure all employees understand and comply with evolving regulations, policies, and procedures.',
-      solution:
-        'NeuroLXP delivers structured compliance training modules with automated tracking and certification, ensuring government employees stay updated on regulatory requirements.',
+      icon: <FaUsers />,
+      title: "Large Workforce Training",
+      text: "Departments and regions",
     },
     {
-      id: 2,
-      icon: <FaUsers className="challengeIcon" />,
-      challenge: 'Training Large Public Workforces',
-      description:
-        'State governments and public institutions have large, diverse workforces that require coordinated training programs.',
-      solution:
-        'NeuroLXP provides a scalable platform that enables organizations to deliver consistent training to thousands of employees across departments and locations.',
+      icon: <FaGraduationCap />,
+      title: "Citizen Skill Development",
+      text: "Career-ready programmes",
     },
     {
-      id: 3,
-      icon: <FaBuilding className="challengeIcon" />,
-      challenge: 'Digital Transformation in Public Sector',
-      description:
-        'Government agencies are transitioning to digital operations and need to upskill employees on new technologies.',
-      solution:
-        'NeuroLXP supports digital literacy training, technology adoption programs, and change management learning pathways.',
-    },
-    {
-      id: 4,
-      icon: <FaClipboardCheck className="challengeIcon" />,
-      challenge: 'Monitoring Training Completion',
-      description:
-        'Public institutions must track employee training progress and ensure compliance with mandatory training requirements.',
-      solution:
-        'NeuroLXP provides comprehensive analytics and reporting dashboards that give administrators visibility into training completion rates and compliance status.',
-    },
-    {
-      id: 5,
-      icon: <FaGlobe className="challengeIcon" />,
-      challenge: 'Serving Citizens Effectively',
-      description:
-        'Government employees need continuous training to improve public service delivery and citizen engagement.',
-      solution:
-        'NeuroLXP enables customer service training, communication skills development, and public service excellence programs.',
+      icon: <FaShieldAlt />,
+      title: "Policy Compliance",
+      text: "Governance standards",
     },
   ];
 
-  const benefits: Benefit[] = [
+  const challenges = [
     {
-      id: 1,
-      icon: <FaShieldAlt className="benefitIcon" />,
-      title: 'Compliance Training',
-      description: 'Deliver mandatory compliance and regulatory training at scale',
+      icon: <FaUsers />,
+      title: "Training Large Government Workforces",
+      text: "State departments often need to train thousands of employees across administrative levels and geographic regions.",
+      solution:
+        "NeuroLXP enables centralized training management for structured learning, policy training, and administrative skill development.",
+      color: "blue",
     },
     {
-      id: 2,
-      icon: <FaUsers className="benefitIcon" />,
-      title: 'Workforce Development',
-      description: 'Upskill and reskill public sector employees for modern governance',
+      icon: <FaGlobe />,
+      title: "Skill Development for Citizens",
+      text: "State governments run large skilling and vocational programmes to improve employability and workforce readiness.",
+      solution:
+        "NeuroLXP supports digital skilling programmes and career pathways through accessible online learning modules.",
+      color: "green",
     },
     {
-      id: 3,
-      icon: <FaGraduationCap className="benefitIcon" />,
-      title: 'Citizen Skilling Programs',
-      description: 'Provide learning opportunities for citizens to develop job-ready skills',
+      icon: <FaShieldAlt />,
+      title: "Policies and Regulations",
+      text: "Government departments must ensure employees understand official procedures and regulatory frameworks.",
+      solution:
+        "NeuroLXP enables compliance training and policy education so staff stay informed about operational standards.",
+      color: "orange",
     },
     {
-      id: 4,
-      icon: <FaChartLine className="benefitIcon" />,
-      title: 'Advanced Analytics',
-      description: 'Monitor training effectiveness and compliance with detailed reports',
+      icon: <FaBuilding />,
+      title: "Multiple Departments",
+      text: "Departments such as education, healthcare, finance, administration, and public services have unique training needs.",
+      solution:
+        "The platform provides a centralized learning ecosystem with department-level management and unified reporting.",
+      color: "purple",
     },
     {
-      id: 5,
-      icon: <FaBuilding className="benefitIcon" />,
-      title: 'Scalable Infrastructure',
-      description: 'Support large-scale training programs across multiple departments',
+      icon: <FaChartLine />,
+      title: "Participation and Outcomes",
+      text: "Monitoring participation and evaluating programme impact can be complex across large public systems.",
+      solution:
+        "Advanced analytics help administrators track engagement, completion, and assessment outcomes.",
+      color: "cyan",
     },
-    {
-      id: 6,
-      icon: <FaCheckCircle className="benefitIcon" />,
-      title: 'Standardized Training',
-      description: 'Ensure consistent learning experiences across all government offices',
-    },
+  ];
+
+  const benefits = [
+    "Deliver large-scale training programmes efficiently",
+    "Support workforce development and citizen skilling",
+    "Maintain consistent policy and compliance training",
+    "Monitor training performance through analytics",
+    "Scale learning across departments and regions",
   ];
 
   return (
-    <main className="neumorphic-page">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="heroContent">
-          <h1 className="heroTitle">Government & State Institutions</h1>
-          <p className="heroSubtitle">
-            Scalable Training for Public Sector Excellence
+    <main className="states-page">
+      <section className="states-hero">
+        <div className="states-hero-content">
+          <span className="states-badge">
+            <FaLandmark /> Government & State Institutions
+          </span>
+
+          <h1>Government & State Institutions</h1>
+
+          <h2>Empowering State-Level Learning and Skill Development</h2>
+
+          <p>
+            State governments and public sector institutions play a critical
+            role in education, workforce development, governance training, and
+            citizen skill development programmes.
           </p>
 
-          <div className="heroButtons">
-            <button className="btn">
-              <span>Request Demo</span>
-              <FaArrowRight className="btnIcon" />
-            </button>
-            <button className="btn">
-              <FaPlay className="btnIcon" />
-              <span>Watch Overview</span>
-            </button>
+          <p>
+            NeuroLXP provides a scalable Learning Experience Platform designed
+            for public institutions to deliver structured learning programmes,
+            compliance training, and skill development initiatives at scale.
+          </p>
+
+          <button className="states-btn">
+            Explore Public Sector Learning <FaArrowRight />
+          </button>
+        </div>
+
+        <div className="states-terminal">
+          <div className="terminal-top">
+            <span></span>
+            <span></span>
+            <span></span>
           </div>
-
-          <p className="heroDescription">
-            Government agencies and state institutions play a critical role in public service delivery, policy implementation, and citizen engagement. To serve communities effectively, public sector organizations must continuously train employees on regulatory compliance, digital transformation, customer service, and operational excellence.
-          </p>
-          
-          <p className="heroDescription">
-            NeuroLXP provides a scalable Learning Experience Platform (LXP) for government and state institutions, enabling them to deliver structured training programs, track compliance, and build future-ready public workforces.
-          </p>
-
-          {/* Hero Image Placeholder */}
-          <div className="heroImage">
-            <div className="imagePlaceholder">
-              <FaLandmark style={{ fontSize: '4rem', marginBottom: '1rem', opacity: 0.5 }} />
-              <div>Government Training Management Dashboard</div>
-              <div className="imageLabel">Image: 1000x450px - Public sector training compliance tracking dashboard</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Challenges Section */}
-      <section className="challenges">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Addressing Key Challenges in Government Training</h2>
-        </div>
-
-        <div className="challengesGrid">
-          {challenges.map((item) => (
-            <div key={item.id} className="challengeCard">
-              {item.icon}
-              <h3 className="challengeTitle">Challenge: {item.challenge}</h3>
-              <p className="challengeDescription">{item.description}</p>
-              <div className="solutionLabel">How NeuroLXP Helps</div>
-              <p className="solutionDescription">{item.solution}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="benefits">
-        <div className="sectionHeader">
-          <h2 className="sectionTitle">Benefits for Government Institutions</h2>
-          <p className="sectionSubtitle">
-            State governments and public institutions using NeuroLXP can transform their workforce development
-          </p>
-        </div>
-
-        <div className="benefitsGrid">
-          {benefits.map((benefit) => (
-            <div key={benefit.id} className="benefitCard">
-              <div className="benefitIconWrapper">{benefit.icon}</div>
-              <h3 className="benefitTitle">{benefit.title}</h3>
-              <p className="benefitDescription">{benefit.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta">
-        <div className="ctaContent">
-          <h2 className="ctaTitle">Modernizing Public Sector Learning</h2>
-          <p className="ctaDescription">
-            By leveraging modern learning technologies, government institutions can improve employee capabilities, ensure regulatory compliance, and enhance public service delivery. NeuroLXP helps state governments build scalable, technology-enabled learning ecosystems that support digital transformation and workforce readiness.
-          </p>
-
-          <div className="ctaButtons">
-            <button className="btn">
-              Schedule a Demo
-              <FaArrowRight className="btnIcon" />
-            </button>
-            <button className="btn btn-outline">
-              <span>Contact Sales</span>
-              <FaArrowRight className="btnIcon" />
-            </button>
+          <div className="terminal-body">
+            <p>$ start state-learning-platform</p>
+            <p>&gt; Loading department training...</p>
+            <p>&gt; Building citizen skilling pathways...</p>
+            <p>&gt; Tracking compliance and outcomes...</p>
+            <strong>Public sector learning activated.</strong>
           </div>
         </div>
       </section>
 
-      {/* Footer CTA */}
-      <section className="footerCta">
-        <h3>NeuroLXP — Powering Learning for Government & State Institutions</h3>
+      <section className="states-highlight-strip">
+        {highlights.map((item, index) => (
+          <div className="states-highlight" key={index}>
+            <div>{item.icon}</div>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="states-section-heading">
+        <h2>Addressing Key Challenges in State-Level Training</h2>
         <p>
-          With AI-powered learning tools, compliance-ready training modules, and advanced analytics, NeuroLXP empowers government institutions to build knowledgeable, compliant, and future-ready public workforces that serve citizens effectively.
+          NeuroLXP helps governments manage learning across employees,
+          departments, regions, and citizens through one scalable digital
+          ecosystem.
         </p>
-        <button className="btn">
-          Get Started Today
-          <FaArrowRight className="btnIcon" />
-        </button>
+      </section>
+
+      <section className="states-challenge-grid">
+        {challenges.map((item, index) => (
+          <article className={`states-challenge-card ${item.color}`} key={index}>
+            <div className="states-card-icon">{item.icon}</div>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+
+            <div className="states-solution">
+              <span>How NeuroLXP Helps</span>
+              <p>{item.solution}</p>
+            </div>
+          </article>
+        ))}
+      </section>
+
+      <section className="states-skill-panel">
+        <div>
+          <span className="states-badge dark">Benefits for State Governments</span>
+          <h2>State institutions using NeuroLXP can scale learning with clarity.</h2>
+          <p>
+            These capabilities help public institutions improve workforce
+            readiness, citizen education, compliance, and service delivery.
+          </p>
+        </div>
+
+        <div className="states-benefit-list">
+          {benefits.map((benefit, index) => (
+            <span key={index}>
+              <FaCheckCircle />
+              {benefit}
+            </span>
+          ))}
+        </div>
+      </section>
+
+      <section className="states-bottom">
+       <div className="states-image-placeholder">
+  <img
+    src="/pexels-droosmo-2982449.jpg"
+    alt="Public sector learning dashboard"
+  />
+</div>
+
+        <div>
+          <h2>Enabling Digital Transformation in Public Sector Learning</h2>
+          <p>
+            By leveraging modern learning technologies, state governments can
+            strengthen workforce capabilities, improve service delivery, and
+            empower citizens through accessible learning opportunities.
+          </p>
+          <p>
+            NeuroLXP helps public institutions build scalable,
+            technology-enabled learning ecosystems that support governance,
+            workforce development, and citizen education.
+          </p>
+        </div>
+      </section>
+
+      <section className="states-footer">
+        <h2>NeuroLXP — Powering Learning for State Governments and Public Institutions</h2>
+        <p>
+          With scalable digital learning capabilities, structured training
+          programmes, and advanced analytics, NeuroLXP enables state governments
+          to deliver impactful learning initiatives that drive workforce
+          development and public sector excellence.
+        </p>
       </section>
     </main>
   );
