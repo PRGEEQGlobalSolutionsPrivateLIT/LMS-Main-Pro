@@ -1,18 +1,37 @@
 import "./content-creation-management.css";
-import { FaPencilAlt, FaRobot, FaDatabase, FaLayerGroup, FaSyncAlt, FaExpandArrowsAlt, FaVideo, FaPuzzlePiece, FaGamepad,
-  FaClipboardList, FaFilePdf,  FaSortAmountUp, FaCodeBranch, FaBook, FaBolt, FaUsers, FaUniversity, FaBuilding, FaGraduationCap, FaBrain,
-  FaChartLine, } from "react-icons/fa";
+import {
+  FaBookOpen,
+  FaBrain,
+  FaCloudUploadAlt,
+  FaCubes,
+  FaFileAlt,
+  FaGamepad,
+  FaImage,
+  FaLayerGroup,
+  FaMagic,
+  FaPlayCircle,
+  FaProjectDiagram,
+  FaSyncAlt,
+  FaTasks,
+  FaVideo,
+  FaArrowRight,
+  FaCheckCircle,
+  FaUniversity,
+  FaSchool,
+  FaBuilding,
+  FaGraduationCap,
+} from "react-icons/fa";
 
-const richContentItems = [
-  { icon: <FaVideo />, label: "Interactive learning modules" },
-  { icon: <FaPuzzlePiece />, label: "Multimedia lessons (video, audio, images)" },
-  { icon: <FaGamepad />, label: "Gamified learning activities" },
-  { icon: <FaClipboardList />, label: "Assessments and quizzes integrated within lessons" },
-  { icon: <FaBolt />, label: "Clickable and interactive content elements" },
-  { icon: <FaBook />, label: "Scenario-based learning exercises" },
+const contentTypes = [
+  { icon: <FaCubes />, title: "Interactive learning modules" },
+  { icon: <FaVideo />, title: "Multimedia lessons" },
+  { icon: <FaMagic />, title: "Clickable content elements" },
+  { icon: <FaGamepad />, title: "Gamified learning activities" },
+  { icon: <FaTasks />, title: "Integrated quizzes" },
+  { icon: <FaProjectDiagram />, title: "Scenario-based exercises" },
 ];
 
-const aiCapabilities = [
+const aiTools = [
   "Convert detailed study materials into concise summaries",
   "Generate exam-oriented content and practice questions",
   "Extract key insights from videos and documents",
@@ -20,293 +39,257 @@ const aiCapabilities = [
   "Develop structured learning modules from uploaded resources",
 ];
 
-const cmsCapabilities = [
+const cmsActions = [
   "Upload and manage videos, PDFs, presentations, and multimedia content",
   "Categorize learning resources by course, subject, or skill level",
-  "Update content easily without disrupting ongoing learning programs",
+  "Update content without disrupting ongoing learning programmes",
   "Maintain version control for course materials",
   "Ensure consistent content delivery across departments",
 ];
 
-const contentFormats = [
-  { icon: <FaBook />, label: "Detailed lessons & structured notes" },
-  { icon: <FaPuzzlePiece />, label: "Interactive learning activities" },
-  { icon: <FaBolt />, label: "Microlearning modules" },
-  { icon: <FaLayerGroup />, label: "Visual learning components" },
-  { icon: <FaClipboardList />, label: "Practice-based learning exercises" },
+const deliveryFormats = [
+  "Detailed lessons and structured notes",
+  "Interactive learning activities",
+  "Microlearning modules",
+  "Visual learning components",
+  "Practice-based learning exercises",
 ];
 
 const idealFor = [
-  { icon: <FaUniversity />, label: "Universities & higher education" },
-  { icon: <FaGraduationCap />, label: "Schools & digital learning platforms" },
-  { icon: <FaBuilding />, label: "Corporate learning & development teams" },
-  { icon: <FaUsers />, label: "Professional training organizations" },
-  { icon: <FaBrain />, label: "EdTech companies & online course providers" },
+  { icon: <FaUniversity />, title: "Universities" },
+  { icon: <FaSchool />, title: "Schools" },
+  { icon: <FaBuilding />, title: "Corporate L&D" },
+  { icon: <FaGraduationCap />, title: "Training Organizations" },
+  { icon: <FaBookOpen />, title: "EdTech Providers" },
 ];
 
-export default function ContentCreationManagementPage() {
+export default function ContentManagement() {
   return (
-    <main className="ccm-page page">
+    <main className="content-page">
+      <section className="content-hero content-card">
+        <div className="content-hero-text">
+          <span className="content-eyebrow">Content Creation & Management</span>
+          <h1>Build, Organize, and Deliver High-Quality Learning Content with Ease</h1>
+          <p>
+            Creating effective learning experiences requires more than uploading
+            documents or videos. NeuroLXP enables institutions, educators, and
+            training teams to design, organize, and deliver engaging digital
+            learning content efficiently.
+          </p>
+          <p>
+            As an AI-powered Learning Management System, NeuroLXP simplifies the
+            entire content lifecycle — from creation and curation to management
+            and continuous improvement.
+          </p>
+        </div>
 
-      <section className="ccm-heroSection">
-        <div className="ccm-heroGrid">
-          <div className="ccm-heroContent">
-  
-            <h1 className="ccm-heroTitle">Content Creation &amp; Management</h1>
-            <h2 className="ccm-heroSubtitle">
-              Build, Organize, and Deliver High-Quality Learning Content with Ease
-            </h2>
-            <p className="ccm-heroText">
-              Creating effective learning experiences requires more than just uploading documents or
-              videos. NeuroLXP provides a powerful Content Creation and Management system that
-              enables institutions, educators, and training teams to design, organize, and deliver
-              engaging digital learning content efficiently.
-            </p>
-            <p className="ccm-heroText">
-              As an AI-powered Learning Management System (LMS), NeuroLXP simplifies the entire
-              content lifecycle—from creation and curation to management and continuous improvement.
-            </p>
+        <div className="content-studio-panel">
+          <div className="content-studio-top">
+            <span>Content Studio</span>
+            <FaLayerGroup />
           </div>
 
-          <div className="ccm-heroVisualCard">
-            <div className="ccm-imagePlaceholder">
-              <img
-                src="/photo-1516321318423-f06f85e504b3.jpeg"
-                alt="Content Creation and Management"
-                className="ccm-heroImg"
-              />
+          <div className="content-canvas">
+            <div className="content-canvas-icon">
+              <FaPlayCircle />
             </div>
-            <div className="ccm-floatingStats">
-              <div className="ccm-statPill">
-                <FaPencilAlt className="ccm-iconText" />
-                <span>Rich Content Tools</span>
-              </div>
-              <div className="ccm-statPill">
-                <FaRobot className="ccm-iconText" />
-                <span>AI-Assisted Development</span>
-              </div>
-              <div className="ccm-statPill">
-                <FaDatabase className="ccm-iconText" />
-                <span>Centralized CMS</span>
-              </div>
+            <h3>Lesson Builder</h3>
+            <p>Video, quizzes, activities, and AI-generated resources in one workspace.</p>
+          </div>
+
+          <div className="content-studio-actions">
+            <div>
+              <FaCloudUploadAlt />
+              <span>Upload</span>
+            </div>
+            <div>
+              <FaMagic />
+              <span>AI Assist</span>
+            </div>
+            <div>
+              <FaSyncAlt />
+              <span>Update</span>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="ccm-cardsSection">
+      <section className="content-intro">
+        <span>Learning Content Lifecycle</span>
+        <h2>From Creation to Continuous Improvement</h2>
+        <p>
+          NeuroLXP brings content creation, AI assistance, organization, delivery,
+          analytics, and updates into one structured digital learning workflow.
+        </p>
+      </section>
 
-        <article className="ccm-contentCard">
-          <div className="ccm-cardHeader">
-            <div className="ccm-iconWrap">
-              <FaPencilAlt className="ccm-iconText" />
+      <section className="content-rich-section">
+        <div className="content-section-heading">
+          <h2>Create Rich and Engaging Learning Content</h2>
+          <p>
+            Educators and instructional designers can build interactive and
+            multimedia-rich learning modules that go beyond static materials.
+          </p>
+        </div>
+
+        <div className="content-type-grid">
+          {contentTypes.map((item) => (
+            <article className="content-type-card" key={item.title}>
+              <div className="content-type-icon">{item.icon}</div>
+              <h4>{item.title}</h4>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-ai-section content-card">
+        <div className="content-ai-left">
+          <span className="content-eyebrow">AI-Assisted Development</span>
+          <h2>Turn Existing Materials into Structured Learning Resources</h2>
+          <p>
+            NeuroLXP integrates AI-powered content tools that reduce preparation
+            time while improving the quality and effectiveness of learning
+            resources.
+          </p>
+        </div>
+
+        <div className="content-ai-list">
+          {aiTools.map((item, index) => (
+            <div key={item}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h4>{item}</h4>
             </div>
-            <h3>Create Rich and Engaging Learning Content</h3>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-cms-layout">
+        <article className="content-cms-card content-card">
+          <div className="content-icon-box">
+            <FaBookOpen />
           </div>
+          <h2>Centralized Content Management System</h2>
           <p>
-            NeuroLXP enables educators and instructional designers to develop interactive and
-            multimedia-rich learning modules that go far beyond static learning materials.
+            NeuroLXP allows institutions to organize, update, and manage all
+            learning resources in one place.
           </p>
-          <div className="ccm-insetBox">
-            <h4>Content creators can build learning experiences using:</h4>
-            <ul className="ccm-iconList">
-              {richContentItems.map((item, i) => (
-                <li key={i} className="ccm-iconListItem">
-                  <span className="ccm-listIcon">{item.icon}</span>
-                  <span>{item.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p>
-            This ensures that learners interact with the material actively, improving engagement and
-            knowledge retention.
-          </p>
+
+          <ul className="content-list">
+            {cmsActions.map((item) => (
+              <li key={item}>
+                <FaArrowRight />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </article>
 
-        <article className="ccm-contentCard">
-          <div className="ccm-cardHeader">
-            <div className="ccm-iconWrap">
-              <FaRobot className="ccm-iconText" />
-            </div>
-            <h3>AI-Assisted Content Development</h3>
+        <article className="content-library-panel">
+          <div className="content-folder content-folder-main">
+            <FaLayerGroup />
+            <span>Course Library</span>
           </div>
-          <p>
-            NeuroLXP integrates AI-powered content tools that help transform existing learning
-            materials into structured and engaging educational resources.
-          </p>
-          <div className="ccm-insetBox">
-            <h4>Using AI capabilities, educators can:</h4>
-            <ul className="ccm-featureList">
-              {aiCapabilities.map((item) => (
-                <li key={item}>
-                  <span className="ccm-bullet">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="content-folder">
+            <FaVideo />
+            <span>Videos</span>
           </div>
-          <p>
-            This significantly reduces content preparation time while improving the quality and
-            effectiveness of learning resources.
-          </p>
-        </article>
-
-        <article className="ccm-contentCard">
-          <div className="ccm-cardHeader">
-            <div className="ccm-iconWrap">
-              <FaDatabase className="ccm-iconText" />
-            </div>
-            <h3>Centralized Content Management System</h3>
+          <div className="content-folder">
+            <FaFileAlt />
+            <span>PDFs</span>
           </div>
-          <p>
-            NeuroLXP provides a centralized content management system (CMS) that allows
-            institutions to organize, update, and manage all learning resources in one place.
-          </p>
-          <div className="ccm-insetBox">
-            <h4>Administrators and educators can:</h4>
-            <ul className="ccm-featureList">
-              {cmsCapabilities.map((item) => (
-                <li key={item}>
-                  <span className="ccm-bullet">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="content-folder">
+            <FaImage />
+            <span>Media Assets</span>
           </div>
-          <p>
-            This centralized system makes it easier to maintain structured and scalable digital
-            learning environments.
-          </p>
-        </article>
-
-        <article className="ccm-contentCard">
-          <div className="ccm-cardHeader">
-            <div className="ccm-iconWrap">
-              <FaLayerGroup className="ccm-iconText" />
-            </div>
-            <h3>Multi-Format Content Delivery</h3>
+          <div className="content-folder">
+            <FaTasks />
+            <span>Quizzes</span>
           </div>
-          <p>
-            Different learners prefer different formats. NeuroLXP supports multiple content
-            formats, allowing institutions to deliver learning materials in ways that suit diverse
-            learning preferences.
-          </p>
-          <div className="ccm-insetBox">
-            <h4>Content can be presented as:</h4>
-            <ul className="ccm-iconList">
-              {contentFormats.map((item, i) => (
-                <li key={i} className="ccm-iconListItem">
-                  <span className="ccm-listIcon">{item.icon}</span>
-                  <span>{item.label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <p>
-            This flexibility ensures that learning remains accessible, engaging, and effective.
-          </p>
         </article>
       </section>
 
-      <section className="ccm-updatesBanner">
-        <div className="ccm-updatesInner">
-          <div className="ccm-updatesIcon">
+      <section className="content-delivery-section content-card">
+        <div>
+          <span className="content-eyebrow">Multi-Format Delivery</span>
+          <h2>Deliver Content in Formats Learners Prefer</h2>
+          <p>
+            NeuroLXP supports multiple content formats so institutions can
+            deliver learning materials in accessible, engaging, and effective
+            ways.
+          </p>
+        </div>
+
+        <div className="content-delivery-grid">
+          {deliveryFormats.map((item) => (
+            <div key={item}>
+              <FaCheckCircle />
+              <h4>{item}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="content-improvement-layout">
+        <article className="content-improvement-card">
+          <div className="content-icon-box content-sync-icon">
             <FaSyncAlt />
           </div>
-          <div className="ccm-updatesText">
-            <h3>Efficient Content Updates &amp; Continuous Improvement</h3>
-            <p>
-              Educational content evolves constantly. NeuroLXP enables educators to update learning
-              materials quickly and efficiently, ensuring that courses remain relevant and aligned with
-              current knowledge and industry requirements. Analytics and learner feedback can also help
-              instructors identify areas where content improvements are needed, supporting continuous
-              learning enhancement.
-            </p>
-          </div>
-          <div className="ccm-updatesVisual">
-            <img
-              src="/photo-1551288049-bebda4e38f71.jpeg"
-              alt="Analytics and continuous improvement"
-              className="ccm-updatesImg"
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="ccm-highlightSection">
-        <div className="ccm-highlightGrid">
-          <div className="ccm-highlightTextCard">
-            <div className="ccm-cardHeader">
-              <div className="ccm-iconWrap">
-                <FaExpandArrowsAlt className="ccm-iconText" />
-              </div>
-              <h3>Scalable Content Management for Institutions</h3>
-            </div>
-            <p>
-              NeuroLXP's content creation and management tools are designed for organizations that
-              manage large volumes of learning materials. This scalability ensures that institutions
-              can manage thousands of courses and learning resources without complexity.
-            </p>
-            <h4 className="ccm-idealLabel">The platform is ideal for:</h4>
-            <div className="ccm-idealGrid">
-              {idealFor.map((item, i) => (
-                <div key={i} className="ccm-idealPill">
-                  <span className="ccm-idealIcon">{item.icon}</span>
-                  <span>{item.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="ccm-secondaryVisualCard">
-            <div className="ccm-imagePlaceholderAlt">
-              <img
-                src="/photo-1524178232363-1fb2b075b655.jpeg"
-                alt="Scalable learning institution"
-                className="ccm-heroImg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="ccm-footerCta">
-        <div className="ccm-footerCtaInner">
-          <div className="ccm-iconWrap ccm-ctaIcon">
-            <FaBrain className="ccm-iconText" />
-          </div>
-          <h3>NeuroLXP — Powering Smarter Content Creation and Learning Management</h3>
+          <h2>Efficient Content Updates and Continuous Improvement</h2>
           <p>
-            With advanced content creation tools, AI-assisted development, and centralized content
-            management, NeuroLXP enables institutions to deliver high-quality digital learning
-            experiences that engage learners and improve learning outcomes.
+            Educators can update learning materials quickly so courses stay
+            relevant and aligned with current knowledge, learner feedback, and
+            industry requirements.
           </p>
-          <div className="ccm-ctaFeatures">
-            <div className="ccm-miniFeature">
-              <FaChartLine className="ccm-iconText" />
-              <span>Advanced Analytics</span>
-            </div>
-            <div className="ccm-miniFeature">
-              <FaRobot className="ccm-iconText" />
-              <span>AI-Powered Tools</span>
-            </div>
-            <div className="ccm-miniFeature">
-              <FaCodeBranch className="ccm-iconText" />
-              <span>Version Control</span>
-            </div>
-            <div className="ccm-miniFeature">
-              <FaFilePdf className="ccm-iconText" />
-              <span>Multi-Format Export</span>
-            </div>
-            <div className="ccm-miniFeature">
-              <FaSortAmountUp className="ccm-iconText" />
-              <span>Scalable System</span>
-            </div>
+        </article>
+
+        <article className="content-improvement-card content-improvement-alt">
+          <div className="content-icon-box content-brain-icon">
+            <FaBrain />
           </div>
+          <h2>Improve Content Through Analytics and Feedback</h2>
+          <p>
+            Analytics and learner feedback help instructors identify areas where
+            content improvements are needed, supporting continuous learning
+            enhancement.
+          </p>
+        </article>
+      </section>
+
+      <section className="content-scale-section">
+        <div className="content-section-heading">
+          <h2>Scalable Content Management for Institutions</h2>
+          <p>
+            NeuroLXP is designed for organizations managing large volumes of
+            learning materials, courses, and digital resources.
+          </p>
+        </div>
+
+        <div className="content-scale-grid">
+          {idealFor.map((item) => (
+            <article className="content-scale-card" key={item.title}>
+              <div className="content-scale-icon">{item.icon}</div>
+              <h4>{item.title}</h4>
+            </article>
+          ))}
         </div>
       </section>
 
+      <section className="content-final content-card">
+        <div className="content-final-icon">
+          <FaRocketIcon />
+        </div>
+        <h2>NeuroLXP — Powering Smarter Content Creation and Learning Management</h2>
+        <p>
+          With advanced content creation tools, AI-assisted development, and
+          centralized content management, NeuroLXP enables institutions to deliver
+          high-quality digital learning experiences that engage learners and
+          improve outcomes.
+        </p>
+      </section>
     </main>
   );
+}
+
+function FaRocketIcon() {
+  return <FaMagic />;
 }
