@@ -1,9 +1,33 @@
 .induction-page {
   min-height: 100vh;
   padding: 64px 7%;
-  background: #e6e7ee;
+  background-color: #e6e7ee;
   color: #31344b;
-  font-family: Inter, system-ui, sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.induction-page h1 {
+  font-size: 40px;
+}
+
+.induction-page h2 {
+  font-size: 32px;
+}
+
+.induction-page h3 {
+  font-size: 24px;
+}
+
+.induction-page h4 {
+  font-size: 20px;
+}
+
+.induction-page p {
+  font-size: 18px;
+}
+
+.induction-page span {
+  font-size: 15px;
 }
 
 /* HERO */
@@ -32,18 +56,28 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   box-shadow: inset 4px 4px 8px #c8cad3, inset -4px -4px 8px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.induction-badge:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    inset 2px 2px 6px #c8cad3,
+    inset -2px -2px 6px #ffffff,
+    6px 6px 14px #c8cad3,
+    -6px -6px 14px #ffffff;
 }
 
 .induction-page h1 {
   margin: 0 0 18px;
-  font-size: clamp(2.4rem, 5.5vw, 5.2rem);
+  font-size: 40px;
   line-height: 0.98;
   letter-spacing: -0.06em;
 }
 
 .induction-page h2 {
   margin: 0 0 16px;
-  font-size: clamp(1.55rem, 3vw, 2.45rem);
+  font-size: 32px;
   line-height: 1.15;
   letter-spacing: -0.04em;
 }
@@ -51,14 +85,22 @@
 .induction-page h3 {
   margin: 22px 0 10px;
   color: #5e72e4;
-  font-size: 1.08rem;
+  font-size: 24px;
+}
+
+.induction-page h4 {
+  font-size: 20px;
 }
 
 .induction-page p {
   margin: 0 0 18px;
   color: #5f6275;
-  font-size: 1.02rem;
+  font-size: 18px;
   line-height: 1.75;
+}
+
+.induction-page span {
+  font-size: 15px;
 }
 
 .induction-hero-content h2 {
@@ -76,6 +118,12 @@
   display: grid;
   align-content: center;
   gap: 28px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.induction-visual:hover {
+  transform: translateY(-6px);
+  box-shadow: 15px 15px 30px #c8cad3, -15px -15px 30px #ffffff;
 }
 
 .visual-step {
@@ -88,6 +136,13 @@
   color: #45485c;
   font-weight: 900;
   box-shadow: inset 8px 8px 16px #c8cad3, inset -8px -8px 16px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+}
+
+.visual-step:hover {
+  transform: translateY(-6px);
+  color: #5e72e4;
+  box-shadow: 10px 10px 20px #c8cad3, -10px -10px 20px #ffffff;
 }
 
 .visual-step svg {
@@ -99,6 +154,12 @@
   background: #e6e7ee;
   color: #5e72e4;
   box-shadow: 6px 6px 12px #c8cad3, -6px -6px 12px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.visual-step:hover svg {
+  transform: scale(1.1) rotate(3deg);
+  box-shadow: 9px 9px 18px #c8cad3, -9px -9px 18px #ffffff;
 }
 
 .visual-step:last-child svg {
@@ -120,7 +181,7 @@
 }
 
 .induction-intro h2 {
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: 32px;
 }
 
 /* CHALLENGES - OPEN PAGE TIMELINE */
@@ -171,6 +232,12 @@
   background: #e6e7ee;
   color: #5e72e4;
   box-shadow: 7px 7px 14px #c8cad3, -7px -7px 14px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.induction-card:hover .induction-icon {
+  transform: scale(1.08);
+  box-shadow: 10px 10px 20px #c8cad3, -10px -10px 20px #ffffff;
 }
 
 .induction-icon svg {
@@ -181,6 +248,12 @@
 .induction-card > div:last-child {
   padding-bottom: 26px;
   border-bottom: 1px solid #cfd1db;
+  transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.induction-card:hover > div:last-child {
+  transform: translateX(8px);
+  border-bottom-color: #5e72e4;
 }
 
 .induction-card:nth-child(2) .induction-icon {
@@ -207,6 +280,12 @@
   background: #e6e7ee;
   border: 1px solid #d1d3dc;
   box-shadow: 10px 10px 20px #c8cad3, -10px -10px 20px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.benefits-section:hover {
+  transform: translateY(-6px);
+  box-shadow: 15px 15px 30px #c8cad3, -15px -15px 30px #ffffff;
 }
 
 .benefits-heading {
@@ -232,6 +311,14 @@
   font-weight: 800;
   border-top: 5px solid #5e72e4;
   box-shadow: inset 6px 6px 12px #c8cad3, inset -6px -6px 12px #ffffff;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, color 0.35s ease;
+}
+
+.benefits-grid div:hover {
+  transform: translateY(-10px);
+  color: #31344b;
+  box-shadow: 12px 12px 24px #c8cad3, -12px -12px 24px #ffffff;
 }
 
 .benefits-grid div:nth-child(2) {
@@ -259,6 +346,12 @@
   background: #e6e7ee;
   color: #5e72e4;
   box-shadow: 6px 6px 12px #c8cad3, -6px -6px 12px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.benefits-grid div:hover svg {
+  transform: scale(1.12) rotate(4deg);
+  box-shadow: 9px 9px 18px #c8cad3, -9px -9px 18px #ffffff;
 }
 
 .benefits-grid div:nth-child(2) svg {
@@ -294,6 +387,12 @@
   background: #e6e7ee;
   border: 1px solid #d1d3dc;
   box-shadow: 10px 10px 20px #c8cad3, -10px -10px 20px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.induction-final:hover {
+  transform: translateY(-6px);
+  box-shadow: 15px 15px 30px #c8cad3, -15px -15px 30px #ffffff;
 }
 
 .final-visual {
@@ -307,6 +406,12 @@
   background: #e6e7ee;
   border: 1px solid #d1d3dc;
   box-shadow: inset 8px 8px 16px #c8cad3, inset -8px -8px 16px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.final-visual:hover {
+  transform: scale(1.02);
+  box-shadow: 10px 10px 20px #c8cad3, -10px -10px 20px #ffffff;
 }
 
 .final-visual svg {
@@ -318,6 +423,12 @@
   background: #e6e7ee;
   color: #5e72e4;
   box-shadow: 6px 6px 12px #c8cad3, -6px -6px 12px #ffffff;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.final-visual:hover svg {
+  transform: scale(1.1) rotate(-4deg);
+  box-shadow: 9px 9px 18px #c8cad3, -9px -9px 18px #ffffff;
 }
 
 /* RESPONSIVE */
@@ -362,4 +473,17 @@
   .induction-final {
     padding: 28px;
   }
+}
+
+.image-placeholder {
+  overflow: hidden;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  display: block;
+  border-radius: inherit;
 }
