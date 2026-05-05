@@ -1,350 +1,332 @@
 import "./analytics-reporting.css";
-import { FaChartBar, FaChartLine, FaClipboardList, FaExclamationTriangle, FaRocket, FaGlobe, FaBrain, FaDatabase, FaTachometerAlt, FaUsers, FaGraduationCap, FaBuilding, } from "react-icons/fa";
+import {
+  FaChartLine,
+  FaChartPie,
+  FaChartBar,
+  FaUserGraduate,
+  FaClipboardList,
+  FaBrain,
+  FaExclamationTriangle,
+  FaGraduationCap,
+  FaUniversity,
+  FaBuilding,
+  FaSchool,
+  FaArrowRight,
+  FaDownload,
+} from "react-icons/fa";
 
-const dashboardPoints = [
+const analyticsBenefits = [
+  "Monitor learner progress in real time",
+  "Identify knowledge gaps early",
+  "Track course engagement and completion rates",
+  "Evaluate assessment performance and trends",
+  "Improve curriculum effectiveness through data insights",
+];
+
+const dashboardInsights = [
   "Learner activity and engagement tracking",
-  "Course completion rates and time on modules",
+  "Course completion rates",
+  "Time spent on learning modules",
   "Assessment scores and performance trends",
   "Participation in discussions and collaborative learning",
   "Gamification progress and achievements",
 ];
 
-const reportingPoints = [
-  "Learner performance and progress reports",
-  "Course effectiveness and quality reports",
-  "Assessment analytics and exam result breakdowns",
-  "Instructor activity and contribution reports",
-  "Department-level and program-wide analytics",
+const reportingCapabilities = [
+  "Learner performance reports",
+  "Course effectiveness reports",
+  "Assessment analytics and exam results",
+  "Instructor activity reports",
+  "Department-level learning analytics",
+  "Program and curriculum performance reports",
 ];
 
-const earlyIdentificationPoints = [
+const learningGaps = [
   "Learners falling behind in courses",
   "Low engagement with learning materials",
-  "Assessment performance patterns and anomalies",
+  "Assessment performance patterns",
   "Topics where learners consistently struggle",
 ];
 
-const scalablePoints = [
-  "Universities and higher education institutions",
-  "Schools and digital learning platforms",
-  "Corporate training and professional development programs",
-  "EdTech companies and online course providers",
+const outcomeBenefits = [
+  "Enhance course design and curriculum quality",
+  "Improve teaching strategies",
+  "Increase learner engagement",
+  "Boost course completion rates",
+  "Achieve stronger academic and training outcomes",
 ];
 
-export default function AnalyticsReportingPage() {
+const environments = [
+  {
+    icon: <FaUniversity />,
+    title: "Universities",
+    text: "Higher education institutions managing academic programmes.",
+  },
+  {
+    icon: <FaSchool />,
+    title: "Schools",
+    text: "Digital learning platforms for structured education delivery.",
+  },
+  {
+    icon: <FaBuilding />,
+    title: "Corporate Training",
+    text: "Professional development and workforce learning programmes.",
+  },
+  {
+    icon: <FaGraduationCap />,
+    title: "EdTech Providers",
+    text: "Online course providers and scalable learning businesses.",
+  },
+];
+
+export default function LearningAnalytics() {
   return (
-    <main className="analytics-reporting-page page">
-      <section className="heroSection">
-        <div className="heroGrid">
-          <div className="heroContent">
+    <main className="analytics-page">
+      <section className="analytics-hero analytics-neumorphic-card">
+        <div className="analytics-hero-content">
+          <span className="analytics-eyebrow">
+            Learning Analytics & Reporting
+          </span>
+          <h1>Turn Learning Data into Actionable Insights</h1>
+          <p>
+            In modern digital education, success depends on more than delivering
+            content—it depends on understanding how learners engage, progress,
+            and perform.
+          </p>
+          <p>
+            NeuroLXP’s advanced Learning Analytics and Reporting system empowers
+            institutions, educators, and training leaders with real-time data
+            insights that support smarter, evidence-based decisions.
+          </p>
+        </div>
 
-            <h1 className="heroTitle">Learning Analytics &amp; Reporting</h1>
-
-            <h2 className="heroSubtitle">
-              Turn Learning Data into Actionable Insights
-            </h2>
-
-            <p className="heroText">
-              In modern digital education, success depends on more than
-              delivering content—it depends on understanding how learners engage,
-              progress, and perform. NeuroLXP's advanced Learning Analytics and
-              Reporting system empowers institutions, educators, and training
-              leaders with real-time data insights that support smarter,
-              evidence-based decisions.
-            </p>
-
-            <p className="heroText">
-              As an AI-powered Learning Management System (LMS), NeuroLXP
-              transforms learning data into meaningful analytics that help
-              improve learning effectiveness, learner engagement, course
-              quality, and academic outcomes.
-            </p>
+        <div className="analytics-chart-card">
+          <div className="analytics-chart-header">
+            <span>Learning Performance</span>
+            <FaChartLine />
           </div>
 
-          <div className="heroVisualCard">
-            <div className="imagePlaceholder">
-              <img
-                src="/photo-1551288049-bebda4e38f71.jpeg"
-                alt="Learning analytics dashboard visualization"
-                className="heroImage"
-              />
+          <div className="analytics-bar-row">
+            <span>Engagement</span>
+            <div>
+              <strong className="analytics-bar analytics-bar-one"></strong>
             </div>
+            <b>86%</b>
+          </div>
 
-            <div className="floatingStats">
-              <div className="statPill">
-                <FaTachometerAlt className="iconText" />
-                <span>Real-Time Dashboards</span>
-              </div>
-              <div className="statPill">
-                <FaChartLine className="iconText" />
-                <span>AI-Powered Insights</span>
-              </div>
-              <div className="statPill">
-                <FaDatabase className="iconText" />
-                <span>Data-Driven Decisions</span>
-              </div>
+          <div className="analytics-bar-row">
+            <span>Completion</span>
+            <div>
+              <strong className="analytics-bar analytics-bar-two"></strong>
+            </div>
+            <b>74%</b>
+          </div>
+
+          <div className="analytics-bar-row">
+            <span>Assessment</span>
+            <div>
+              <strong className="analytics-bar analytics-bar-three"></strong>
+            </div>
+            <b>91%</b>
+          </div>
+
+          <div className="analytics-mini-stats">
+            <div>
+              <h3>12k+</h3>
+              <p>Learners tracked</p>
+            </div>
+            <div>
+              <h3>98%</h3>
+              <p>Report accuracy</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="whySection">
-        <div className="whyCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaChartBar className="iconText" />
-            </div>
-            <h3>Why Learning Analytics Matters in Modern LMS Platforms</h3>
-          </div>
+      <section className="analytics-open-section">
+        <span>AI-Powered LMS Intelligence</span>
+        <h2>Transform Learning Data into Meaningful Analytics</h2>
+        <p>
+          NeuroLXP converts learning activity into insights that help improve
+          learning effectiveness, learner engagement, course quality, and
+          academic outcomes.
+        </p>
+      </section>
+
+      <section className="analytics-benefits-section">
+        <div className="analytics-section-heading">
+          <h2>Why Learning Analytics Matters in Modern LMS Platforms</h2>
           <p>
             Educational institutions and training organizations generate large
-            volumes of learning data every day. Without proper analytics tools,
-            this valuable information often remains underutilized.
+            volumes of learning data every day. NeuroLXP helps convert that data
+            into better learning strategies.
           </p>
-          <p>
-            NeuroLXP provides powerful LMS analytics and reporting dashboards
-            that allow institutions to move from assumption-based decisions to
-            data-driven learning strategies.
-          </p>
-          <div className="whyImageWrap">
-            <img
-              src="/photo-1460925895917-afdab827c52f.jpeg"
-              alt="Analytics and data-driven education"
-              className="whyImage"
-            />
-          </div>
+        </div>
+
+        <div className="analytics-benefits-grid">
+          {analyticsBenefits.map((item, index) => (
+            <article className="analytics-benefit-card" key={item}>
+              <div className="analytics-benefit-icon">
+                {index === 0 && <FaUserGraduate />}
+                {index === 1 && <FaExclamationTriangle />}
+                {index === 2 && <FaChartBar />}
+                {index === 3 && <FaClipboardList />}
+                {index === 4 && <FaBrain />}
+              </div>
+              <h4>{item}</h4>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="cardsSection">
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaTachometerAlt className="iconText" />
-            </div>
-            <h3>Comprehensive Learning Analytics Dashboard</h3>
+      <section className="analytics-dashboard-layout">
+        <article className="analytics-neumorphic-card analytics-dashboard-card">
+          <div className="analytics-icon-box">
+            <FaChartPie />
           </div>
-
+          <h2>Comprehensive Learning Analytics Dashboard</h2>
           <p>
-            NeuroLXP provides an intuitive learning analytics dashboard that
-            consolidates key metrics into clear, visual insights. Administrators,
-            instructors, and training managers can easily monitor performance
-            across the entire learning ecosystem.
+            NeuroLXP consolidates key metrics into clear visual insights so
+            administrators, instructors, and training managers can monitor the
+            entire learning ecosystem.
           </p>
 
-          <div className="insetBox">
-            <h4>Key analytics insights include:</h4>
-            <ul className="featureList">
-              {dashboardPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            These insights help institutions better understand how learners
-            interact with courses and where improvements are needed.
-          </p>
+          <ul className="analytics-list">
+            {dashboardInsights.map((item) => (
+              <li key={item}>
+                <FaArrowRight />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
         </article>
 
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaClipboardList className="iconText" />
+        <article className="analytics-neumorphic-card analytics-visual-card">
+          <h3>Dashboard Snapshot</h3>
+
+          <div className="analytics-donut-wrap">
+            <div className="analytics-donut">
+              <span>78%</span>
             </div>
-            <h3>Advanced Reporting for Institutions and Educators</h3>
+            <p>Average learner activity</p>
           </div>
 
-          <p>
-            NeuroLXP supports advanced LMS reporting tools that generate
-            detailed reports for academic and training analysis. Institutions can
-            easily create customized reports to monitor performance at multiple
-            levels.
-          </p>
-
-          <div className="insetBox">
-            <h4>Reporting capabilities include:</h4>
-            <ul className="featureList">
-              {reportingPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            Reports can be exported and shared with stakeholders, enabling
-            institutions to maintain transparency, accountability, and
-            continuous improvement.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaExclamationTriangle className="iconText" />
+          <div className="analytics-small-metrics">
+            <div>
+              <span></span>
+              <p>Course completion</p>
             </div>
-            <h3>Early Identification of Learning Gaps</h3>
-          </div>
-
-          <p>
-            One of the most powerful advantages of AI-driven learning analytics
-            is the ability to identify struggling learners early. NeuroLXP helps
-            institutions detect issues before they escalate.
-          </p>
-
-          <div className="insetBox">
-            <h4>NeuroLXP helps institutions detect:</h4>
-            <ul className="featureList">
-              {earlyIdentificationPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            By identifying these trends early, educators can provide timely
-            support, targeted interventions, and improved instructional
-            strategies.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaGlobe className="iconText" />
+            <div>
+              <span></span>
+              <p>Assessment performance</p>
             </div>
-            <h3>Scalable Analytics for Every Learning Environment</h3>
-          </div>
-
-          <p>
-            NeuroLXP's learning analytics platform is designed for diverse
-            learning environments. The system supports large-scale learning
-            analytics, making it suitable for institutions managing thousands of
-            learners.
-          </p>
-
-          <div className="insetBox">
-            <h4>
-              NeuroLXP's platform is built for:
-            </h4>
-            <ul className="featureList">
-              {scalablePoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <span></span>
+              <p>Discussion participation</p>
+            </div>
           </div>
         </article>
       </section>
 
-      <section className="outcomesSection">
-        <div className="outcomesCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaRocket className="iconText" />
-            </div>
-            <h3>Improve Learning Outcomes with Data-Driven Decisions</h3>
-          </div>
-
+      <section className="analytics-report-section analytics-neumorphic-card">
+        <div>
+          <span className="analytics-eyebrow">Advanced Reporting</span>
+          <h2>Reports for Institutions and Educators</h2>
           <p>
-            With powerful analytics and reporting, NeuroLXP helps institutions
-            continuously improve the learning experience. Decision-makers can
-            evaluate what works, what needs improvement, and how to optimize
-            courses for better results.
+            NeuroLXP supports detailed LMS reporting tools that generate
+            customized reports across learners, courses, departments,
+            instructors, programmes, and assessments.
           </p>
+          <p>
+            Reports can be exported and shared with stakeholders to support
+            transparency, accountability, and continuous improvement.
+          </p>
+        </div>
 
-          <div className="outcomesImageWrap">
-            <img
-              src="/photo-1522202176988-66273c2fd55f.jpeg"
-              alt="Teams improving learning outcomes through data"
-              className="outcomesImage"
-            />
-          </div>
-
-          <div className="outcomesGrid">
-            <div className="outcomeItem">
-              <FaChartLine className="outcomeIcon" />
-              <span>Enhance course design and curriculum quality</span>
+        <div className="analytics-report-grid">
+          {reportingCapabilities.map((item) => (
+            <div key={item}>
+              <FaDownload />
+              <h4>{item}</h4>
             </div>
-            <div className="outcomeItem">
-              <FaUsers className="outcomeIcon" />
-              <span>Increase learner engagement and participation</span>
-            </div>
-            <div className="outcomeItem">
-              <FaGraduationCap className="outcomeIcon" />
-              <span>Boost course completion rates</span>
-            </div>
-            <div className="outcomeItem">
-              <FaBuilding className="outcomeIcon" />
-              <span>Achieve stronger academic outcomes</span>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="highlightSection">
-        <div className="highlightGrid">
-          <div className="highlightTextCard">
-            <div className="cardHeader">
-              <div className="iconWrap">
-                <FaBrain className="iconText" />
-              </div>
-              <h3>
-                NeuroLXP — The AI-Powered LMS for Smarter Learning Analytics
-              </h3>
-            </div>
-
-            <p>
-              Many traditional LMS platforms provide only basic activity logs
-              and simple reports. NeuroLXP goes further by delivering
-              intelligent learning analytics, real-time dashboards, and
-              AI-powered reporting insights that help institutions make smarter
-              decisions.
-            </p>
-
-            <p>
-              By combining advanced analytics, powerful reporting tools, and
-              AI-driven insights, NeuroLXP enables organizations to create more
-              effective, measurable, and outcome-focused learning experiences.
-            </p>
-
-            <div className="miniFeatures">
-              <div className="miniFeature">
-                <FaTachometerAlt className="iconText" />
-                <span>Real-time dashboards</span>
-              </div>
-              <div className="miniFeature">
-                <FaChartBar className="iconText" />
-                <span>Advanced reporting tools</span>
-              </div>
-              <div className="miniFeature">
-                <FaBrain className="iconText" />
-                <span>AI-powered insights</span>
-              </div>
-            </div>
+      <section className="analytics-gap-layout">
+        <article className="analytics-neumorphic-card analytics-gap-card">
+          <div className="analytics-icon-box analytics-warning-icon">
+            <FaExclamationTriangle />
           </div>
+          <h2>Early Identification of Learning Gaps</h2>
+          <p>
+            AI-driven learning analytics help institutions detect struggling
+            learners early and provide timely support, targeted interventions,
+            and improved instructional strategies.
+          </p>
 
-          <div className="secondaryVisualCard">
-            <div className="imagePlaceholderAlt">
-              <img
-                src="/photo-1504868584819-f8e8b4b6d7e3.jpeg"
-                alt="AI-powered analytics and smart insights"
-                className="secondaryImage"
-              />
-            </div>
+          <ul className="analytics-gap-list">
+            {learningGaps.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </article>
+
+        <article className="analytics-neumorphic-card analytics-outcome-card">
+          <div className="analytics-icon-box analytics-success-icon">
+            <FaChartLine />
           </div>
+          <h2>Improve Learning Outcomes with Data-Driven Decisions</h2>
+          <p>
+            Decision-makers can evaluate what works, what needs improvement, and
+            how to optimize courses for stronger outcomes.
+          </p>
+
+          <ul className="analytics-list">
+            {outcomeBenefits.map((item) => (
+              <li key={item}>
+                <FaArrowRight />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+      </section>
+
+      <section className="analytics-environments-section">
+        <div className="analytics-section-heading">
+          <h2>Scalable Analytics for Every Learning Environment</h2>
+          <p>
+            NeuroLXP supports large-scale learning analytics for institutions and
+            organizations managing thousands of learners.
+          </p>
         </div>
+
+        <div className="analytics-environment-grid">
+          {environments.map((env) => (
+            <article className="analytics-environment-card" key={env.title}>
+              <div className="analytics-environment-icon">{env.icon}</div>
+              <h4>{env.title}</h4>
+              <p>{env.text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="analytics-final-section analytics-neumorphic-card">
+        <div className="analytics-final-icon">
+          <FaBrain />
+        </div>
+        <h2>Beyond Traditional LMS Reporting</h2>
+        <p>
+          NeuroLXP goes further than basic activity logs and simple reports by
+          delivering intelligent analytics, real-time dashboards, and AI-powered
+          reporting insights.
+        </p>
+        <h3>
+          NeuroLXP — The AI-Powered LMS for Smarter Learning Analytics and
+          Data-Driven Education.
+        </h3>
       </section>
     </main>
   );
