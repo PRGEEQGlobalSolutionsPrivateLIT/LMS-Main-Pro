@@ -1,5 +1,4 @@
 import "./digital-literacy.css";
-import Image from "next/image";
 
 const IMonitor = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"
@@ -103,7 +102,7 @@ export default function DigitalLiteracyPage() {
       <section className="dl__hero">
         <div className="dl__hero-text">
           <span className="dl__eyebrow">Digital Literacy</span>
-          <h1 className="dl__title">Build Digital<br/>Skills That Last</h1>
+          <h1 className="dl__title">Build Digital Skills</h1>
           <h2 className="dl__subtitle">Equip every employee with the digital competencies they need</h2>
           <p className="dl__body">
             NeuroLXP delivers AI-powered digital literacy training — from foundational
@@ -130,13 +129,6 @@ export default function DigitalLiteracyPage() {
             <button className="dl__btn dl__btn--ghost">Request Demo</button>
           </div>
         </div>
-        <div className="dl__hero-img-panel">
-          <img src={IMG.hero} alt="Team learning digital skills" className="dl__hero-img"/>
-          <div className="dl__hero-badge">
-            <IZap/>
-            <span>AI-Driven Paths</span>
-          </div>
-        </div>
       </section>
 
       <section className="dl__band">
@@ -144,7 +136,7 @@ export default function DigitalLiteracyPage() {
           <div className="dl__icon-pill dl__icon-pill--primary">
             <ICpu/><span>Core Capabilities</span>
           </div>
-          <h3 className="dl__section-title">Everything your workforce needs to go digital</h3>
+          <h3 className="dl__section-title">Every workforce needs to go digital</h3>
           <p className="dl__body">
             From basic tool literacy to AI-ready skills — one platform covers the full spectrum.
           </p>
@@ -170,7 +162,7 @@ export default function DigitalLiteracyPage() {
           <div className="dl__icon-pill dl__icon-pill--secondary">
             <ITarget/><span>Close the Skills Gap</span>
           </div>
-          <h3 className="dl__section-title">Accelerate digital transformation across every team</h3>
+          <h3 className="dl__section-title">Accelerate org-wide tech adoption</h3>
           <p className="dl__body">
             Smart skill mapping identifies gaps before they slow you down — and fills them fast.
           </p>
@@ -266,7 +258,7 @@ export default function DigitalLiteracyPage() {
             <div className="dl__step-wrap" key={num}>
               <div className={`dl__step dl__step--${c}`}>
                 <span className={`dl__step-num dl__step-num--${c}`}>{num}</span>
-                <h4 className="dl__step-title">{title}</h4>
+                <h4 className={`dl__step-title dl__step-title--${c}`}>{title}</h4>
                 <p className="dl__step-body">{body}</p>
               </div>
               {i < arr.length - 1 && <span className="dl__step-arrow"><IArrowRight/></span>}
