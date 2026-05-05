@@ -1,234 +1,201 @@
 import {
-  FaNetworkWired,
-  FaUsers,
-  FaGlobe,
-  FaHandshake,
-  FaCertificate,
-  FaChartLine,
-  FaBoxes,
-  FaStore,
-  FaUserShield,
-  FaProjectDiagram,
-} from "react-icons/fa";
-import { MdOutlineAnalytics, MdOutlineSchool } from "react-icons/md";
+  Network,
+  Users,
+  Globe2,
+  BadgeCheck,
+  BarChart3,
+  Handshake,
+  BookOpen,
+  Target,
+  ShieldCheck,
+  TrendingUp,
+  ArrowRight,
+} from "lucide-react";
 import "./ExtendedEnterpriseLearning.css";
 
-export default function Page() {
+export default function ExtendedEnterpriseLearning() {
   return (
     <main className="enterprise-page">
       <section className="enterprise-hero">
         <div className="enterprise-hero-content">
-          <span className="enterprise-badge">NeuroLXP Extended Enterprise</span>
-
+          <span className="enterprise-badge">Extended Enterprise Learning</span>
           <h1>Extended Enterprise Learning</h1>
-
           <h2>Expanding Learning Beyond Organizational Boundaries</h2>
-
           <p>
             Modern organizations no longer train only their internal employees.
             Businesses today must educate partners, distributors, vendors, and
             customers to ensure consistent knowledge, product understanding, and
-            operational excellence. NeuroLXP enables Extended Enterprise
-            Learning, allowing organizations to deliver structured training
-            programs beyond their internal workforce.
+            operational excellence.
           </p>
-
           <p>
-            With a scalable Extended Enterprise Learning Management System
-            (LMS), NeuroLXP helps organizations build a connected learning
-            ecosystem that supports everyone involved in the value chain.
+            NeuroLXP enables Extended Enterprise Learning, allowing organizations
+            to deliver structured training programs beyond their internal
+            workforce.
           </p>
         </div>
 
-        <div className="enterprise-visual">
-          <div className="network-center">
-            <FaNetworkWired />
-            <span>NeuroLXP</span>
-          </div>
-
-          <div className="network-items">
-            <div>
-              <FaHandshake />
-              <span>Partners</span>
-            </div>
-            <div>
-              <FaStore />
-              <span>Distributors</span>
-            </div>
-            <div>
-              <FaBoxes />
-              <span>Vendors</span>
-            </div>
-            <div>
-              <FaUsers />
-              <span>Customers</span>
-            </div>
-          </div>
+        <div className="enterprise-hero-panel">
+          <Network />
+          <h4>Connected Learning Ecosystem</h4>
+          <p>
+            Train partners, vendors, distributors, and customers through one
+            scalable learning platform.
+          </p>
         </div>
       </section>
 
       <section className="enterprise-intro">
-        <h2>A connected learning ecosystem for the full value chain</h2>
+        <h2>Building a Scalable Extended Enterprise LMS</h2>
         <p>
-          NeuroLXP helps organizations deliver consistent, scalable, and
-          measurable training to external stakeholders who represent, support,
-          sell, or use their products and services.
+          With a scalable Extended Enterprise Learning Management System,
+          NeuroLXP helps organizations build a connected learning ecosystem that
+          supports everyone involved in the value chain.
         </p>
       </section>
 
       <section className="enterprise-challenges">
-        <article className="enterprise-row">
-          <div className="enterprise-icon">
-            <FaUsers />
+        <article className="enterprise-card">
+          <div className="enterprise-card-icon">
+            <Handshake />
           </div>
-
           <div>
-            <h2>The Challenge: Inconsistent Knowledge Across Partners and Vendors</h2>
+            <span>Challenge 01</span>
+            <h3>Inconsistent Knowledge Across Partners and Vendors</h3>
             <p>
               Partners, resellers, and vendors often interact directly with
               customers, yet they may not always have the latest knowledge about
               products, services, or company processes.
             </p>
-
-            <h3>How NeuroLXP Solves It</h3>
+            <h4>How NeuroLXP Solves It</h4>
             <p>
-              NeuroLXP enables organizations to deliver centralized partner and
-              vendor training programs, ensuring that external stakeholders
-              receive consistent and up-to-date learning materials. This helps
-              maintain uniform standards across the entire business network.
+              NeuroLXP enables centralized partner and vendor training programs,
+              ensuring external stakeholders receive consistent and up-to-date
+              learning materials.
             </p>
           </div>
         </article>
 
-        <article className="enterprise-row">
-          <div className="enterprise-icon">
-            <FaGlobe />
+        <article className="enterprise-card">
+          <div className="enterprise-card-icon">
+            <Globe2 />
           </div>
-
           <div>
-            <h2>The Challenge: Training Distributed Global Networks</h2>
+            <span>Challenge 02</span>
+            <h3>Training Distributed Global Networks</h3>
             <p>
               Organizations with global partner ecosystems often struggle to
               provide consistent training across different regions and locations.
             </p>
-
-            <h3>How NeuroLXP Solves It</h3>
+            <h4>How NeuroLXP Solves It</h4>
             <p>
               NeuroLXP supports scalable digital learning delivery, enabling
-              organizations to train partners, resellers, and distributors
-              worldwide through a single platform. Online modules,
-              certifications, and product training programs can be accessed
+              partners, resellers, and distributors worldwide to access training
               anytime from anywhere.
             </p>
           </div>
         </article>
 
-        <article className="enterprise-row">
-          <div className="enterprise-icon">
-            <FaUserShield />
+        <article className="enterprise-card">
+          <div className="enterprise-card-icon">
+            <BadgeCheck />
           </div>
-
           <div>
-            <h2>The Challenge: Ensuring Product Knowledge and Brand Consistency</h2>
+            <span>Challenge 03</span>
+            <h3>Ensuring Product Knowledge and Brand Consistency</h3>
             <p>
-              External stakeholders play a critical role in representing the
-              organization’s products and services. Without proper training, this
-              can lead to inconsistent messaging or incorrect product usage.
+              External stakeholders represent the organization’s products and
+              services. Without proper training, this can lead to inconsistent
+              messaging or incorrect product usage.
             </p>
-
-            <h3>How NeuroLXP Solves It</h3>
+            <h4>How NeuroLXP Solves It</h4>
             <p>
-              Through structured product training modules, certification
-              programs, and knowledge assessments, NeuroLXP ensures that
-              partners and distributors fully understand product capabilities,
-              brand guidelines, and best practices.
+              Through product training modules, certification programs, and
+              knowledge assessments, NeuroLXP ensures partners understand product
+              capabilities, brand guidelines, and best practices.
             </p>
           </div>
         </article>
 
-        <article className="enterprise-row">
-          <div className="enterprise-icon">
-            <MdOutlineAnalytics />
+        <article className="enterprise-card">
+          <div className="enterprise-card-icon">
+            <BarChart3 />
           </div>
-
           <div>
-            <h2>The Challenge: Tracking Learning Progress Across External Networks</h2>
+            <span>Challenge 04</span>
+            <h3>Tracking Learning Progress Across External Networks</h3>
             <p>
               Managing training for large partner ecosystems can make it
-              difficult to track who has completed training or earned
-              certifications.
+              difficult to track completions, certifications, and compliance.
             </p>
-
-            <h3>How NeuroLXP Solves It</h3>
+            <h4>How NeuroLXP Solves It</h4>
             <p>
-              NeuroLXP provides advanced analytics and reporting dashboards that
-              allow organizations to monitor partner learning progress,
-              certification status, and training completion rates. These insights
-              help ensure compliance with training requirements.
+              NeuroLXP provides analytics and reporting dashboards to monitor
+              learning progress, certification status, and completion rates.
             </p>
           </div>
         </article>
       </section>
 
       <section className="enterprise-benefits">
-        <div className="benefits-heading">
-          <span className="enterprise-badge">Benefits</span>
+        <div className="enterprise-section-heading">
           <h2>Benefits of Extended Enterprise Learning with NeuroLXP</h2>
           <p>
-            Organizations using NeuroLXP for extended enterprise training can:
+            A unified learning environment strengthens collaboration and
+            performance across the full enterprise network.
           </p>
         </div>
 
-        <div className="benefits-grid">
+        <div className="enterprise-benefits-grid">
           <div>
-            <FaHandshake />
-            <span>Deliver consistent training to partners, vendors, and distributors</span>
+            <BookOpen />
+            <h4>Consistent Training</h4>
+            <p>Deliver consistent training to partners, vendors, and distributors.</p>
           </div>
 
           <div>
-            <FaProjectDiagram />
-            <span>Improve product knowledge across the business ecosystem</span>
+            <Target />
+            <h4>Product Knowledge</h4>
+            <p>Improve product knowledge across the business ecosystem.</p>
           </div>
 
           <div>
-            <FaUserShield />
-            <span>Strengthen brand representation and customer experience</span>
+            <ShieldCheck />
+            <h4>Brand Consistency</h4>
+            <p>Strengthen brand representation and customer experience.</p>
           </div>
 
           <div>
-            <FaGlobe />
-            <span>Scale training programs globally with ease</span>
+            <Globe2 />
+            <h4>Global Scale</h4>
+            <p>Scale training programs globally with ease.</p>
           </div>
 
           <div>
-            <FaCertificate />
-            <span>Monitor certification and training compliance</span>
+            <TrendingUp />
+            <h4>Compliance Tracking</h4>
+            <p>Monitor certification and training compliance.</p>
           </div>
         </div>
-
-        <p className="benefits-note">
-          This approach creates a unified learning environment that strengthens
-          collaboration and performance across the entire enterprise network.
-        </p>
       </section>
 
       <section className="enterprise-final">
-        <div className="final-visual">
-          <MdOutlineSchool />
-          <span>Image Placeholder</span>
-        </div>
-
         <div>
-          <span className="enterprise-badge">Extended Learning Network</span>
-
-          <h2>NeuroLXP — Empowering the Extended Enterprise Through Learning</h2>
-
+          <span className="enterprise-badge">NeuroLXP</span>
+          <h2>Empowering the Extended Enterprise Through Learning</h2>
           <p>
             With powerful training tools, scalable learning delivery, and
             advanced analytics, NeuroLXP helps organizations extend their
             learning ecosystem beyond internal teams and empower their entire
             enterprise network with knowledge and expertise.
           </p>
+        </div>
+
+        <div className="enterprise-final-action">
+          <img
+          src="/pexels-divinetechygirl-1181435.jpg"
+          alt="Learners using digital learning resources"
+          className="placeholder-image"
+        />
         </div>
       </section>
     </main>
