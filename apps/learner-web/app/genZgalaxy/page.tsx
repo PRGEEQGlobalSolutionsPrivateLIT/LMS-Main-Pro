@@ -1,25 +1,52 @@
 import Image from "next/image";
+import {
+  FaArrowRight,
+  FaBookOpen,
+  FaBullseye,
+  FaCheck,
+  FaCompass,
+  FaGlobe,
+  FaLayerGroup,
+  FaMicrochip,
+  FaRegStar,
+  FaRocket,
+  FaUsers,
+} from "react-icons/fa";
 import "./genZgalaxy.css";
 
 export default function GenZGalaxyPage() {
   return (
     <main className="genzgalaxy-page genz-page">
+      {/* HERO */}
       <section className="hero-section">
         <div className="hero-content neu-card">
           <div className="hero-text">
-            <span className="eyebrow neu-inset">NeuroLXP Product</span>
+            <span className="eyebrow neu-inset">
+              <FaMicrochip /> NeuroLXP Product
+            </span>
+
             <h1>GenZgalaxy</h1>
-            <h2>A Learning Universe Designed for the Gen Z Generation</h2>
+            <h2>A learning space that actually feels modern</h2>
+
             <p>
-  <strong>GenZgalaxy by NeuroLXP</strong> is a dynamic learning ecosystem for the <strong>digital-native generation</strong>. Gen Z learners grow up with smartphones, social media, interactive apps, and instant information, so traditional learning environments often fail to meet their expectations for speed, engagement, and interactivity.
-</p>
-<p>
-  GenZgalaxy reimagines learning as an <strong>immersive, interactive digital experience</strong> that helps Gen Z explore knowledge, build skills, and connect with learning communities.
-</p>
+              <strong>GenZgalaxy</strong> is built for people who grew up online.
+              Fast apps, constant updates, interactive content — that’s the
+              baseline now. Traditional learning doesn’t always match that pace.
+            </p>
+
+            <p>
+              So instead of forcing old systems to work, this platform takes a
+              different route. It makes learning feel more like something you
+              explore, not something you sit through.
+            </p>
 
             <div className="hero-actions">
-              <button className="neu-btn">Explore Platform</button>
-              <button className="neu-btn neu-btn-secondary">Learn More</button>
+              <button className="neu-btn">
+                Explore Platform <FaArrowRight />
+              </button>
+              <button className="neu-btn neu-btn-secondary">
+                Learn More
+              </button>
             </div>
           </div>
 
@@ -27,7 +54,7 @@ export default function GenZGalaxyPage() {
             <div className="hero-image-card neu-card-inner">
               <Image
                 src="/GenZgalaxy-learning-illustration.jpeg"
-                alt="GenZgalaxy learning illustration"
+                alt="Learning illustration"
                 width={700}
                 height={520}
                 className="hero-image"
@@ -38,69 +65,90 @@ export default function GenZGalaxyPage() {
         </div>
       </section>
 
+      {/* INTRO */}
       <section className="intro-grid">
         <article className="info-card neu-card">
-          <h3>Learning Designed for Digital Natives</h3>
+          <h3>
+            <FaBullseye /> Built for how people learn today
+          </h3>
+
           <p>
-            Gen Z learners are naturally comfortable with technology and expect learning environments that feel intuitive, interactive, and visually engaging.
+            Most learners today don’t struggle with technology — they expect it
+            to just work. Clean interfaces, quick responses, and something that
+            keeps their attention.
           </p>
-          <p>GenZgalaxy brings together modern learning approaches such as:</p>
+
+          <p>That’s why the platform focuses on things like:</p>
+
           <ul>
-            <li>Gamified learning experiences</li>
-            <li>Interactive digital content</li>
-            <li>Microlearning modules</li>
-            <li>Collaborative learning communities</li>
-            <li>Mobile-first learning environments</li>
+            <li><FaCheck /> Gamified elements</li>
+            <li><FaCheck /> Interactive content</li>
+            <li><FaCheck /> Short, focused lessons</li>
+            <li><FaCheck /> Group-based learning</li>
+            <li><FaCheck /> Mobile-friendly design</li>
           </ul>
+
           <p>
-            This approach transforms learning from a passive activity into an
-            <strong> engaging and exploratory experience.</strong>
+            Put together, it feels less rigid — and a lot more usable day to day.
           </p>
         </article>
 
         <article className="info-card neu-card">
-          <h3>Interactive and Immersive Learning Experiences</h3>
+          <h3>
+            <FaRocket /> Not just content — actual interaction
+          </h3>
+
           <p>
-            GenZgalaxy integrates interactive learning elements that keep
-            learners actively involved in the learning journey.
+            Passive reading doesn’t stick for long. So the idea here is simple:
+            keep people involved while they’re learning.
           </p>
-          <p>Learners can engage through:</p>
+
+          <p>You’ll see things like:</p>
+
           <ul>
-            <li>Gamified challenges and rewards</li>
-            <li>Interactive simulations and quizzes</li>
-            <li>Creative problem-solving activities</li>
-            <li>Collaborative discussions and peer learning</li>
+            <li><FaCheck /> Challenges and small rewards</li>
+            <li><FaCheck /> Quizzes that respond instantly</li>
+            <li><FaCheck /> Scenario-based tasks</li>
+            <li><FaCheck /> Peer discussions</li>
           </ul>
+
           <p>
-            These experiences make learning <strong> more engaging, memorable, and
-            enjoyable.</strong>
+            It’s not about making things flashy — just more engaging and easier
+            to retain.
           </p>
         </article>
       </section>
 
+      {/* FEATURES */}
       <section className="feature-section">
         <div className="section-heading">
-          <span className="eyebrow neu-inset">Adaptive Experience</span>
-          <h2>Personalized Learning Journeys</h2>
+          <span className="eyebrow neu-inset">
+            <FaCompass /> Adaptive Experience
+          </span>
+          <h2>Learning that adjusts as you go</h2>
         </div>
 
         <div className="feature-layout">
           <div className="feature-main neu-card">
             <p>
-              Every Gen Z learner has unique interests, learning styles, and
-              career goals. GenZgalaxy leverages <strong> AI-powered personalization</strong> to
-              create adaptive learning journeys that evolve with each learner.
+              People don’t all learn the same way. Some move fast, some need more
+              time, some switch interests midway. The platform adapts to that.
             </p>
-            <p>The platform can recommend:</p>
-            <div className="chip-grid">
-              <span className="neu-chip">Skill development pathways</span>
-              <span className="neu-chip">Relevant learning resources</span>
-              <span className="neu-chip">Practice challenges and assessments</span>
-              <span className="neu-chip">Career-focused learning modules</span>
-            </div>
+
             <p>
-              This ensures that learning remains <strong> relevant, motivating, and
-              aligned with individual aspirations.</strong>
+              Based on usage, it can suggest:
+            </p>
+
+            <div className="chip-grid">
+              <span className="neu-chip">Skill paths</span>
+              <span className="neu-chip">Useful resources</span>
+              <span className="neu-chip">Practice tasks</span>
+              <span className="neu-chip">Career-focused modules</span>
+            </div>
+
+            <p>
+              Nothing feels forced — it just gradually aligns with what you’re
+              trying to do.
             </p>
           </div>
 
@@ -108,7 +156,7 @@ export default function GenZGalaxyPage() {
             <div className="mini-card neu-card">
               <img
                 src="/GenZgalaxy-Learning.jpeg"
-                alt="GenZgalaxy Learning"
+                alt="Learning"
                 className="feature-placeholder"
               />
             </div>
@@ -116,83 +164,99 @@ export default function GenZGalaxyPage() {
         </div>
       </section>
 
+      {/* SKILLS */}
       <section className="skills-section neu-card">
         <div className="section-heading">
-          <span className="eyebrow neu-inset">Outcome Driven</span>
-          <h2>Building Skills for the Future</h2>
+          <span className="eyebrow neu-inset">
+            <FaBookOpen /> Practical Focus
+          </span>
+          <h2>Skills that actually matter</h2>
         </div>
 
         <p className="section-copy">
-          GenZgalaxy focuses on developing <strong> future-ready skills</strong> that Gen Z
-          learners need to thrive in modern careers and digital environments.
+          The focus is less on theory for the sake of it, and more on what’s
+          useful outside.
         </p>
 
         <div className="skills-grid">
           <div className="skill-box neu-card-inner">
-            <h4>Digital and technological literacy</h4>
+            <FaMicrochip />
+            <h4>Tech awareness</h4>
           </div>
+
           <div className="skill-box neu-card-inner">
-            <h4>Creative problem solving</h4>
+            <FaLayerGroup />
+            <h4>Problem solving</h4>
           </div>
+
           <div className="skill-box neu-card-inner">
-            <h4>Critical thinking and innovation</h4>
+            <FaRegStar />
+            <h4>Thinking critically</h4>
           </div>
+
           <div className="skill-box neu-card-inner">
-            <h4>Communication and collaboration skills</h4>
+            <FaUsers />
+            <h4>Working with others</h4>
           </div>
+
           <div className="skill-box neu-card-inner">
-            <h4>Career-oriented technical skills</h4>
+            <FaGlobe />
+            <h4>Career skills</h4>
           </div>
         </div>
 
         <p className="section-copy">
-          By focusing on real-world competencies, GenZgalaxy prepares learners
-          for the <strong>demands of the modern workforce.</strong>
+          The idea is simple — make learning useful, not just complete.
         </p>
       </section>
 
+      {/* COMMUNITY */}
       <section className="community-section">
         <div className="community-card neu-card">
           <div className="community-left">
-            <span className="eyebrow neu-inset">Community Powered</span>
-            <h2>A Community-Driven Learning Ecosystem</h2>
+            <span className="eyebrow neu-inset">
+              <FaUsers /> Community
+            </span>
+
+            <h2>Learning doesn’t happen alone</h2>
+
             <p>
-              Gen Z values collaboration, social interaction, and shared
-              experiences. GenZgalaxy encourages learners to connect through <strong>
-              learning communities, discussion forums, and collaborative
-              activities.</strong>
+              A lot of understanding comes from discussion. Asking questions,
+              seeing different perspectives — that’s part of the process.
             </p>
-            <p>Learning becomes a social and collective experience.</p>
+
+            <p>
+              So the platform keeps that open through shared spaces and group
+              interaction.
+            </p>
           </div>
 
           <div className="community-points">
-            <div className="point neu-card-inner">Share ideas and insights</div>
-            <div className="point neu-card-inner">Learn from peers and mentors</div>
-            <div className="point neu-card-inner">
-              Collaborate on projects and challenges
-            </div>
-            <div className="point neu-card-inner">
-              Participate in knowledge-driven communities
-            </div>
+            <div className="point neu-card-inner"><FaCheck /> Share thoughts</div>
+            <div className="point neu-card-inner"><FaCheck /> Learn from others</div>
+            <div className="point neu-card-inner"><FaCheck /> Build together</div>
+            <div className="point neu-card-inner"><FaCheck /> Stay connected</div>
           </div>
         </div>
       </section>
 
+      {/* CLOSING */}
       <section className="closing-section">
         <div className="closing-card neu-card">
-          <span className="eyebrow neu-inset">GenZgalaxy</span>
-          <h2>Where Learning Meets Exploration</h2>
+          <span className="eyebrow neu-inset">
+            <FaGlobe /> GenZgalaxy
+          </span>
+
+          <h2>A simpler way to approach learning</h2>
+
           <p>
-            GenZgalaxy transforms learning into an engaging journey of
-            discovery, creativity, and growth. By combining <strong>interactive
-            technology, personalized learning, and community-driven engagement,</strong>
-            NeuroLXP empowers the next generation of learners to explore
-            knowledge, build skills, and shape their future.
+            It’s not trying to reinvent everything. Just making learning feel
+            more natural, more flexible, and a bit easier to stay with.
           </p>
+
           <p className="closing-line">
             <strong>
-              GenZgalaxy by NeuroLXP — A Universe of Learning for the Next
-              Generation.
+              Built for how people actually learn today.
             </strong>
           </p>
         </div>
