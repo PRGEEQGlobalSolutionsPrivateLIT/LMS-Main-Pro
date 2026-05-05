@@ -228,9 +228,12 @@ export default function Page() {
 
       <section className="induction-final">
         <div className="final-visual">
-          <FaBuilding />
-          <span>Image Placeholder</span>
-        </div>
+        <img
+          src="/pexels-divinetechygirl-1181396.jpg"
+          alt="Learners using digital learning resources"
+          className="placeholder-image"
+        />
+      </div>
 
         <div>
           <span className="induction-badge">Smarter Employee Onboarding</span>
