@@ -233,8 +233,7 @@ export default function Page() {
 
       <section className="blended-final">
         <div className="final-visual">
-          <MdOutlineSchool />
-          <span>Image Placeholder</span>
+         <img src="/pexels-katerina-holmes-5905703.jpg"  alt="Learners using a digital learning platform" className="placeholder-image"/>
         </div>
 
         <div>
