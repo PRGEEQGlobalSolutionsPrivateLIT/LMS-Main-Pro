@@ -1,301 +1,296 @@
 import "./compliance-training.css";
-import { FaShieldAlt, FaClipboardCheck, FaIndustry, FaGamepad, FaChartBar, FaCertificate, FaBuilding, FaBrain, FaLock, FaBalanceScale, FaUserShield, FaGlobe, } from "react-icons/fa";
+import {
+  FaShieldAlt,
+  FaClipboardCheck,
+  FaUsersCog,
+  FaBuilding,
+  FaLock,
+  FaBalanceScale,
+  FaLeaf,
+  FaHeartbeat,
+  FaChartBar,
+  FaCertificate,
+  FaFileAlt,
+  FaCheckCircle,
+  FaArrowRight,
+  FaUserShield,
+} from "react-icons/fa";
 
-const centralizedPoints = [
-  "Maintain consistent compliance training across all teams",
+const managementPoints = [
+  "Maintain consistent compliance training across teams",
   "Deliver mandatory regulatory courses efficiently",
   "Monitor training completion and certification status",
-  "Maintain proper documentation for audits and inspections",
+  "Maintain documentation for audits and inspections",
 ];
 
-const industryPoints = [
-  "Workplace safety and health regulations",
-  "Data privacy and cybersecurity compliance",
-  "Corporate ethics and code of conduct training",
-  "Anti-harassment and workplace conduct policies",
-  "Financial and regulatory compliance training",
-  "Environmental and sustainability compliance",
+const complianceTypes = [
+  {
+    icon: <FaHeartbeat />,
+    title: "Workplace Safety",
+    text: "Health, safety, and workplace regulation training.",
+  },
+  {
+    icon: <FaLock />,
+    title: "Data Privacy",
+    text: "Cybersecurity and privacy compliance learning.",
+  },
+  {
+    icon: <FaBalanceScale />,
+    title: "Corporate Ethics",
+    text: "Code of conduct and ethical workplace practices.",
+  },
+  {
+    icon: <FaUserShield />,
+    title: "Workplace Conduct",
+    text: "Anti-harassment and conduct policy training.",
+  },
+  {
+    icon: <FaBuilding />,
+    title: "Financial Compliance",
+    text: "Regulatory and financial standards training.",
+  },
+  {
+    icon: <FaLeaf />,
+    title: "Sustainability",
+    text: "Environmental and sustainability compliance.",
+  },
 ];
 
-const interactivePoints = [
+const interactiveModules = [
   "Scenario-based learning activities",
   "Interactive quizzes and assessments",
   "Case studies based on real-world situations",
-  "Gamified learning elements for better engagement",
+  "Gamified learning elements",
   "Knowledge checks and certification tests",
 ];
 
-const scalablePoints = [
-  "Corporate enterprises and large organizations",
-  "Healthcare organizations and institutions",
-  "Financial institutions and regulatory bodies",
-  "Manufacturing industries and government agencies",
+const reportItems = [
+  "Course completion rates",
+  "Certification status",
+  "Assessment performance",
+  "Compliance participation",
+  "Department-level compliance metrics",
 ];
 
-export default function ComplianceTrainingPage() {
+const organizationTypes = [
+  "Corporate enterprises",
+  "Healthcare organizations",
+  "Financial institutions",
+  "Manufacturing industries",
+  "Government agencies",
+  "Educational institutions",
+];
+
+export default function ComplianceTraining() {
   return (
-    <main className="compliance-training-page page">
+    <main className="compliance-page">
+      <section className="compliance-hero compliance-card">
+        <div className="compliance-hero-content">
+          <span className="compliance-eyebrow">Compliance Training Modules</span>
+          <h1>Ensure Regulatory Compliance with Structured Digital Training</h1>
+          <p>
+            Organizations today must comply with numerous industry regulations,
+            safety standards, and legal requirements.
+          </p>
+          <p>
+            NeuroLXP enables institutions and enterprises to deliver structured
+            Compliance Training Modules that help employees and learners
+            understand policies, follow guidelines, and maintain organizational
+            standards.
+          </p>
+        </div>
 
-      <section className="heroSection">
-        <div className="heroGrid">
-          <div className="heroContent">
-            <h1 className="heroTitle">Compliance Training Modules</h1>
-
-            <h2 className="heroSubtitle">
-              Ensure Regulatory Compliance with Structured Digital Training
-            </h2>
-
-            <p className="heroText">
-              Organizations today must comply with numerous industry
-              regulations, safety standards, and legal requirements. NeuroLXP
-              enables institutions and enterprises to deliver structured
-              Compliance Training Modules that help employees and learners
-              understand policies, follow regulatory guidelines, and maintain
-              organizational standards.
-            </p>
-
-            <p className="heroText">
-              Through a robust Learning Management System for compliance
-              training, NeuroLXP ensures that compliance learning becomes
-              systematic, measurable, and easy to manage across every
-              department.
-            </p>
+        <div className="compliance-hero-visual">
+          <div className="compliance-shield">
+            <FaShieldAlt />
+            <span>Compliant</span>
           </div>
 
-          <div className="heroVisualCard">
-            <div className="imagePlaceholder">
-              <img
-                src="/photo-1450101499163-c8848c66ca85.jpeg"
-                alt="Professionals reviewing compliance documents and regulations"
-                className="heroImg"
-              />
-            </div>
+          <div className="compliance-mini-tile compliance-tile-one">
+            <FaCertificate />
+            <span>Certified</span>
+          </div>
 
-            <div className="floatingStats">
-              <div className="statPill">
-                <FaShieldAlt className="iconText" />
-                <span>Regulatory Compliance</span>
-              </div>
-              <div className="statPill">
-                <FaClipboardCheck className="iconText" />
-                <span>Audit Readiness</span>
-              </div>
-              <div className="statPill">
-                <FaCertificate className="iconText" />
-                <span>Digital Certification</span>
-              </div>
-            </div>
+          <div className="compliance-mini-tile compliance-tile-two">
+            <FaChartBar />
+            <span>Tracked</span>
+          </div>
+
+          <div className="compliance-mini-tile compliance-tile-three">
+            <FaFileAlt />
+            <span>Audit Ready</span>
           </div>
         </div>
       </section>
 
-      <section className="cardsSection">
+      <section className="compliance-intro">
+        <span>Smart Compliance LMS</span>
+        <h2>Systematic, Measurable, and Easy to Manage</h2>
+        <p>
+          Through a robust LMS for compliance training, NeuroLXP ensures that
+          compliance learning becomes structured, trackable, and scalable across
+          teams and departments.
+        </p>
+      </section>
 
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaBuilding className="iconText" />
-            </div>
-            <h3>Centralized Compliance Training Management</h3>
+      <section className="compliance-management-layout">
+        <article className="compliance-card compliance-management-card">
+          <div className="compliance-icon-box">
+            <FaUsersCog />
           </div>
-
+          <h2>Centralized Compliance Training Management</h2>
           <p>
-            NeuroLXP allows organizations to manage all compliance training
-            programs through a centralized digital learning platform.
             Administrators can design, assign, and track mandatory training
-            modules across departments, ensuring that every learner completes
+            modules across departments, ensuring every learner completes the
             required courses.
           </p>
 
-          <div className="insetBox">
-            <h4>This centralized approach helps organizations:</h4>
-            <ul className="featureList">
-              {centralizedPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
+          <div className="compliance-check-list">
+            {managementPoints.map((point) => (
+              <div key={point}>
+                <FaCheckCircle />
+                <h4>{point}</h4>
+              </div>
+            ))}
           </div>
-
-          <p>
-            A single platform view keeps administrators in full control of
-            compliance obligations at every level.
-          </p>
         </article>
 
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaIndustry className="iconText" />
+        <article className="compliance-status-panel">
+          <div className="compliance-status-header">
+            <span>Compliance Readiness</span>
+            <FaClipboardCheck />
+          </div>
+
+          <div className="compliance-status-row">
+            <p>Training completion</p>
+            <div>
+              <strong className="compliance-progress-one"></strong>
             </div>
-            <h3>Industry-Specific Compliance Training</h3>
+            <span>92%</span>
           </div>
 
-          <p>
-            NeuroLXP supports a wide range of industry compliance training
-            programs. Organizations can easily create training modules aligned
-            with local regulations, global standards, and industry best
-            practices for their specific sector.
-          </p>
-
-          <div className="insetBox">
-            <h4>Supported compliance areas include:</h4>
-            <ul className="featureList">
-              {industryPoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            Every module can be tailored to reflect the unique regulatory
-            landscape of your organization.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaGamepad className="iconText" />
+          <div className="compliance-status-row">
+            <p>Certification status</p>
+            <div>
+              <strong className="compliance-progress-two"></strong>
             </div>
-            <h3>Interactive Compliance Learning Experiences</h3>
+            <span>86%</span>
           </div>
 
-          <p>
-            Traditional compliance training often becomes monotonous and
-            ineffective. NeuroLXP transforms compliance learning into engaging
-            digital training experiences using modern interactive learning
-            formats that improve comprehension and retention.
-          </p>
-
-          <div className="insetBox">
-            <h4>Compliance modules can include:</h4>
-            <ul className="featureList">
-              {interactivePoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            These formats help learners better understand compliance
-            requirements and apply them confidently in real workplace
-            situations.
-          </p>
-        </article>
-
-        <article className="contentCard">
-          <div className="cardHeader">
-            <div className="iconWrap">
-              <FaGlobe className="iconText" />
+          <div className="compliance-status-row">
+            <p>Audit documentation</p>
+            <div>
+              <strong className="compliance-progress-three"></strong>
             </div>
-            <h3>Scalable Compliance Training for Every Organization</h3>
+            <span>95%</span>
           </div>
-
-          <p>
-            NeuroLXP's compliance training capabilities support organizations
-            of all sizes, ensuring that compliance learning can be scaled
-            across thousands of learners while maintaining strict regulatory
-            standards.
-          </p>
-
-          <div className="insetBox">
-            <h4>The platform is purpose-built for:</h4>
-            <ul className="featureList">
-              {scalablePoints.map((item) => (
-                <li key={item}>
-                  <span className="listIcon">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <p>
-            No matter the scale, NeuroLXP delivers consistent, auditable
-            compliance outcomes across the entire organization.
-          </p>
         </article>
-
       </section>
 
-      <section className="highlightSection">
-        <div className="highlightGrid">
+      <section className="compliance-section-heading">
+        <h2>Industry-Specific Compliance Training</h2>
+        <p>
+          NeuroLXP supports compliance programmes aligned with local regulations,
+          global standards, and industry best practices.
+        </p>
+      </section>
 
-          <div className="highlightTextCard">
-            <div className="cardHeader">
-              <div className="iconWrap">
-                <FaBrain className="iconText" />
-              </div>
-              <h3>
-                NeuroLXP — Simplifying Compliance Training Through Smart
-                Digital Learning
-              </h3>
+      <section className="compliance-type-grid">
+        {complianceTypes.map((item) => (
+          <article className="compliance-type-card" key={item.title}>
+            <div className="compliance-type-icon">{item.icon}</div>
+            <h4>{item.title}</h4>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="compliance-learning-section compliance-card">
+        <div>
+          <span className="compliance-eyebrow">Interactive Learning</span>
+          <h2>Make Compliance Training Engaging</h2>
+          <p>
+            NeuroLXP transforms traditional compliance learning into engaging
+            digital training experiences using interactive formats.
+          </p>
+        </div>
+
+        <div className="compliance-module-list">
+          {interactiveModules.map((item, index) => (
+            <div key={item}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h4>{item}</h4>
             </div>
-
-            <p>
-              NeuroLXP's advanced analytics and reporting tools allow
-              organizations to monitor compliance training progress in real
-              time. Administrators can generate detailed reports on course
-              completion rates, certification status, assessment performance,
-              and department-level compliance metrics.
-            </p>
-
-            <p>
-              Upon completion of compliance training modules, NeuroLXP
-              automatically issues digital certificates and maintains training
-              records — providing verifiable documentation for regulatory
-              audits, internal reviews, and industry compliance checks.
-            </p>
-
-            <div className="miniFeatures">
-              <div className="miniFeature">
-                <FaChartBar className="iconText" />
-                <span>Automated tracking &amp; reporting</span>
-              </div>
-              <div className="miniFeature">
-                <FaCertificate className="iconText" />
-                <span>Digital certification</span>
-              </div>
-              <div className="miniFeature">
-                <FaLock className="iconText" />
-                <span>Audit-ready records</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="secondaryVisualCard">
-            <div className="imagePlaceholderAlt">
-              <img
-                src="/photo-1573496359142-b8d87734a5a2.jpeg"
-                alt="Professional receiving digital compliance certification"
-                className="secondaryImg"
-              />
-            </div>
-
-            <div className="badgePills">
-              <div className="badgePill">
-                <FaBalanceScale className="iconText" />
-                <span>Regulatory standards</span>
-              </div>
-              <div className="badgePill">
-                <FaUserShield className="iconText" />
-                <span>Culture of responsibility</span>
-              </div>
-            </div>
-          </div>
-
+          ))}
         </div>
       </section>
 
+      <section className="compliance-report-layout">
+        <article className="compliance-card compliance-report-card">
+          <div className="compliance-icon-box compliance-report-icon">
+            <FaChartBar />
+          </div>
+          <h2>Automated Tracking and Reporting</h2>
+          <p>
+            Advanced analytics and reporting tools allow organizations to monitor
+            compliance training progress in real time and simplify regulatory
+            audits.
+          </p>
+
+          <ul className="compliance-report-list">
+            {reportItems.map((item) => (
+              <li key={item}>
+                <FaArrowRight />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </article>
+
+        <article className="compliance-card compliance-certificate-card">
+          <div className="compliance-icon-box compliance-certificate-icon">
+            <FaCertificate />
+          </div>
+          <h2>Certification and Audit Readiness</h2>
+          <p>
+            NeuroLXP can automatically issue digital certificates and maintain
+            verifiable training records for regulatory audits, internal reviews,
+            and compliance checks.
+          </p>
+        </article>
+      </section>
+
+      <section className="compliance-scale-section">
+        <div className="compliance-section-heading">
+          <h2>Scalable Compliance Training for Organizations</h2>
+          <p>
+            NeuroLXP supports compliance learning across thousands of learners
+            while maintaining regulatory standards.
+          </p>
+        </div>
+
+        <div className="compliance-scale-grid">
+          {organizationTypes.map((item) => (
+            <div key={item}>
+              <FaBuilding />
+              <h4>{item}</h4>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="compliance-final compliance-card">
+        <div className="compliance-final-icon">
+          <FaShieldAlt />
+        </div>
+        <h2>NeuroLXP — Simplifying Compliance Training Through Smart Digital Learning</h2>
+        <p>
+          With structured compliance modules, automated tracking, and powerful
+          analytics, NeuroLXP helps organizations maintain regulatory compliance
+          while building a culture of awareness, responsibility, and ethical
+          practice.
+        </p>
+      </section>
     </main>
   );
 }
