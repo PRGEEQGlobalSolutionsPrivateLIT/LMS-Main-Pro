@@ -80,7 +80,7 @@ export default function LearningStyleAnalysisPage() {
             <h1 className="heroTitle">Learning Style Analysis</h1>
 
             <h2 className="heroSubtitle">
-              Empower Your Learning Journey — Tailored For Your Success
+              Empower Learning Journey — Tailored For Success
             </h2>
 
             <p className="heroText">
@@ -275,7 +275,7 @@ export default function LearningStyleAnalysisPage() {
               <div className="iconWrap">
                 <FaRocket className="iconText" />
               </div>
-              <h3>NeuroLXP — Enabling Smarter Learning Style Analysis</h3>
+              <h3>Enabling Smarter Learning Style Analysis</h3>
             </div>
 
             <p>
