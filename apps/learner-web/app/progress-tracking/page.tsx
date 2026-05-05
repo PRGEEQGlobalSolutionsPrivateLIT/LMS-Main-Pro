@@ -20,10 +20,10 @@ const challengeItems = [
 ];
 
 const statsData = [
-  { label: "Real-time Progress Updates", value: "38%", suffix: "increase" },
-  { label: "Performance Analytics", value: "25%", suffix: "boost" },
-  { label: "Learner Motivation", value: "30%", suffix: "increase" },
-  { label: "Time Management Skills", value: "18%", suffix: "improvement" },
+  { label: "Real-time Progress Updates", value: "38%", suffix: "Increase" },
+  { label: "Performance Analytics", value: "25%", suffix: "Boost" },
+  { label: "Learner Motivation", value: "30%", suffix: "Increase" },
+  { label: "Time Management Skills", value: "18%", suffix: "Improvement" },
 ];
 
 const whyItems = [
