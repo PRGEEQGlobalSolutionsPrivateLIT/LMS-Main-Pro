@@ -1,317 +1,214 @@
-import React from 'react';
-import type { Metadata } from 'next';
-import Image from 'next/image';
 import {
+  FaUniversity,
   FaShieldAlt,
+  FaFileContract,
   FaChartLine,
-  FaUsers,
-  FaBookOpen,
+  FaUsersCog,
+  FaPiggyBank,
   FaClipboardCheck,
-  FaNetworkWired,
-  FaGraduationCap,
   FaCheckCircle,
-  FaArrowRight,
-  FaPlay,
+  FaLightbulb,
+  FaImage,
   FaLock,
-  FaBuilding,
-} from 'react-icons/fa';
-import './BFSI.css';
+} from "react-icons/fa";
+import "./BFSI.css";
 
-const heroIllustration = '/finance.jpg';
-const totalValueImage = '/Total-value.jpg';
-const tradingDashboardImage = '/Trading-dashboard.jpg';
-
-export const metadata: Metadata = {
-  title: 'BFSI Solutions | Industries We Serve',
-  description:
-    'Secure, scalable learning for the BFSI industry. NeuroLXP provides AI-driven compliance training, skill development, and workforce readiness for banking, financial services, and insurance organizations.',
-  keywords:
-    'BFSI training, banking compliance, financial services learning, insurance training, regulatory compliance, LXP for BFSI',
-  openGraph: {
-    title: 'BFSI Solutions | Industries We Serve',
-    description:
-      'Empowering BFSI organizations with secure, compliant, and scalable learning solutions.',
-    type: 'website',
-  },
-};
-
-interface Challenge {
-  id: number;
-  icon: React.ReactNode;
-  challenge: string;
-  description: string;
-  solution: string;
-}
-
-interface Benefit {
-  id: number;
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
-
-export default function BFSIPage() {
-  const challenges: Challenge[] = [
+export default function BFSI() {
+  const challenges = [
     {
-      id: 1,
-      icon: <FaShieldAlt className="challengeIcon" />,
-      challenge: 'Regulatory Compliance and Frequent Policy Updates',
-      description:
-        'Financial institutions must constantly train employees on changing regulations, compliance policies, and industry standards.',
-      solution:
-        'NeuroLXP enables organizations to deliver structured compliance training modules with automated tracking, certification, and reporting. Institutions can ensure employees stay updated on regulatory requirements while maintaining complete training records for audits.',
+      icon: <FaFileContract />,
+      title: "Compliance Updates",
+      point: "Structured compliance modules with tracking, certification, and audit records.",
+      color: "blue",
     },
     {
-      id: 2,
-      icon: <FaChartLine className="challengeIcon" />,
-      challenge: 'Continuous Skill Development in a Dynamic Industry',
-      description:
-        'The BFSI industry requires employees to continuously develop skills in areas such as financial analysis, digital banking, risk management, and customer relationship management.',
-      solution:
-        'NeuroLXP supports skill-based learning programs and professional development courses that help employees stay updated with evolving financial technologies, market trends, and industry best practices.',
+      icon: <FaChartLine />,
+      title: "Skill Development",
+      point: "Role-based learning for financial analysis, digital banking, and risk management.",
+      color: "green",
     },
     {
-      id: 3,
-      icon: <FaNetworkWired className="challengeIcon" />,
-      challenge: 'Training Large and Distributed Workforces',
-      description:
-        'Banks, financial institutions, and insurance companies often operate across multiple branches and geographic locations.',
-      solution:
-        'With a scalable digital learning platform, NeuroLXP enables organizations to deliver training programs to employees across branches and regions while ensuring consistent learning experiences.',
+      icon: <FaUsersCog />,
+      title: "Distributed Workforce",
+      point: "Consistent training delivery across branches, regions, teams, and partners.",
+      color: "orange",
     },
     {
-      id: 4,
-      icon: <FaBookOpen className="challengeIcon" />,
-      challenge: 'Product Knowledge and Analytics',
-      description:
-        'Financial professionals must have strong knowledge of financial products and services to effectively guide customers.',
-      solution:
-        'NeuroLXP allows organizations to create product training modules, interactive learning experiences, and assessment-based evaluations that strengthen employees\' knowledge of banking products, financial services, and insurance offerings.',
+      icon: <FaPiggyBank />,
+      title: "Product Knowledge",
+      point: "Interactive product training for banking, finance, and insurance offerings.",
+      color: "purple",
     },
     {
-      id: 5,
-      icon: <FaClipboardCheck className="challengeIcon" />,
-      challenge: 'Monitoring Training Effectiveness',
-      description:
-        'Financial institutions must track employee learning progress and ensure training completion across departments.',
-      solution:
-        'NeuroLXP provides advanced analytics and reporting dashboards that give managers insights into learner engagement, assessment performance, and certification completion. This helps organizations measure training effectiveness and improve learning strategies.',
+      icon: <FaClipboardCheck />,
+      title: "Training Effectiveness",
+      point: "Analytics dashboards for progress, engagement, assessment, and certification.",
+      color: "cyan",
     },
   ];
 
-  const benefits: Benefit[] = [
-    {
-      id: 1,
-      icon: <FaShieldAlt className="benefitIcon" />,
-      title: 'Structured Compliance Training',
-      description: 'Deliver structured compliance and regulatory training to ensure workforce readiness',
-    },
-    {
-      id: 2,
-      icon: <FaGraduationCap className="benefitIcon" />,
-      title: 'Employee Upskilling',
-      description: 'Upskill employees with industry-relevant learning programs and professional development',
-    },
-    {
-      id: 3,
-      icon: <FaNetworkWired className="benefitIcon" />,
-      title: 'Distributed Training',
-      description: 'Train distributed branch networks efficiently across multiple locations',
-    },
-    {
-      id: 4,
-      icon: <FaBookOpen className="benefitIcon" />,
-      title: 'Product Knowledge',
-      description: 'Improve product knowledge and advisory capabilities for better customer service',
-    },
-    {
-      id: 5,
-      icon: <FaChartLine className="benefitIcon" />,
-      title: 'Advanced Analytics',
-      description: 'Monitor training performance through advanced analytics and reporting dashboards',
-    },
-    {
-      id: 6,
-      icon: <FaCheckCircle className="benefitIcon" />,
-      title: 'Compliance Records',
-      description: 'Maintain compliance records for regulatory audits with automated tracking',
-    },
+  const benefits = [
+    "Structured compliance and regulatory training",
+    "Industry-relevant employee upskilling",
+    "Efficient branch-network training",
+    "Improved product and advisory knowledge",
+    "Advanced training-performance analytics",
+    "Audit-ready compliance records",
   ];
 
   return (
-    <main className="neumorphic-page">
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="heroContent">
-          <div className="heroGrid">
-            <div className="heroText">
-              <div className="heroBadge">
-                <span className="badge-label">
-                  <span className="badge-dot" />
-                  BFSI Solutions
-                </span>
-              </div>
+    <section className="bfsi-page">
+      <div className="bfsi-hero">
 
-              <h1 className="heroTitle">Secure Learning for <span className="accent-word">Banking & Finance</span></h1>
+        <h1>BFSI</h1>
 
-              <p className="heroSubtitle">
-                NeuroLXP delivers an AI-powered Learning Experience Platform built exclusively for BFSI — enabling secure, scalable, and compliance-ready digital learning.
-              </p>
+        <h2>Secure, Scalable Learning for the BFSI Industry</h2>
 
-              <div className="heroButtons">
-                <button className="btn">
-                  <span>Request Demo</span>
-                  <FaArrowRight className="btnIcon" />
-                </button>
-                <button className="btn btn-play">
-                  <span className="playDot">
-                    <svg width="10" height="12" viewBox="0 0 10 12">
-                      <path d="M0 0L10 6L0 12V0Z" />
-                    </svg>
-                  </span>
-                  <span>Watch Overview</span>
-                </button>
-              </div>
-
-              <p className="heroDescription">
-                The Banking, Financial Services, and Insurance (BFSI) sector operates in a highly regulated and rapidly evolving environment. Organizations must continuously train employees on compliance, financial products, risk management, and customer service.
-              </p>
-            </div>
-
-            <div className="heroMedia">
-              <div className="heroGraphGrid">
-                <div className="heroGraphCard heroGraphCardGraph">
-                  <div className="graphCardHeader">Total value</div>
-                  <div className="graphImageWrapper">
-                    <Image
-                      src={totalValueImage}
-                      alt="Total value visualization"
-                      fill
-                      className="heroVisualAsset"
-                    />
-                  </div>
-                </div>
-                <div className="heroGraphCard heroGraphCardGraph">
-                  <div className="graphCardHeader">Trading dashboard</div>
-                  <div className="graphImageWrapper">
-                    <Image
-                      src={tradingDashboardImage}
-                      alt="Trading dashboard visualization"
-                      fill
-                      className="heroVisualAsset"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="heroPhotoCard">
-                <Image
-                  src={heroIllustration}
-                  alt="Finance hero"
-                  fill
-                  className="heroVisualAsset"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="heroMetrics">
-            <div className="metricCard">
-              <span className="metricValue">500+</span>
-              <span className="metricLabel">Financial Institutions</span>
-            </div>
-            <div className="metricCard">
-              <span className="metricValue">2M+</span>
-              <span className="metricLabel">Trained Professionals</span>
-            </div>
-            <div className="metricCard">
-              <span className="metricValue">99%</span>
-              <span className="metricLabel">Compliance Rate</span>
-            </div>
-            <div className="metricCard">
-              <span className="metricValue">4.9</span>
-              <span className="metricLabel">Average Rating</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="challenges">
-        <div className="section-inner">
-          <div className="sectionHeader">
-            <h2 className="sectionTitle">Addressing Key Challenges in <span className="accent-span">BFSI Training</span></h2>
-          </div>
-
-          <div className="challengesGrid">
-            {challenges.map((item) => (
-              <div key={item.id} className="challengeCard">
-                <div className="challengeIconWrap">
-                  {item.icon}
-                </div>
-                <h3 className="challengeTitle">{item.challenge}</h3>
-                <p className="challengeDescription">{item.description}</p>
-                <div className="solutionBox">
-                  <div className="solutionLabel">How NeuroLXP Helps</div>
-                  <p className="solutionDescription">{item.solution}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="benefits">
-        <div className="section-inner">
-          <div className="sectionHeader">
-            <h2 className="sectionTitle">Benefits for <span className="accent-span">BFSI Organizations</span></h2>
-            <p className="sectionSubtitle">
-              Transform learning and development with NeuroLXP
-            </p>
-          </div>
-
-          <div className="benefitsGrid">
-            {benefits.map((benefit) => (
-              <div key={benefit.id} className="benefitCard">
-                <div className="benefitIconWrapper">{benefit.icon}</div>
-                <h3 className="benefitTitle">{benefit.title}</h3>
-                <p className="benefitDescription">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="cta">
-        <div className="ctaContent">
-          <h2 className="ctaTitle">Enabling Digital Transformation in <span className="accent-span">Financial Services Learning</span></h2>
-          <p className="ctaDescription">
-            By leveraging modern learning technologies, BFSI organizations can strengthen compliance, improve employee skills, and enhance customer service.
-          </p>
-
-          <div className="ctaButtons">
-            <button className="btn">
-              Schedule a Demo
-              <FaArrowRight className="btnIcon" />
-            </button>
-            <button className="btn">
-              <span>Contact Sales</span>
-              <FaArrowRight className="btnIcon" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer CTA */}
-      <section className="footerCta">
-        <h3>NeuroLXP — Powering Learning for BFSI Organizations</h3>
         <p>
-          With AI-powered learning tools, compliance-ready training modules, and advanced analytics, NeuroLXP empowers BFSI organizations to build knowledgeable, compliant, and future-ready workforces.
+          NeuroLXP helps banking, financial services, and insurance organisations
+          deliver secure, scalable, and compliant digital learning programmes
+          for workforce development and regulatory readiness.
         </p>
-        <button className="btn">
-          Get Started Today
-          <FaArrowRight className="btnIcon" />
-        </button>
-      </section>
-    </main>
+      </div>
+
+      <div className="bfsi-image-row single">
+  <div className="bfsi-image-box">
+    <img
+      src="/pexels-polina-tankilevitch-6927375.jpg"
+      alt="BFSI training and compliance learning"
+    />
+  </div>
+</div>
+
+      <div className="bfsi-content-block">
+        <div>
+          <span className="bfsi-label">Regulated Learning Ecosystem</span>
+          <h3>Built for Banking, Financial Services, and Insurance Teams</h3>
+          <p>
+            The BFSI sector operates in a highly regulated and rapidly evolving
+            environment. Organisations must continuously train employees,
+            partners, and stakeholders on regulatory compliance, financial
+            products, risk management, cybersecurity, and customer service.
+          </p>
+          <p>
+            NeuroLXP provides an AI-driven Learning Experience Platform for BFSI
+            organisations, helping them maintain workforce capability,
+            compliance readiness, and consistent learning delivery.
+          </p>
+        </div>
+
+        <div className="bfsi-mini-panel">
+          <FaLock />
+          <h4>Secure Learning Delivery</h4>
+          <p>
+            Support compliance, certification, policy training, and audit-ready
+            learning records from one secure platform.
+          </p>
+        </div>
+      </div>
+
+      <div className="bfsi-intro-grid">
+        <div className="bfsi-intro-card">
+          <FaShieldAlt />
+          <h3>Compliance Ready</h3>
+          <p>Keep employees aligned with regulations and policy updates.</p>
+        </div>
+
+        <div className="bfsi-intro-card">
+          <FaChartLine />
+          <h3>Skill Focused</h3>
+          <p>Build role-based capabilities for a changing financial sector.</p>
+        </div>
+
+        <div className="bfsi-intro-card">
+          <FaClipboardCheck />
+          <h3>Audit Friendly</h3>
+          <p>Track completion, certification, and training effectiveness.</p>
+        </div>
+      </div>
+
+      <div className="bfsi-section-title">
+        <span>Challenges & Solutions</span>
+        <h3>Addressing Key Challenges in BFSI Training</h3>
+        <p>
+          NeuroLXP supports BFSI organisations by simplifying compliance
+          training, skill development, branch-level training, and learning
+          measurement.
+        </p>
+      </div>
+
+      <div className="bfsi-challenge-grid">
+        {challenges.map((item, index) => (
+          <article className={`bfsi-challenge-card ${item.color}`} key={index}>
+            <div className="bfsi-challenge-icon">{item.icon}</div>
+            <h4>{item.title}</h4>
+            <p>{item.point}</p>
+          </article>
+        ))}
+      </div>
+
+      <div className="bfsi-text-section">
+        <h3>How NeuroLXP Helps BFSI Organisations Train Better</h3>
+        <p>
+          NeuroLXP enables financial institutions to deliver structured
+          compliance training modules with automated tracking, certification,
+          and reporting. This helps employees stay updated while maintaining
+          complete records for audits.
+        </p>
+        <p>
+          The platform supports continuous skill development across financial
+          analysis, digital banking, risk management, customer relationship
+          management, and product advisory roles.
+        </p>
+        <p>
+          For banks, insurance companies, and financial institutions operating
+          across many locations, NeuroLXP enables consistent training delivery
+          across branches, departments, and regions.
+        </p>
+      </div>
+
+      <div className="bfsi-benefits-section">
+        <div className="bfsi-benefits-heading">
+          <span>Organisation Benefits</span>
+          <h3>Benefits of NeuroLXP for BFSI Organisations</h3>
+        </div>
+
+        <div className="bfsi-benefits-grid">
+          {benefits.map((benefit, index) => (
+            <div className="bfsi-benefit-card" key={index}>
+              <FaCheckCircle />
+              <p>{benefit}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="bfsi-future-card">
+        <div>
+          <span className="bfsi-label">Future Ready</span>
+          <h3>Future-Ready Learning for the Financial Sector</h3>
+          <p>
+            As the BFSI industry embraces digital transformation, organisations
+            require learning platforms that support continuous professional
+            development, regulatory compliance, and workforce readiness.
+            NeuroLXP helps financial institutions build secure, intelligent,
+            and scalable learning ecosystems.
+          </p>
+        </div>
+
+        <div className="bfsi-future-icon">
+          <FaLightbulb />
+        </div>
+      </div>
+
+      <div className="bfsi-closing-card">
+        <h3>NeuroLXP — Enabling Smarter Learning for the BFSI Industry</h3>
+        <p>
+          With AI-powered learning tools, compliance-ready training modules, and
+          advanced analytics, NeuroLXP empowers BFSI organisations to build
+          knowledgeable, compliant, and future-ready workforces.
+        </p>
+      </div>
+    </section>
   );
 }
