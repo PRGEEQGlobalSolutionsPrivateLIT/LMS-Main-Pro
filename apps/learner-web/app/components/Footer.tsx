@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import "./Footer.css";
 import {
   FaInstagram,
@@ -9,6 +9,8 @@ import {
 } from "react-icons/fa";
 
 export default function Footer() {
+
+  const router = useRouter();
   return (
     <footer className="footer-container">
       <div className="footer-content">
@@ -59,26 +61,44 @@ export default function Footer() {
 
         {/* Column 2: Company Links */}
         <div className="footer-column">
-          <h3 className="column-title">NeuroLXP</h3>
-          <ul className="footer-links">
-            <li>Our NeuroLXP Team</li>
-            <li>About NeuroLXP</li>
-            <li>AI-Powered Content Curation</li>
-            <li>Our Adaptive Learning Pathways</li>
-            <li>Inclusivity and Accessibility</li>
-          </ul>
-        </div>
+            <h3 className="column-title">NeuroLXP</h3>
+            <ul className="footer-links">
+              <li onClick={() => router.push("")}>
+                Our NeuroLXP Team
+              </li>
+              <li onClick={() => router.push("/")}>
+                About NeuroLXP
+              </li>
+              <li onClick={() => router.push("/content-curation")}>
+                AI-Powered Content Curation
+              </li>
+              <li onClick={() => router.push("/learning-path")}>
+                Our Adaptive Learning Pathways
+              </li>
+              <li onClick={() => router.push("/goal-setting-planning")}>
+                Goal Setting Planning
+              </li>
+            </ul>
+          </div>
 
-        {/* Column 3: Quick Links */}
-        <div className="footer-column">
-          <h3 className="column-title">Quick Links</h3>
-          <ul className="footer-links">
-            <li>Privacy Policy</li>
-            <li>Terms of Use</li>
-            <li>Support</li>
-            <li>Contact</li>
-          </ul>
-        </div>
+          {/* Column 3: Quick Links */}
+          <div className="footer-column">
+            <h3 className="column-title">Quick Links</h3>
+            <ul className="footer-links">
+              <li onClick={() => router.push("/privacy-policy")}>
+                Privacy Policy
+              </li>
+              <li onClick={() => router.push("/terms-of-use")}>
+                Terms of Use
+              </li>
+              <li onClick={() => router.push("/talk-to-our-expert")}>
+                Support
+              </li>
+              <li onClick={() => router.push("/contact")}>
+                Contact
+              </li>
+            </ul>
+          </div>
 
         {/* Column 4: Map */}
         <div className="footer-column map-column">
