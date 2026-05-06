@@ -3,10 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { FaComments } from "react-icons/fa";
 
 type MenuKey =
   | "features"
-  | "usecases"
   | "customers"
   | "resources"
   | "neurolabs"
@@ -205,12 +205,8 @@ export default function Header() {
                     ? "mobile-submenu-open"
                     : ""
                 }`}
-                onMouseEnter={() =>
-                  handleSubmenuEnter("customers-industries")
-                }
-                onClick={(e) =>
-                  handleSubmenuClick("customers-industries", e)
-                }
+                onMouseEnter={() => handleSubmenuEnter("customers-industries")}
+                onClick={(e) => handleSubmenuClick("customers-industries", e)}
               >
                 <div className="dropdown-item-label">
                   <span>Industries we Serve</span>
@@ -224,10 +220,7 @@ export default function Header() {
                   >
                     Higher Education
                   </div>
-                  <div
-                    className="nav-item"
-                    onClick={() => router.push("/bfsi")}
-                  >
+                  <div className="nav-item" onClick={() => router.push("/bfsi")}>
                     BFSI
                   </div>
                   <div
@@ -236,10 +229,7 @@ export default function Header() {
                   >
                     Retail &amp; Healthcare
                   </div>
-                  <div
-                    className="nav-item"
-                    onClick={() => router.push("/states")}
-                  >
+                  <div className="nav-item" onClick={() => router.push("/states")}>
                     States
                   </div>
                   <div
@@ -257,12 +247,8 @@ export default function Header() {
                     ? "mobile-submenu-open"
                     : ""
                 }`}
-                onMouseEnter={() =>
-                  handleSubmenuEnter("customers-solutions")
-                }
-                onClick={(e) =>
-                  handleSubmenuClick("customers-solutions", e)
-                }
+                onMouseEnter={() => handleSubmenuEnter("customers-solutions")}
+                onClick={(e) => handleSubmenuClick("customers-solutions", e)}
               >
                 <div className="dropdown-item-label">
                   <span>Solutions for</span>
@@ -376,12 +362,8 @@ export default function Header() {
                     ? "mobile-submenu-open"
                     : ""
                 }`}
-                onMouseEnter={() =>
-                  handleSubmenuEnter("features-augmentation")
-                }
-                onClick={(e) =>
-                  handleSubmenuClick("features-augmentation", e)
-                }
+                onMouseEnter={() => handleSubmenuEnter("features-augmentation")}
+                onClick={(e) => handleSubmenuClick("features-augmentation", e)}
               >
                 <div className="dropdown-item-label">
                   <span>Augmentation</span>
@@ -487,9 +469,7 @@ export default function Header() {
                 <div className="submenu">
                   <div
                     className="nav-item"
-                    onClick={() =>
-                      router.push("/content-creation-management")
-                    }
+                    onClick={() => router.push("/content-creation-management")}
                   >
                     Content Creation &amp; Management
                   </div>
@@ -530,19 +510,19 @@ export default function Header() {
 
           <div
             className="nav-item dropdown-parent"
-            onClick={() => handleTopMenuClick("usecases")}
-            onMouseEnter={() => handleTopMenuEnter("usecases")}
+            onClick={() => handleTopMenuClick("resources")}
+            onMouseEnter={() => handleTopMenuEnter("resources")}
             onMouseLeave={handleTopMenuLeave}
           >
-            Use Cases
+            Resources
             <span
-              className={`arrow ${activeMenu === "usecases" ? "rotate" : ""}`}
+              className={`arrow ${activeMenu === "resources" ? "rotate" : ""}`}
             >
               ▾
             </span>
 
             <div
-              className={`dropdown ${activeMenu === "usecases" ? "show" : ""}`}
+              className={`dropdown ${activeMenu === "resources" ? "show" : ""}`}
               onClick={(e) => e.stopPropagation()}
             >
               <div
@@ -555,7 +535,7 @@ export default function Header() {
                 onClick={(e) => handleSubmenuClick("usecases-challenge", e)}
               >
                 <div className="dropdown-item-label">
-                  <span>By Challenge</span>
+                  <span>Use Cases</span>
                   <span className="submenu-caret">▹</span>
                 </div>
 
@@ -592,26 +572,7 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
 
-          <div
-            className="nav-item dropdown-parent"
-            onClick={() => handleTopMenuClick("resources")}
-            onMouseEnter={() => handleTopMenuEnter("resources")}
-            onMouseLeave={handleTopMenuLeave}
-          >
-            Resources
-            <span
-              className={`arrow ${activeMenu === "resources" ? "rotate" : ""}`}
-            >
-              ▾
-            </span>
-
-            <div
-              className={`dropdown ${activeMenu === "resources" ? "show" : ""}`}
-              onClick={(e) => e.stopPropagation()}
-            >
               <div
                 className="nav-item"
                 onClick={() => router.push("/media-presence")}
@@ -636,6 +597,10 @@ export default function Header() {
             </div>
           </div>
 
+          <div className="nav-item" onClick={() => router.push("/book-a-demo")}>
+            Book a Demo
+          </div>
+
           <button
             className="signin"
             onClick={() => router.push("/chatboat/app")}
@@ -645,21 +610,20 @@ export default function Header() {
         </nav>
       </header>
 
-      <div className="floating-action-buttons">
-  <button
-    className="floating-btn demo-btn"
-    type="button"
-    onClick={() => router.push("/book-a-demo")}
-  >
-    Book a Demo
-  </button>
-
+     <div className="floating-action-buttons">
   <button
     className="floating-btn expert-btn"
     type="button"
     onClick={() => router.push("/talk-to-our-expert")}
+    aria-label="Talk to Our Expert"
   >
-    Talk to Our Expert
+    <span className="floating-btn-icon">
+      <FaComments />
+    </span>
+
+    <span className="floating-btn-text">
+      Talk to Our Expert
+    </span>
   </button>
 </div>
     </>
