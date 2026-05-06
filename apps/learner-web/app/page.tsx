@@ -20,22 +20,25 @@ import {
 
 export default function Home() {
   const slides = [
-      {
-      image: "/pexels-darlene-alderson-4384864.jpg",
-      title: (
-        <>
-          Comprehensive <br />
-          Learning Experience Platform
-        </>
-      ),
+    {
+      image: "/reimagine-how-the-world-learns.jpg",
+      title: "Reimagine How the World Learns",
     },
     {
       image: "/huzefa-pithawala-kerK4xolE4o-unsplash.jpg",
-      title: "Personalized Learning Experience",
+      title: "Not Just Learning — A Transformation Engine",
     },
     {
       image: "/pexels-karola-g-5908764.jpg",
-      title: "Advanced Learning Record Store",
+      title: "Designed for Minds That Refuse Average",
+    },
+    {
+      image: "/Empowering-Lifelong-learning.jpg",
+      title: "Empowering Lifelong learning",
+    },
+    {
+      image: "/Built-for-Education-That-Goes-Beyond-the-Classroom.jpg",
+      title: "Built for Education That Goes Beyond the Classroom",
     },
   ];
 
@@ -69,7 +72,6 @@ export default function Home() {
 
             <div className="hero-overlay">
               <h2>{slides[current].title}</h2>
-              {/* <p>{slides[current].desc}</p> */}
             </div>
 
             <div className="hero-dots">
@@ -107,98 +109,127 @@ export default function Home() {
           </p>
         </div>
         </section>
+<section className="platform-features">
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaRocket />
+    </div>
+    <h3>AI-Powered Learning</h3>
+    <p>
+      Our AI algorithms personalize learning experiences by adapting to each learner's pace, style, and preferences, ensuring effective and engaging education.
+    </p>
+  </div>
 
-      <section className="platform-features">
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaRocket />
-          </div>
-          <h3>AI-Powered Learning</h3>
-          <p>
-            Our AI algorithms personalize learning experiences by adapting to each learner's pace, style, and preferences, ensuring effective and engaging education.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaLightbulb />
+    </div>
+    <h3>Interactive Content</h3>
+    <p>
+      Engage with immersive and interactive content including videos, quizzes, simulations, and gamified elements that make learning fun and effective.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaLightbulb />
-          </div>
-          <h3>Interactive Content</h3>
-          <p>
-            Engage with immersive and interactive content including videos, quizzes, simulations, and gamified elements that make learning fun and effective.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaGraduationCap />
+    </div>
+    <h3>Skill</h3>
+    <p>
+      Focus on practical skill-building with courses and modules designed to enhance real-world competencies, preparing learners for future careers.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaUsers />
-          </div>
-          <h3>Collaborative Learning</h3>
-          <p>
-            Enhance learning experiences through collaboration with peers, mentors, and industry experts using our integrated communication tools.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaUsers />
+    </div>
+    <h3>Collaborative Learning</h3>
+    <p>
+      Enhance learning experiences through collaboration with peers, mentors, and industry experts using our integrated communication tools.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaGraduationCap />
-          </div>
-          <h3>Skill Development</h3>
-          <p>
-            Focus on practical skill-building with courses and modules designed to enhance real-world competencies, preparing learners for future careers.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaMobileAlt />
+    </div>
+    <h3>Mobile-First Design</h3>
+    <p>
+      Access learning anytime, anywhere with our mobile-first design, ensuring a seamless experience across all devices.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaSyncAlt />
-          </div>
-          <h3>Continuous Learning</h3>
-          <p>
-            Stay ahead with continuous learning opportunities, including up-to-date content and resources that evolve with industry trends and demands.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaChartLine />
+    </div>
+    <h3>Career Pathways</h3>
+    <p>
+      Track progress and explore career opportunities with our career pathway tools, connecting learning outcomes to potential job roles and industries.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaChartLine />
-          </div>
-          <h3>Career Pathways</h3>
-          <p>
-            Track progress and explore career opportunities with our career pathway tools, connecting learning outcomes to potential job roles and industries.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaTools />
+    </div>
+    <h3>Customizable Interface</h3>
+    <p>
+      Personalize your learning environment with customizable interfaces that align with your preferences and enhance your learning journey.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaMobileAlt />
-          </div>
-          <h3>Mobile-First Design</h3>
-          <p>
-            Access learning anytime, anywhere with our mobile-first design, ensuring a seamless experience across all devices.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaChartBar />
+    </div>
+    <h3>Real-Time Analytics &amp; Insights</h3>
+    <p>
+      Turn data into decisions instantly with live visibility into learner progress, engagement, and performance. Empower educators to act at the right moment, not after it’s too late.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaTools />
-          </div>
-          <h3>Customizable Interface</h3>
-          <p>
-            Personalize your learning environment with customizable interfaces that align with your preferences and enhance your learning journey.
-          </p>
-        </div>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaCogs />
+    </div>
+    <h3>Multi-Tenant Architecture</h3>
+    <p>
+      Run multiple institutions, departments, or academies seamlessly on a single platform with complete data isolation. Scale effortlessly while maintaining full control and customisation for each tenant.
+    </p>
+  </div>
 
-        <div className="feature-box">
-          <div className="icon-circle">
-            <FaShieldAlt />
-          </div>
-          <h3>Secure and Scalable</h3>
-          <p>
-            Benefit from a platform that prioritizes security and scalability, ensuring your data is protected and your learning can grow with you.
-          </p>
-        </div>
-      </section>
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaSyncAlt />
+    </div>
+    <h3>Content Management &amp; Versioning</h3>
+    <p>
+      Keep your learning content always up-to-date with powerful version control and structured management. Update, track, and reuse content without losing consistency or control.
+    </p>
+  </div>
+
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaLightbulb />
+    </div>
+    <h3>Adaptive Learning Engine</h3>
+    <p>
+      Deliver personalised learning journeys that evolve with every learner’s performance and pace. Ensure better outcomes by meeting each learner exactly where they are.
+    </p>
+  </div>
+
+  <div className="feature-box">
+    <div className="icon-circle">
+      <FaChartLine />
+    </div>
+    <h3>Learner lifecycle tracking</h3>
+    <p>
+      Track every stage of the learner journey—from enrolment to achievement and beyond. Gain a complete view of growth, engagement, and outcomes in one unified system.
+    </p>
+  </div>
+</section>
 
       <section className="digital-section">
         <div className="digital-header">
@@ -306,7 +337,7 @@ export default function Home() {
          <div className="training-container">
           <div className="training-card">
             <Image
-              src="/Learning-Journey.jpeg"
+              src="/Learning-Journey.png"
               alt="Onboarding"
               width={400}
               height={200}
@@ -347,7 +378,7 @@ export default function Home() {
         <div className="training-container">
           <div className="training-card">
             <Image
-              src="/Blended-Learning.png"
+              src="/blended-learning.png"
               alt="Onboarding"
               width={400}
               height={200}
